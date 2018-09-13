@@ -1,4 +1,11 @@
-Week Fri 08/31/18 - Thu 09/06/18 .
+Week Fri 09/06/18 - Thu 09/13/18
+
+- Setup Future Systems account
+- Provided public SSH key
+- Started working on technology summaries
+- reviewing updated epub
+
+Week Fri 08/31/18 - Thu 09/06/18 
 
 - Went through lecture videos
 - Setup Github
