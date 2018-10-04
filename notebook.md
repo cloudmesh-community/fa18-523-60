@@ -1,7 +1,7 @@
 # Week Fri 09/28/18 - Thu 10/04/18
 
 - narowwing down potential datasets for the final project with the team
-- should make the decision tonight or in the next few days
+- should make the decision on the dataset tonight or in the next few days
 - exploring which technologies to use for our final project (most likely MongoDB in combination with some cloud service)
 - moving through epub
 
