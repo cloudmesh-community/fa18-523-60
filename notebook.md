@@ -1,3 +1,8 @@
+# Week Fri 10/05/18 - Thu 10/11/18
+
+- not started yet
+
+
 # Week Fri 09/28/18 - Thu 10/04/18
 
 - narowwing down potential datasets for the final project with the team
