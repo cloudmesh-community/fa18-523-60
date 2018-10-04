@@ -1,10 +1,17 @@
+# Week Fri 09/28/18 - Thu 10/04/18
+
+- narowwing down potential datasets for the final project with the team
+- should make the decision tonight or in the next few days
+- exploring which technologies to use for our final project (most likely MongoDB in combination with some cloud service)
+- moving through epub
+
 # Week Fri 09/21/18 - Thu 09/27/18
 
 - forked the original repository for the technology summaries
 - cloned the original repository to my local machine
 - updated the four technology summary files
 - updated the bibliography file with references for the summaries
-- planning on pushing the changes to GItHub in the next few days
+- pushed the technology summaries to the master branch
 - moving through the epub file
 - reviewed Scientific writing II
 - starting to explore datasets for the final project
