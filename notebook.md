@@ -3,7 +3,8 @@
 - Finished my part of the technology paper (need to push once the rest of the team completes their part)
 - decided on the topic for the final project - the responsiblities have been delegated 
 - working on the project update for the Oct 12th deadline
-- create paper and project-report folder in HID repository, along with the files that need to be updated.
+- create paper and project-report folder in HID repository, along with the files that need to be updated
+- added Kaggle.com public API paper draft
 
 
 # Week Fri 09/28/18 - Thu 10/04/18
