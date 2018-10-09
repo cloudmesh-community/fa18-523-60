@@ -1,4 +1,11 @@
-#Kaggle.com Public API
+#Technology Paper
+## Work Breakdown 
+1. Kaggle.com Public API - Izolda Fetko fa18-523-60
+2. MongoDB - Nishad Tupe fa18-523-64
+3. PyMongo - Vishal Bhoyar fa18-523-72
+
+
+##Kaggle.com Public API
 
 In the recent years, data science has become one of the 
 most important drivers of the modern economy. It is used 
@@ -75,3 +82,4 @@ has allowed developers, data scientists, and even ordinary layman to access
 datasets quickly and excel business, and ultimately industries. It is also 
 helping students with their education as it can aid “apps and websites interact 
 with data storage systems” used in online education [@www-apieconomy]. 
+
