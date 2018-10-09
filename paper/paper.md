@@ -1,5 +1,5 @@
-#Technology Paper
-## Work Breakdown 
+## Technology Paper
+### Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
 2. MongoDB - Nishad Tupe fa18-523-64
 3. PyMongo - Vishal Bhoyar fa18-523-72
