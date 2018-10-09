@@ -5,7 +5,7 @@
 3. PyMongo - Vishal Bhoyar fa18-523-72
 
 
-##Kaggle.com Public API
+### Kaggle.com Public API
 
 In the recent years, data science has become one of the 
 most important drivers of the modern economy. It is used 
