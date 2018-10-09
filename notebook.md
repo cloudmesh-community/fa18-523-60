@@ -1,6 +1,6 @@
 # Week Fri 10/05/18 - Thu 10/11/18
 
-- Finished my part of the technology paper (need to push once rest of the team completes their part)
+- Finished my part of the technology paper (need to push once the rest of the team completes their part)
 - decided on the topic for the final project - the responsiblities have been delegated 
 - working on the project update for the Oct 12th deadline
 - will create the paper and project folders today
