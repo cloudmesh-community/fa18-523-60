@@ -101,7 +101,7 @@ way to work with MongoDB from Python. The PyMongo distribution contains three
 top-level packages for interacting with MongoDB. The bson is an implementation 
 of the BSON format, pymongo is a full-featured driver for MongoDB, and gridfs
  is a set of tools for working with the GridFS storage specification 
-[@api.mongodb.com-api].
+[@api-mongodb-com-api].
 
 The PyMongo supports MongoDB 2.6, 3.0, 3.2, 3.4, 3.6 and 4.0 [@github].
  It is thread-safe and provides built-in connection pooling for threaded 
@@ -111,7 +111,7 @@ The PyMongo supports MongoDB 2.6, 3.0, 3.2, 3.4, 3.6 and 4.0 [@github].
 The PyMongo uses datetime objects for representing dates and times in MongoDB
  documents. Because MongoDB assumes that dates and times are in UTC, care 
  should be taken to ensure that dates and times written to the database 
- reflect UTC [@api.mongodb-datetimes]
+ reflect UTC [@api-mongodb-datetimes]
 
 Atlas is MongoDB, Inc.’s hosted MongoDB as a service offering. Connections 
 to Atlas require TLS/SSL. For connections using TLS/SSL, PyMongo may require 
@@ -123,12 +123,12 @@ Create a MongoClient to the running mongod instance is the first step when
 working with PyMongo. A single instance of MongoDB can support multiple 
 independent databases. When working with PyMongo you access databases using 
 attribute style access on MongoClient instances. In PyMongo we use dictionaries
- to represent documents [@api.mongodb.com-tutorial].
+ to represent documents [@api-mongodb-com-tutorial].
 
 **i. Installing / Upgrading with pip**
 
 The pip is the recommended way to install Pymongo on all platforms. 
-The command uses to install pymongo is as below [@api.mongodb.com-installation].
+The command uses to install pymongo is as below [@api-mongodb-com-installation].
 
 >>> $ python -m pip install pymongo
 
@@ -143,7 +143,7 @@ To upgrade PyMongo using pip use below command.
 **ii. Installing with easy_install**
 
 To use easy_install from setuptools [https://pypi.org/project/setuptools/] do 
-[@api.mongodb.com-installation]:
+[@api-mongodb-com-installation]:
 
 >>> $ python -m easy_install pymongo
 
@@ -164,7 +164,7 @@ GSSAPI authentication requires pykerberos on Unix or WinKerberos on Windows.
 To install directly from the source (i.e. to stay on the bleeding edge),
  install the C extension dependencies then check out the latest source from 
  GitHub and install the driver from the resulting tree 
- [@api.mongodb.com-installation]:
+ [@api-mongodb-com-installation]:
 
 >>> $ git clone git://github.com/mongodb/mongo-python-driver.git pymongo
 
@@ -177,14 +177,14 @@ To install directly from the source (i.e. to stay on the bleeding edge),
 **Making a Connection with MongoClient**
 
 The first step when working with PyMongo is to create a MongoClient to the 
-running mongod instance [@api.mongodb.com-tutorial].
+running mongod instance [@api-mongodb-com-tutorial].
 
 >>> from pymongo import MongoClient
 
 >>> client = MongoClient()
 
 The above code will connect on the default host and port. We can also specify 
-the host and port explicitly, as follows [@api.mongodb.com-tutorial]:
+the host and port explicitly, as follows [@api-mongodb-com-tutorial]:
 
 >>> client = MongoClient('localhost', 27017)
 
@@ -198,13 +198,13 @@ Or use the MongoDB URI format:
 
 A single instance of MongoDB can support multiple independent databases.
  When working with PyMongo you access databases using attribute style access 
- on MongoClient instances [@api.mongodb.com-tutorial]:
+ on MongoClient instances [@api-mongodb-com-tutorial]:
 
 >>> db = client.test_database
 
 If your database name is such that using attribute style access won’t work
  (like test-database), you can use dictionary style access instead 
- [@api.mongodb.com-tutorial]:
+ [@api-mongodb-com-tutorial]:
 
 >>> db = client['test-database']
 
@@ -230,7 +230,7 @@ Data in MongoDB is represented (and stored) using JSON-style documents.
 In PyMongo we use dictionaries to represent documents. The documents can 
 contain native Python types (like datetime.datetime instances) which will 
 be automatically converted to and from the appropriate BSON types 
-[@api.mongodb.com-tutorial].
+[@api-mongodb-com-tutorial].
 
 When a document is inserted a special key, "_id", is automatically added
 if the document doesn’t already contain an "_id" key. The value of "_id" 
