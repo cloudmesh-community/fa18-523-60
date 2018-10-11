@@ -4,7 +4,8 @@
 - decided on the topic for the final project - the responsiblities have been delegated 
 - working on the project update for the Oct 12th deadline
 - create paper and project-report folder in HID repository, along with the files that need to be updated
-- added Kaggle.com public API paper draft
+- added Kaggle.com public API paper draft and added references to the paper.bib file
+- added abstract, key words, introduction to the project report file and references to the bib file
 
 
 # Week Fri 09/28/18 - Thu 10/04/18
