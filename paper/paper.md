@@ -186,7 +186,7 @@ additional flavor to PyMongo. Next we present alist of tools related to PyMongo.
 
 :o: use list environment from markdown
 
-**PyMODM**: 
+**PyMODM**:
 
 : PyMODM is an ORM-like framework on top of PyMongo. The PyMODM 
   provides simple, extensible functionality that can be leveraged by other 
