@@ -86,6 +86,8 @@ can be used for dataset downloads and dataset creation, while the final
 group of commands listed on the Kaggle API GitHub page is the commands to 
 manage Kernels, more specifically Kernel pull and push [@www-githubkegapi].
 
+:o: It is not clar if the next section relates to kagle and how it relates to it:
+
 The relationship between public APIs and Big Data is very strong. The Big 
 Data volume has grown so much in the recent years with the rise of open/public 
 APIs that some of the experts started “using the term ‘API economy’ to refer to 
