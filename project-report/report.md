@@ -2,9 +2,9 @@
 
 ### Project Participants
 
-Izolda Fetko fa18-523-60
-Nishad Tupe fa18-523-64
-Vishal Bhoyar fa18-523-72
+- Izolda Fetko fa18-523-60
+- Nishad Tupe fa18-523-64
+- Vishal Bhoyar fa18-523-72
 
 
 ### Abstract
