@@ -4,8 +4,7 @@
 1. Abstract - Izolda Fetko fa18-523-60
 2. Key Words - Izolda Fetko fa18-523-60
 3. Introduction - Izolda Fetko fa18-523-60
-4. Dataset Description - Nishad Tupe fa18-523-64
-5. Literature Review - Nishad Tupe fa18-523-64
+
 
 ### Abstract
 
