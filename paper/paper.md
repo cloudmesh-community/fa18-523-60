@@ -8,6 +8,7 @@
 - [ ] use spaces before brackts
 - [ ] Section about Mongo and PyMOngo will build core of chapter. IT shoudl be comparible to the GraphQL chapter ins scope with 3 people. When doing examples do examples with cloud computing in mind, not users or cars, or so. 
 - [ ] use proper quotes which are " not left and right quote
+- [ ] never use the words below or above in a paper
 
 ### Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
