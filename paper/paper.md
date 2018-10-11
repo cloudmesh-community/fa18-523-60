@@ -6,9 +6,10 @@
 
 - [ ] Section about Kagle. THis section can be included directly in the lecture notes at the dataset.md file when ready.
 - [ ] use spaces before brackts
-- [ ] Section about Mongo and PyMOngo will build core of chapter. IT shoudl be comparible to the GraphQL chapter ins scope with 3 people. When doing examples do examples with cloud computing in mind, not users or cars, or so. 
+- [ ] Section about Mongo and PyMOngo will build core of chapter. IT shoudl be comparible to the GraphQL chapter ins scope with 3 people. When doing examples do examples with cloud computing in mind, not users or cars, or so. and no todo example as that is covered by regular tutorials
 - [ ] use proper quotes which are " not left and right quote
 - [ ] never use the words below or above in a paper
+- [ ] sections should include a simple example
 
 see: chapters/msg/graphql.md what other students did. 
 
@@ -16,7 +17,6 @@ see: chapters/msg/graphql.md what other students did.
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
 2. MongoDB - Nishad Tupe fa18-523-64
 3. PyMongo - Vishal Bhoyar fa18-523-72
-
 
 
 ## Kaggle.com Public API
@@ -100,7 +100,13 @@ helping students with their education as it can aid “apps and websites interac
 with data storage systems” used in online education [@www-apieconomy]. 
 
 
-## PyMongo
+## MongoDB
+
+section will include mongodb information and tutorial
+
+## Using MongoDB in Python
+
+
 
 :o: here PyMongo does not use the word the
 
@@ -239,12 +245,16 @@ capped collection.
 **mongobox** is a tool to run a sandboxed 
 MongoDB instance from within a python app.
 
+### PyMongo (1/3 students)
+
+### Mongoengine (2/3 students)
+
+### Flask and MongoDB (3/3 students)
+
 **Flask-MongoAlchemy** add Flask support for MongoDB using MongoAlchemy.
 
 **Flask-MongoKit** is the Flask extension to better integrate
 MongoKit into Flask.
 
 **Flask-PyMongo** is the bridges Flask and PyMongo [@api-mongodb-tools].
-
-
 
