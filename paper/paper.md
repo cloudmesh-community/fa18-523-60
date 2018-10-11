@@ -1,13 +1,27 @@
-## Technology Paper - DRAFT (NOT READY FOR REVIEW)
-### Work Breakdown 
+# Technology Paper - DRAFT (NOT READY FOR REVIEW)
+
+## Suggestions
+
+:o: I suggest to split up the paper.
+
+- [ ] Section about Kagle. THis section can be included directly in the lecture notes at the dataset.md file when ready.
+- [ ] use spaces before brackts
+- [ ] Section about Mongo and PyMOngo will build core of chapter. IT shoudl be comparible to the GraphQL chapter ins scope with 3 people. When doing examples do examples with cloud computing in mind, not users or cars, or so. and no todo example as that is covered by regular tutorials
+- [ ] use proper quotes which are " not left and right quote
+- [ ] never use the words below or above in a paper
+- [ ] sections should include a simple example
+
+see: chapters/msg/graphql.md what other students did. 
+
+## Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
 2. MongoDB - Nishad Tupe fa18-523-64
 3. PyMongo - Vishal Bhoyar fa18-523-72
 
 
-### Kaggle.com Public API
+## Kaggle.com Public API
 
-In the recent years, data science has become one of the 
+In recent years, data science has become one of the 
 most important drivers of the modern economy. It is used 
 to uncover actionable insights into the consumer markets, 
 for conveying powerful messages drawn from big data to 
@@ -15,7 +29,7 @@ shareholders and consumers, as well as building technologies
 that are continuously improving the quality of life around 
 the globe [@www-datascience]. This “growing importance of 
 data science has, in turn, led to the growth and importance 
-of data scientists”[@www-datascience]. An online platform 
+of data scientists” [@www-datascience]. An online platform 
 that allows the continuous idea sharing, learning, and 
 collaboration for those individuals is Kaggle.com.
 
@@ -37,16 +51,16 @@ types of datasets, such as CSV, Excel (although recommended to be
 uploaded as CSV), JSON, SQLite, BigQuery, and other [@www-kaggle-datasets].
 Other file formats constitute PNG imagery files, NPZ specialty file formats
 , as well as complex hierarchical data formats like HDF5 [@www-kaggle-datasets]. 
-Kaggle also supports archives, in other words, “files compressed using 
-the ZIP file format as well as other common archive formats like 7z” [@www-kaggle-datasets]. 
+Kaggle also supports archives, in other words, "files compressed using 
+the ZIP file format as well as other common archive formats like 7z" [@www-kaggle-datasets]. 
 The datasets are organized in a list on the Datasets webpage, and can be 
 filtered in a few different ways: by searching a common term in the 
 search bar; by choosing the dataset type from the drop-down menu; by 
 choosing the dataset size; and/or by choosing one of the available tags 
 in the Tags submenu. “Tags are added by dataset owners to indicate the 
 topic of the dataset”, as well as techniques that can be used to explore 
-the dataset (e.g., “classification”), “or the type of the data itself 
-(e.g., “text data”) “ [@www-kaggle-datasets].
+the dataset (e.g., *classification*), "or the type of the data itself 
+(e.g., *text data*)" [@www-kaggle-datasets].
 
 To easily obtain those datasets, Kaggle offers their newly created 
 Public API option to its users. API stands for “Application Programming 
@@ -74,6 +88,8 @@ can be used for dataset downloads and dataset creation, while the final
 group of commands listed on the Kaggle API GitHub page is the commands to 
 manage Kernels, more specifically Kernel pull and push [@www-githubkegapi].
 
+:o: It is not clar if the next section relates to kagle and how it relates to it:
+
 The relationship between public APIs and Big Data is very strong. The Big 
 Data volume has grown so much in the recent years with the rise of open/public 
 APIs that some of the experts started “using the term ‘API economy’ to refer to 
@@ -84,23 +100,31 @@ helping students with their education as it can aid “apps and websites interac
 with data storage systems” used in online education [@www-apieconomy]. 
 
 
+## MongoDB
+
+section will include mongodb information and tutorial
+
+## Using MongoDB in Python
 
 
 ### PyMongo
 
-The MongoDB is an open source database which stores information as flexible
- JSON-like documents. The documents can have any number, name, or hierarchy of
- fields information within it. The storing information in MangoDB document
- is differentthan relational database row data. The MongoDB can use as 
- persistent, searchable Python dictionaries repository[@flask-pymongo].
+
+:o: here PyMongo does not use the word the
+
+MongoDB is an open source database which stores information as flexible
+JSON-like documents. The documents can have any number, name, or hierarchy of
+fields information within it. The storing information in MangoDB document
+is differentthan relational database row data. The MongoDB can use as 
+persistent, searchable Python dictionaries repository[@flask-pymongo].
 
 Three top-level packages for interacting with MongoDB are available in PyMongo 
 distribution contains. The bson is an implementation of the BSON format, pymongo
- is a full-featured driver for ongoDB, and gridfs is a set of tools 
- for working with the GridFS storage specification. The PyMongo is the 
- official driver published by the Mongo to work with python. It is a Python
- distribution containing tools for working with MongoDB and is the recommended
- way to work with MongoDB from Python [@api-mongodb-com-api].
+is a full-featured driver for ongoDB, and gridfs is a set of tools 
+for working with the GridFS storage specification. The PyMongo is the 
+official driver published by the Mongo to work with python. It is a Python
+distribution containing tools for working with MongoDB and is the recommended
+way to work with MongoDB from Python [@api-mongodb-com-api].
 
 The PyMongo supports MongoDB versions 2.6, 3.0, 3.2, 3.4, 3.6 and 4.0 [@github].
 The PyMongo has the features of thread-safe and provides built-in connection 
@@ -113,18 +137,24 @@ datetime objects [@api-mongodb-com-api]. Because MongoDB assumes that dates
 and times are in UTC, care should be taken to ensure that dates and 
 times written to the database reflect UTC [@api-mongodb-datetimes].
 
+
 The Atlas is cloud hosted MongoDB as a service offering. 
+
 The Pymango can use to connect Atlas from python code. Connections 
 to Atlas is secure connection and need TLS/SSL. For connections using TLS/SSL,
 PyMongo may require third party dependencies as determined by the version of 
 Python. With Python 3.3+, can install PyMongo and any TLS/SSL-related 
 dependencies using the pip tls command [@api.mongodb.com-atlas].
 
+:o: The first step to you reverted it ...
+
 Create a MongoClient to the running mongod instance is the first step when 
 working with PyMongo. A single instance of MongoDB can support multiple 
 independent databases. When working with PyMongo you access databases using 
 attribute style access on MongoClient instances. In PyMongo we use dictionaries
 to represent documents [@api-mongodb-com-tutorial].
+
+:o: next sntence grammar, isnt it PyMongo? Is there not a pip install? I suggest to have install section.
 
 The Pymango can install or upgrade with pip command. The pip is the recommended
 way to install Pymongo on all platforms. We can get the specific Pymongo 
@@ -135,15 +165,17 @@ from source. It first install the C extension dependencies then check the
 latest GitHub sourceand install the driver from the resulting 
 tree [@api-mongodb-com-installation].
 
+
 The Pymango has some dependencies as it supports only CPython 2.6, 2.7, 3.4+, 
 PyPy, and PyPy3. The GSSAPI authentication requires pykerberos on Unix
  or WinKerberos on Windows for installation.
+
+:o: Now we have another first step, there is typically only one first step in one section
 
 The first step when working with PyMongo is to create a MongoClient to the 
 running mongod instance [@api-mongodb-com-tutorial]. It will connect on the 
 default host and port. If we want, we can also specify the host and port
 explicitly [@api-mongodb-com-tutorial]. 
-
 
 One MongoDb instance can connect multiple independent databases. The PyMongo 
 use attribute style access on MongoClient instances to access databases.
@@ -161,13 +193,17 @@ using JSON-style documents. The documents can contain native Python types
  the special key as "_id" automatically added in database
 
 There are many tools written for working with PyMongo. These tools give 
-additional flavor to PyMongo. Below is the list for some of the tools.
+additional flavor to PyMongo. Next we present alist of tools related to PyMongo.
 
-**PyMODM** is an ORM-like framework on top of PyMongo. The PyMODM 
- provides simple, extensible functionality that can be leveraged by other 
- libraries to target platforms like Django. At the same time, PyMODM is 
- powerful enough to be used for developing applications on its own 
- [@api-mongodb-tools].
+:o: use list environment from markdown
+
+**PyMODM**:
+
+: PyMODM is an ORM-like framework on top of PyMongo. The PyMODM 
+  provides simple, extensible functionality that can be leveraged by other 
+  libraries to target platforms like Django. At the same time, PyMODM is 
+  powerful enough to be used for developing applications on its own 
+  [@api-mongodb-tools].
 
 **Humongolus** is a lightweight ORM framework for Python and MongoDB. 
 The name comes from the combination of MongoDB and Homunculus. 
@@ -216,13 +252,20 @@ capped collection [@api-mongodb-tools].
 **mongobox** is a tool to run a sandboxed [@api-mongodb-tools] 
 MongoDB instance from within a python app [@api-mongodb-tools].
 
-**Flask-MongoAlchemy** add Flask support for MongoDB using MongoAlchemy 
+
 [@api-mongodb-tools].
+
+### PyMongo (1/3 students)
+
+### Mongoengine (2/3 students)
+
+### Flask and MongoDB (3/3 students)
+
+**Flask-MongoAlchemy** add Flask support for MongoDB using MongoAlchemy.
+
 
 **Flask-MongoKit** is the Flask extension to better integrate
 MongoKit into Flask [@api-mongodb-tools].
 
 **Flask-PyMongo** is the bridges Flask and PyMongo [@api-mongodb-tools].
-
-
 
