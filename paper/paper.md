@@ -7,6 +7,7 @@
 - [ ] Section about Kagle. THis section can be included directly in the lecture notes at the dataset.md file when ready.
 - [ ] use spaces before brackts
 - [ ] Section about Mongo and PyMOngo will build core of chapter. IT shoudl be comparible to the GraphQL chapter ins scope with 3 people. When doing examples do examples with cloud computing in mind, not users or cars, or so. 
+- [ ] use proper quotes which are " not left and right quote
 
 ### Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
@@ -47,16 +48,16 @@ types of datasets, such as CSV, Excel (although recommended to be
 uploaded as CSV), JSON, SQLite, BigQuery, and other [@www-kaggle-datasets].
 Other file formats constitute PNG imagery files, NPZ specialty file formats
 , as well as complex hierarchical data formats like HDF5 [@www-kaggle-datasets]. 
-Kaggle also supports archives, in other words, “files compressed using 
-the ZIP file format as well as other common archive formats like 7z” [@www-kaggle-datasets]. 
+Kaggle also supports archives, in other words, "files compressed using 
+the ZIP file format as well as other common archive formats like 7z" [@www-kaggle-datasets]. 
 The datasets are organized in a list on the Datasets webpage, and can be 
 filtered in a few different ways: by searching a common term in the 
 search bar; by choosing the dataset type from the drop-down menu; by 
 choosing the dataset size; and/or by choosing one of the available tags 
 in the Tags submenu. “Tags are added by dataset owners to indicate the 
 topic of the dataset”, as well as techniques that can be used to explore 
-the dataset (e.g., “classification”), “or the type of the data itself 
-(e.g., “text data”) “ [@www-kaggle-datasets].
+the dataset (e.g., *classification*), "or the type of the data itself 
+(e.g., *text data*)" [@www-kaggle-datasets].
 
 To easily obtain those datasets, Kaggle offers their newly created 
 Public API option to its users. API stands for “Application Programming 
