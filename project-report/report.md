@@ -1,9 +1,10 @@
 ## Instacart basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud
 
-### Work Breakdown 
-1. Abstract - Izolda Fetko fa18-523-60
-2. Key Words - Izolda Fetko fa18-523-60
-3. Introduction - Izolda Fetko fa18-523-60
+### Project Participants
+
+Izolda Fetko fa18-523-60
+Nishad Tupe fa18-523-64
+Vishal Bhoyar fa18-523-72
 
 
 ### Abstract
