@@ -1,4 +1,4 @@
-## Technology Paper - DRAFT (NOT READY FOR REVIEW)
+# Technology Paper - DRAFT (NOT READY FOR REVIEW)
 
 ## Suggestions
 
@@ -12,14 +12,14 @@
 
 see: chapters/msg/graphql.md what other students did. 
 
-### Work Breakdown 
+## Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
 2. MongoDB - Nishad Tupe fa18-523-64
 3. PyMongo - Vishal Bhoyar fa18-523-72
 
 
 
-### Kaggle.com Public API
+## Kaggle.com Public API
 
 In recent years, data science has become one of the 
 most important drivers of the modern economy. It is used 
@@ -100,10 +100,7 @@ helping students with their education as it can aid “apps and websites interac
 with data storage systems” used in online education [@www-apieconomy]. 
 
 
-
-
-
-### PyMongo
+## PyMongo
 
 :o: here PyMongo does not use the word the
 
@@ -162,11 +159,12 @@ The Pymango has some dependencies as it supports only CPython 2.6, 2.7, 3.4+,
 PyPy, and PyPy3. The GSSAPI authentication requires pykerberos on Unix
  or WinKerberos on Windows for installation.
 
+:o: Now we have another first step, there is typically only one first step in one section
+
 The first step when working with PyMongo is to create a MongoClient to the 
 running mongod instance [@api-mongodb-com-tutorial]. It will connect on the 
 default host and port. If we want, we can also specify the host and port
 explicitly [@api-mongodb-com-tutorial]. 
-
 
 One MongoDb instance can connect multiple independent databases. The PyMongo 
 use attribute style access on MongoClient instances to access databases.
@@ -184,13 +182,17 @@ using JSON-style documents. The documents can contain native Python types
  the special key as "_id" automatically added in database
 
 There are many tools written for working with PyMongo. These tools give 
-additional flavor to PyMongo. Below is the list for some of the tools.
+additional flavor to PyMongo. Next we present alist of tools related to PyMongo.
 
-**PyMODM** is an ORM-like framework on top of PyMongo. The PyMODM 
- provides simple, extensible functionality that can be leveraged by other 
- libraries to target platforms like Django. At the same time, PyMODM is 
- powerful enough to be used for developing applications on its own 
- [@api-mongodb-tools].
+:o: use list environment from markdown
+
+**PyMODM**: 
+
+: PyMODM is an ORM-like framework on top of PyMongo. The PyMODM 
+  provides simple, extensible functionality that can be leveraged by other 
+  libraries to target platforms like Django. At the same time, PyMODM is 
+  powerful enough to be used for developing applications on its own 
+  [@api-mongodb-tools].
 
 **Humongolus** is a lightweight ORM framework for Python and MongoDB. 
 The name comes from the combination of MongoDB and Homunculus. 
