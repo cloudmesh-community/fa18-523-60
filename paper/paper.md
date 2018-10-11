@@ -10,6 +10,8 @@
 - [ ] use proper quotes which are " not left and right quote
 - [ ] never use the words below or above in a paper
 
+see: chapters/msg/graphql.md what other students did. 
+
 ### Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
 2. MongoDB - Nishad Tupe fa18-523-64
@@ -103,19 +105,21 @@ with data storage systems” used in online education [@www-apieconomy].
 
 ### PyMongo
 
-The MongoDB is an open source database which stores information as flexible
- JSON-like documents. The documents can have any number, name, or hierarchy of
- fields information within it. The storing information in MangoDB document
- is differentthan relational database row data. The MongoDB can use as 
- persistent, searchable Python dictionaries repository[@flask-pymongo].
+:o: here PyMongo does not use the word the
+
+MongoDB is an open source database which stores information as flexible
+JSON-like documents. The documents can have any number, name, or hierarchy of
+fields information within it. The storing information in MangoDB document
+is differentthan relational database row data. The MongoDB can use as 
+persistent, searchable Python dictionaries repository[@flask-pymongo].
 
 Three top-level packages for interacting with MongoDB are available in PyMongo 
 distribution contains. The bson is an implementation of the BSON format, pymongo
- is a full-featured driver for ongoDB, and gridfs is a set of tools 
- for working with the GridFS storage specification. The PyMongo is the 
- official driver published by the Mongo to work with python. It is a Python
- distribution containing tools for working with MongoDB and is the recommended
- way to work with MongoDB from Python [@api-mongodb-com-api].
+is a full-featured driver for ongoDB, and gridfs is a set of tools 
+for working with the GridFS storage specification. The PyMongo is the 
+official driver published by the Mongo to work with python. It is a Python
+distribution containing tools for working with MongoDB and is the recommended
+way to work with MongoDB from Python [@api-mongodb-com-api].
 
 The PyMongo supports MongoDB versions 2.6, 3.0, 3.2, 3.4, 3.6 and 4.0 [@github].
 The PyMongo has the features of thread-safe and provides built-in connection 
@@ -128,12 +132,14 @@ datetime objects. Because MongoDB assumes that dates and times are in UTC, care
 should be taken to ensure that dates and times written to the database 
 reflect UTC [@api-mongodb-datetimes].
 
-Atlas is MongoDB, Inc.’s hosted MongoDB as a service offering. 
+Atlas [:o:] is MongoDB, Inc.’s hosted MongoDB as a service offering. 
 The Pymango can use to connect Atlas from python code. Connections 
 to Atlas is secure connection and need TLS/SSL. For connections using TLS/SSL,
 PyMongo may require third party dependencies as determined by the version of 
 Python. With Python 3.3+, can install PyMongo and any TLS/SSL-related 
 dependencies using the pip tls command [@api.mongodb.com-atlas].
+
+:o: The first step to you reverted it ...
 
 Create a MongoClient to the running mongod instance is the first step when 
 working with PyMongo. A single instance of MongoDB can support multiple 
@@ -141,10 +147,12 @@ independent databases. When working with PyMongo you access databases using
 attribute style access on MongoClient instances. In PyMongo we use dictionaries
 to represent documents [@api-mongodb-com-tutorial].
 
+:o: next sntence grammar, isnt it PyMongo? Is there not a pip install? I suggest to have install section.
+
 The Pymango can install or upgrade with pip command. The pip is the recommended
 way to install Pymongo on all platforms. We can get the specific Pymongo 
-version using pip commands [@api-mongodb-com-installation]. we can use 
-easy_install from setuptools location (https://pypi.org/project/setuptools/)
+version using pip commands [@api-mongodb-com-installation]. We can use 
+`easy_install` from setuptools location (https://pypi.org/project/setuptools/)
 for installation and upgrade. There is another way to install Pymango directly 
 from source (i.e. to stay on the bleeding edge. The install the C extension 
 dependencies then check out the latest source from  GitHub and install the 
