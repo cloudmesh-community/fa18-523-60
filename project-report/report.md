@@ -24,7 +24,7 @@ this NoSQL database technology for the online shopping analysis
 purposes that can ultimately be applied to other e-commerce 
 platforms. The second part entails a MongoDB performance 
 benchmarking by testing it on a local machine, a virtual 
-machine, and on a fully automate cloud service – Mongo Atlas.
+machine, and on a cloud service - Mongo Atlas.
 
 ### Keywords
 
@@ -83,17 +83,17 @@ In our project, we focus on the market basket analysis of the
 Instacart customers, more specifically on the 3 million orders 
 that are publicly available via the Kaggle platform. The application 
 built by our team allows a seamless download of the dataset via 
-Kaggle’s public API and data import into MongoDB with use of PyMongo. 
+Kaggle’s public API and data import into MongoDB. 
 Once in this NoSQL database, the data is ultimately joined and wrapped 
-into a form ready for data analysis. The exploratory analysis and 
-visualizations are completed with help of Python and its packages 
-such as Numpy, Pandas, Matplotlib, Altair, and Seaborn. In this segment, 
-the project touches upon statistics such as Average Order Size, Average 
-Item Quantity per Order, Time of Order, Most Frequently Purchased Items, 
-Most Frequently Purchased Categories of Items, and similar. The final 
+into a form ready for data analysis. The exploratory analysis is completed
+with use of PyMongo and the visualizations are completed with help of Python 
+and its packages such as Numpy, Pandas, Matplotlib, Altair, and Seaborn. 
+In this segment, the project touches upon statistics such as Average Order 
+Size, Average Item Quantity per Order, Time of Order, Most Frequently Purchased 
+Items, Most Frequently Purchased Categories of Items, and similar. The final 
 stage of the project includes technology benchmarking, where our team 
 is comparing MongoDB performance on a local machine, on a virtual machine,
-and on a fully automated cloud service – Mongo Atlas. We are hoping that 
+and on a cloud service – Mongo Atlas. We are hoping that 
 the results and the underlying idea of our research will not only encourage
 other researchers to consider MongoDB as a suitable medium in future Big 
 Data applications, considering its cloud capabilities, but also encourage 
