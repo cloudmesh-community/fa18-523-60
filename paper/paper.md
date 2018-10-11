@@ -195,6 +195,9 @@ most popular choices among the NoSQL databases [@www-mongomanual].
 
 
 
+
+
+
 ### PyMongo
 
 The MongoDB is an open source database which stores information as flexible
@@ -222,7 +225,7 @@ datetime objects [@api-mongodb-com-api]. Because MongoDB assumes that dates
 and times are in UTC, care should be taken to ensure that dates and 
 times written to the database reflect UTC [@api-mongodb-datetimes].
 
-The Atlas is cloud hosted MongoDB as a service offering. 
+Atlas is MongoDB, Inc.’s hosted MongoDB as a service offering. 
 The Pymango can use to connect Atlas from python code. Connections 
 to Atlas is secure connection and need TLS/SSL. For connections using TLS/SSL,
 PyMongo may require third party dependencies as determined by the version of 
@@ -235,6 +238,7 @@ independent databases. When working with PyMongo you access databases using
 attribute style access on MongoClient instances. In PyMongo we use dictionaries
 to represent documents [@api-mongodb-com-tutorial].
 
+
 The Pymango can install or upgrade with pip command. The pip is the recommended
 way to install Pymongo on all platforms. We can get the specific Pymongo 
 version using pip commands [@api-mongodb-com-installation]. we can use 
@@ -243,6 +247,16 @@ for installation and upgrade. There is another way to install Pymongo directly
 from source. It first install the C extension dependencies then check the 
 latest GitHub sourceand install the driver from the resulting 
 tree [@api-mongodb-com-installation].
+
+
+The Pymango can install or upgrade with pip command. The pip is the recommended
+way to install Pymongo on all platforms. We can get the specific Pymongo 
+version using pip commands [@api-mongodb-com-installation]. we can use 
+easy_install from setuptools location (https://pypi.org/project/setuptools/)
+for installation and upgrade. There is another way to install Pymango directly 
+from source (i.e. to stay on the bleeding edge. The install the C extension 
+dependencies then check out the latest source from  GitHub and install the 
+driver from the resulting tree [@api-mongodb-com-installation].
 
 The Pymango has some dependencies as it supports only CPython 2.6, 2.7, 3.4+, 
 PyPy, and PyPy3. The GSSAPI authentication requires pykerberos on Unix
@@ -267,6 +281,9 @@ using JSON-style documents. The documents can contain native Python types
  which will be automatically converted to and from the appropriate BSON types 
  [@api-mongodb-com-tutorial]. The PyMongo use dictionaries to  represent
  documents data. When a document is inserted by Pymogo in mongodb, 
+ which will be automatically converted to and from the appropriate BSON types.
+ The PyMongo use dictionaries to  represent documents data 
+ [@api-mongodb-com-tutorial]. When a document is inserted by Pymago in mongodb, 
  the special key as "_id" automatically added in database
 
 There are many tools written for working with PyMongo. These tools give 
@@ -300,6 +317,7 @@ motor_asyncio, and mongomock [@api-mongodb-tools].
 **Djongo** is a connector for using Django with MongoDB as the database backend.
 Use the Django Admin GUI to add and modify documents in MongoDB 
 [@api-mongodb-tools]. 
+
 
 **Django MongoDB Engine** is a MongoDB database backend for Django that 
 completely integrates with its ORM [@api-mongodb-tools].
