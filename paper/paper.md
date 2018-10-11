@@ -1,13 +1,23 @@
 ## Technology Paper - DRAFT (NOT READY FOR REVIEW)
+
+## Suggestions
+
+:o: I suggest to split up the paper.
+
+- [ ] Section about Kagle. THis section can be included directly in the lecture notes at the dataset.md file when ready.
+- [ ] use spaces before brackts
+- [ ] Section about Mongo and PyMOngo will build core of chapter. IT shoudl be comparible to the GraphQL chapter ins scope with 3 people. When doing examples do examples with cloud computing in mind, not users or cars, or so. 
+
 ### Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
 2. MongoDB - Nishad Tupe fa18-523-64
 3. PyMongo - Vishal Bhoyar fa18-523-72
 
 
+
 ### Kaggle.com Public API
 
-In the recent years, data science has become one of the 
+In recent years, data science has become one of the 
 most important drivers of the modern economy. It is used 
 to uncover actionable insights into the consumer markets, 
 for conveying powerful messages drawn from big data to 
@@ -15,7 +25,7 @@ shareholders and consumers, as well as building technologies
 that are continuously improving the quality of life around 
 the globe [@www-datascience]. This “growing importance of 
 data science has, in turn, led to the growth and importance 
-of data scientists”[@www-datascience]. An online platform 
+of data scientists” [@www-datascience]. An online platform 
 that allows the continuous idea sharing, learning, and 
 collaboration for those individuals is Kaggle.com.
 
