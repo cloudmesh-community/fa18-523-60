@@ -86,7 +86,6 @@ with data storage systems” used in online education [@www-apieconomy].
 
 
 
-
 ### PyMongo
 
 The MongoDB is an open source database which stores information as flexible
@@ -105,16 +104,16 @@ distribution contains. The bson is an implementation of the BSON format, pymongo
 
 The PyMongo supports MongoDB versions 2.6, 3.0, 3.2, 3.4, 3.6 and 4.0 [@github].
 The PyMongo has the features of thread-safe and provides built-in connection 
-pooling for threaded applications. The PyMongo also support asynchronous 
-frameworks like Gevent, asyncio, Tornado, or Twisted. It works with mod_wsgi 
-also [@api.mongodb.com-FAQ].
+pooling for threaded applications [@api.mongodb.com-FAQ]. The PyMongo also 
+support asynchronous frameworks like Gevent, asyncio, Tornado, or Twisted. 
+It works with mod_wsgi also [@api.mongodb.com-FAQ].
 
 For representing dates and times in MongoDB documents, the PyMongo uses 
-datetime objects. Because MongoDB assumes that dates and times are in UTC, care 
-should be taken to ensure that dates and times written to the database 
-reflect UTC [@api-mongodb-datetimes].
+datetime objects [@api-mongodb-com-api]. Because MongoDB assumes that dates 
+and times are in UTC, care should be taken to ensure that dates and 
+times written to the database reflect UTC [@api-mongodb-datetimes].
 
-Atlas is MongoDB, Inc.’s hosted MongoDB as a service offering. 
+The Atlas is cloud hosted MongoDB as a service offering. 
 The Pymango can use to connect Atlas from python code. Connections 
 to Atlas is secure connection and need TLS/SSL. For connections using TLS/SSL,
 PyMongo may require third party dependencies as determined by the version of 
@@ -131,10 +130,10 @@ The Pymango can install or upgrade with pip command. The pip is the recommended
 way to install Pymongo on all platforms. We can get the specific Pymongo 
 version using pip commands [@api-mongodb-com-installation]. we can use 
 easy_install from setuptools location (https://pypi.org/project/setuptools/)
-for installation and upgrade. There is another way to install Pymango directly 
-from source (i.e. to stay on the bleeding edge. The install the C extension 
-dependencies then check out the latest source from  GitHub and install the 
-driver from the resulting tree [@api-mongodb-com-installation].
+for installation and upgrade. There is another way to install Pymongo directly 
+from source. It first install the C extension dependencies then check the 
+latest GitHub sourceand install the driver from the resulting 
+tree [@api-mongodb-com-installation].
 
 The Pymango has some dependencies as it supports only CPython 2.6, 2.7, 3.4+, 
 PyPy, and PyPy3. The GSSAPI authentication requires pykerberos on Unix
@@ -156,9 +155,9 @@ table in a relational database. Collections and databases are created when the
 first document is inserted into MongoDB. Accessing a collection in PyMongo
 works the same as getting a database. The Data in MongoDB is represented
 using JSON-style documents. The documents can contain native Python types 
- which will be automatically converted to and from the appropriate BSON types.
- The PyMongo use dictionaries to  represent documents data 
- [@api-mongodb-com-tutorial]. When a document is inserted by Pymago in mongodb, 
+ which will be automatically converted to and from the appropriate BSON types 
+ [@api-mongodb-com-tutorial]. The PyMongo use dictionaries to  represent
+ documents data. When a document is inserted by Pymogo in mongodb, 
  the special key as "_id" automatically added in database
 
 There are many tools written for working with PyMongo. These tools give 
@@ -190,35 +189,38 @@ with existing ODMs. It works with multiple drivers: PyMongo, TxMongo,
 motor_asyncio, and mongomock [@api-mongodb-tools].
 
 **Djongo** is a connector for using Django with MongoDB as the database backend.
-Use the Django Admin GUI to add and modify documents in MongoDB. 
+Use the Django Admin GUI to add and modify documents in MongoDB 
+[@api-mongodb-tools]. 
 
 **Django MongoDB Engine** is a MongoDB database backend for Django that 
 completely integrates with its ORM [@api-mongodb-tools].
 
 **mongodb_beaker** is a project to enable using MongoDB as a backend for 
-beaker’s caching / session system.
+beaker’s caching / session system [@api-mongodb-tools].
 
 **Log4Mongo** is a flexible Python logging handler that can store logs in 
-MongoDB using normal and capped collections.
+MongoDB using normal and capped collections [@api-mongodb-tools].
 
 **MongoLog** is a Python logging handler that stores logs in MongoDB using a 
-capped collection.
+capped collection [@api-mongodb-tools].
 
-**c5t** is a content-management system using TurboGears and MongoDB.
+**c5t** is a content-management system using TurboGears and MongoDB 
+[@api-mongodb-tools].
 
 **rod.recipe.mongodb** is a ZC Buildout recipe for downloading and
- installing MongoDB.
+ installing MongoDB [@api-mongodb-tools].
 
 **repoze-what-plugins-mongodb** is a project working to support a plugin for
- using MongoDB as a backend forrepoze.what.
+ using MongoDB as a backend for repoze.what [@api-mongodb-tools].
 
-**mongobox** is a tool to run a sandboxed 
-MongoDB instance from within a python app.
+**mongobox** is a tool to run a sandboxed [@api-mongodb-tools] 
+MongoDB instance from within a python app [@api-mongodb-tools].
 
-**Flask-MongoAlchemy** add Flask support for MongoDB using MongoAlchemy.
+**Flask-MongoAlchemy** add Flask support for MongoDB using MongoAlchemy 
+[@api-mongodb-tools].
 
 **Flask-MongoKit** is the Flask extension to better integrate
-MongoKit into Flask.
+MongoKit into Flask [@api-mongodb-tools].
 
 **Flask-PyMongo** is the bridges Flask and PyMongo [@api-mongodb-tools].
 
