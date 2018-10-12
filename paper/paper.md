@@ -1,38 +1,38 @@
 ## Technology Paper - DRAFT (NOT READY FOR REVIEW)
 
-gregors comments are her:
+gregors comments are here:
 * <https://github.com/cloudmesh-community/fa18-523-60/blob/aaff63d6d0a53d808049ed193ba87420abfc8207/paper/paper.md>
 
 ### Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60 - Moved to Project report under "dataset description"
 2. MongoDB - Nishad Tupe fa18-523-64
-3. PyMongo - Vishal Bhoyar fa18-523-72
+3. PyMongo - Izolda Fetko fa18-523-60
 
 ### MongoDB
 
-In today's era, NoSQL databases have developed an enormous potential to 
+MongoDB is one of the leading NoSQL databases in the market. In today's 
+era, NoSQL databases have developed an enormous potential to 
 process the unstructured data efficiently. Modern information is 
 complex, extensive, and may not have pre-existing relationships. With 
 the advent of the advanced search engines, machine learning, and 
 Artificial Intelligence, technology expectations to process, store, and 
-analyze such data has grown tremendously [@www-upwork]. Today, NoSQL 
+analyze such data have grown tremendously [@www-upwork]. The NoSQL 
 database engines such as MongoDB, Redis, and Cassandra have successfully 
 overcome the traditional relational database challenges such as 
 scalability, performance, unstructured data growth, agile sprint cycles, 
 and growing needs of processing data in real-time with minimal hardware 
 processing power [@www-guru99]. The NoSQL databases are a new generation 
-of engines that don't necessarily require SQL language and are sometimes 
-also called "Not Only SQL" databases. However, most of them support 
+of engines that do not necessarily require SQL language and are sometimes 
+also called "Not Only SQL" databases.However, most of them support 
 various third-party open connectivity drivers that can map NoSQL queries 
 to SQL's. It would be safe to say that although NoSQL databases are 
 still far from replacing the relational databases, they are adding an 
 immense value when used in hybrid IT environments in conjunction with 
 relational databases, based on the application specific needs 
-[@www-guru99]. Today, MongoDB is one of the leading NoSQL databases in 
-the market. It is fully capable of handling dynamic changes; processing 
-large volumes of structured and unstructured data; easily using 
-object-oriented programming features; as well as distributed systems 
-challenges[@www-mongodb]. At its core, MongoDB is an open source, 
+[@www-guru99]. Today, this type of database is fully capable of handling 
+dynamic changes; processing large volumes of structured and unstructured data; 
+easily using object-oriented programming features; as well as distributed systems 
+challenges [@www-mongodb]. At its core, MongoDB is an open source, 
 cross-platform, document database mainly written in C++ language. Each 
 database within Mongo environment contains collections which in turn 
 contain documents. Collections and documents are analogous to tables and 
@@ -41,7 +41,7 @@ in a key-value form which allows storing of complex data types composed
 out of field and value pairs. Documents are objects which correspond to 
 native data types in many programming languages, hence a well defined, 
 embedded document can help reduce expensive joins and improve query 
-performance. Every document is uniquely identified by a "_id" field 
+performance. Every document is uniquely identified by an *"_id"* field 
 [@www-guru99]. MongoDB offers flexibility to write records that are 
 not restricted by column types. The data storage approach is flexible as 
 it allows one to store data as it grows and to fulfill varying needs of 
@@ -57,7 +57,7 @@ schema structure within MongoDB allows easy testing of the small sprints
 in agile project management life cycles and research projects that 
 require frequent changes to the data structure with minimal downtime. 
 Contrary to this flexible process, modifying the data structure of 
-relational databases can be a very tedious process[@www-upwork]. 
+relational databases can be a very tedious process [@www-upwork]. 
 Similarly to the relational databases, the query performance can be 
 improved by using indexing. MongoDB queries support regular expressions 
 as well as range asks for specific fields that eliminate the need of 
@@ -74,176 +74,145 @@ from two or more tables using a common column, often called as key. The
 native table contains the primary key column while the referenced table 
 contains a foreign key. This mechanism allows one to make changes in a 
 single row instead of changing all rows in the referenced table, this 
-action is referred to as normalization. MongoDB is a documented database 
+action is referred to as *normalization*. MongoDB is a documented database 
 and mainly contains denormalized data which means the data is repeated 
 instead of indexed over a specific key. If the same data is required in 
 more than one table, it needs to be repeated. This constraint has been 
 eliminated in MongoDB's new version 3.2. The new release introduced a 
-"$lookup" feature which more likely works as a left-outer-join. Lookups 
+*"$lookup"* feature which more likely works as a left-outer-join. Lookups 
 are restricted to aggregated functions which means that data usually 
 need some type of filtering and grouping operations to be conducted 
 beforehand. For this reason, joins in MongoDB require more complicated 
 querying compared to the traditional relational database joins. Although 
-at this time, "lookups" are still very far from replacing "joins", this 
+at this time, *lookups* are still very far from replacing *joins*, this 
 is a prominent feature that can resolve some of the relational data 
 challenges for MongoDB [@www-sitepoint]. When it comes to the technical 
 elements of MongoDB, it posses a rich interface for importing and 
 storage of external data in various formats. Using Mongo Import/Export 
-tool one can easily transfer the contents from a JSON, CSV, or TSV files 
+tool one can easily transfer the contents from JSON, CSV, or TSV files 
 into a database. MongoDB supports CRUD(Create, read, update, delete) 
 operations efficiently and has detailed documentation available on the 
-website. It can also query the geospatial data, and it is capable of 
+product website. It can also query the geospatial data, and it is capable of 
 storing geospatial data in GeoJSON objects. Aggregation Operation of 
 MongoDB process data records and returns computed results. MongoDB 
 aggregation framework is modeled on the concept of data pipelines. Data 
 security is the crucial aspect of enterprise infrastructure management 
 and that is why MongoDB provides various security features such as 
 authentication, access control, and encryption. It supports mechanisms 
-such as SCRAM and LDAP and Kerberos authentication. The administrator 
+such as SCRAM, LDAP, and Kerberos authentication. The administrator 
 can create role-based access control; roles can be predefined or custom. 
-MongoDB can audit activities such as DDL, CRUD statements, 
-authentication and authorization operations [@www-mongodbmanual]. In 
-regards to the cloud technologies, MongoDB also offers fully automated 
-cloud service called "Atlas" with competitive pricing options. Mongo 
-Atlas Cloud interface offers interactive GUI for managing cloud 
-resources and deploying applications quickly. The service is equipped 
-with geographically distributed instances to ensure no single point 
-failure. Also, a well-rounded performance monitoring interface allows 
-users to promptly detect anomalies and generate index suggestions to 
-optimize the performance and reliability of the database. Global 
-technology leaders such as Google, Facebook, eBay, and Nokia are 
-leveraging MongoDB and Atlas cloud services making MongoDB one of the 
-most popular choices among the NoSQL databases [@www-mongomanual]. 
-
+MongoDB can audit activities such as DDL, CRUD statements, authentication 
+and authorization operations [@www-mongodbmanual]. In regards to the cloud 
+technologies, MongoDB also offers fully automated cloud service called *Atlas*
+with competitive pricing options. Mongo Atlas Cloud interface offers 
+interactive GUI for managing cloud resources and deploying applications quickly. 
+The service is equipped with geographically distributed instances to ensure no 
+single point failure. Also, a well-rounded performance monitoring interface 
+allows users to promptly detect anomalies and generate index suggestions to 
+optimize the performance and reliability of the database. Global technology 
+leaders such as Google, Facebook, eBay, and Nokia are leveraging MongoDB and 
+Atlas cloud services making MongoDB one of the most popular choices among the 
+NoSQL databases [@www-mongomanual]. 
 
 ### PyMongo
 
-MongoDB is an open source database which stores information as flexible
-JSON-like documents. The documents can have any number, name, or hierarchy of
-fields information within it. Storing information in a MongoDB document
-is different than storing it in a relational database row data. MongoDB can
-be used as a persistent, searchable Python dictionaries repository [@flask-pymongo].
+PyMongo is the official Python driver or distribution that allows work with 
+a NoSQL type database called *MongoDB* [@api-mongodb-com-api]. The first version 
+of the driver was developed in 2009 [@www-pymongo-blog] only two years after the 
+MongoDB development was started. This driver allows developers to combine both 
+Python's versatility and MongoDB's unstructured data nature into successful 
+applications. Currently, this driver supports MongoDB versions 2.6, 3.0, 3.2, 
+3.4, 3.6, and 4.0 [@github]. MongoDB and Python represent a compatible fit 
+considering that BSON (binary JSON) used in this NoSQL database is very similar 
+to Python dictionaries, which makes the collaboration between the two even 
+more appealing [@www-slideshare]. For this reason, ditionaries are the recommended 
+tools to be used in PyMongo when representing documents [@www-gearheart]. 
 
-Three top-level packages for interacting with MongoDB are available in PyMongo 
-distribution contains. The bson is an implementation of the BSON format, while
-Pymongo is a full-featured driver for MngoDB, and gridfs is a set of tools 
-for working with the GridFS storage specification. PyMongo is the official 
-driver published by the Mongo to work with Python. It is a Python distribution that
-contains tools for working with MongoDB and is the recommended way to work with 
-MongoDB from Python [@api-mongodb-com-api].
+#### Installation
 
-PyMongo supports MongoDB versions 2.6, 3.0, 3.2, 3.4, 3.6 and 4.0 [@github].
-It contains the thread-safe features and provides a built-in connection 
-pooling for threaded applications [@api.mongodb.com-FAQ]. PyMongo also 
-supports asynchronous frameworks like Gevent, asyncio, Tornado, or Twisted. 
-as well as mod_wsgi also [@api.mongodb.com-FAQ].
+Prior to be able to exploit the benefits of Python and MongoDB symultaneously,
+the PyMongo distribution must be installed using *pip*. To install it on
+all platforms, the following command should be used [@api-mongodb-com-installation]:
 
-For representing dates and times in MongoDB documents, PyMongo uses 
-datetime objects [@api-mongodb-com-api]. Since MongoDB assumes that dates 
-and times are in UTC, one should ensure that dates and 
-times written to the database reflect the UTC [@api-mongodb-datetimes].
+`$ python -m pip install pymongo`
 
-Atlas is MongoDB, Inc.’s hosted MongoDB as a service offering. 
-Pymango can be used to connect Atlas from python code. Connections 
-to Atlas are secure, but also need TLS/SSL. For connections using TLS/SSL,
-PyMongo may require third party dependencies as determined by the version of 
-Python. With Python 3.3+, PyMongo and any TLS/SSL-related 
-dependencies can be installed using the pip tls command [@api.mongodb.com-atlas].
+Specific versions of PyMongo can be installed with command lines such as 
+in this example where the 3.5.1 version is installed [@api-mongodb-com-installation]:
 
-Creating a MongoClient to the running mongod instance is the first step when 
-working with PyMongo. A single instance of MongoDB can support multiple 
-independent databases. When working with PyMongo, one accesses databases using 
-attribute style access on the MongoClient instances. In PyMongo dictionaries are
-used to represent documents [@api-mongodb-com-tutorial].
+`$ python -m pip install pymongo==3.5.1`
 
+A single line of code can be used to upgrade the driver as 
+well [@api-mongodb-com-installation].
 
-PyMongo can be installed or upgraded with a single pip command. The pip is the 
-recommended way of installing PyMongo on all platforms. Specific PyMongo 
-versions can also we obtained by using specific pip commands [@api-mongodb-com-installation]. 
-Also, an easy_install from setuptools location (https://pypi.org/project/setuptools/)
-can be used for installation and upgrade. There is another way to install Pymongo directly 
-from the source. First, an install of the C extension dependencies is necessary before the 
-latest GitHub source is checked and the driver from the resulting 
-tree is installed [@api-mongodb-com-installation].
+`$ python -m pip install --upgrade pymongo`
 
+Further more, the installation process can be completed with help of the 
+easy_install tool, which requires users to use the following command 
+[@api-mongodb-com-installation].
 
-PyMongo has some dependencies as it supports only Python 2.6, 2.7, 3.4+, 
-PyPy, and PyPy3. The GSSAPI authentication requires pykerberos on Unix
-or WinKerberos on Windows for installation.
+`$ python -m easy_install pymongo`
 
-The first step when working with PyMongo is to create a MongoClient to the 
-running mongod instance [@api-mongodb-com-tutorial]. It will connect to the 
-default host and port. Per user preference, the host and port can also be 
-explicitly specified [@api-mongodb-com-tutorial]. 
+To do an upgrade of the driver using this tool, the following command is
+recommended [@api-mongodb-com-installation]:
 
+`$ python -m easy_install -U pymongo`
 
-One MongoDb instance can connect multiple independent databases. PyMongo 
-uses an attribute style access on MongoClient instances to access databases.
-If attribute style access does not work, instead a dictionary style access to 
-connect should be used [@api-mongodb-com-tutorial].
+There are many other ways of installing PyMongo directly from the source, 
+however they require for the C extension dependencies to be installed prior to
+the driver installation step, as they are the ones that skim throught the sources 
+on GitHub and use the most up-to-date source to install the driver 
+[@api-mongodb-com-installation].
 
-There are many tools written for working with PyMongo. These tools give 
-additional flavor to PyMongo. Below is the list for some of the tools.
+To check if the installation was completed accurately, the following command is used
+in the Python console [@www-realpython].
 
-1) **PyMODM** is an ORM-like framework on top of PyMongo. The PyMODM 
- provides simple, extensible functionality that can be leveraged by other 
- libraries to target platforms like Django. At the same time, PyMODM is 
- powerful enough to be used for developing applications on its own 
- [@api-mongodb-tools].
+`import pymongo`
 
-2) **Humongolus** is a lightweight ORM framework for Python and MongoDB. 
-The name comes from the combination of MongoDB and Homunculus. 
-Humongolus allows one to create models/schemas with robust validation 
-[@api-mongodb-tools].
+If the command returns zero exceptions within the Python shell, one can consider 
+the PyMongo installation to be completed successfully.
 
-3) **Ming** (the Merciless) is a library that allows users to enforce 
-schemas on a MongoDB database in their Python application. It was developed by 
-SourceForge during their migration to MongoDB [@api-mongodb-tools].
+### Dependencies
 
-4) **MongoEngine** is another ORM-like layer on top of PyMongo. It allows one 
-to define schemas for documents and query collections using syntax inspired by 
-the Django ORM [@api-mongodb-tools].
+The PyMongo driver has a few dependencies that should be taken into consideration.
+Currently, it supports CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ interpreters 
+[@www-github-driver]. An optional dependency that requires some additional 
+components to be installed is the GSSAPI authentication [@www-github-driver]. For 
+the Unix based machine, it requires pykerberos, while for the Windows machines 
+WinKerberos is needed to fullfill this requirement [@www-github-driver]. The 
+automatic installation of this dependency can be done symoultaneously with the
+driver installation, in the following manner:
 
-5) **uMongo** is a Python MongoDB ODM. Its inception comes from two needs: 
-the lack of async ODM and the difficulty to do document(un)serialization
-with existing ODMs. It works with multiple drivers: PyMongo, TxMongo, 
-motor_asyncio, and mongomock [@api-mongodb-tools].
+`$ python -m pip install pymongo[gssapi]`
 
-6) **Djongo** is a connector for using Django with MongoDB as the database backend.
-The Django Admin GUI can be used to add and modify documents in MongoDB 
-[@api-mongodb-tools]. 
+Other third-party dependencies such as *ipaddress*, *certifi*, or *wincerstore*
+are necessery for connections with help of TLS/SSL and can also be symoultaneously
+be installed with the driver installation [@www-github-driver].
 
+### Running PyMongo with Mongo Deamon
 
-7) **Django MongoDB Engine** is a MongoDB database backend for Django that 
-completely integrates with its ORM [@api-mongodb-tools].
+Once PyMongo installed, the Mongo deamon can be run with a very simple command
+in a new terminal window [@www-realpython].
 
-8) **mongodb_beaker** is a project to enable using MongoDB as a backend for 
-beaker’s caching / session system [@api-mongodb-tools].
+`$ mongod`
 
-9) **Log4Mongo** is a flexible Python logging handler that can store logs in 
-MongoDB using normal and capped collections [@api-mongodb-tools].
+### Connecting to a database using MongoClient
 
-10) **MongoLog** is a Python logging handler that stores logs in MongoDB using a 
-capped collection [@api-mongodb-tools].
+In order to be able to establish a connection with the database, a MongoClient
+class needs to be imported that subsequentially allows the MongoClient object to 
+communicate with the database [@www-realpython]. 
 
-11) **c5t** is a content-management system using TurboGears and MongoDB 
-[@api-mongodb-tools].
+`from pymongo import MongoClient
+client = MongoClient()`
 
-12) **rod.recipe.mongodb** is a ZC Buildout recipe for downloading and
- installing MongoDB [@api-mongodb-tools].
+This command allows a connection with a default, local host and port (27017),
+however, depending on the programming requirements, one can also specify those
+by listing them in the client instance or instead use the same information
+via the Mongo URI format [@www-realpython].
 
-13) **repoze-what-plugins-mongodb** is a project working to support a plugin for
- using MongoDB as a backend for repoze.what [@api-mongodb-tools].
+### Accessing Databases, Inserting and Retrieving Documents
 
-14) **mongobox** is a tool to run a sandboxed [@api-mongodb-tools] 
-MongoDB instance from within a python app [@api-mongodb-tools].
+### Pros and Cons using PyMongo
 
-15) **Flask-MongoAlchemy** add Flask support for MongoDB using MongoAlchemy 
-[@api-mongodb-tools].
+#### Pros
 
-16) **Flask-MongoKit** is the Flask extension to better integrate
-MongoKit into Flask [@api-mongodb-tools].
-
-17) **Flask-PyMongo** is the bridges Flask and PyMongo [@api-mongodb-tools].
-
-
+#### Cons
