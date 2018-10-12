@@ -199,155 +199,132 @@ most popular choices among the NoSQL databases [@www-mongomanual].
 
 ### PyMongo
 
-The MongoDB is an open source database which stores information as flexible
- JSON-like documents. The documents can have any number, name, or hierarchy of
- fields information within it. The storing information in MangoDB document
- is differentthan relational database row data. The MongoDB can use as 
- persistent, searchable Python dictionaries repository[@flask-pymongo].
+MongoDB is an open source database which stores information as flexible
+JSON-like documents. The documents can have any number, name, or hierarchy of
+fields information within it. Storing information in a MongoDB document
+is different than storing it in a relational database row data. MongoDB can
+be used as a persistent, searchable Python dictionaries repository [@flask-pymongo].
 
 Three top-level packages for interacting with MongoDB are available in PyMongo 
-distribution contains. The bson is an implementation of the BSON format, pymongo
- is a full-featured driver for ongoDB, and gridfs is a set of tools 
- for working with the GridFS storage specification. The PyMongo is the 
- official driver published by the Mongo to work with python. It is a Python
- distribution containing tools for working with MongoDB and is the recommended
- way to work with MongoDB from Python [@api-mongodb-com-api].
+distribution contains. The bson is an implementation of the BSON format, while
+Pymongo is a full-featured driver for MngoDB, and gridfs is a set of tools 
+for working with the GridFS storage specification. PyMongo is the official 
+driver published by the Mongo to work with Python. It is a Python distribution that
+contains tools for working with MongoDB and is the recommended way to work with 
+MongoDB from Python [@api-mongodb-com-api].
 
-The PyMongo supports MongoDB versions 2.6, 3.0, 3.2, 3.4, 3.6 and 4.0 [@github].
-The PyMongo has the features of thread-safe and provides built-in connection 
-pooling for threaded applications [@api.mongodb.com-FAQ]. The PyMongo also 
-support asynchronous frameworks like Gevent, asyncio, Tornado, or Twisted. 
-It works with mod_wsgi also [@api.mongodb.com-FAQ].
+PyMongo supports MongoDB versions 2.6, 3.0, 3.2, 3.4, 3.6 and 4.0 [@github].
+It contains the thread-safe features and provides a built-in connection 
+pooling for threaded applications [@api.mongodb.com-FAQ]. PyMongo also 
+supports asynchronous frameworks like Gevent, asyncio, Tornado, or Twisted. 
+as well as mod_wsgi also [@api.mongodb.com-FAQ].
 
-For representing dates and times in MongoDB documents, the PyMongo uses 
-datetime objects [@api-mongodb-com-api]. Because MongoDB assumes that dates 
-and times are in UTC, care should be taken to ensure that dates and 
-times written to the database reflect UTC [@api-mongodb-datetimes].
+For representing dates and times in MongoDB documents, PyMongo uses 
+datetime objects [@api-mongodb-com-api]. Since MongoDB assumes that dates 
+and times are in UTC, one should ensure that dates and 
+times written to the database reflect the UTC [@api-mongodb-datetimes].
 
 Atlas is MongoDB, Inc.’s hosted MongoDB as a service offering. 
-The Pymango can use to connect Atlas from python code. Connections 
-to Atlas is secure connection and need TLS/SSL. For connections using TLS/SSL,
+Pymango can be used to connect Atlas from python code. Connections 
+to Atlas are secure, but also need TLS/SSL. For connections using TLS/SSL,
 PyMongo may require third party dependencies as determined by the version of 
-Python. With Python 3.3+, can install PyMongo and any TLS/SSL-related 
-dependencies using the pip tls command [@api.mongodb.com-atlas].
+Python. With Python 3.3+, PyMongo and any TLS/SSL-related 
+dependencies can be installed using the pip tls command [@api.mongodb.com-atlas].
 
-Create a MongoClient to the running mongod instance is the first step when 
+Creating a MongoClient to the running mongod instance is the first step when 
 working with PyMongo. A single instance of MongoDB can support multiple 
-independent databases. When working with PyMongo you access databases using 
-attribute style access on MongoClient instances. In PyMongo we use dictionaries
-to represent documents [@api-mongodb-com-tutorial].
+independent databases. When working with PyMongo, one accesses databases using 
+attribute style access on the MongoClient instances. In PyMongo dictionaries are
+used to represent documents [@api-mongodb-com-tutorial].
 
 
-The Pymango can install or upgrade with pip command. The pip is the recommended
-way to install Pymongo on all platforms. We can get the specific Pymongo 
-version using pip commands [@api-mongodb-com-installation]. we can use 
-easy_install from setuptools location (https://pypi.org/project/setuptools/)
-for installation and upgrade. There is another way to install Pymongo directly 
-from source. It first install the C extension dependencies then check the 
-latest GitHub sourceand install the driver from the resulting 
-tree [@api-mongodb-com-installation].
+PyMongo can be installed or upgraded with a single pip command. The pip is the 
+recommended way of installing PyMongo on all platforms. Specific PyMongo 
+versions can also we obtained by using specific pip commands [@api-mongodb-com-installation]. 
+Also, an easy_install from setuptools location (https://pypi.org/project/setuptools/)
+can be used for installation and upgrade. There is another way to install Pymongo directly 
+from the source. First, an install of the C extension dependencies is necessary before the 
+latest GitHub source is checked and the driver from the resulting 
+tree is installed [@api-mongodb-com-installation].
 
 
-The Pymango can install or upgrade with pip command. The pip is the recommended
-way to install Pymongo on all platforms. We can get the specific Pymongo 
-version using pip commands [@api-mongodb-com-installation]. we can use 
-easy_install from setuptools location (https://pypi.org/project/setuptools/)
-for installation and upgrade. There is another way to install Pymango directly 
-from source (i.e. to stay on the bleeding edge. The install the C extension 
-dependencies then check out the latest source from  GitHub and install the 
-driver from the resulting tree [@api-mongodb-com-installation].
-
-The Pymango has some dependencies as it supports only CPython 2.6, 2.7, 3.4+, 
+PyMongo has some dependencies as it supports only Python 2.6, 2.7, 3.4+, 
 PyPy, and PyPy3. The GSSAPI authentication requires pykerberos on Unix
- or WinKerberos on Windows for installation.
+or WinKerberos on Windows for installation.
 
 The first step when working with PyMongo is to create a MongoClient to the 
-running mongod instance [@api-mongodb-com-tutorial]. It will connect on the 
-default host and port. If we want, we can also specify the host and port
-explicitly [@api-mongodb-com-tutorial]. 
+running mongod instance [@api-mongodb-com-tutorial]. It will connect to the 
+default host and port. Per user preference, the host and port can also be 
+explicitly specified [@api-mongodb-com-tutorial]. 
 
 
-One MongoDb instance can connect multiple independent databases. The PyMongo 
-use attribute style access on MongoClient instances to access databases.
-If attribute style access won’t work then can use dictionary style access to 
-connect [@api-mongodb-com-tutorial].
-
-The group of documents stored in MongoDB is call collection. It is equivalent to 
-table in a relational database. Collections and databases are created when the
-first document is inserted into MongoDB. Accessing a collection in PyMongo
-works the same as getting a database. The Data in MongoDB is represented
-using JSON-style documents. The documents can contain native Python types 
- which will be automatically converted to and from the appropriate BSON types 
- [@api-mongodb-com-tutorial]. The PyMongo use dictionaries to  represent
- documents data. When a document is inserted by Pymogo in mongodb, 
- which will be automatically converted to and from the appropriate BSON types.
- The PyMongo use dictionaries to  represent documents data 
- [@api-mongodb-com-tutorial]. When a document is inserted by Pymago in mongodb, 
- the special key as "_id" automatically added in database
+One MongoDb instance can connect multiple independent databases. PyMongo 
+uses an attribute style access on MongoClient instances to access databases.
+If attribute style access does not work, instead a dictionary style access to 
+connect should be used [@api-mongodb-com-tutorial].
 
 There are many tools written for working with PyMongo. These tools give 
 additional flavor to PyMongo. Below is the list for some of the tools.
 
-**PyMODM** is an ORM-like framework on top of PyMongo. The PyMODM 
+1) **PyMODM** is an ORM-like framework on top of PyMongo. The PyMODM 
  provides simple, extensible functionality that can be leveraged by other 
  libraries to target platforms like Django. At the same time, PyMODM is 
  powerful enough to be used for developing applications on its own 
  [@api-mongodb-tools].
 
-**Humongolus** is a lightweight ORM framework for Python and MongoDB. 
+2) **Humongolus** is a lightweight ORM framework for Python and MongoDB. 
 The name comes from the combination of MongoDB and Homunculus. 
-Humongolus allows you to create models/schemas with robust validation 
+Humongolus allows one to create models/schemas with robust validation 
 [@api-mongodb-tools].
 
-**Ming** (the Merciless) is a library that 
-allows you to enforce schemas on a MongoDB database in your Python application.
- It was developed by SourceForge during their migration to MongoDB
- [@api-mongodb-tools].
+3) **Ming** (the Merciless) is a library that allows users to enforce 
+schemas on a MongoDB database in their Python application. It was developed by 
+SourceForge during their migration to MongoDB [@api-mongodb-tools].
 
-**MongoEngine** is another ORM-like layer on top of
- PyMongo. It allows you to define schemas for documents and query collections
- using syntax inspired by the Django ORM [@api-mongodb-tools].
+4) **MongoEngine** is another ORM-like layer on top of PyMongo. It allows one 
+to define schemas for documents and query collections using syntax inspired by 
+the Django ORM [@api-mongodb-tools].
 
-**uMongo** is a Python MongoDB ODM. Its inception comes from two needs: 
+5) **uMongo** is a Python MongoDB ODM. Its inception comes from two needs: 
 the lack of async ODM and the difficulty to do document(un)serialization
 with existing ODMs. It works with multiple drivers: PyMongo, TxMongo, 
 motor_asyncio, and mongomock [@api-mongodb-tools].
 
-**Djongo** is a connector for using Django with MongoDB as the database backend.
-Use the Django Admin GUI to add and modify documents in MongoDB 
+6) **Djongo** is a connector for using Django with MongoDB as the database backend.
+The Django Admin GUI can be used to add and modify documents in MongoDB 
 [@api-mongodb-tools]. 
 
 
-**Django MongoDB Engine** is a MongoDB database backend for Django that 
+7) **Django MongoDB Engine** is a MongoDB database backend for Django that 
 completely integrates with its ORM [@api-mongodb-tools].
 
-**mongodb_beaker** is a project to enable using MongoDB as a backend for 
+8) **mongodb_beaker** is a project to enable using MongoDB as a backend for 
 beaker’s caching / session system [@api-mongodb-tools].
 
-**Log4Mongo** is a flexible Python logging handler that can store logs in 
+9) **Log4Mongo** is a flexible Python logging handler that can store logs in 
 MongoDB using normal and capped collections [@api-mongodb-tools].
 
-**MongoLog** is a Python logging handler that stores logs in MongoDB using a 
+10_ **MongoLog** is a Python logging handler that stores logs in MongoDB using a 
 capped collection [@api-mongodb-tools].
 
-**c5t** is a content-management system using TurboGears and MongoDB 
+11) **c5t** is a content-management system using TurboGears and MongoDB 
 [@api-mongodb-tools].
 
-**rod.recipe.mongodb** is a ZC Buildout recipe for downloading and
+12) **rod.recipe.mongodb** is a ZC Buildout recipe for downloading and
  installing MongoDB [@api-mongodb-tools].
 
-**repoze-what-plugins-mongodb** is a project working to support a plugin for
+13) **repoze-what-plugins-mongodb** is a project working to support a plugin for
  using MongoDB as a backend for repoze.what [@api-mongodb-tools].
 
-**mongobox** is a tool to run a sandboxed [@api-mongodb-tools] 
+14) **mongobox** is a tool to run a sandboxed [@api-mongodb-tools] 
 MongoDB instance from within a python app [@api-mongodb-tools].
 
-**Flask-MongoAlchemy** add Flask support for MongoDB using MongoAlchemy 
+15) **Flask-MongoAlchemy** add Flask support for MongoDB using MongoAlchemy 
 [@api-mongodb-tools].
 
-**Flask-MongoKit** is the Flask extension to better integrate
+16) **Flask-MongoKit** is the Flask extension to better integrate
 MongoKit into Flask [@api-mongodb-tools].
 
-**Flask-PyMongo** is the bridges Flask and PyMongo [@api-mongodb-tools].
+17) **Flask-PyMongo** is the bridges Flask and PyMongo [@api-mongodb-tools].
 
 
