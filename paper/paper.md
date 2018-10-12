@@ -235,11 +235,11 @@ insertion of multiple documents at the same time is possible also with use
 of the insert_many() method [@www-realpython]. An example of this method is
 as follows: 
 
-`course_info = {
-    'course': 'Big Data Applications and Analytics',
-    'instructor': ' Gregor von Laszewski',
-    'chapter': 'technologies'
-}`
+`course_info = {`
+    `'course': 'Big Data Applications and Analytics',`
+    `'instructor': ' Gregor von Laszewski',`
+    `'chapter': 'technologies'`
+`}`
 
 `result = cloudmesh.insert_one(course_info)`
 
