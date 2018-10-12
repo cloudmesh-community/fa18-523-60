@@ -130,7 +130,7 @@ tools to be used in PyMongo when representing documents [@www-gearheart].
 
 #### Installation
 
-Prior to be able to exploit the benefits of Python and MongoDB symultaneously,
+Prior to being able to exploit the benefits of Python and MongoDB simultaneously,
 the PyMongo distribution must be installed using *pip*. To install it on
 all platforms, the following command should be used [@api-mongodb-com-installation]:
 
@@ -141,8 +141,8 @@ in our example where the 3.5.1 version is installed [@api-mongodb-com-installati
 
 `$ python -m pip install pymongo==3.5.1`
 
-A single line of code can be used to upgrade the driver as 
-well [@api-mongodb-com-installation].
+A single line of code can be used to upgrade the driver as well 
+[@api-mongodb-com-installation].
 
 `$ python -m pip install --upgrade pymongo`
 
@@ -159,7 +159,7 @@ recommended [@api-mongodb-com-installation]:
 
 There are many other ways of installing PyMongo directly from the source, 
 however, they require for C extension dependencies to be installed prior to
-the driver installation step, as they are the ones that skim throught the 
+the driver installation step, as they are the ones that skim through the 
 sources on GitHub and use the most up-to-date links to install the driver 
 [@api-mongodb-com-installation].
 
@@ -179,13 +179,13 @@ Currently, it supports CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ interpreters
 components to be installed is the GSSAPI authentication [@www-github-driver]. For 
 the Unix based machines, it requires pykerberos, while for the Windows machines 
 WinKerberos is needed to fullfill this requirement [@www-github-driver]. The 
-automatic installation of this dependency can be done symoultaneously with the
+automatic installation of this dependency can be done simultaneously with the
 driver installation, in the following manner:
 
 `$ python -m pip install pymongo[gssapi]`
 
 Other third-party dependencies such as *ipaddress*, *certifi*, or *wincerstore*
-are necessary for connections with help of TLS/SSL and can also be symoultaneously
+are necessary for connections with help of TLS/SSL and can also be simultaneously
 installed along with the driver installation [@www-github-driver].
 
 #### Running PyMongo with Mongo Deamon
@@ -198,8 +198,8 @@ in a new terminal window [@www-realpython].
 #### Connecting to a database using MongoClient
 
 In order to be able to establish a connection with the database, a MongoClient
-class needs to be imported, which subsequentially allows the MongoClient object to 
-communicate with the database [@www-realpython]. 
+class needs to be imported, which sub-sequentially allows the MongoClient object 
+to communicate with the database [@www-realpython]. 
 
 `from pymongo import MongoClient`
 `client = MongoClient()`
@@ -216,7 +216,7 @@ databases in an easy way. To do that, one can use two different approaches.
 The first approach would be doing this via attribute method where the name of
 the desired database is listed as an attribute, and the second approach, which
 would include a dictionary-style access [@www-realpython]. For example, to 
-access a database called *cloudmesh_community*, one would use the following 
+access a database called *cloudmesh_community*, one would use following 
 commands for the attribute and for the dictionary method, respectfully.
 
 `db = client.cloudmesh_community`
@@ -224,14 +224,14 @@ commands for the attribute and for the dictionary method, respectfully.
 
 Creating documents and storing data using PyMongo is equally easy as 
 accessing databases. In order to add new data, a collection must be 
-specified first. In this example, we are making a decision to use the
+specified first. In this example, a decision is made to use the
 *cloudmesh* group of documents.
 
 `cloudmesh = db.cloudmesh`
 
 Once this step is completed, data may be inserted using the insert_one()
-method, which means that only one document is being inserted. Of course,
-insertion of multiple documents at the same time is possible also with use
+method, which means that only one document is being created. Of course,
+insertion of multiple documents at the same time is possible as well with use
 of the insert_many() method [@www-realpython]. An example of this method is
 as follows: 
 
@@ -246,9 +246,9 @@ course_info = {
 
 `result = cloudmesh.insert_one(course_info)`
 
-Retrieving documents is equally simple as it requires the use of a 
-find_one() method [@www-realpython]. An implementation of this method 
-is given in the following example.
+Retrieving documents is equally simple as creating them. A find_one() method
+can be used to retrieve one document [@www-realpython]. An implementation of
+this method is given in the following example.
 
 `gregors_course = cloudmesh.find_one({'instructor':'Gregor von Laszewski'})`
 
