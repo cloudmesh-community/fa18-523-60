@@ -1,4 +1,8 @@
 ## Technology Paper - DRAFT (NOT READY FOR REVIEW)
+
+gregors comments are her:
+* <https://github.com/cloudmesh-community/fa18-523-60/blob/aaff63d6d0a53d808049ed193ba87420abfc8207/paper/paper.md>
+
 ### Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60
 2. MongoDB - Nishad Tupe fa18-523-64
