@@ -235,11 +235,14 @@ insertion of multiple documents at the same time is possible also with use
 of the insert_many() method [@www-realpython]. An example of this method is
 as follows: 
 
-`course_info = {`
-    `'course': 'Big Data Applications and Analytics',`
-    `'instructor': ' Gregor von Laszewski',`
-    `'chapter': 'technologies'`
-`}`
+```
+course_info = {
+     'course': 'Big Data Applications and Analytics',
+     'instructor': ' Gregor von Laszewski',
+     'chapter': 'technologies'
+}
+
+```
 
 `result = cloudmesh.insert_one(course_info)`
 
@@ -250,16 +253,16 @@ is given in the following example.
 `gregors_course = cloudmesh.find_one({'instructor':'Gregor von Laszewski'})`
 
 Similarly, to retieve multiple documents, one would use the find() method 
-instead. For example, to find all courses thought by professor Laszewski,
-we would use the following command.
+instead of the find_one(). For example, to find all courses thought by 
+professor Laszewski, one would use the following command:
 
 `gregors_course = cloudmesh.find({'instructor':'Gregor von Laszewski'})`
 
 One thing that users should be cognizant of when using the find() method 
-is that it does not return the results in an array format but as a 
-*cursor* object, which is a combination of methods that work together to 
+is that it does not return results in an array format but as a *cursor* 
+object, which is a combination of methods that work together to 
 help with data querying [@www-realpython]. In order to return individual 
-documents iteration over the result must be completed [@www-realpython].
+documents, iteration over the result must be completed [@www-realpython].
 
 #### Pros and Cons using PyMongo
 
