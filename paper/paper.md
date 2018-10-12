@@ -304,7 +304,7 @@ beaker’s caching / session system [@api-mongodb-tools].
 9) **Log4Mongo** is a flexible Python logging handler that can store logs in 
 MongoDB using normal and capped collections [@api-mongodb-tools].
 
-10_ **MongoLog** is a Python logging handler that stores logs in MongoDB using a 
+10) **MongoLog** is a Python logging handler that stores logs in MongoDB using a 
 capped collection [@api-mongodb-tools].
 
 11) **c5t** is a content-management system using TurboGears and MongoDB 
