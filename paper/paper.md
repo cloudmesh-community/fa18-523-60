@@ -78,15 +78,12 @@ can be used for dataset downloads and dataset creation, while the final
 group of commands listed on the Kaggle API GitHub page is the commands to 
 manage Kernels, more specifically Kernel pull and push [@www-githubkegapi].
 
-The relationship between public APIs and Big Data is very strong. The Big 
-Data volume has grown so much in the recent years with the rise of open/public 
-APIs that some of the experts started "using the term 'API economy' to refer to 
-transactions taking place with help of APIs" [@www-apieconomy]. This technology
-has allowed developers, data scientists, and even ordinary layman to access 
-datasets quickly and excel business, and ultimately industries. It is also 
-helping students with their education as it can aid "apps and websites interact 
-with data storage systems" used in online education [@www-apieconomy]. 
-
+The importance of the Kaggle.com public API is significant. It minimizes the 
+need for its users to manually download large datasets, hence saving them 
+time when working on important projects. It is also helping students in 
+expanding their knowledge and programming experience through practical 
+examples and real-life data that can be later implemented in their 
+professional work. 
 
 ### MongoDB
 
