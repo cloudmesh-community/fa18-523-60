@@ -109,3 +109,17 @@ Currently, Amazon Alexa is capable of placing online orders on Amazon.
 Given the rate AI technology is accelerating nowadays, perhaps virtual 
 assistants will have the capability of placing orders on non-native 
 platforms in the near future as well.
+
+### Dataset Description
+The Instacart Market Basket Analysis dataset api is publicly available on 
+Kaggle website. The dataset is relational set of data files describing 
+customers' orders over the time. It contains information for over 3 million
+online grocery orders placed by more than 200000 anonymous Instacart users.
+It has Instacart user data who placed order between 4 and 100 in each year
+[@www-kaggle-data].
+
+The Instacart dataset has entities like product, order, aisle, department. 
+All entities associated with each other by unique ids. The product, aisle, 
+department are the dimension entities and the order is the quantitative
+fact entity. The order details are available on week day and day hour
+level [@www-kaggle-data].
