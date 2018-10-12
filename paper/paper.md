@@ -120,12 +120,12 @@ PyMongo is the official Python driver or distribution that allows work with
 a NoSQL type database called *MongoDB* [@api-mongodb-com-api]. The first version 
 of the driver was developed in 2009 [@www-pymongo-blog], only two years after the 
 MongoDB development was started. This driver allows developers to combine both 
-Python's versatility and MongoDB's unstructured data nature into successful 
+Python's versatility and MongoDB's flexible schema nature into successful 
 applications. Currently, this driver supports MongoDB versions 2.6, 3.0, 3.2, 
 3.4, 3.6, and 4.0 [@github]. MongoDB and Python represent a compatible fit 
 considering that BSON (binary JSON) used in this NoSQL database is very similar 
 to Python dictionaries, which makes the collaboration between the two even 
-more appealing [@www-slideshare]. For this reason, ditionaries are the recommended 
+more appealing [@www-slideshare]. For this reason, dictionaries are the recommended 
 tools to be used in PyMongo when representing documents [@www-gearheart]. 
 
 #### Installation
@@ -264,5 +264,19 @@ object, which is a combination of methods that work together to
 help with data querying [@www-realpython]. In order to return individual 
 documents, iteration over the result must be completed [@www-realpython].
 
-#### Pros and Cons using PyMongo
+#### PyMongo Strengths
+
+One of PyMongo strengths is that allows document creation and querying natively
+
+> "through the use of existing language features such as nested dictionaries and 
+> lists" [@book-ohiggins]. 
+
+For moderately experienced Python developers, it is very easy to learn it and
+quickly feel comfortable with it.
+
+> "For these reasons, MongoDB and Python make a powerful combination for rapid, 
+iterative development of horizontally scalable backend applications" [@book-ohiggins].
+According to O'Higgins, MongoDB is very applicable to modern applications, which makes
+PyMongo equally valuable [@book-ohiggins].
+
 
