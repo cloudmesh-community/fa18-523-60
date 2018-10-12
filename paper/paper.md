@@ -201,8 +201,8 @@ In order to be able to establish a connection with the database, a MongoClient
 class needs to be imported, which subsequentially allows the MongoClient object to 
 communicate with the database [@www-realpython]. 
 
-`from pymongo import MongoClient
-client = MongoClient()`
+`from pymongo import MongoClient`
+`client = MongoClient()`
 
 This command allows a connection with a default, local host and port (27017),
 however, depending on the programming requirements, one can also specify those
@@ -239,9 +239,9 @@ as follows:
     'course': 'Big Data Applications and Analytics',
     'instructor': ' Gregor von Laszewski',
     'chapter': 'technologies'
-}
+}`
 
-result = cloudmesh.insert_one(course_info)`
+`result = cloudmesh.insert_one(course_info)`
 
 Retrieving documents is equally simple as it requires the use of a 
 find_one() method [@www-realpython]. An implementation of this method 
