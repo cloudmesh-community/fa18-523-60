@@ -9,7 +9,7 @@
 
 ### Abstract
 
-In today’s busy world, time is a valuable asset. People 
+In today's busy world, time is a valuable asset. People 
 are trying to save time and money in all segments of their 
 lives, one of them being grocery shopping. Instacart is an 
 e-commerce platform that helps them save both. This technology 
@@ -56,17 +56,17 @@ grocery delivery service and platform which is the topic of our
 report - its name is Instacart [@www-partnerships]. 
 
 This e-commerce platform was founded in 2012 by a former Amazon 
-employee, Apoorva Mehta, who is the company’s current 
-CEO[@www-wikinstacart]. The service is mainly offered through 
+employee, Apoorva Mehta, who is the company's current 
+CEO [@www-wikinstacart]. The service is mainly offered through 
 the company website, but it also offers an Android and iOS 
 version of a smartphone app [@www-apps]. To deliver its services, 
-the company uses a team of “personal shoppers” to “procure grocery 
-items from a variety of stores” in the desired geographical 
+the company uses a team of "personal shoppers" to "procure grocery 
+items from a variety of stores" in the desired geographical 
 area [@www-apps]. The app allows one to place an order from a 
 specific store or multiple stores while also offering substitutions 
 for all items in case the originally chosen items are out of 
 stock [@www-bold]. Once an order is placed, the app offers a live 
-view of the actions performed by the “personal shopper” with 
+view of the actions performed by the "personal shopper" with 
 timestamps for each step taken as well as their GPS location [@www-bold]. 
 This is a very valuable feature as it helps Instacart users to 
 prepare for the delivery. The service is paid for through the 
@@ -83,7 +83,7 @@ In our project, we focus on the market basket analysis of the
 Instacart customers, more specifically on the 3 million orders 
 that are publicly available via the Kaggle platform. The application 
 built by our team allows a seamless download of the dataset via 
-Kaggle’s public API and data import into MongoDB. 
+Kaggle's public API and data import into MongoDB. 
 Once in this NoSQL database, the data is ultimately joined and wrapped 
 into a form ready for data analysis. The exploratory analysis is completed
 with use of PyMongo and the visualizations are completed with help of Python 
