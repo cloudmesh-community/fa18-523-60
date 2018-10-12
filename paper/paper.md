@@ -118,7 +118,7 @@ NoSQL databases [@www-mongomanual].
 
 PyMongo is the official Python driver or distribution that allows work with 
 a NoSQL type database called *MongoDB* [@api-mongodb-com-api]. The first version 
-of the driver was developed in 2009 [@www-pymongo-blog] only two years after the 
+of the driver was developed in 2009 [@www-pymongo-blog], only two years after the 
 MongoDB development was started. This driver allows developers to combine both 
 Python's versatility and MongoDB's unstructured data nature into successful 
 applications. Currently, this driver supports MongoDB versions 2.6, 3.0, 3.2, 
@@ -137,7 +137,7 @@ all platforms, the following command should be used [@api-mongodb-com-installati
 `$ python -m pip install pymongo`
 
 Specific versions of PyMongo can be installed with command lines such as 
-in this example where the 3.5.1 version is installed [@api-mongodb-com-installation]:
+in our example where the 3.5.1 version is installed [@api-mongodb-com-installation]:
 
 `$ python -m pip install pymongo==3.5.1`
 
@@ -146,7 +146,7 @@ well [@api-mongodb-com-installation].
 
 `$ python -m pip install --upgrade pymongo`
 
-Further more, the installation process can be completed with help of the 
+Furthermore, the installation process can be completed with help of the 
 easy_install tool, which requires users to use the following command 
 [@api-mongodb-com-installation].
 
@@ -158,18 +158,18 @@ recommended [@api-mongodb-com-installation]:
 `$ python -m easy_install -U pymongo`
 
 There are many other ways of installing PyMongo directly from the source, 
-however they require for the C extension dependencies to be installed prior to
-the driver installation step, as they are the ones that skim throught the sources 
-on GitHub and use the most up-to-date source to install the driver 
+however, they require for C extension dependencies to be installed prior to
+the driver installation step, as they are the ones that skim throught the 
+sources on GitHub and use the most up-to-date links to install the driver 
 [@api-mongodb-com-installation].
 
-To check if the installation was completed accurately, the following command is used
-in the Python console [@www-realpython].
+To check if the installation was completed accurately, the following command is 
+used in the Python console [@www-realpython].
 
 `import pymongo`
 
 If the command returns zero exceptions within the Python shell, one can consider 
-the PyMongo installation to be completed successfully.
+for the PyMongo installation to have been completed successfully.
 
 #### Dependencies
 
@@ -177,7 +177,7 @@ The PyMongo driver has a few dependencies that should be taken into consideratio
 Currently, it supports CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ interpreters 
 [@www-github-driver]. An optional dependency that requires some additional 
 components to be installed is the GSSAPI authentication [@www-github-driver]. For 
-the Unix based machine, it requires pykerberos, while for the Windows machines 
+the Unix based machines, it requires pykerberos, while for the Windows machines 
 WinKerberos is needed to fullfill this requirement [@www-github-driver]. The 
 automatic installation of this dependency can be done symoultaneously with the
 driver installation, in the following manner:
@@ -185,12 +185,12 @@ driver installation, in the following manner:
 `$ python -m pip install pymongo[gssapi]`
 
 Other third-party dependencies such as *ipaddress*, *certifi*, or *wincerstore*
-are necessery for connections with help of TLS/SSL and can also be symoultaneously
-be installed with the driver installation [@www-github-driver].
+are necessary for connections with help of TLS/SSL and can also be symoultaneously
+installed along with the driver installation [@www-github-driver].
 
 #### Running PyMongo with Mongo Deamon
 
-Once PyMongo installed, the Mongo deamon can be run with a very simple command
+Once PyMongo is installed, the Mongo deamon can be run with a very simple command
 in a new terminal window [@www-realpython].
 
 `$ mongod`
@@ -198,7 +198,7 @@ in a new terminal window [@www-realpython].
 #### Connecting to a database using MongoClient
 
 In order to be able to establish a connection with the database, a MongoClient
-class needs to be imported that subsequentially allows the MongoClient object to 
+class needs to be imported, which subsequentially allows the MongoClient object to 
 communicate with the database [@www-realpython]. 
 
 `from pymongo import MongoClient
@@ -206,10 +206,60 @@ client = MongoClient()`
 
 This command allows a connection with a default, local host and port (27017),
 however, depending on the programming requirements, one can also specify those
-by listing them in the client instance or instead use the same information
-via the Mongo URI format [@www-realpython].
+by listing them in the client instance or use the same information via the Mongo 
+URI format [@www-realpython].
 
 #### Accessing Databases, Inserting and Retrieving Documents
+
+Since MongoClient plays a server role, it can be used to access any desired 
+databases in an easy way. To do that, one can use two different approaches.
+The first approach would be doing this via attribute method where the name of
+the desired database is listed as an attribute, and the second approach, which
+would include a dictionary-style access [@www-realpython]. For example, to 
+access a database called *cloudmesh_community*, one would use the following 
+commands for the attribute and for the dictionary method, respectfully.
+
+`db = client.cloudmesh_community`
+`db = client['cloudmesh_community']`
+
+Creating documents and storing data using PyMongo is equally easy as 
+accessing databases. In order to add new data, a collection must be 
+specified first. In this example, we are making a decision to use the
+*cloudmesh* group of documents.
+
+`cloudmesh = db.cloudmesh`
+
+Once this step is completed, data may be inserted using the insert_one()
+method, which means that only one document is being inserted. Of course,
+insertion of multiple documents at the same time is possible also with use
+of the insert_many() method [@www-realpython]. An example of this method is
+as follows: 
+
+`course_info = {
+    'course': 'Big Data Applications and Analytics',
+    'instructor': ' Gregor von Laszewski',
+    'chapter': 'technologies'
+}
+
+result = cloudmesh.insert_one(course_info)`
+
+Retrieving documents is equally simple as it requires the use of a 
+find_one() method [@www-realpython]. An implementation of this method 
+is given in the following example.
+
+`gregors_course = cloudmesh.find_one({'instructor':'Gregor von Laszewski'})`
+
+Similarly, to retieve multiple documents, one would use the find() method 
+instead. For example, to find all courses thought by professor Laszewski,
+we would use the following command.
+
+`gregors_course = cloudmesh.find({'instructor':'Gregor von Laszewski'})`
+
+One thing that users should be cognizant of when using the find() method 
+is that it does not return the results in an array format but as a 
+*cursor* object, which is a combination of methods that work together to 
+help with data querying [@www-realpython]. In order to return individual 
+documents iteration over the result must be completed [@www-realpython].
 
 #### Pros and Cons using PyMongo
 
