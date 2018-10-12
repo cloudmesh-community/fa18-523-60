@@ -171,7 +171,7 @@ in the Python console [@www-realpython].
 If the command returns zero exceptions within the Python shell, one can consider 
 the PyMongo installation to be completed successfully.
 
-### Dependencies
+#### Dependencies
 
 The PyMongo driver has a few dependencies that should be taken into consideration.
 Currently, it supports CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ interpreters 
@@ -188,14 +188,14 @@ Other third-party dependencies such as *ipaddress*, *certifi*, or *wincerstore*
 are necessery for connections with help of TLS/SSL and can also be symoultaneously
 be installed with the driver installation [@www-github-driver].
 
-### Running PyMongo with Mongo Deamon
+#### Running PyMongo with Mongo Deamon
 
 Once PyMongo installed, the Mongo deamon can be run with a very simple command
 in a new terminal window [@www-realpython].
 
 `$ mongod`
 
-### Connecting to a database using MongoClient
+#### Connecting to a database using MongoClient
 
 In order to be able to establish a connection with the database, a MongoClient
 class needs to be imported that subsequentially allows the MongoClient object to 
@@ -209,10 +209,7 @@ however, depending on the programming requirements, one can also specify those
 by listing them in the client instance or instead use the same information
 via the Mongo URI format [@www-realpython].
 
-### Accessing Databases, Inserting and Retrieving Documents
+#### Accessing Databases, Inserting and Retrieving Documents
 
-### Pros and Cons using PyMongo
+#### Pros and Cons using PyMongo
 
-#### Pros
-
-#### Cons
