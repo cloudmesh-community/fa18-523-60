@@ -1,14 +1,14 @@
-## MongoDB and PyMongo - DRAFT
+# MongoDB and PyMongo :hand:
 
 gregors comments are here:
 * <https://github.com/cloudmesh-community/fa18-523-60/blob/aaff63d6d0a53d808049ed193ba87420abfc8207/paper/paper.md>
 
-### Work Breakdown 
+## Work Breakdown 
 1. Kaggle.com Public API - Izolda Fetko fa18-523-60 - Moved to Project report under "dataset description"
 2. MongoDB - Nishad Tupe fa18-523-64
 3. PyMongo - Izolda Fetko fa18-523-60
 
-### MongoDB
+## MongoDB
 
 MongoDB is one of the leading NoSQL databases in the market. In today's 
 era, NoSQL databases have developed an enormous potential to 
@@ -114,7 +114,7 @@ leaders such as Google, Facebook, eBay, and Nokia are leveraging MongoDB and
 Atlas cloud services making MongoDB one of the most popular choices among the 
 NoSQL databases [@www-mongomanual]. 
 
-### PyMongo
+## PyMongo
 
 PyMongo is the official Python driver or distribution that allows work with 
 a NoSQL type database called *MongoDB* [@api-mongodb-com-api]. The first version 
@@ -128,7 +128,7 @@ to Python dictionaries, which makes the collaboration between the two even
 more appealing [@www-slideshare]. For this reason, dictionaries are the recommended 
 tools to be used in PyMongo when representing documents [@www-gearheart]. 
 
-#### Installation
+### Installation
 
 Prior to being able to exploit the benefits of Python and MongoDB simultaneously,
 the PyMongo distribution must be installed using *pip*. To install it on
@@ -171,7 +171,7 @@ used in the Python console [@www-realpython].
 If the command returns zero exceptions within the Python shell, one can consider 
 for the PyMongo installation to have been completed successfully.
 
-#### Dependencies
+### Dependencies
 
 The PyMongo driver has a few dependencies that should be taken into consideration.
 Currently, it supports CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ interpreters 
@@ -188,14 +188,14 @@ Other third-party dependencies such as *ipaddress*, *certifi*, or *wincerstore*
 are necessary for connections with help of TLS/SSL and can also be simultaneously
 installed along with the driver installation [@www-github-driver].
 
-#### Running PyMongo with Mongo Deamon
+### Running PyMongo with Mongo Deamon
 
 Once PyMongo is installed, the Mongo deamon can be run with a very simple command
 in a new terminal window [@www-realpython].
 
 `$ mongod`
 
-#### Connecting to a database using MongoClient
+### Connecting to a database using MongoClient
 
 In order to be able to establish a connection with the database, a MongoClient
 class needs to be imported, which sub-sequentially allows the MongoClient object 
@@ -209,7 +209,7 @@ however, depending on the programming requirements, one can also specify those
 by listing them in the client instance or use the same information via the Mongo 
 URI format [@www-realpython].
 
-#### Accessing Databases, Inserting and Retrieving Documents
+### Accessing Databases, Inserting and Retrieving Documents
 
 Since MongoClient plays a server role, it can be used to access any desired 
 databases in an easy way. To do that, one can use two different approaches.
@@ -264,7 +264,7 @@ object, which is a combination of methods that work together to
 help with data querying [@www-realpython]. In order to return individual 
 documents, iteration over the result must be completed [@www-realpython].
 
-#### PyMongo Strengths
+### PyMongo Strengths
 
 One of PyMongo strengths is that allows document creation and querying natively
 
