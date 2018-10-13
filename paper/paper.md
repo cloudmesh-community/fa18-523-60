@@ -1,4 +1,4 @@
-# MongoDB and PyMongo :hand: fa18-523-60, fa18-523-64, fa18-523-72
+# MongoDB, PyMongo, MongoEngine, and Flask-Mongo :hand: fa18-523-60, fa18-523-64, fa18-523-72
 
 | Izolda Fetko, Nishad Tupe, Vishal Bhoyar
 | ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
@@ -277,12 +277,15 @@ iterative development of horizontally scalable backend applications" [@book-ohig
 According to O'Higgins, MongoDB is very applicable to modern applications, which makes
 PyMongo equally valuable [@book-ohiggins].
 
+## MongoEngine
+
+## Flask-Mongo
 
 ## Workbreakdown
 
 - MongoDB - Nishad Tupe fa18-523-64
 - PyMongo - Izolda Fetko fa18-523-60
-- MongoEngine, Flask and MongoDB - Vishal Bhoyar fa18-523-72
+- MongoEngine, Flask-Mongo - Vishal Bhoyar fa18-523-72
 
 
 
