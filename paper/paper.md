@@ -1,4 +1,4 @@
-## Technology Paper - DRAFT (NOT READY FOR REVIEW)
+## MongoDB and PyMongo - DRAFT
 
 gregors comments are here:
 * <https://github.com/cloudmesh-community/fa18-523-60/blob/aaff63d6d0a53d808049ed193ba87420abfc8207/paper/paper.md>
