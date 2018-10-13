@@ -200,10 +200,35 @@ dimension entities while an order is the quantitative fact entity. The order det
 are available by a week day and by a day hour level [@www-kaggle-data].
 
 ### Litrature review
-Mongo DB and Python both are open source technologies. One can get started quickly building an application on MongoDB using any of the languages that leverage a MongoDB's driver.
-MongoDB offers a native driver called PyMongo to fit Python developer community needs. "MongoDB stores data in documents, however, they are not like Microsoft Word or Adobe PDF documents but rather JSON documents based on the JSON specification" [@www-pymongo]. There are several advantages of storing data in document format and some of them are flexible schema and ability to store arrays which are faster to process using native commands of python scripts [@www-pymongo].
-In June 2018, students of Indiana University of Bloomington Izolda Fetko, Rashmi Ray,  and Nishad Tupe explored the France accidents dataset using MongoDB, PyMongo, and Tableau to provide safety recommendations. They used the newest release of the MongoDB driver called the  *Mongo BI connector* that allows BI tools such as  Tableau to interact with MongoDB. The BI connector converts the Tableau's SQL-like commands on structured data into the native MongoDB commands while fetching data [@www-mongotab].
-The team also used Pymongo and other web technologies to build the website that can store, update, and process records live and can be accessed by the global audience. As MongoDB is a NoSQL engine, it scales easily for multiple tables as single JSON object, and makes query retrieval speed faster than RDBMS, while avoiding complex joins. However, their research also shows that Tableau and MongoDB is a lousy marriage predominantly because Tableau was built before the NoSQL and Bigdata was popular and is not yet mature to process the relational data [@www-mongoknowi].
-Tableau slow processing of joins, when connected directly to MongoDB, was one of the main reason authors decided to join the CSV files using Pandas data frame and use MongoDB as a backend tool. This tool allows a stable platform for the user-friendly BI tools such as Tableau to perform analytics on large datasets with millions of rows and also stand as a robust database on which one can build applications [@www-mongotab].
-In the final step, authors created a website and provided links to various dashboards using technologies such as HTML, CSS, JavaScript, Bootstrap, Flask, JQuery.js, and Chartist.js [@www-mongotab].
-Our project fosters a similar idea however instead of using the BI tools we will be creating a python application that can run seamlessly on any of the underlying environment virtualized,  physical, or on a cloud. The basic idea here is building a packaged application to perform exploratory analysis on the Instacart basket data and perform the benchmarking of elapsed time and other constraints on hardware environment such as virtual machine, local machine, and cloud.
+Mongo DB and Python both are open source technologies. One can get started quickly building 
+an application on MongoDB using any of the languages that leverage a MongoDB's driver.
+MongoDB offers a native driver called PyMongo to fit Python developer community needs. 
+"MongoDB stores data in documents, however, they are not like Microsoft Word or Adobe 
+PDF documents but rather JSON documents based on the JSON specification" [@www-pymongo]. 
+There are several advantages of storing data in document format and some of them are 
+flexible schema and ability to store arrays which are faster to process using native 
+commands of Python scripts [@www-pymongo]. In June 2018, students of Indiana University 
+of Bloomington Izolda Fetko, Rashmi Ray,  and Nishad Tupe explored the France accidents 
+dataset using MongoDB, PyMongo, and Tableau to provide safety recommendations. They used 
+the newest release of the MongoDB driver called the  *Mongo BI connector* that allows BI 
+tools such as  Tableau to interact with MongoDB. The BI connector converts the Tableau's 
+SQL-like commands on structured data into the native MongoDB commands while fetching data 
+[@www-mongotab]. The team also used Pymongo and other web technologies to build the website 
+that can store, update, and process records live and can be accessed by the global audience. 
+As MongoDB is a NoSQL engine, it scales easily for multiple tables as single JSON object, 
+and makes query retrieval speed faster than RDBMS, while avoiding complex joins. However, 
+their research also shows that Tableau and MongoDB is a lousy marriage predominantly because 
+Tableau was built before the NoSQL and Big Data was popular and is not yet mature to process 
+the relational data [@www-mongoknowi]. Tableau's slow processing of joins, when connected 
+directly to MongoDB, was one of the main reason authors decided to join the CSV files using 
+Pandas data frame and use MongoDB as a backend tool. This tool allows a stable platform for 
+the user-friendly BI tools such as Tableau to perform analytics on large datasets with 
+millions of rows and also stand as a robust database on which one can build applications 
+[@www-mongotab]. In the final step, authors created a website and provided links to various 
+dashboards using technologies such as HTML, CSS, JavaScript, Bootstrap, Flask, JQuery.js, 
+and Chartist.js [@www-mongotab]. Our project fosters a similar idea however instead of using 
+the BI tools we will be creating a python application that can run seamlessly on any of the 
+underlying environment - virtualized,  physical, or on a cloud. The basic idea here is 
+building a packaged application to perform exploratory analysis on the Instacart basket 
+data and perform the benchmarking of elapsed time and other constraints on hardware 
+environment such as virtual machine, local machine, and cloud.
