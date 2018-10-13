@@ -9,8 +9,8 @@
 
 ---
 
-Keywords: Online grocery shopping, market basket analysis, Instacart, 
-MongoDB, PyMongo, Kaggle.com Public API, virtual machine, Mongo Atlas
+Keywords: Online Grocery Shopping, Market Basket Analysis, Instacart, 
+MongoDB, PyMongo, Kaggle.com Public API, Virtual Machine, Mongo Atlas
 
 ---
 
