@@ -1,4 +1,4 @@
-## Instacart basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud
+# Instacart basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud :hand:
 
 ### Project Participants
 
