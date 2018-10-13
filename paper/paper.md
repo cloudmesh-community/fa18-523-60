@@ -1,12 +1,10 @@
-# MongoDB and PyMongo :hand:
+# MongoDB and PyMongo :hand: fa18-523-60, fa18-523-64, fa18-523-72
 
-gregors comments are here:
-* <https://github.com/cloudmesh-community/fa18-523-60/blob/aaff63d6d0a53d808049ed193ba87420abfc8207/paper/paper.md>
-
-## Work Breakdown 
-1. Kaggle.com Public API - Izolda Fetko fa18-523-60 - Moved to Project report under "dataset description"
-2. MongoDB - Nishad Tupe fa18-523-64
-3. PyMongo - Izolda Fetko fa18-523-60
+| Izolda Fetko, Nishad Tupe, Vishal Bhoyar
+| ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
+| Indiana University
+| hid: fa18-523-60, fa18-523-64, fa18-523-72
+| github: https://github.com/cloudmesh-community/fa18-523-60/edit/master/paper/paper.md
 
 ## MongoDB
 
@@ -278,5 +276,13 @@ quickly feel comfortable with it.
 iterative development of horizontally scalable backend applications" [@book-ohiggins].
 According to O'Higgins, MongoDB is very applicable to modern applications, which makes
 PyMongo equally valuable [@book-ohiggins].
+
+
+## Workbreakdown
+
+- MongoDB - Nishad Tupe fa18-523-64
+- PyMongo - Izolda Fetko fa18-523-60
+- MongoEngine, Flask and MongoDB - Vishal Bhoyar fa18-523-72
+
 
 
