@@ -258,15 +258,15 @@ TBD
 
 ## Workbreakdown
 
-Keywords - Izolda Fetko fa18-523-60
-Abstract - Izolda Fetko fa18-523-60
-Introduction - Izolda Fetko fa18-523-60
-Requirements - TBD
-Design - TBD
-Architecture - TBD
-Dataset Description - Izolda Fetko fa18-523-60
-Literature Review - Nishad Tupe fa18-523-64
-Implementation - TBD
-Benchmark - TBD
-Conclusion - TBD
-Acknowledgement - TBD
+- Keywords - Izolda Fetko fa18-523-60
+- Abstract - Izolda Fetko fa18-523-60
+- Introduction - Izolda Fetko fa18-523-60
+- Requirements - TBD
+- Design - TBD
+- Architecture - TBD
+- Dataset Description - Izolda Fetko fa18-523-60
+- Literature Review - Nishad Tupe fa18-523-64
+- Implementation - TBD
+- Benchmark - TBD
+- Conclusion - TBD
+- Acknowledgement - TBD
