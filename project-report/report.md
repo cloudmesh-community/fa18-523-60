@@ -1,4 +1,4 @@
-# Instacart basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud :hand:
+# Instacart Basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud :hand:
 
 ### Project Participants
 
@@ -200,6 +200,7 @@ dimension entities while an order is the quantitative fact entity. The order det
 are available by a week day and by a day hour level [@www-kaggle-data].
 
 ### Litrature review
+
 Mongo DB and Python both are open source technologies. One can get started quickly building 
 an application on MongoDB using any of the languages that leverage a MongoDB's driver.
 MongoDB offers a native driver called PyMongo to fit Python developer community needs. 
@@ -232,3 +233,21 @@ underlying environment - virtualized,  physical, or on a cloud. The basic idea h
 building a packaged application to perform exploratory analysis on the Instacart basket 
 data and perform the benchmarking of elapsed time and other constraints on hardware 
 environment such as virtual machine, local machine, and cloud.
+
+### Technologies Used
+
+MondoDB, PyMongo, Mongo Atlas, local machine, virtual machine, cloud
+
+### Research Design and Methods
+
+TBD
+
+### Exploratory Analysis
+
+TBD
+
+### Benchmarking
+
+TBD
+
+### Conclusion
