@@ -1,11 +1,19 @@
-# Instacart Basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud :hand:
+# Instacart Basket Analysis using MongoDB and Performance Benchmarking on VM 
+# and Cloud :hand: fa18-523-60, fa18-523-64, fa18-523-72
 
-### Project Participants
+| Izolda Fetko, Nishad Tupe, Vishal Bhoyar
+| ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
+| Indiana University
+| hid: fa18-523-60, fa18-523-64, fa18-523-72
+| github: https://github.com/cloudmesh-community/fa18-523-60/edit/master/project-report/report.md
+| code: TBD
 
-- Izolda Fetko fa18-523-60
-- Nishad Tupe fa18-523-64
-- Vishal Bhoyar fa18-523-72
+---
 
+Keywords: Online grocery shopping, market basket analysis, Instacart, 
+MongoDB, PyMongo, Kaggle.com Public API, virtual machine, Mongo Atlas
+
+---
 
 ### Abstract
 
@@ -25,12 +33,6 @@ purposes that can ultimately be applied to other e-commerce
 platforms. The second part entails a MongoDB performance 
 benchmarking by testing it on a local machine, a virtual 
 machine, and on a cloud service - Mongo Atlas.
-
-### Keywords
-
-Online grocery shopping, market basket analysis, Instacart, 
-MongoDB, PyMongo, Kaggle.com Public API, virtual machine, 
-Mongo Atlas
 
 ### Introduction
 
@@ -109,6 +111,15 @@ Currently, Amazon Alexa is capable of placing online orders on Amazon.
 Given the rate AI technology is accelerating nowadays, perhaps virtual 
 assistants will have the capability of placing orders on non-native 
 platforms in the near future as well.
+
+## Requirements
+TBD
+
+## Design
+TBD
+
+## Architecture
+TBD
 
 ### Dataset Description
 
@@ -234,20 +245,29 @@ building a packaged application to perform exploratory analysis on the Instacart
 data and perform the benchmarking of elapsed time and other constraints on hardware 
 environment such as virtual machine, local machine, and cloud.
 
-### Technologies Used
-
-MondoDB, PyMongo, Mongo Atlas, local machine, virtual machine, cloud
-
-### Research Design and Methods
-
+## Implementation
 TBD
 
-### Exploratory Analysis
-
+## Benchmark
 TBD
 
-### Benchmarking
-
+## Conclusion
 TBD
 
-### Conclusion
+## Acknowledgement
+TBD
+
+## Workbreakdown
+
+Keywords - Izolda Fetko fa18-523-60
+Abstract - Izolda Fetko fa18-523-60
+Introduction - Izolda Fetko fa18-523-60
+Requirements - TBD
+Design - TBD
+Architecture - TBD
+Dataset Description - Izolda Fetko fa18-523-60
+Literature Review - Nishad Tupe fa18-523-64
+Implementation - TBD
+Benchmark - TBD
+Conclusion - TBD
+Acknowledgement - TBD
