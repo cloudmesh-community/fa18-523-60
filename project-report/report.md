@@ -1,5 +1,4 @@
-# Instacart Basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud :hand: 
-fa18-523-60, fa18-523-64, fa18-523-72
+# Instacart Basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud :hand: fa18-523-60, fa18-523-64, fa18-523-72
 
 | Izolda Fetko, Nishad Tupe, Vishal Bhoyar
 | ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
