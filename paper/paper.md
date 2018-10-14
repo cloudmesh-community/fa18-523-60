@@ -21,7 +21,7 @@ scalability, performance, unstructured data growth, agile sprint cycles,
 and growing needs of processing data in real-time with minimal hardware 
 processing power [@www-guru99]. The NoSQL databases are a new generation 
 of engines that do not necessarily require SQL language and are sometimes 
-also called "Not Only SQL" databases.However, most of them support 
+also called *Not Only SQL* databases.However, most of them support 
 various third-party open connectivity drivers that can map NoSQL queries 
 to SQL's. It would be safe to say that although NoSQL databases are 
 still far from replacing the relational databases, they are adding an 
