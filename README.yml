@@ -4,6 +4,7 @@ owner:
   lastname: "Fetko"
   hid: "fa18-523-60"
   community: "i523"
+  semester: fa18
 technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/docker-compose.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/linux-vserver.md
