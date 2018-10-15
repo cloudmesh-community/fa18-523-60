@@ -350,12 +350,57 @@ and moreover, has the capability of handling *string queries*, *geo queries*, *l
 and querying of the raw PyMongo queries [@www-querying]. 
 
 ## Flask-Mongo
+“Flask is a micro web framework written in Python” 
+[@flask-framework]. It is more pythonic, it is developed after Django, 
+and is explicitly targeting Python user community. It is lightweight, it 
+does not require tools or libraries and hence is classified as a Micro 
+Web framework. Flask caters application features such object mappers, 
+authentication methods, and form validations by supporting extensions. 
+Flask is often used with MongoDB using PyMongo connector, and it treats 
+data within MongoDB as searchable Python dictionaries. The applications 
+such as Pinterest, LinkedIn, and the community web page for Flask are 
+using the Flask framework. It supports various features such as RESTful 
+request dispatching, secure cookies, Google app engine compatibility, 
+and integrated support for unit testing, etc. [@flask -framework]. Flask 
+PyMongo offers methods such as *Collection.find_one_or_404* which is the 
+equivalent to MongoDB’s *find_one* in which instead of returning None, 
+causes a *404 Not Found HTTP status* on a request. Similarly, 
+*PyMongo.send_file* and *PyMongo.save_file* methods works on the 
+file-like object. The connection details for MongoDB can be passed as a 
+variable or configured in PyMongo constructor with additional arguments 
+such as username and password if required. One can create multiple Flask 
+PyMongo instances to connect to multiple MongoDB databases. It is 
+important that versions of both Flask and MongoDB are compatible with 
+each other avoid functionality breaks [@flask-pymongo]. 
+Flask-MongoAlchemy and Flask-MongoEngine are the additional libraries 
+that can be used to connect to a MongoDB database while using enhanced 
+features with the Flask app. It can be easily installed using pip. The 
+Flask-MongoAlchemy is used as a proxy between Python and MongoDB to 
+connect. Flask-MongoAlchemy provides an option such as server or 
+database based authentication to connect to MongoDB. While the default 
+is set server based, to use database-based authentication, the config 
+value MONGOALCHEMY_SERVER_AUTH parameter must be set to False 
+[@pythonhosted-MongoAlchemy]. Flask-MongoEngine is the Flask extension 
+that provides integration with MongoEngine. It handles connection 
+management for the apps. It can be installed through pip and set up very 
+easily as well. The default configuration is set to local host and port 
+27017, for the custom port and if MongoDB is running on another server 
+the host and port must be explicitly specified in connect strings 
+specified within the "MONGODB_SETTINGS" dictionary with 
+"app.config" along with database username and password in case 
+database authentication is enabled. URI style connections are also 
+supported and supply the URI as the host in the ‘MONGODB_SETTINGS’ 
+dictionary with "app.config". There are various custom query sets 
+that are available within Flask-Mongoengine that are attached to 
+Mongoengine’s default queryset [flask-mongoengine]. 
 
 ## Workbreakdown
 
 - MongoDB - Nishad Tupe fa18-523-64
 - PyMongo - Izolda Fetko fa18-523-60
-- MongoEngine, Flask-Mongo - Vishal Bhoyar fa18-523-72
+- MongoEngine, Flask-Mongo - Vishal Bhoyar fa18-523-72 
+- MongoEngine (Peer reviewed) - Izolda Fetko fa18-523-60
+- Flask-Mongo (Peer reviewed) - Nishad Tupe fa18-523-64
 
 
 
