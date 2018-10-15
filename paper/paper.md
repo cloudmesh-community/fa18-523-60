@@ -114,28 +114,32 @@ NoSQL databases [@www-mongomanual].
 
 ## PyMongo
 
-PyMongo is the official Python driver or distribution that allows work with 
-a NoSQL type database called *MongoDB* [@api-mongodb-com-api]. The first version 
-of the driver was developed in 2009 [@www-pymongo-blog], only two years after the 
-MongoDB development was started. This driver allows developers to combine both 
-Python's versatility and MongoDB's flexible schema nature into successful 
-applications. Currently, this driver supports MongoDB versions 2.6, 3.0, 3.2, 
-3.4, 3.6, and 4.0 [@github]. MongoDB and Python represent a compatible fit 
-considering that BSON (binary JSON) used in this NoSQL database is very similar 
-to Python dictionaries, which makes the collaboration between the two even 
-more appealing [@www-slideshare]. For this reason, dictionaries are the recommended 
-tools to be used in PyMongo when representing documents [@www-gearheart]. 
+PyMongo is the official Python driver or distribution that allows work 
+with a NoSQL type database called *MongoDB* [@api-mongodb-com-api]. The 
+first version of the driver was developed in 2009 [@www-pymongo-blog], 
+only two years after the MongoDB development was started. This driver 
+allows developers to combine both Python's versatility and MongoDB's 
+flexible schema nature into successful applications. Currently, this 
+driver supports MongoDB versions 2.6, 3.0, 3.2, 3.4, 3.6, and 4.0 
+[@github]. MongoDB and Python represent a compatible fit considering 
+that BSON (binary JSON) used in this NoSQL database is very similar 
+to Python dictionaries, which makes the collaboration between the two 
+even more appealing [@www-slideshare]. For this reason, dictionaries 
+are the recommended tools to be used in PyMongo when representing 
+documents [@www-gearheart]. 
 
 ### Installation
 
-Prior to being able to exploit the benefits of Python and MongoDB simultaneously,
-the PyMongo distribution must be installed using *pip*. To install it on
-all platforms, the following command should be used [@api-mongodb-com-installation]:
+Prior to being able to exploit the benefits of Python and MongoDB 
+simultaneously, the PyMongo distribution must be installed using 
+*pip*. To install it onall platforms, the following command should 
+be used [@api-mongodb-com-installation]:
 
 `$ python -m pip install pymongo`
 
-Specific versions of PyMongo can be installed with command lines such as 
-in our example where the 3.5.1 version is installed [@api-mongodb-com-installation]:
+Specific versions of PyMongo can be installed with command lines 
+such as in our example where the 3.5.1 version is installed 
+[@api-mongodb-com-installation].
 
 `$ python -m pip install pymongo==3.5.1`
 
@@ -144,78 +148,88 @@ A single line of code can be used to upgrade the driver as well
 
 `$ python -m pip install --upgrade pymongo`
 
-Furthermore, the installation process can be completed with help of the 
-easy_install tool, which requires users to use the following command 
-[@api-mongodb-com-installation].
+Furthermore, the installation process can be completed with help 
+of the easy_install tool, which requires users to use the 
+following command [@api-mongodb-com-installation].
 
 `$ python -m easy_install pymongo`
 
-To do an upgrade of the driver using this tool, the following command is
-recommended [@api-mongodb-com-installation]:
+To do an upgrade of the driver using this tool, the following 
+command is recommended [@api-mongodb-com-installation]:
 
 `$ python -m easy_install -U pymongo`
 
-There are many other ways of installing PyMongo directly from the source, 
-however, they require for C extension dependencies to be installed prior to
-the driver installation step, as they are the ones that skim through the 
-sources on GitHub and use the most up-to-date links to install the driver 
+There are many other ways of installing PyMongo directly from 
+the source, however, they require for C extension dependencies 
+to be installed prior to the driver installation step, as they 
+are the ones that skim through the sources on GitHub and use 
+the most up-to-date links to install the driver 
 [@api-mongodb-com-installation].
 
-To check if the installation was completed accurately, the following command is 
-used in the Python console [@www-realpython].
+To check if the installation was completed accurately, the 
+following command is used in the Python console 
+[@www-realpython].
 
 `import pymongo`
 
-If the command returns zero exceptions within the Python shell, one can consider 
-for the PyMongo installation to have been completed successfully.
+If the command returns zero exceptions within the Python 
+shell, one can consider for the PyMongo installation to 
+have been completed successfully.
 
 ### Dependencies
 
-The PyMongo driver has a few dependencies that should be taken into consideration.
-Currently, it supports CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ interpreters 
-[@www-github-driver]. An optional dependency that requires some additional 
-components to be installed is the GSSAPI authentication [@www-github-driver]. For 
-the Unix based machines, it requires pykerberos, while for the Windows machines 
-WinKerberos is needed to fullfill this requirement [@www-github-driver]. The 
-automatic installation of this dependency can be done simultaneously with the
-driver installation, in the following manner:
+The PyMongo driver has a few dependencies that should 
+be taken into consideration. Currently, it supports 
+CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ interpreters 
+[@www-github-driver]. An optional dependency that 
+requires some additional components to be installed 
+is the GSSAPI authentication [@www-github-driver]. For 
+the Unix based machines, it requires pykerberos, while 
+for the Windows machines WinKerberos is needed to fullfill 
+this requirement [@www-github-driver]. The automatic installation 
+of this dependency can be done simultaneously with the driver 
+installation, in the following manner:
 
 `$ python -m pip install pymongo[gssapi]`
 
-Other third-party dependencies such as *ipaddress*, *certifi*, or *wincerstore*
-are necessary for connections with help of TLS/SSL and can also be simultaneously
-installed along with the driver installation [@www-github-driver].
+Other third-party dependencies such as *ipaddress*, *certifi*, 
+or *wincerstore* are necessary for connections with help of 
+TLS/SSL and can also be simultaneously installed along with the 
+driver installation [@www-github-driver].
 
 ### Running PyMongo with Mongo Deamon
 
-Once PyMongo is installed, the Mongo deamon can be run with a very simple command
-in a new terminal window [@www-realpython].
+Once PyMongo is installed, the Mongo deamon can be run with a 
+very simple command in a new terminal window [@www-realpython].
 
 `$ mongod`
 
 ### Connecting to a database using MongoClient
 
-In order to be able to establish a connection with the database, a MongoClient
-class needs to be imported, which sub-sequentially allows the MongoClient object 
-to communicate with the database [@www-realpython]. 
+In order to be able to establish a connection with the database, 
+a MongoClientclass needs to be imported, which sub-sequentially 
+allows the MongoClient object to communicate with the database 
+[@www-realpython]. 
 
 `from pymongo import MongoClient`
 `client = MongoClient()`
 
-This command allows a connection with a default, local host and port (27017),
-however, depending on the programming requirements, one can also specify those
-by listing them in the client instance or use the same information via the Mongo 
-URI format [@www-realpython].
+This command allows a connection with a default, local host and 
+port (27017), however, depending on the programming requirements,
+one can also specify those by listing them in the client instance 
+or use the same information via the Mongo URI format [@www-realpython].
 
 ### Accessing Databases, Inserting and Retrieving Documents
 
-Since MongoClient plays a server role, it can be used to access any desired 
-databases in an easy way. To do that, one can use two different approaches.
-The first approach would be doing this via attribute method where the name of
-the desired database is listed as an attribute, and the second approach, which
-would include a dictionary-style access [@www-realpython]. For example, to 
-access a database called *cloudmesh_community*, one would use following 
-commands for the attribute and for the dictionary method, respectfully.
+Since MongoClient plays a server role, it can be used to access 
+any desired databases in an easy way. To do that, one can use two 
+different approaches. The first approach would be doing this via 
+attribute method where the name of the desired database is listed 
+as an attribute, and the second approach, which would include a 
+dictionary-style access [@www-realpython]. For example, to access a 
+database called *cloudmesh_community*, one would use following 
+commands for the attribute and for the dictionary method, 
+respectively.
 
 `db = client.cloudmesh_community`
 `db = client['cloudmesh_community']`
@@ -227,126 +241,145 @@ specified first. In this example, a decision is made to use the
 
 `cloudmesh = db.cloudmesh`
 
-Once this step is completed, data may be inserted using the insert_one()
-method, which means that only one document is being created. Of course,
-insertion of multiple documents at the same time is possible as well with use
-of the insert_many() method [@www-realpython]. An example of this method is
-as follows: 
+Once this step is completed, data may be inserted using the 
+*insert_one()* method, which means that only one document is 
+being created. Of course, insertion of multiple documents at 
+the same time is possible as well with use of the *insert_many()*
+method [@www-realpython]. An example of this method is as follows: 
 ```
 course_info = {
      'course': 'Big Data Applications and Analytics',
      'instructor': ' Gregor von Laszewski',
      'chapter': 'technologies'
 }
-
 ```
 `result = cloudmesh.insert_one(course_info)`
 
-Retrieving documents is equally simple as creating them. A find_one() method
-can be used to retrieve one document [@www-realpython]. An implementation of
-this method is given in the following example.
+Retrieving documents is equally simple as creating them. A 
+*find_one()* method can be used to retrieve one document 
+[@www-realpython]. An implementation of this method is given 
+in the following example.
 
 `gregors_course = cloudmesh.find_one({'instructor':'Gregor von Laszewski'})`
 
-Similarly, to retieve multiple documents, one would use the find() method 
-instead of the find_one(). For example, to find all courses thought by 
-professor Laszewski, one would use the following command:
+Similarly, to retieve multiple documents, one would use the 
+*find()* method instead of the *find_one()*. For example, to 
+find all courses thought by professor Laszewski, one would 
+use the following command:
 
 `gregors_course = cloudmesh.find({'instructor':'Gregor von Laszewski'})`
 
-One thing that users should be cognizant of when using the find() method 
-is that it does not return results in an array format but as a *cursor* 
-object, which is a combination of methods that work together to 
-help with data querying [@www-realpython]. In order to return individual 
-documents, iteration over the result must be completed [@www-realpython].
+One thing that users should be cognizant of when using the *find()*
+method is that it does not return results in an array format but 
+as a *cursor* object, which is a combination of methods that work 
+together to help with data querying [@www-realpython]. In order to 
+return individual documents, iteration over the result must be 
+completed [@www-realpython].
 
 ### PyMongo Strengths
 
-One of PyMongo strengths is that allows document creation and querying natively
+One of PyMongo strengths is that allows document creation and 
+querying natively
 
-> "through the use of existing language features such as nested dictionaries and 
-> lists" [@book-ohiggins]. 
+> "through the use of existing language features such as nested 
+> dictionaries and lists" [@book-ohiggins]. 
 
-For moderately experienced Python developers, it is very easy to learn it and
-quickly feel comfortable with it.
+For moderately experienced Python developers, it is very easy to 
+learn it and quickly feel comfortable with it.
 
-> "For these reasons, MongoDB and Python make a powerful combination for rapid, 
-iterative development of horizontally scalable backend applications" [@book-ohiggins].
-According to O'Higgins, MongoDB is very applicable to modern applications, which makes
-PyMongo equally valuable [@book-ohiggins].
+> "For these reasons, MongoDB and Python make a powerful 
+> combination for rapid, iterative development of horizontally 
+> scalable backend applications" [@book-ohiggins].
+
+According to O'Higgins, MongoDB is very applicable to modern 
+applications, which makes PyMongo equally valuable [@book-ohiggins].
 
 ## MongoEngine
 
-> "MongoEngine is an Object-Document Mapper, written in Python for working with MongoDB" 
-[@docs-mongoengine]. It is actually a library that allows a more advanced communication 
-with MongoDB compared to PyMongo. As MongoEngine is technically considered to be an 
-object-document mapper(ODM), it can also be considered to be 
+> "MongoEngine is an Object-Document Mapper, written in Python 
+> for working with MongoDB" [@docs-mongoengine]. 
+
+It is actually a library that allows a more advanced communication 
+with MongoDB compared to PyMongo. As MongoEngine is technically 
+considered to be an object-document mapper(ODM), it can also be 
+considered to be 
 
 > "equivalent to a SQL-based object relational mapper(ORM)" [@www-realpython].
 
-The primary technique why one would use an ODM includes *data conversion* between computer 
-systems that are not compatible with each other[@www-wikiodm]. For the purpose of converting 
-data to the appropriate form, a *virtual object database* must be created within the utilized 
-programming language [@www-wikiodm]. This library is also used to define schemata for documents 
-within MongoDB, which ultimately helps with minimizing coding errors as well defining methods 
-on existing fields [@docs-mongoengine- schema]. It is also very beneficial to the overall workflow 
-as it tracks changes made to the documents and aids in the document saving process 
+The primary technique why one would use an ODM includes 
+*data conversion* between computer systems that are not 
+compatible with each other[@www-wikiodm]. For the purpose of 
+converting data to the appropriate form, a *virtual object 
+database* must be created within the utilized programming 
+language [@www-wikiodm]. This library is also used to define 
+schemata for documents within MongoDB, which ultimately helps
+with minimizing coding errors as well defining methods 
+on existing fields [@docs-mongoengine- schema]. It is also 
+very beneficial to the overall workflow as it tracks changes 
+made to the documents and aids in the document saving process 
 [docs-mongoengine- instances].
 
 ### Installation
 
-The installation process for this technology is fairly simple as it is considered to be a library. 
-To install it, one would use the following command [@www-installing]:
+The installation process for this technology is fairly simple 
+as it is considered to be a library. To install it, one would 
+use the following command [@www-installing]:
 
 `$ pip install mongoengine`
 
-A *bleeding-edge* version of MongoEngine can be installed directly from GitHub but first cloning 
-the repository on the local machine, virtual machine, or cloud.
+A *bleeding-edge* version of MongoEngine can be installed directly 
+from GitHub but first cloning the repository on the local machine, 
+virtual machine, or cloud.
 
 ### Connecting to a database using MongoEngine
 
-Once installed, MongoEngine needs to be connected to an instance of the mongod, similarly to 
-PyMongo [@www-connecting]. The *connect()* function must be used to successfully complete this step 
-and the argument that must be used in this function is the name of the desired database 
-[@www-connecting]. Prior to using this function, the function name needs to be imported from the 
-MongoEngine library.
+Once installed, MongoEngine needs to be connected to an instance of 
+the mongod, similarly to PyMongo [@www-connecting]. The *connect()* 
+function must be used to successfully complete this step and the argument 
+that must be used in this function is the name of the desired database 
+[@www-connecting]. Prior to using this function, the function name needs 
+to be imported from the MongoEngine library.
 ```
 from mongoengine import connect
 connect('cloudmesh_community')
 ```
-Similarly, to the MongoClient, MongoEngine uses the local host and port (27017) by default, 
-however, the *connect()* function also allows to specify other host and port arguments as 
-well [@www-connecting].
+Similarly, to the MongoClient, MongoEngine uses the local host and 
+port (27017) by default, however, the *connect()* function also allows 
+to specify other host and port arguments as well [@www-connecting].
 
 `connect('cloudmesh_community', host='196.185.1.62', port=16758)`
 
-Other types of connections are also supported (i.e. URI) and they can be completed by providing 
-the URI in the *connect()* function [@www-connecting]. 
+Other types of connections are also supported (i.e. URI) and they can 
+be completed by providing the URI in the *connect()* function 
+[@www-connecting]. 
 
 ### Querying using MongoEngine
 
-To query MongoDB using MongoEngine an *objects attribute* is used, which is, technically, a part 
-of the document class [@www-querying]. This attribute is called the *QuerySetManager* which in 
-return 
+To query MongoDB using MongoEngine an *objects attribute* is used, 
+which is, technically, a part of the document class [@www-querying]. 
+This attribute is called the *QuerySetManager* which in return 
 
 >  "creates a new *QuerySet* object on access" [@www-querying].
 
-To be able to access individual documents from a database, this object needs to be iterated over. 
-For example, to return/print all students in the cloudmesh_community object (database), the 
-following command would be used.
+To be able to access individual documents from a database, this object
+needs to be iterated over. For example, to return/print all students 
+in the *cloudmesh_community*object (database), the following command 
+would be used.
 ```
 for user in cloudmesh_community.objects:
     print cloudmesh_community.student
 ```
-MongoEngine also has a capability of query filtering which means that a keyword can be used with 
-in the called *QuerySet* object to retrieve specific information [@www-querying]. Let’s say one 
-would like to iterate over cloudmesh_community students that are natives of Indiana. To achieve 
-this, one would use the following command:
+MongoEngine also has a capability of query filtering which means that 
+a keyword can be used with in the called *QuerySet* object to retrieve 
+specific information [@www-querying]. Let’s say one would like to 
+iterate over cloudmesh_community students that are natives of Indiana. 
+To achieve this, one would use the following command:
 
 `indy_students = cloudmesh_community.objects(state='IN')`
 
-This library also allows the use of all operators except for the equality operator in its queries, 
-and moreover, has the capability of handling *string queries*, *geo queries*, *list querying*, 
+This library also allows the use of all operators except for the 
+equality operator in its queries, and moreover, has the capability 
+of handling *string queries*, *geo queries*, *list querying*, 
 and querying of the raw PyMongo queries [@www-querying]. 
 
 ## Flask-Mongo
