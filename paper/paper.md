@@ -279,6 +279,78 @@ PyMongo equally valuable [@book-ohiggins].
 
 ## MongoEngine
 
+> "MongoEngine is an Object-Document Mapper, written in Python for working with MongoDB" 
+[@docs-mongoengine]. It is actually a library that allows a more advanced communication 
+with MongoDB compared to PyMongo. As MongoEngine is technically considered to be an 
+object-document mapper(ODM), it can also be considered to be 
+
+> "equivalent to a SQL-based object relational mapper(ORM)" [@www-realpython].
+
+The primary technique why one would use an ODM includes *data conversion* between computer 
+systems that are not compatible with each other[@www-wikiodm]. For the purpose of converting 
+data to the appropriate form, a *virtual object database* must be created within the utilized 
+programming language [@www-wikiodm]. This library is also used to define schemata for documents 
+within MongoDB, which ultimately helps with minimizing coding errors as well defining methods 
+on existing fields [@docs-mongoengine- schema]. It is also very beneficial to the overall workflow 
+as it tracks changes made to the documents and aids in the document saving process 
+[docs-mongoengine- instances].
+
+### Installation
+
+The installation process for this technology is fairly simple as it is considered to be a library. 
+To install it, one would use the following command [@www-installing]:
+
+`$ pip install mongoengine`
+
+A *bleeding-edge* version of MongoEngine can be installed directly from GitHub but first cloning 
+the repository on the local machine, virtual machine, or cloud.
+
+### Connecting to a database using MongoEngine
+
+Once installed, MongoEngine needs to be connected to an instance of the mongod, similarly to 
+PyMongo [@www-connecting]. The *connect()* function must be used to successfully complete this step 
+and the argument that must be used in this function is the name of the desired database 
+[@www-connecting]. Prior to using this function, the function name needs to be imported from the 
+MongoEngine library.
+
+`from mongoengine import connect
+connect('cloudmesh_community')`
+
+Similarly, to the MongoClient, MongoEngine uses the local host and port (27017) by default, 
+however, the *connect()* function also allows to specify other host and port arguments as 
+well [@www-connecting].
+
+`connect('cloudmesh_community', host='196.185.1.62', port=16758)`
+
+Other types of connections are also supported (i.e. URI) and they can be completed by providing 
+the URI in the *connect()* function [@www-connecting]. 
+
+### Querying using MongoEngine
+
+To query MongoDB using MongoEngine an *objects attribute* is used, which is, technically, a part 
+of the document class [@www-querying]. This attribute is called the *QuerySetManager* which in 
+return 
+
+>  "creates a new *QuerySet* object on access" [@www-querying].
+
+To be able to access individual documents from a database, this object needs to be iterated over. 
+For example, to return/print all students in the cloudmesh_community object (database), the 
+following command would be used.
+
+`for user in cloudmesh_community.objects:
+    print cloudmesh_community.student`
+
+MongoEngine also has a capability of query filtering which means that a keyword can be used with 
+in the called *QuerySet* object to retrieve specific information [@www-querying]. Let’s say one 
+would like to iterate over cloudmesh_community students that are natives of Indiana. To achieve 
+this, one would use the following command:
+
+`indy_students = cloudmesh_community.objects(state=’IN’)`
+
+This library also allows the use of all operators except for the equality operator in its queries, 
+and moreover, has the capability of handling *string queries*, *geo queries*, *list querying*, 
+and querying of the raw PyMongo queries [@www-querying]. 
+
 ## Flask-Mongo
 
 ## Workbreakdown
