@@ -127,7 +127,7 @@
 }
 
 @TechReport{www-mongotab,
-  author      = {Nishad Tupe, Izolda Fetko, Rashmi Ray},
+  author      = {Nishad Tupe,Izolda Fetko , Rashmi Ray},
   title       = {Analyzing France Accidents Data using Mongo DB},
   institution = {Indiana University of Bloomington},
   year        = {2018},
@@ -143,5 +143,4 @@
   note         = {Accessed: Oct 11,2018},
   url          = {https://blog.knowi.com/2018/03/tableau-and-mongodb-analytics.html},
 }
-
 @Comment{jabref-meta: databaseType:bibtex;}
