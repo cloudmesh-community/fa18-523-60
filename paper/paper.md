@@ -1,4 +1,4 @@
-# MongoDB, PyMongo, MongoEngine, and Flask-Mongo :hand: fa18-523-60, fa18-523-64, fa18-523-72
+# MongoDB, PyMongo, MongoEngine, and Flask-Mongo :smiley: fa18-523-60, fa18-523-64, fa18-523-72
 
 | Izolda Fetko, Nishad Tupe, Vishal Bhoyar
 | ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
