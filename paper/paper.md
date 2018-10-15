@@ -232,7 +232,6 @@ method, which means that only one document is being created. Of course,
 insertion of multiple documents at the same time is possible as well with use
 of the insert_many() method [@www-realpython]. An example of this method is
 as follows: 
-
 ```
 course_info = {
      'course': 'Big Data Applications and Analytics',
@@ -241,7 +240,6 @@ course_info = {
 }
 
 ```
-
 `result = cloudmesh.insert_one(course_info)`
 
 Retrieving documents is equally simple as creating them. A find_one() method
@@ -312,10 +310,10 @@ PyMongo [@www-connecting]. The *connect()* function must be used to successfully
 and the argument that must be used in this function is the name of the desired database 
 [@www-connecting]. Prior to using this function, the function name needs to be imported from the 
 MongoEngine library.
-
-`from mongoengine import connect
-connect('cloudmesh_community')`
-
+```
+from mongoengine import connect
+connect('cloudmesh_community')
+```
 Similarly, to the MongoClient, MongoEngine uses the local host and port (27017) by default, 
 however, the *connect()* function also allows to specify other host and port arguments as 
 well [@www-connecting].
@@ -336,16 +334,16 @@ return
 To be able to access individual documents from a database, this object needs to be iterated over. 
 For example, to return/print all students in the cloudmesh_community object (database), the 
 following command would be used.
-
-`for user in cloudmesh_community.objects:
-    print cloudmesh_community.student`
-
+```
+for user in cloudmesh_community.objects:
+    print cloudmesh_community.student
+```
 MongoEngine also has a capability of query filtering which means that a keyword can be used with 
 in the called *QuerySet* object to retrieve specific information [@www-querying]. Let’s say one 
 would like to iterate over cloudmesh_community students that are natives of Indiana. To achieve 
 this, one would use the following command:
 
-`indy_students = cloudmesh_community.objects(state=’IN’)`
+`indy_students = cloudmesh_community.objects(state='IN')`
 
 This library also allows the use of all operators except for the equality operator in its queries, 
 and moreover, has the capability of handling *string queries*, *geo queries*, *list querying*, 
