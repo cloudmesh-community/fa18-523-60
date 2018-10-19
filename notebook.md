@@ -1,3 +1,7 @@
+# Week Fri 10/19/18 - Thu 10/25/18
+
+- forket cloudmesh/technologies again per professor's request
+
 # Week Fri 10/12/18 - Thu 10/18/18
 
 - Completed Kaggle.com public api section which was moved to project-report.md 
