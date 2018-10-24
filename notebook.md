@@ -1,6 +1,7 @@
 # Week Fri 10/19/18 - Thu 10/25/18
 
-- forket cloudmesh/technologies again per professor's request
+- forked cloudmesh/technologies again per professor's request
+- working on the technology paper and project
 
 # Week Fri 10/12/18 - Thu 10/18/18
 
