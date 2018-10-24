@@ -232,6 +232,7 @@ commands for the attribute and for the dictionary method,
 respectively.
 
 `db = client.cloudmesh_community`
+
 `db = client['cloudmesh_community']`
 
 Creating documents and storing data using PyMongo is equally easy as 
