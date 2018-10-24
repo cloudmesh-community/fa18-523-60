@@ -132,7 +132,7 @@ documents [@www-gearheart].
 
 Prior to being able to exploit the benefits of Python and MongoDB 
 simultaneously, the PyMongo distribution must be installed using 
-*pip*. To install it onall platforms, the following command should 
+*pip*. To install it on all platforms, the following command should 
 be used [@api-mongodb-com-installation]:
 
 `$ python -m pip install pymongo`
@@ -232,6 +232,7 @@ commands for the attribute and for the dictionary method,
 respectively.
 
 `db = client.cloudmesh_community`
+
 `db = client['cloudmesh_community']`
 
 Creating documents and storing data using PyMongo is equally easy as 
@@ -264,7 +265,7 @@ in the following example.
 
 Similarly, to retieve multiple documents, one would use the 
 *find()* method instead of the *find_one()*. For example, to 
-find all courses thought by professor Laszewski, one would 
+find all courses thought by professor von Laszewski, one would 
 use the following command:
 
 `gregors_course = cloudmesh.find({'instructor':'Gregor von Laszewski'})`
