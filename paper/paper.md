@@ -4,7 +4,8 @@
 | ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
 | Indiana University
 | hid: fa18-523-60, fa18-523-64, fa18-523-72
-| github: https://github.com/cloudmesh-community/fa18-523-60/edit/master/paper/paper.md
+| github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md)
+
 
 ## MongoDB
 
