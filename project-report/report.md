@@ -4,7 +4,7 @@
 | ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
 | Indiana University
 | hid: fa18-523-60, fa18-523-64, fa18-523-72
-| github: https://github.com/cloudmesh-community/fa18-523-60/edit/master/project-report/report.md
+| | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60blob/master/project-report/report.md)
 | code: TBD
 
 ---
