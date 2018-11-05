@@ -14,7 +14,7 @@ MongoDB, PyMongo, Kaggle.com Public API, Virtual Machine, Mongo Atlas
 
 ---
 
-### Abstract
+## Abstract
 
 In today's busy world, time is a valuable asset. People 
 are trying to save time and money in all segments of their 
@@ -33,7 +33,7 @@ platforms. The second part entails a MongoDB performance
 benchmarking by testing it on a local machine, a virtual 
 machine, and on a cloud service - Mongo Atlas.
 
-### Introduction
+## Introduction
 
 The modern world is increasingly becoming busier each year. 
 The number of daily tasks has exponentially increased compared 
@@ -121,7 +121,7 @@ TBD
 ## Architecture
 TBD
 
-### Dataset Description
+## Dataset Description
 
 In the recent years, data science has become one of the 
 most important drivers of the modern economy. It is used 
@@ -232,7 +232,7 @@ each other with unique ids. The product, aisle, and department are considered to
 dimension entities while an order is the quantitative fact entity. The order details 
 are available by a week day and by a day hour level [@www-kaggle-data].
 
-### Litrature review
+## Litrature review
 
 Mongo DB and Python both are open source technologies. One can get started quickly building 
 an application on MongoDB using any of the languages that leverage a MongoDB's driver.
