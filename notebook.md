@@ -1,3 +1,17 @@
+
+# Week Fri 11/9/18 - Thu 11/15/18
+
+- not yet started
+
+# Week Fri 11/2/18 - Thu 11/8/18
+
+- continuing to work on the project report and project paper
+
+# Week Fri 10/26/18 - Thu 11/1/18
+
+- worked with professor on fixing references for plasma-magma that were created in prior semesters
+- edited my references to match the syntax
+
 # Week Fri 10/19/18 - Thu 10/25/18
 
 - forked cloudmesh/technologies again per professor's request
