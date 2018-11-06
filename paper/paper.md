@@ -278,6 +278,73 @@ together to help with data querying [@www-realpython]. In order to
 return individual documents, iteration over the result must be 
 completed [@www-realpython].
 
+Counting documents can be done with one simple operation called
+*count_documents()* instead of using a full query 
+[@www-pymongo-tutorial]. For example, we can count the documents 
+in the *cloudmesh_commpunity* by using the following command:
+
+`cloudmesh = count_documents({})`
+
+To create a more specific count, one would use a command similar 
+to this:
+
+`cloudmesh = count_documents({"author": "von Laszewski"})`
+
+This technology supports some more advanced querying options as well. 
+Those advanced queries allow us to add certain contraints and narrow 
+down the results even more. For example, to get the courses thought
+by professor von Laszewski after a certain date, we would use the 
+following command:
+
+```
+d = datetime.datetime(2017, 11, 12, 12)
+     for course in cloudmesh.find({"date": {"$lt": d}}).sort("author"):
+     pprint.pprint(course)
+```
+#### Indexing
+
+Indexing is a very important part of querying. It can greately improve
+query performance but also add functionality and aide in storing 
+documents [@www-pymongo-tutorial]. 
+
+> "To create a unique index on a key that rejects documents whose value 
+> for that key already exists in the index" [@www-pymongo-tutorial], 
+
+we need to firstly create the index in the following manner:
+
+```
+result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
+unique=True)
+
+sorted(list(db.profiles.index_information()))
+```
+
+Which acutally created two different indexed *_id* created by MongoDB
+automatically, and *user_id* created by the user (us in this case).
+
+Overall, those indexes are cleverly preventing future additions of 
+invalid user_ids into a collection.
+
+### Aggregation
+
+Pymongo in its documentation offers a separate framework that supports
+data aggregation. This aggreagation framework can be used to 
+
+> "provide projection capabilities to reshape the returned data"
+> [@www-mongo-aggregation].
+
+Another option here would be to use the Map/Reduce framework,
+which essentially includes two different functions *map* and 
+*reduce*. The first one provides the key value pair for each
+tag in the array, while the latter one
+
+> "summs over all of the emitted values for a given key"
+> [@www-mongo-aggregation].
+
+The last step in this specific process it to call the 
+*map_reduce()* function and iterate over the results.
+[@www-mongo-aggregation].
+
 ### PyMongo Strengths
 
 One of PyMongo strengths is that allows document creation and 
