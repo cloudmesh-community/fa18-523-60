@@ -8,10 +8,21 @@
 
 * :o: we already pointed out that first section is too long
 * :o: proposedtitle chamge: MongoDB in Python - changed 
-* :o: introductionand learning outcome missing - TO ADD
+* :o: introductionand learning outcome missing - added learning outcome
 * :o: wrong quotes - fixed quotes
 * :o: donot use quotes fro non cited text such as in  "_id" that is `_id` - fixed
 * :o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
+
+## Introduction
+
+## Learning Outcome
+
+The learning outcome of this paper is to equip readers with the basic 
+MongoDB knowledge, as well as on how to use PyMongo driver in
+conjunction with this NoSQL database. Other than this instructions on
+how to use this driver, the reader will be able introduced to some 
+basic functionalities of the MongoEngine, an Object-Document mapper,
+and Flask-Mongo, a micro web framework.  
 
 ## MongoDB
 
