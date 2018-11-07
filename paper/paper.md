@@ -220,7 +220,7 @@ port (27017), however, depending on the programming requirements,
 one can also specify those by listing them in the client instance 
 or use the same information via the Mongo URI format [@www-realpython].
 
-### Accessing Databases, Inserting and Retrieving Documents
+### Accessing Databases
 
 Since MongoClient plays a server role, it can be used to access 
 any desired databases in an easy way. To do that, one can use two 
@@ -235,6 +235,8 @@ respectively.
 `db = client.cloudmesh_community`
 
 `db = client['cloudmesh_community']`
+
+### Inserting and Retrieving Documents
 
 Creating documents and storing data using PyMongo is equally easy as 
 accessing databases. In order to add new data, a collection must be 
@@ -278,6 +280,8 @@ together to help with data querying [@www-realpython]. In order to
 return individual documents, iteration over the result must be 
 completed [@www-realpython].
 
+### Counting Documents
+
 Counting documents can be done with one simple operation called
 *count_documents()* instead of using a full query 
 [@www-pymongo-tutorial]. For example, we can count the documents 
@@ -301,7 +305,7 @@ d = datetime.datetime(2017, 11, 12, 12)
      for course in cloudmesh.find({"date": {"$lt": d}}).sort("author"):
      pprint.pprint(course)
 ```
-#### Indexing
+### Indexing
 
 Indexing is a very important part of querying. It can greately improve
 query performance but also add functionality and aide in storing 
@@ -325,7 +329,7 @@ automatically, and *user_id* created by the user (us in this case).
 Overall, those indexes are cleverly preventing future additions of 
 invalid user_ids into a collection.
 
-#### Sorting
+### Sorting
 
 Sorting on the server-side is also avaialable via MongoDB. The PyMongo
 *sort()* method is equivalent to the SQL *order by*  statement and it
