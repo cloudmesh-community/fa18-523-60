@@ -265,6 +265,28 @@ course_info = {
 ```
 `result = cloudmesh.insert_one(course_info)`
 
+Another example of this method would be to create a collection.
+If we wanted to create a collection of students in the 
+*cloudmesh_community*, we would do it in the following manner:
+
+```
+student = [ {'name': 'John', 'st_id': 52642},
+    {'name': 'Mercedes', 'st_id': 5717},
+    {'name': 'Anna', 'st_id': 5654},
+    {'name': 'Greg', 'st_id': 5423},
+    {'name': 'Amaya', 'st_id': 3540},
+    {'name': 'Cameron', 'st_id': 2343},
+    {'name': 'Bozer', 'st_id': 4143},
+    {'name': 'Cody', 'price': 2165} ]
+
+client = MongoClient('mongodb://localhost:27017/')
+
+with client:
+
+    db = client.cloudmesh
+    
+    db.students.insert_many(student)
+```
 Retrieving documents is equally simple as creating them. A 
 *find_one()* method can be used to retrieve one document 
 [@www-realpython]. An implementation of this method is given 
