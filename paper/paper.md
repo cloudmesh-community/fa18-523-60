@@ -325,6 +325,24 @@ automatically, and *user_id* created by the user (us in this case).
 Overall, those indexes are cleverly preventing future additions of 
 invalid user_ids into a collection.
 
+#### Sorting
+
+Sorting on the server-side is also avaialable via MongoDB. The PyMongo
+*sort()* method is equivalent to the SQL *order by* statement and it
+can be performed as *pymongo.ascending* and *pymongo.descending* 
+[@book-ohiggins]. This method is much more efficient as it is being 
+completed on the server-side, compared to the sorting completed on 
+the client side. For example, to return all users with first name 
+"Gregor" sorted in descending order by birthdate we would use 
+a command such as this:
+
+```
+users = cloudmesh.users.find(
+ {"firstname":"Gregor"}).sort(("dateofbirth", pymongo.DESCENDING))
+for user in users:
+ print user.get("email")
+```
+
 ### Aggregation
 
 Pymongo in its documentation offers a separate framework that supports
@@ -344,6 +362,20 @@ tag in the array, while the latter one
 The last step in this specific process it to call the 
 *map_reduce()* function and iterate over the results.
 [@www-mongo-aggregation].
+
+### Deleting Documents from a Collection
+
+The deletion of documents with PyMongo is fairly straight forward. 
+To do so, one would use the *remove()* method of the PyMongo 
+Collection object [@book-ohiggins]. Similarly to the reads and
+updates, specification of documents to be removed is a must. For 
+example, removal of the entire document collection wiht a score
+of 1, one would use the following command:
+
+`cloudmesh.users.remove({"score":1, safe=True})`
+
+The *safe* parameter set to "True" ensures the operation was 
+completed [@book-ohiggins]. 
 
 ### PyMongo Strengths
 
