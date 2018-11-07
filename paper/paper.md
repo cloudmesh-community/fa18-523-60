@@ -1,4 +1,4 @@
-# MongoDB, PyMongo, MongoEngine, and Flask-Mongo :hand: fa18-523-60, fa18-523-64, fa18-523-72
+# MongoDB in Python :hand: fa18-523-60, fa18-523-64, fa18-523-72
 
 | Izolda Fetko, Nishad Tupe, Vishal Bhoyar
 | ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
@@ -7,11 +7,11 @@
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md)
 
 * :o: we already pointed out that first section is too long
-* :o: proposedtitle chamge: MongoDB in Python 
-* :o: introductionand learning outcome missing
-* :o: wrong quotes
-* :o: donot use quotes fro non cited text such as in  "_id" that is `_id`
-* :o: use bash and python after the 3 quotes, bash has a $ at the beginning
+* :o: proposedtitle chamge: MongoDB in Python - changed 
+* :o: introductionand learning outcome missing - TO ADD
+* :o: wrong quotes - fixed quotes
+* :o: donot use quotes fro non cited text such as in  "_id" that is `_id` - fixed
+* :o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
 
 ## MongoDB
 
@@ -46,7 +46,7 @@ in a key-value form which allows storing of complex data types composed
 out of field and value pairs. Documents are objects which correspond to 
 native data types in many programming languages, hence a well defined, 
 embedded document can help reduce expensive joins and improve query 
-performance. Every document is uniquely identified by an *"_id"* field 
+performance. Every document is uniquely identified by an *_id* field 
 [@www-guru99]. MongoDB offers flexibility to write records that are 
 not restricted by column types. The data storage approach is flexible as 
 it allows one to store data as it grows and to fulfill varying needs of 
@@ -84,7 +84,7 @@ and mainly contains denormalized data which means the data is repeated
 instead of indexed over a specific key. If the same data is required in 
 more than one table, it needs to be repeated. This constraint has been 
 eliminated in MongoDB's new version 3.2. The new release introduced a 
-*"$lookup"* feature which more likely works as a left-outer-join. Lookups 
+*$lookup* feature which more likely works as a left-outer-join. Lookups 
 are restricted to aggregated functions which means that data usually 
 need some type of filtering and grouping operations to be conducted 
 beforehand. For this reason, joins in MongoDB require more complicated 
@@ -177,7 +177,7 @@ To check if the installation was completed accurately, the
 following command is used in the Python console 
 [@www-realpython].
 
-`import pymongo`
+`$ import pymongo`
 
 If the command returns zero exceptions within the Python 
 shell, one can consider for the PyMongo installation to 
@@ -218,8 +218,8 @@ a MongoClientclass needs to be imported, which sub-sequentially
 allows the MongoClient object to communicate with the database 
 [@www-realpython]. 
 
-`from pymongo import MongoClient`
-`client = MongoClient()`
+`$ from pymongo import MongoClient`
+`$ client = MongoClient()`
 
 This command allows a connection with a default, local host and 
 port (27017), however, depending on the programming requirements,
@@ -238,9 +238,9 @@ database called *cloudmesh_community*, one would use following
 commands for the attribute and for the dictionary method, 
 respectively.
 
-`db = client.cloudmesh_community`
+`$ db = client.cloudmesh_community`
 
-`db = client['cloudmesh_community']`
+`$ db = client['cloudmesh_community']`
 
 ### Inserting and Retrieving Documents
 
@@ -249,7 +249,7 @@ accessing databases. In order to add new data, a collection must be
 specified first. In this example, a decision is made to use the
 *cloudmesh* group of documents.
 
-`cloudmesh = db.cloudmesh`
+`$ cloudmesh = db.cloudmesh`
 
 Once this step is completed, data may be inserted using the 
 *insert_one()* method, which means that only one document is 
@@ -257,20 +257,20 @@ being created. Of course, insertion of multiple documents at
 the same time is possible as well with use of the *insert_many()*
 method [@www-realpython]. An example of this method is as follows: 
 ```
-course_info = {
+$ course_info = {
      'course': 'Big Data Applications and Analytics',
      'instructor': ' Gregor von Laszewski',
      'chapter': 'technologies'
 }
 ```
-`result = cloudmesh.insert_one(course_info)`
+`$ result = cloudmesh.insert_one(course_info)`
 
 Another example of this method would be to create a collection.
 If we wanted to create a collection of students in the 
 *cloudmesh_community*, we would do it in the following manner:
 
 ```
-student = [ {'name': 'John', 'st_id': 52642},
+$ student = [ {'name': 'John', 'st_id': 52642},
     {'name': 'Mercedes', 'st_id': 5717},
     {'name': 'Anna', 'st_id': 5654},
     {'name': 'Greg', 'st_id': 5423},
@@ -292,14 +292,14 @@ Retrieving documents is equally simple as creating them. A
 [@www-realpython]. An implementation of this method is given 
 in the following example.
 
-`gregors_course = cloudmesh.find_one({'instructor':'Gregor von Laszewski'})`
+`$ gregors_course = cloudmesh.find_one({'instructor':'Gregor von Laszewski'})`
 
 Similarly, to retieve multiple documents, one would use the 
 *find()* method instead of the *find_one()*. For example, to 
 find all courses thought by professor von Laszewski, one would 
 use the following command:
 
-`gregors_course = cloudmesh.find({'instructor':'Gregor von Laszewski'})`
+`$ gregors_course = cloudmesh.find({'instructor':'Gregor von Laszewski'})`
 
 One thing that users should be cognizant of when using the *find()*
 method is that it does not return results in an array format but 
@@ -315,12 +315,12 @@ Counting documents can be done with one simple operation called
 [@www-pymongo-tutorial]. For example, we can count the documents 
 in the *cloudmesh_commpunity* by using the following command:
 
-`cloudmesh = count_documents({})`
+`$ cloudmesh = count_documents({})`
 
 To create a more specific count, one would use a command similar 
 to this:
 
-`cloudmesh = count_documents({"author": "von Laszewski"})`
+`$ cloudmesh = count_documents({"author": "von Laszewski"})`
 
 This technology supports some more advanced querying options as well. 
 Those advanced queries allow us to add certain contraints and narrow 
@@ -329,7 +329,7 @@ by professor von Laszewski after a certain date, we would use the
 following command:
 
 ```
-d = datetime.datetime(2017, 11, 12, 12)
+$ d = datetime.datetime(2017, 11, 12, 12)
      for course in cloudmesh.find({"date": {"$lt": d}}).sort("author"):
      pprint.pprint(course)
 ```
@@ -345,10 +345,10 @@ documents [@www-pymongo-tutorial].
 we need to firstly create the index in the following manner:
 
 ```
-result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
-unique=True)
+$ result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
+  unique=True)
 
-sorted(list(db.profiles.index_information()))
+  sorted(list(db.profiles.index_information()))
 ```
 
 Which acutally created two different indexed *_id* created by MongoDB
@@ -365,14 +365,14 @@ can be performed as *pymongo.ascending* and *pymongo.descending*
 [@book-ohiggins]. This method is much more efficient as it is being 
 completed on the server-side, compared to the sorting completed on 
 the client side. For example, to return all users with first name 
-"Gregor" sorted in descending order by birthdate we would use 
+*Gregor* sorted in descending order by birthdate we would use 
 a command such as this:
 
 ```
-users = cloudmesh.users.find(
- {"firstname":"Gregor"}).sort(("dateofbirth", pymongo.DESCENDING))
-for user in users:
- print user.get("email")
+$ users = cloudmesh.users.find(
+   {"firstname":"Gregor"}).sort(("dateofbirth", pymongo.DESCENDING))
+ for user in users:
+   print user.get("email")
 ```
 
 ### Aggregation
@@ -404,7 +404,7 @@ updates, specification of documents to be removed is a must. For
 example, removal of the entire document collection with a score
 of 1, one would use the following command:
 
-`cloudmesh.users.remove({"score":1, safe=True})`
+`$ cloudmesh.users.remove({"score":1, safe=True})`
 
 The *safe* parameter set to *True* ensures the operation was 
 completed [@book-ohiggins]. 
@@ -473,14 +473,14 @@ that must be used in this function is the name of the desired database
 [@www-connecting]. Prior to using this function, the function name needs 
 to be imported from the MongoEngine library.
 ```
-from mongoengine import connect
-connect('cloudmesh_community')
+$ from mongoengine import connect
+  connect('cloudmesh_community')
 ```
 Similarly, to the MongoClient, MongoEngine uses the local host and 
 port (27017) by default, however, the *connect()* function also allows 
 to specify other host and port arguments as well [@www-connecting].
 
-`connect('cloudmesh_community', host='196.185.1.62', port=16758)`
+`$ connect('cloudmesh_community', host='196.185.1.62', port=16758)`
 
 Other types of connections are also supported (i.e. URI) and they can 
 be completed by providing the URI in the *connect()* function 
@@ -499,16 +499,16 @@ needs to be iterated over. For example, to return/print all students
 in the *cloudmesh_community*object (database), the following command 
 would be used.
 ```
-for user in cloudmesh_community.objects:
-    print cloudmesh_community.student
+$ for user in cloudmesh_community.objects:
+     print cloudmesh_community.student
 ```
 MongoEngine also has a capability of query filtering which means that 
 a keyword can be used with in the called *QuerySet* object to retrieve 
-specific information [@www-querying]. Let’s say one would like to 
+specific information [@www-querying]. Let's say one would like to 
 iterate over cloudmesh_community students that are natives of Indiana. 
 To achieve this, one would use the following command:
 
-`indy_students = cloudmesh_community.objects(state='IN')`
+`$ indy_students = cloudmesh_community.objects(state='IN')`
 
 This library also allows the use of all operators except for the 
 equality operator in its queries, and moreover, has the capability 
@@ -516,9 +516,11 @@ of handling *string queries*, *geo queries*, *list querying*,
 and querying of the raw PyMongo queries [@www-querying]. 
 
 ## Flask-Mongo
-“Flask is a micro web framework written in Python” 
-[@flask-framework]. It is more pythonic, it is developed after Django, 
-and is explicitly targeting Python user community. It is lightweight, it 
+> "Flask is a micro web framework written in Python" 
+> [@flask-framework]. 
+
+It is more pythonic, it is developed after Django, and is explicitly 
+targeting Python user community. It is lightweight, it 
 does not require tools or libraries and hence is classified as a Micro 
 Web framework. Flask caters application features such object mappers, 
 authentication methods, and form validations by supporting extensions. 
@@ -529,7 +531,7 @@ using the Flask framework. It supports various features such as RESTful
 request dispatching, secure cookies, Google app engine compatibility, 
 and integrated support for unit testing, etc. [@flask -framework]. Flask 
 PyMongo offers methods such as *Collection.find_one_or_404* which is the 
-equivalent to MongoDB’s *find_one* in which instead of returning None, 
+equivalent to MongoDB's *find_one* in which instead of returning None, 
 causes a *404 Not Found HTTP status* on a request. Similarly, 
 *PyMongo.send_file* and *PyMongo.save_file* methods works on the 
 file-like object. The connection details for MongoDB can be passed as a 
@@ -552,13 +554,13 @@ management for the apps. It can be installed through pip and set up very
 easily as well. The default configuration is set to local host and port 
 27017, for the custom port and if MongoDB is running on another server 
 the host and port must be explicitly specified in connect strings 
-specified within the "MONGODB_SETTINGS" dictionary with 
-"app.config" along with database username and password in case 
+specified within the *MONGODB_SETTINGS* dictionary with 
+*app.config* along with database username and password in case 
 database authentication is enabled. URI style connections are also 
-supported and supply the URI as the host in the ‘MONGODB_SETTINGS’ 
-dictionary with "app.config". There are various custom query sets 
+supported and supply the URI as the host in the *MONGODB_SETTINGS* 
+dictionary with *app.config*. There are various custom query sets 
 that are available within Flask-Mongoengine that are attached to 
-Mongoengine’s default queryset [flask-mongoengine]. 
+Mongoengine's default queryset [flask-mongoengine]. 
 
 ## Workbreakdown
 
