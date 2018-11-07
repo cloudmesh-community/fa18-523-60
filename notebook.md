@@ -6,6 +6,10 @@
 # Week Fri 11/2/18 - Thu 11/8/18
 
 - continuing to work on the project report and project paper
+- added Database creation, Learning outcome sections to the paper.md
+- fixed formatting of quotes and code
+- added more examples in the PyMongo section
+- added new references to the bib file
 
 # Week Fri 10/26/18 - Thu 11/1/18
 
