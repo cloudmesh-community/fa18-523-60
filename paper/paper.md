@@ -592,6 +592,8 @@ Mongoengine's default queryset [flask-mongoengine].
 
 ## Workbreakdown
 
+- Introduction - TBD
+- Learning Outcome - Izolda Fetko fa18-523-60
 - MongoDB - Nishad Tupe fa18-523-64
 - PyMongo - Izolda Fetko fa18-523-60
 - MongoEngine, Flask-Mongo - Vishal Bhoyar fa18-523-72 
