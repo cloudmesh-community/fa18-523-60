@@ -328,7 +328,7 @@ invalid user_ids into a collection.
 #### Sorting
 
 Sorting on the server-side is also avaialable via MongoDB. The PyMongo
-*sort()* method is equivalent to the SQL *order by* statement and it
+*sort()* method is equivalent to the SQL *order by*  statement and it
 can be performed as *pymongo.ascending* and *pymongo.descending* 
 [@book-ohiggins]. This method is much more efficient as it is being 
 completed on the server-side, compared to the sorting completed on 
@@ -345,36 +345,36 @@ for user in users:
 
 ### Aggregation
 
-Pymongo in its documentation offers a separate framework that supports
-data aggregation. This aggreagation framework can be used to 
+PyMongo in its documentation offers a separate framework that supports
+data aggregation. This aggregation framework can be used to 
 
 > "provide projection capabilities to reshape the returned data"
 > [@www-mongo-aggregation].
 
 Another option here would be to use the Map/Reduce framework,
-which essentially includes two different functions *map* and 
+which essentially includes two different functions *map*  and 
 *reduce*. The first one provides the key value pair for each
 tag in the array, while the latter one
 
-> "summs over all of the emitted values for a given key"
+> "sums over all of the emitted values for a given key"
 > [@www-mongo-aggregation].
 
 The last step in this specific process it to call the 
-*map_reduce()* function and iterate over the results.
+*map_reduce()*  function and iterate over the results.
 [@www-mongo-aggregation].
 
 ### Deleting Documents from a Collection
 
 The deletion of documents with PyMongo is fairly straight forward. 
-To do so, one would use the *remove()* method of the PyMongo 
+To do so, one would use the *remove()*  method of the PyMongo 
 Collection object [@book-ohiggins]. Similarly to the reads and
 updates, specification of documents to be removed is a must. For 
-example, removal of the entire document collection wiht a score
+example, removal of the entire document collection with a score
 of 1, one would use the following command:
 
 `cloudmesh.users.remove({"score":1, safe=True})`
 
-The *safe* parameter set to "True" ensures the operation was 
+The *safe* parameter set to *True* ensures the operation was 
 completed [@book-ohiggins]. 
 
 ### PyMongo Strengths
