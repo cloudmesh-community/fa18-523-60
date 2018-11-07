@@ -19,8 +19,8 @@
 
 The learning outcome of this paper is to equip readers with the basic 
 MongoDB knowledge, as well as on how to use PyMongo driver in
-conjunction with this NoSQL database. Other than this instructions on
-how to use this driver, the reader will be able introduced to some 
+conjunction with this NoSQL database. Other than the instructions on
+how to use this driver, the reader will be introduced to some 
 basic functionalities of the MongoEngine, an Object-Document mapper,
 and Flask-Mongo, a micro web framework.  
 
