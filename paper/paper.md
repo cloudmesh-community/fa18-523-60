@@ -242,6 +242,23 @@ respectively.
 
 `$ db = client['cloudmesh_community']`
 
+### Creating a Database
+
+Creating a database is a straight forward process. First, we need to
+create the MongoClient object and specify the connection (IP address)
+as well as the name of the database we are trying to create 
+[@www-w3schools]. The example of this command is presented in the
+followng section:
+
+```
+$ import pymongo
+
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+db = client["cloudmesh"]
+
+```
+
 ### Inserting and Retrieving Documents
 
 Creating documents and storing data using PyMongo is equally easy as 
