@@ -6,6 +6,9 @@
 | hid: fa18-523-60, fa18-523-64, fa18-523-72
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md)
 
+:o: we already pointed out that first section is too long
+:o: proposedtitle chamge: MongoDB in Python 
+:o: introductionand learning outcome missing
 
 ## MongoDB
 
