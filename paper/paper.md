@@ -15,19 +15,7 @@
 
 ## Introduction
 
-## Learning Outcome
-
-The learning outcome of this paper is to equip readers with the basic 
-MongoDB knowledge, as well as on how to use PyMongo driver in
-conjunction with this NoSQL database. Other than the instructions on
-how to use this driver, the reader will be introduced to some 
-basic functionalities of the MongoEngine, an Object-Document mapper,
-and Flask-Mongo, a micro web framework.  
-
-## MongoDB
-
-MongoDB is one of the leading NoSQL databases in the market. In today's 
-era, NoSQL databases have developed an enormous potential to 
+In today's era, NoSQL databases have developed an enormous potential to 
 process the unstructured data efficiently. Modern information is 
 complex, extensive, and may not have pre-existing relationships. With 
 the advent of the advanced search engines, machine learning, and 
@@ -39,18 +27,37 @@ scalability, performance, unstructured data growth, agile sprint cycles,
 and growing needs of processing data in real-time with minimal hardware 
 processing power [@www-guru99]. The NoSQL databases are a new generation 
 of engines that do not necessarily require SQL language and are sometimes 
-also called *Not Only SQL* databases.However, most of them support 
+also called *Not Only SQL* databases. However, most of them support 
 various third-party open connectivity drivers that can map NoSQL queries 
 to SQL's. It would be safe to say that although NoSQL databases are 
 still far from replacing the relational databases, they are adding an 
 immense value when used in hybrid IT environments in conjunction with 
 relational databases, based on the application specific needs 
-[@www-guru99]. Today, this type of database is fully capable of handling 
-dynamic changes; processing large volumes of structured and unstructured data; 
-easily using object-oriented programming features; as well as distributed systems 
-challenges [@www-mongodb]. At its core, MongoDB is an open source, 
-cross-platform, document database mainly written in C++ language. Each 
-database within Mongo environment contains collections which in turn 
+[@www-guru99]. In this paper, we will be covering specifics related
+to the MongoDB database, its drivers, and other components that make
+its use more efficient and user-friendly.
+
+## Learning Outcome
+
+The learning outcome of this paper is to equip readers with the basic 
+MongoDB knowledge, as well as on how to use PyMongo driver in
+conjunction with this NoSQL database. Other than the instructions on
+how to use this driver, the reader will be introduced to some 
+basic functionalities of the MongoEngine, an Object-Document mapper,
+and Flask-Mongo, a micro web framework.  
+
+## MongoDB
+
+MongoDB is one of the leading NoSQL databases in the market. Today, 
+this type of database is fully capable of handling dynamic changes; 
+processing large volumes of structured and unstructured data; 
+easily using object-oriented programming features; as well as distributed
+system challenges [@www-mongodb]. At its core, MongoDB is an open source, 
+cross-platform, document database mainly written in C++ language. 
+
+## Collections and Documents
+
+Each database within Mongo environment contains collections which in turn 
 contain documents. Collections and documents are analogous to tables and 
 rows respectively to the relational databases. The document structure is 
 in a key-value form which allows storing of complex data types composed 
@@ -80,8 +87,12 @@ as well as range asks for specific fields that eliminate the need of
 returning entire documents [@www-guru99]. MongoDB collections do not 
 enforce document structure like SQL databases which is a compelling 
 feature. However, it is essential to keep in mind the needs of the 
-applications. The data retrieval patterns, the frequency of data 
-manipulation statements such as insert, updates, and deletes may embark 
+applications. 
+
+## MongoDB Querying
+
+The data retrieval patterns, the frequency of data manipulation 
+statements such as insert, updates, and deletes may embark 
 the use of indexes or incorporating the sharding feature to improve 
 query performance and efficiency of MongoDB environment [@www-guru99]. 
 One of the significant difference between relational databases and NoSQL 
@@ -102,33 +113,43 @@ beforehand. For this reason, joins in MongoDB require more complicated
 querying compared to the traditional relational database joins. Although 
 at this time, *lookups* are still very far from replacing *joins*, this 
 is a prominent feature that can resolve some of the relational data 
-challenges for MongoDB [@www-sitepoint]. When it comes to the technical 
-elements of MongoDB, it posses a rich interface for importing and 
-storage of external data in various formats. Using Mongo Import/Export 
-tool one can easily transfer the contents from JSON, CSV, or TSV files 
-into a database. MongoDB supports CRUD(Create, read, update, delete) 
-operations efficiently and has detailed documentation available on the 
-product website. It can also query the geospatial data, and it is capable of 
+challenges for MongoDB [@www-sitepoint]. 
+
+## MongoDB Basic Functions
+
+When it comes to the technical elements of MongoDB, it posses a 
+rich interface for importing and storage of external data in various 
+formats. Using Mongo Import/Export tool one can easily transfer the 
+contents from JSON, CSV, or TSV files into a database. MongoDB 
+supports CRUD(Create, read, update, delete) operations efficiently 
+and has detailed documentation available on the product website. 
+It can also query the geospatial data, and it is capable of 
 storing geospatial data in GeoJSON objects. Aggregation Operation of 
 MongoDB process data records and returns computed results. MongoDB 
-aggregation framework is modeled on the concept of data pipelines. Data 
-security is the crucial aspect of enterprise infrastructure management 
+aggregation framework is modeled on the concept of data pipelines. 
+
+## Security Features
+
+Data security is the crucial aspect of enterprise infrastructure management 
 and that is why MongoDB provides various security features such as 
 authentication, access control, and encryption. It supports mechanisms 
 such as SCRAM, LDAP, and Kerberos authentication. The administrator 
 can create role-based access control; roles can be predefined or custom. 
 MongoDB can audit activities such as DDL, CRUD statements, authentication 
-and authorization operations [@www-mongodbmanual]. In regards to the cloud 
-technologies, MongoDB also offers fully automated cloud service called *Atlas*
-with competitive pricing options. Mongo Atlas Cloud interface offers 
-interactive GUI for managing cloud resources and deploying applications quickly. 
-The service is equipped with geographically distributed instances to ensure no 
-single point failure. Also, a well-rounded performance monitoring interface 
-allows users to promptly detect anomalies and generate index suggestions to 
-optimize the performance and reliability of the database. Global technology 
-leaders such as Google, Facebook, eBay, and Nokia are leveraging MongoDB and 
-Atlas cloud services making MongoDB one of the most popular choices among the 
-NoSQL databases [@www-mongomanual]. 
+and authorization operations [@www-mongodbmanual]. 
+
+## MongoDB Cloud Service
+
+In regards to the cloud technologies, MongoDB also offers fully automated 
+cloud service called *Atlas* with competitive pricing options. Mongo Atlas 
+Cloud interface offers interactive GUI for managing cloud resources and 
+deploying applications quickly. The service is equipped with geographically 
+distributed instances to ensure no single point failure. Also, a well-rounded 
+performance monitoring interface allows users to promptly detect anomalies and 
+generate index suggestions to optimize the performance and reliability of the 
+database. Global technology leaders such as Google, Facebook, eBay, and Nokia 
+are leveraging MongoDB and Atlas cloud services making MongoDB one of the most 
+popular choices among the NoSQL databases [@www-mongomanual]. 
 
 ## PyMongo
 
@@ -592,7 +613,7 @@ Mongoengine's default queryset [flask-mongoengine].
 
 ## Workbreakdown
 
-- Introduction - TBD
+- Introduction - Nishad Tupe fa18-523-64
 - Learning Outcome - Izolda Fetko fa18-523-60
 - MongoDB - Nishad Tupe fa18-523-64
 - PyMongo - Izolda Fetko fa18-523-60
