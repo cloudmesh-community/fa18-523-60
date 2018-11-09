@@ -6,9 +6,9 @@
 | hid: fa18-523-60, fa18-523-64, fa18-523-72
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md)
 
-* :o: we already pointed out that first section is too long
+* :o: we already pointed out that first section is too long - broke it down to multiple segments
 * :o: proposedtitle chamge: MongoDB in Python - changed 
-* :o: introductionand learning outcome missing - added learning outcome
+* :o: introductionand learning outcome missing - added introduction and learning outcomes
 * :o: wrong quotes - fixed quotes
 * :o: donot use quotes fro non cited text such as in  "_id" that is `_id` - fixed
 * :o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
