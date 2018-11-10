@@ -33,9 +33,10 @@ to SQL's. It would be safe to say that although NoSQL databases are
 still far from replacing the relational databases, they are adding an 
 immense value when used in hybrid IT environments in conjunction with 
 relational databases, based on the application specific needs 
-[@www-guru99]. In this paper, we will be covering specifics related
-to the MongoDB database, its drivers, and other components that make
-its use more efficient and user-friendly.
+[@www-guru99]. In this paper, we will be covering the MongoDB technology, 
+its driver PyMongo,  its object-document mapper MongoEngine, and 
+a micro-web framework Flask-Mongo that make MongoDB more attractive
+and user-friendly.
 
 ## Learning Outcome
 
