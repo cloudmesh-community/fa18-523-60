@@ -602,7 +602,7 @@ class Page(Document):
 Page.objects(tags='coding')
 ```
 
-## Flask-Mongo
+## Flask-PyMongo
 > "Flask is a micro web framework written in Python" 
 > [@flask-framework]. 
 
@@ -650,31 +650,29 @@ that are available within Flask-Mongoengine that are attached to
 Mongoengine's default queryset [flask-mongoengine]. 
 
 ### Installation
-The Flask-PyMongo help to connect Flask with PyMongo. It provide convenience 
-helpers. The Flask-PyMongo can install with easy command as below :
+
+Flask-PyMongo helps connect Flask with PyMongo. It provides convenience 
+helpers. It can be installed with an easy command such as this:
 
 `$ pip install Flask-PyMongo`
 
-The PyMongo can add to code with below commands.
+PyMongo can be added in the following manner:
 ```
 from flask import Flask
 from flask_pymongo import PyMongo
 app = Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/cloudmesh_community"
 mongo = PyMongo(app)
-
 ```
-The multiple PyMongo instances can use to connect to multiple databases or 
+Multiple PyMongo instances can be used to connect to multiple databases or 
 database servers:
-
 ```
 app = Flask(__name__)
 mongo1 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_one")
-mongo2 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_Two")
+mongo2 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_two")
 mongo3 = PyMongo(app, uri=
       "mongodb://another.host:27017/cloudmesh_community_Three")
 ```
-
 Flask-PyMongo provides helpers for some common tasks:
 
 ```
@@ -692,4 +690,4 @@ def user_profile(username):
 - PyMongo - Izolda Fetko fa18-523-60
 - MongoEngine, Flask-Mongo - Vishal Bhoyar fa18-523-72 
 - MongoEngine (Peer reviewed) - Izolda Fetko fa18-523-60
-- Flask-Mongo (Peer reviewed) - Nishad Tupe fa18-523-64
+- Flask-PyMongo (Peer reviewed) - Nishad Tupe fa18-523-64
