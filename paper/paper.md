@@ -292,7 +292,7 @@ db = client["cloudmesh"]
 
 ```
 
-### Inserting and Retrieving Documents
+### Inserting and Retrieving Documents (Querying)
 
 Creating documents and storing data using PyMongo is equally easy as 
 accessing databases. In order to add new data, a collection must be 
@@ -445,6 +445,11 @@ The last step in this specific process it to call the
 *map_reduce()*  function and iterate over the results.
 [@www-mongo-aggregation].
 
+### Updating Collections
+
+
+
+
 ### Deleting Documents from a Collection
 
 The deletion of documents with PyMongo is fairly straight forward. 
@@ -474,7 +479,7 @@ learn it and quickly feel comfortable with it.
 > combination for rapid, iterative development of horizontally 
 > scalable backend applications" [@book-ohiggins].
 
-According to O'Higgins, MongoDB is very applicable to modern 
+According to [@book-ohiggins], MongoDB is very applicable to modern 
 applications, which makes PyMongo equally valuable [@book-ohiggins].
 
 ## MongoEngine
@@ -487,7 +492,8 @@ with MongoDB compared to PyMongo. As MongoEngine is technically
 considered to be an object-document mapper(ODM), it can also be 
 considered to be 
 
-> "equivalent to a SQL-based object relational mapper(ORM)" [@www-realpython].
+> "equivalent to a SQL-based object relational mapper(ORM)" 
+> [@www-realpython].
 
 The primary technique why one would use an ODM includes 
 *data conversion* between computer systems that are not 
