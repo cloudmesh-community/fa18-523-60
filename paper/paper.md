@@ -6,12 +6,12 @@
 | hid: fa18-523-60, fa18-523-64, fa18-523-72
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md)
 
-* :o: we already pointed out that first section is too long - broke it down to multiple segments
-* :o: proposedtitle chamge: MongoDB in Python - changed 
-* :o: introductionand learning outcome missing - added introduction and learning outcomes
-* :o: wrong quotes - fixed quotes
-* :o: donot use quotes fro non cited text such as in  "_id" that is `_id` - fixed
-* :o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
+:o: we already pointed out that first section is too long - broke it down to multiple segments
+:o: proposed title change: MongoDB in Python - changed 
+:o: introduction and learning outcome missing - added introduction and learning outcomes
+:o: wrong quotes - fixed quotes
+:o: do not use quotes for non cited text such as in  "_id" that is `_id` - fixed
+:o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
 
 ## Introduction
 
@@ -291,7 +291,6 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["cloudmesh"]
 
 ```
-
 ### Inserting and Retrieving Documents (Querying)
 
 Creating documents and storing data using PyMongo is equally easy as 
@@ -318,7 +317,6 @@ $ course_info = {
 Another example of this method would be to create a collection.
 If we wanted to create a collection of students in the 
 *cloudmesh_community*, we would do it in the following manner:
-
 ```
 $ student = [ {'name': 'John', 'st_id': 52642},
     {'name': 'Mercedes', 'st_id': 5717},
@@ -386,7 +384,7 @@ $  myclient = pymongo.MongoClient("mongodb://localhost:27017/")
    newvalues = { "$set": { "instructor": "Gregor von Laszewski" } }
    
    edited = mycol.update_many(myquery, newvalues)
-   ```
+```
 ### Counting Documents
 
 Counting documents can be done with one simple operation called
@@ -406,7 +404,6 @@ Those advanced queries allow us to add certain contraints and narrow
 down the results even more. For example, to get the courses thought
 by professor von Laszewski after a certain date, we would use the 
 following command:
-
 ```
 $ d = datetime.datetime(2017, 11, 12, 12)
      for course in cloudmesh.find({"date": {"$lt": d}}).sort("author"):
@@ -422,14 +419,12 @@ documents [@www-pymongo-tutorial].
 > for that key already exists in the index" [@www-pymongo-tutorial], 
 
 we need to firstly create the index in the following manner:
-
 ```
 $ result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
   unique=True)
 
   sorted(list(db.profiles.index_information()))
 ```
-
 Which acutally created two different indexed *_id* created by MongoDB
 automatically, and *user_id* created by the user (us in this case).
 
@@ -446,14 +441,12 @@ completed on the server-side, compared to the sorting completed on
 the client side. For example, to return all users with first name 
 *Gregor* sorted in descending order by birthdate we would use 
 a command such as this:
-
 ```
 $ users = cloudmesh.users.find(
    {"firstname":"Gregor"}).sort(("dateofbirth", pymongo.DESCENDING))
  for user in users:
    print user.get("email")
 ```
-
 ### Aggregation
 
 PyMongo in its documentation offers a separate framework that supports
@@ -621,18 +614,15 @@ $ cloudmesh_community.objects(
             point__geo_within={"type": "Polygon",
                  "coordinates": [[[40, 5], [40, 6], [41, 6], [40, 5]]]})
 ```
-
 The list query will lookup the documents where the field specified matches 
 the given value exactly. To match all pages that have the word 'coding' as an 
 item in the 'tags' list can find as below:
-
 ```
 $ class Page(Document):
      tags = ListField(StringField())
 
   Page.objects(tags='coding')
 ```
-
 ## Flask-PyMongo
 > "Flask is a micro web framework written in Python" 
 > [@flask-framework]. 
