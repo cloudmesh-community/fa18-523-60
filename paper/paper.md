@@ -288,7 +288,7 @@ $ import pymongo
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 
-db = client["cloudmesh"]
+db = client['cloudmesh']
 
 ```
 ### Inserting and Retrieving Documents (Querying)
@@ -356,12 +356,28 @@ together to help with data querying [@www-realpython]. In order to
 return individual documents, iteration over the result must be 
 completed [@www-realpython].
 
+### Limiting Results
+
+When it comes to working with large databases it is always useful to
+limit the number of query results. PyMongo supports this option 
+with its *limit()* method [@www-w3schools]. This method takes in one
+parameter which specifies the number of documents to be returned
+[@www-w3schools]. For example, if we had a collection with a large 
+number of cloud technologies as individual documents, one could 
+modify the query results to return only the top 10 technologies. 
+To do this, the following example could be utilized:
+```
+$ client = pymongo.MongoClient("mongodb://localhost:27017/")
+    db = client['cloudmesh']
+    col = db['technologies']
+    topten = col.find().limit(10)
+```
 ### Updating Collection
 
 Updating documents is very similar to inserting and retrieving 
 the same. Depending on the number of documents to be updated,
 one would use the *update_one()* or *update_many()* method
-[@www-w3schools-pymongo]. Two parameters need to be passed 
+[@www-w3schools]. Two parameters need to be passed 
 in the *update_one()* method for it to successfully execute. 
 The first argument is the query object that specifies the 
 document to be changed and the second argument is the object 
@@ -372,18 +388,18 @@ $ myquery = { "course": "Big Data Applications and Analytics" }
    newvalues = { "$set": { "course": "Cloud Computing" } }
 ```
 Updating all documents that fall under the same criteria can be
-done with the *update_many* method [@www-w3schools-pymongo].
+done with the *update_many* method [@www-w3schools].
 For example, to update all documents in which course title starts
 with letter *B* with instructor information, we would do the
 following:
 ```
-$  myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-   mydb = myclient["cloudmesh_community"]
-   mycol = mydb["courses"]
-   myquery = { "course": { "$regex": "^B" } }
+$  client = pymongo.MongoClient("mongodb://localhost:27017/")
+   db = client['cloudmesh']
+   col = db["courses"]
+   query = { "course": { "$regex": "^B" } }
    newvalues = { "$set": { "instructor": "Gregor von Laszewski" } }
    
-   edited = mycol.update_many(myquery, newvalues)
+   edited = col.update_many(query, newvalues)
 ```
 ### Counting Documents
 
