@@ -1,7 +1,7 @@
 
 # Week Fri 11/9/18 - Thu 11/15/18
 
-- not yet started
+- adding more examples and info to the PyMongo section of the paper
 
 # Week Fri 11/2/18 - Thu 11/8/18
 
