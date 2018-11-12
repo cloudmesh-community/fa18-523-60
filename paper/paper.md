@@ -358,6 +358,35 @@ together to help with data querying [@www-realpython]. In order to
 return individual documents, iteration over the result must be 
 completed [@www-realpython].
 
+### Updating Collection
+
+Updating documents is very similar to inserting and retrieving 
+the same. Depending on the number of documents to be updated,
+one would use the *update_one()* or *update_many()* method
+[@www-w3schools-pymongo]. Two parameters need to be passed 
+in the *update_one()* method for it to successfully execute. 
+The first argument is the query object that specifies the 
+document to be changed and the second argument is the object 
+that specifies the new value in the document. An example of 
+the *update_one()* method in action is the following:
+```
+$ myquery = { "course": "Big Data Applications and Analytics" }
+   newvalues = { "$set": { "course": "Cloud Computing" } }
+```
+Updating all documents that fall under the same criteria can be
+done with the *update_many* method [@www-w3schools-pymongo].
+For example, to update all documents in which course title starts
+with letter *B* with instructor information, we would do the
+following:
+```
+$  myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+   mydb = myclient["cloudmesh_community"]
+   mycol = mydb["courses"]
+   myquery = { "course": { "$regex": "^B" } }
+   newvalues = { "$set": { "instructor": "Gregor von Laszewski" } }
+   
+   edited = mycol.update_many(myquery, newvalues)
+   ```
 ### Counting Documents
 
 Counting documents can be done with one simple operation called
@@ -445,11 +474,7 @@ The last step in this specific process it to call the
 *map_reduce()*  function and iterate over the results.
 [@www-mongo-aggregation].
 
-### Updating Collections
-
-
-
-
+ 
 ### Deleting Documents from a Collection
 
 The deletion of documents with PyMongo is fairly straight forward. 
@@ -575,26 +600,26 @@ The string queries are useful in performing text operations in the
 conditional queries. The query to find document exactly matching with
 State ACTIVE is give as as below:
 
-`db.cloudmesh_community.find( State.exact("ACTIVE") )`
+`$ db.cloudmesh_community.find( State.exact("ACTIVE") )`
 
 The query to find the document data with Name start with case sensitive AL 
 can written as:
 
-`db.cloudmesh_community.find( Name.startswith("AL") )`
+`$ db.cloudmesh_community.find( Name.startswith("AL") )`
 
 The case insensitive data start with AL extract with query command as:
 
-`db.cloudmesh_community.find( Name.istartswith("AL") )`
+`$ db.cloudmesh_community.find( Name.istartswith("AL") )`
 
 The MongoEngine allow to extract data for geographical location using Geo 
 queries. The geo_within  operator check if a geometry is within a polygon.
 
 ```
-cloudmesh_community.objects(
-           point__geo_within=[[[40, 5], [40, 6], [41, 6], [40, 5]]])
-cloudmesh_community.objects(
-           point__geo_within={"type": "Polygon",
-                "coordinates": [[[40, 5], [40, 6], [41, 6], [40, 5]]]})
+$ cloudmesh_community.objects(
+            point__geo_within=[[[40, 5], [40, 6], [41, 6], [40, 5]]])
+  cloudmesh_community.objects(
+            point__geo_within={"type": "Polygon",
+                 "coordinates": [[[40, 5], [40, 6], [41, 6], [40, 5]]]})
 ```
 
 The list query will lookup the documents where the field specified matches 
@@ -602,10 +627,10 @@ the given value exactly. To match all pages that have the word 'coding' as an
 item in the 'tags' list can find as below:
 
 ```
-class Page(Document):
-    tags = ListField(StringField())
+$ class Page(Document):
+     tags = ListField(StringField())
 
-Page.objects(tags='coding')
+  Page.objects(tags='coding')
 ```
 
 ## Flask-PyMongo
@@ -664,28 +689,28 @@ helpers. It can be installed with an easy command such as this:
 
 PyMongo can be added in the following manner:
 ```
-from flask import Flask
-from flask_pymongo import PyMongo
-app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/cloudmesh_community"
-mongo = PyMongo(app)
+$ from flask import Flask
+  from flask_pymongo import PyMongo
+  app = Flask(__name__)
+  app.config["MONGO_URI"] = "mongodb://localhost:27017/cloudmesh_community"
+  mongo = PyMongo(app)
 ```
 Multiple PyMongo instances can be used to connect to multiple databases or 
 database servers:
 ```
-app = Flask(__name__)
-mongo1 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_one")
-mongo2 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_two")
-mongo3 = PyMongo(app, uri=
-      "mongodb://another.host:27017/cloudmesh_community_Three")
+$ app = Flask(__name__)
+  mongo1 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_one")
+  mongo2 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_two")
+  mongo3 = PyMongo(app, uri=
+        "mongodb://another.host:27017/cloudmesh_community_Three")
 ```
 Flask-PyMongo provides helpers for some common tasks:
 
 ```
-@app.route("/user/<username>")
-def user_profile(username):
-    user = mongo.db.cloudmesh_community.find_one_or_404({"_id": username})
-    return render_template("user.html", user=user)
+$ @app.route("/user/<username>")
+  def user_profile(username):
+      user = mongo.db.cloudmesh_community.find_one_or_404({"_id": username})
+      return render_template("user.html", user=user)
 ```
 
 ## Workbreakdown
