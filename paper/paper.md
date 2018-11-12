@@ -535,14 +535,14 @@ db.artwork.aggregate( [
    }
 ] )
 ```
-$collStats returns statistics regarding a collection or view. [@www.docs.mongodb]
+$collStats returns statistics regarding a collection or view.[@www-docs.mongodb]
 
 ```
 db.matrices.aggregate( [ { $collStats: { latencyStats: { histograms: true } }
  } ] )
  ```
 $count passes a document to the next stage that contains a count of the number
- of documents input to the stage. [@www.docs.mongodb]
+ of documents input to the stage. [@www-docs.mongodb]
  
  ```
  db.scores.aggregate(  [    {
@@ -550,7 +550,7 @@ $count passes a document to the next stage that contains a count of the number
     {      $count: "passing_scores"  } ])
 ```
 $facet stage help to process multiple aggregation pipeline in single stage.
-[@www.docs.mongodb]
+[@www-docs.mongodb]
 
 ```
 db.artwork.aggregate( [ {
