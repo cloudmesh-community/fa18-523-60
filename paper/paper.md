@@ -497,6 +497,42 @@ of 1, one would use the following command:
 The *safe* parameter set to *True* ensures the operation was 
 completed [@book-ohiggins]. 
 
+### Copying a Database
+
+Copying databases within the same mongod instance or between
+different mongod servers is made possible with the *command()*
+method after connecting to the desired mongod instance 
+[@www-pymongo-documentation]. For example, to copy the *cloudmesh*
+database and name the new database *cloudmesh_copy*, one would
+use the *command()* method in the following manner:
+
+```
+$ client.admin.command('copydb',
+                         fromdb='cloudmesh',
+                         todb='cloudmesh_copy')
+```
+There are two way to copy a database between servers. If a
+server is not password-prodected, one would not need to 
+pass in the credentials nor to authenticate to the admin database
+[@www-pymongo-documentation]. In that case, to copy a database one 
+would use the following command:
+```
+$ client.admin.command('copydb',
+                         fromdb='cloudmesh',
+                         todb='cloudmesh_copy',
+                         fromhost='source.example.com')
+```
+On the other hand, if the server where we are copying the 
+database to is protected, one would use this command instead:
+```
+$ client = MongoClient('target.example.com',
+                     username='administrator',
+                     password='pwd')
+  client.admin.command('copydb',
+                     fromdb='cloudmesh',
+                     todb='cloudmesh_copy',
+                     fromhost='source.example.com')
+```                     
 ### PyMongo Strengths
 
 One of PyMongo strengths is that allows document creation and 
