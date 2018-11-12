@@ -465,11 +465,109 @@ $ users = cloudmesh.users.find(
 ```
 ### Aggregation
 
-PyMongo in its documentation offers a separate framework that supports
-data aggregation. This aggregation framework can be used to 
+Aggregation operation use to process given data and produce the summaries
+results. Aggregation operation collect the data from number of documents and 
+provide collective result by grouping data. PyMongo in its documentation
+offers a separate framework that supports data aggregation. This 
+aggregation framework can be used to 
 
 > "provide projection capabilities to reshape the returned data"
 > [@www-mongo-aggregation].
+
+In aggregation pipeline, document pass through multiple pipeline stages which 
+converting documents into result data. The basic pipeline stages has filter. 
+These filter act like document transformation, help to change output document
+ form. Other pipelines helps to group or sort documented with specific fields. 
+ Using native operations from MongoDB, the pipeline operators efficient 
+ aggregated results.
+
+ $addFields is use to add new field in documents. It reshape each documents in 
+ stream similar to $project. The output document will contain existing fields
+ from input documents and the newly added fields. [@www.docs.mongodb]
+ 
+ ```
+db.cloudmesh_community.aggregate([
+ {
+        $addFields: {
+        "document.StudentDetails": {
+        $concat:['$document.student.FirstName', '$document.student.LastName']
+            }
+        }
+    } ])
+```
+
+$bucket Categorizes incoming documents based on a specified expression into 
+groups. The groups called as buckets.[@www.docs.mongodb]
+
+```
+db.user.aggregate([
+  { "$group": {
+    "_id": {
+      "city": "$city",
+      "age": {
+        "$let": {
+          "vars": { 
+   "age": { "$subtract" :[{ "$year": new Date() },{ "$year": "$birthDay" }] }},
+          "in": {
+            "$switch": {
+              "branches": [
+                { "case": { "$lt": [ "$$age", 20 ] }, "then": 0 },
+                { "case": { "$lt": [ "$$age", 30 ] }, "then": 20 },
+                { "case": { "$lt": [ "$$age", 40 ] }, "then": 30 },
+                { "case": { "$lt": [ "$$age", 50 ] }, "then": 40 },
+                { "case": { "$lt": [ "$$age", 200 ] }, "then": 50 }
+              ] }  }  } } },
+    "count": { "$sum": 1 }}})
+```
+
+In $bucketAuto, the Bucket boundaries are automatically determined in an 
+attempt to evenly distribute the documents into the specified number of buckets.
+In the following operation, input documents are grouped into four 
+buckets according to the values in the price field. [@www.docs.mongodb]
+
+```
+db.artwork.aggregate( [
+   {
+     $bucketAuto: {
+         groupBy: "$price",
+         buckets: 4
+     }
+   }
+] )
+```
+$collStats returns statistics regarding a collection or view. [@www.docs.mongodb]
+
+```
+db.matrices.aggregate( [ { $collStats: { latencyStats: { histograms: true } }
+ } ] )
+ ```
+$count passes a document to the next stage that contains a count of the number
+ of documents input to the stage. [@www.docs.mongodb]
+ 
+ ```
+ db.scores.aggregate(  [    {
+      $match: {        score: {          $gt: 80    } }  },
+    {      $count: "passing_scores"  } ])
+```
+$facet stage help to process multiple aggregation pipeline in single stage.
+[@www.docs.mongodb]
+
+```
+db.artwork.aggregate( [ {
+    $facet: {  "categorizedByTags": [   { $unwind: "$tags" },
+        { $sortByCount: "$tags" }  ],  "categorizedByPrice": [
+        // Filter out documents without a price e.g., _id: 7
+        { $match: { price: { $exists: 1 } } },
+        { $bucket: { groupBy: "$price",
+            boundaries: [  0, 150, 200, 300, 400 ],
+            default: "Other",
+            output: { "count": { $sum: 1 },
+              "titles": { $push: "$title" }
+            } }        }], "categorizedByYears(Auto)": [
+        { $bucketAuto: { groupBy: "$year",buckets: 4 }
+        } ]}}])
+
+```
 
 Another option here would be to use the Map/Reduce framework,
 which essentially includes two different functions, *map*  and 
