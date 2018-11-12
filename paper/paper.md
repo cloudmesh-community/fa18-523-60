@@ -189,7 +189,7 @@ A single line of code can be used to upgrade the driver as well
 `$ python -m pip install --upgrade pymongo`
 
 Furthermore, the installation process can be completed with help 
-of the easy_install tool, which requires users to use the 
+of the *easy_install* tool, which requires users to use the 
 following command [@api-mongodb-com-installation].
 
 `$ python -m easy_install pymongo`
@@ -213,8 +213,8 @@ following command is used in the Python console
 `$ import pymongo`
 
 If the command returns zero exceptions within the Python 
-shell, one can consider for the PyMongo installation to 
-have been completed successfully.
+shell (or any other (IDE), one can consider for the PyMongo 
+installation to have been completed successfully.
 
 ### Dependencies
 
@@ -224,8 +224,8 @@ CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ interpreters
 [@www-github-driver]. An optional dependency that 
 requires some additional components to be installed 
 is the GSSAPI authentication [@www-github-driver]. For 
-the Unix based machines, it requires pykerberos, while 
-for the Windows machines WinKerberos is needed to fullfill 
+the Unix based machines, it requires *pykerberos*, while 
+for the Windows machines *WinKerberos* is needed to fullfill 
 this requirement [@www-github-driver]. The automatic installation 
 of this dependency can be done simultaneously with the driver 
 installation, in the following manner:
@@ -246,16 +246,16 @@ very simple command in a new terminal window [@www-realpython].
 
 ### Connecting to a database using MongoClient
 
-In order to be able to establish a connection with the database, 
-a MongoClientclass needs to be imported, which sub-sequentially 
+In order to be able to establish a connection with a database, 
+a MongoClient class needs to be imported, which sub-sequentially 
 allows the MongoClient object to communicate with the database 
 [@www-realpython]. 
 
 `$ from pymongo import MongoClient`
 `$ client = MongoClient()`
 
-This command allows a connection with a default, local host and 
-port (27017), however, depending on the programming requirements,
+This command allows a connection with a default, local host through 
+port 27017, however, depending on the programming requirements,
 one can also specify those by listing them in the client instance 
 or use the same information via the Mongo URI format [@www-realpython].
 
@@ -264,8 +264,8 @@ or use the same information via the Mongo URI format [@www-realpython].
 Since MongoClient plays a server role, it can be used to access 
 any desired databases in an easy way. To do that, one can use two 
 different approaches. The first approach would be doing this via 
-attribute method where the name of the desired database is listed 
-as an attribute, and the second approach, which would include a 
+the *attribute* method where the name of the desired database is 
+listed as an attribute, and the second approach, which would include a 
 dictionary-style access [@www-realpython]. For example, to access a 
 database called *cloudmesh_community*, one would use following 
 commands for the attribute and for the dictionary method, 
@@ -277,16 +277,15 @@ respectively.
 
 ### Creating a Database
 
-Creating a database is a straight forward process. First, we need to
+Creating a database is a straight forward process. First,one needs to
 create the MongoClient object and specify the connection (IP address)
-as well as the name of the database we are trying to create 
+as well as the name of the database they are trying to create 
 [@www-w3schools]. The example of this command is presented in the
 followng section:
-
 ```
 $ import pymongo
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient('mongodb://localhost:27017/')
 
 db = client['cloudmesh']
 
@@ -294,9 +293,9 @@ db = client['cloudmesh']
 ### Inserting and Retrieving Documents (Querying)
 
 Creating documents and storing data using PyMongo is equally easy as 
-accessing databases. In order to add new data, a collection must be 
-specified first. In this example, a decision is made to use the
-*cloudmesh* group of documents.
+accessing and creating databases. In order to add new data, a 
+collection must be specified first. In this example, a decision is 
+made to use the *cloudmesh* group of documents.
 
 `$ cloudmesh = db.cloudmesh`
 
@@ -367,7 +366,7 @@ number of cloud technologies as individual documents, one could
 modify the query results to return only the top 10 technologies. 
 To do this, the following example could be utilized:
 ```
-$ client = pymongo.MongoClient("mongodb://localhost:27017/")
+$ client = pymongo.MongoClient('mongodb://localhost:27017/')
     db = client['cloudmesh']
     col = db['technologies']
     topten = col.find().limit(10)
@@ -380,24 +379,24 @@ one would use the *update_one()* or *update_many()* method
 [@www-w3schools]. Two parameters need to be passed 
 in the *update_one()* method for it to successfully execute. 
 The first argument is the query object that specifies the 
-document to be changed and the second argument is the object 
+document to be changed, and the second argument is the object 
 that specifies the new value in the document. An example of 
 the *update_one()* method in action is the following:
 ```
-$ myquery = { "course": "Big Data Applications and Analytics" }
-   newvalues = { "$set": { "course": "Cloud Computing" } }
+$ myquery = { 'course': 'Big Data Applications and Analytics' }
+   newvalues = { '$set': { 'course': 'Cloud Computing' } }
 ```
 Updating all documents that fall under the same criteria can be
 done with the *update_many* method [@www-w3schools].
 For example, to update all documents in which course title starts
-with letter *B* with instructor information, we would do the
-following:
+with letter *B* with a different instructor information, we would 
+do the following:
 ```
-$  client = pymongo.MongoClient("mongodb://localhost:27017/")
+$  client = pymongo.MongoClient('mongodb://localhost:27017/')
    db = client['cloudmesh']
-   col = db["courses"]
-   query = { "course": { "$regex": "^B" } }
-   newvalues = { "$set": { "instructor": "Gregor von Laszewski" } }
+   col = db['courses']
+   query = { 'course': { '$regex': '^B' } }
+   newvalues = { '$set': { 'instructor': 'Gregor von Laszewski' } }
    
    edited = col.update_many(query, newvalues)
 ```
@@ -413,7 +412,7 @@ in the *cloudmesh_commpunity* by using the following command:
 To create a more specific count, one would use a command similar 
 to this:
 
-`$ cloudmesh = count_documents({"author": "von Laszewski"})`
+`$ cloudmesh = count_documents({'author': 'von Laszewski'})`
 
 This technology supports some more advanced querying options as well. 
 Those advanced queries allow us to add certain contraints and narrow 
@@ -422,7 +421,7 @@ by professor von Laszewski after a certain date, we would use the
 following command:
 ```
 $ d = datetime.datetime(2017, 11, 12, 12)
-     for course in cloudmesh.find({"date": {"$lt": d}}).sort("author"):
+     for course in cloudmesh.find({'date': {'$lt': d}}).sort('author'):
      pprint.pprint(course)
 ```
 ### Indexing
@@ -441,10 +440,11 @@ $ result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
 
   sorted(list(db.profiles.index_information()))
 ```
-Which acutally created two different indexed *_id* created by MongoDB
-automatically, and *user_id* created by the user (us in this case).
+This command acutally creates two different indexes. The first one is
+*_id* , created by MongoDB automatically, and the second one is 
+*user_id*, created by the user (us in this case).
 
-Overall, those indexes are cleverly preventing future additions of 
+The purpose of those indexes is to cleverly prevent future additions of 
 invalid user_ids into a collection.
 
 ### Sorting
@@ -459,9 +459,9 @@ the client side. For example, to return all users with first name
 a command such as this:
 ```
 $ users = cloudmesh.users.find(
-   {"firstname":"Gregor"}).sort(("dateofbirth", pymongo.DESCENDING))
+   {'firstname':'Gregor'}).sort(('dateofbirth', pymongo.DESCENDING))
  for user in users:
-   print user.get("email")
+   print user.get('email')
 ```
 ### Aggregation
 
@@ -472,7 +472,7 @@ data aggregation. This aggregation framework can be used to
 > [@www-mongo-aggregation].
 
 Another option here would be to use the Map/Reduce framework,
-which essentially includes two different functions *map*  and 
+which essentially includes two different functions, *map*  and 
 *reduce*. The first one provides the key value pair for each
 tag in the array, while the latter one
 
@@ -483,7 +483,6 @@ The last step in this specific process it to call the
 *map_reduce()*  function and iterate over the results.
 [@www-mongo-aggregation].
 
- 
 ### Deleting Documents from a Collection
 
 The deletion of documents with PyMongo is fairly straight forward. 
