@@ -6,12 +6,12 @@
 | hid: fa18-523-60, fa18-523-64, fa18-523-72
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md)
 
-:o: we already pointed out that first section is too long - broke it down to multiple segments
-:o: proposed title change: MongoDB in Python - changed 
-:o: introduction and learning outcome missing - added introduction and learning outcomes
-:o: wrong quotes - fixed quotes
-:o: do not use quotes for non cited text such as in  "_id" that is `_id` - fixed
-:o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
+-:o: we already pointed out that first section is too long - broke it down to multiple segments
+-:o: proposed title change: MongoDB in Python - changed 
+-:o: introduction and learning outcome missing - added introduction and learning outcomes
+-:o: wrong quotes - fixed quotes
+-:o: do not use quotes for non cited text such as in  "_id" that is `_id` - fixed
+-:o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
 
 ## Introduction
 
