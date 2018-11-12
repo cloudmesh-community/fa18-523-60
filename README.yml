@@ -13,7 +13,7 @@ technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/plasma-magma.md  
 paper:
   - keyword: MongoDB
-    title: "MongoDB, PyMongo, MongoEngine, and Flask-Mongo"
+    title: "MongoDB, PyMongo, MongoEngine, and Flask-PyMongo"
     url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
 project:
