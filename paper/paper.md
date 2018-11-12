@@ -569,6 +569,75 @@ db.artwork.aggregate( [ {
 
 ```
 
+$geoNear returns an ordered stream of documents based on the proximity
+ to a geospatial point. The output documents include an additional distance
+ field and can include a location identifier field.[@www-docs.mongodb]
+ 
+ ```
+ db.places.aggregate([
+   {    $geoNear: {
+        near: { type: "Point", coordinates: [ -73.99279 , 40.719296 ] },
+        distanceField: "dist.calculated",
+        maxDistance: 2,
+        query: { type: "public" },
+        includeLocs: "dist.location",
+        num: 5,
+        spherical: true
+     }  }])
+```
+
+$graphLookup performs a recursive search on a collection. To each output 
+document, adds a new array field that contains the traversal results of the 
+recursive search for that document.[@www-docs.mongodb]
+
+```
+db.travelers.aggregate( [
+   {
+      $graphLookup: {
+         from: "airports",
+         startWith: "$nearestAirport",
+         connectFromField: "connects",
+         connectToField: "airport",
+         maxDepth: 2,
+         depthField: "numConnections",
+         as: "destinations"
+      }
+   }
+] )
+```
+$group consumes the document data per each distinct group. The $group stage has
+ RAM limit for 100 MB . If the stage exceeds this limit,$group produce
+an error. [@www-docs.mongodb]
+
+```
+db.sales.aggregate(
+   [
+      {
+        $group : {
+           _id : { month: { $month: "$date" }, day: { $dayOfMonth: "$date" }, 
+		   year: { $year: "$date" } },
+           totalPrice: { $sum: { $multiply: [ "$price", "$quantity" ] } },
+           averageQuantity: { $avg: "$quantity" },
+           count: { $sum: 1 }
+        }
+      }
+   ]
+)
+```
+$indexStats returns statistics regarding the use of each index for the
+ collection. [@www-docs.mongodb]
+ 
+`db.orders.aggregate( [ { $indexStats: { } } ] )`
+
+$limit is controlling the number of documents passed to the next stage 
+in the pipeline.[@www-docs.mongodb]
+
+```
+db.article.aggregate(
+    { $limit : 5 }
+);
+```
+
 Another option here would be to use the Map/Reduce framework,
 which essentially includes two different functions, *map*  and 
 *reduce*. The first one provides the key value pair for each
