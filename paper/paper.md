@@ -465,25 +465,27 @@ $ users = cloudmesh.users.find(
 ```
 ### Aggregation
 
-Aggregation operation use to process given data and produce the summaries
-results. Aggregation operation collect the data from number of documents and 
-provide collective result by grouping data. PyMongo in its documentation
-offers a separate framework that supports data aggregation. This 
-aggregation framework can be used to 
+Aggregation operations are used to process given data and produce the 
+summarized results. Aggregation operations collect data from number of 
+documents and provide collective results by grouping data. PyMongo in 
+its documentation offers a separate framework that supports data 
+aggregation. This aggregation framework can be used to 
 
 > "provide projection capabilities to reshape the returned data"
 > [@www-mongo-aggregation].
 
-In aggregation pipeline, document pass through multiple pipeline stages which 
-converting documents into result data. The basic pipeline stages has filter. 
-These filter act like document transformation, help to change output document
- form. Other pipelines helps to group or sort documented with specific fields. 
- Using native operations from MongoDB, the pipeline operators efficient 
- aggregated results.
+In the aggregation pipeline, documents pass through multiple pipeline 
+stages which convert documents into result data. The basic pipeline stages 
+include filters. Those filters act like document transformation by helping
+change the output document form. Other pipelines help group or sort documents
+with specific fields. Using native operations from MongoDB, the pipeline 
+operators are efficient in aggregating results.
 
- *$addFields* use to add new field in documents. It reshape each documents in 
- stream similar to $project. The output document will contain existing fields
- from input documents and the newly added fields [@www.docs.mongodb].
+ The *$addFields* stage is used to add new fields into documents. It reshapes 
+ each document in stream similarly to the $project stage. The output document 
+ will contain existing fields from input documents and the newly added fields 
+ [@www.docs.mongodb]. The following example show how to add *student details*
+ into the document.
  
  ```
 db.cloudmesh_community.aggregate([
@@ -496,9 +498,9 @@ db.cloudmesh_community.aggregate([
     } ])
 ```
 
-*$bucket* categorizes incoming documents based on a specified expression into 
-groups. The groups called as buckets [@www.docs.mongodb].
-
+The *$bucket*  stage is used to categorize incoming documents based on a 
+specified expression into groups. We call those groups *buckets* [@www.docs.mongodb].
+The following example shows the *$bucket* stage in action.
 ```
 db.user.aggregate([
   { "$group": {
@@ -520,8 +522,8 @@ db.user.aggregate([
     "count": { "$sum": 1 }}})
 ```
 
-In *$bucketAuto* boundaries are automatically determined in an 
-attempt to evenly distribute the documents into the specified number of buckets.
+In the *$bucketAuto* stage, the boundaries are automatically determined in an 
+attempt to evenly distribute documents into a specified number of buckets.
 In the following operation, input documents are grouped into four 
 buckets according to the values in the price field [@www.docs.mongodb].
 
