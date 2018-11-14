@@ -481,14 +481,13 @@ change the output document form. Other pipelines help group or sort documents
 with specific fields. Using native operations from MongoDB, the pipeline 
 operators are efficient in aggregating results.
 
- The *$addFields* stage is used to add new fields into documents. It reshapes 
- each document in stream similarly to the $project stage. The output document 
- will contain existing fields from input documents and the newly added fields 
- [@www.docs.mongodb]. The following example show how to add *student details*
- into the document.
- 
- ```
-db.cloudmesh_community.aggregate([
+The *$addFields* stage is used to add new fields into documents. It reshapes 
+each document in stream similarly to the $project stage. The output document 
+will contain existing fields from input documents and the newly added fields 
+[@www.docs.mongodb]. The following example show how to add *student details*
+into the document.
+```
+$ db.cloudmesh_community.aggregate([
  {
         $addFields: {
         "document.StudentDetails": {
@@ -497,12 +496,12 @@ db.cloudmesh_community.aggregate([
         }
     } ])
 ```
-
-The *$bucket*  stage is used to categorize incoming documents based on a 
-specified expression into groups. We call those groups *buckets* [@www.docs.mongodb].
-The following example shows the *$bucket* stage in action.
+The *$bucket* stage is used to categorize incoming documents based on a 
+specified expression into groups. We call those groups *buckets* 
+[@www.docs.mongodb]. The following example shows the *$bucket* stage 
+in action.
 ```
-db.user.aggregate([
+$ db.user.aggregate([
   { "$group": {
     "_id": {
       "city": "$city",
@@ -521,46 +520,41 @@ db.user.aggregate([
               ] }  }  } } },
     "count": { "$sum": 1 }}})
 ```
-
 In the *$bucketAuto* stage, the boundaries are automatically determined in an 
 attempt to evenly distribute documents into a specified number of buckets.
 In the following operation, input documents are grouped into four 
 buckets according to the values in the price field [@www.docs.mongodb].
-
 ```
-db.artwork.aggregate( [
-   {
-     $bucketAuto: {
-         groupBy: "$price",
-         buckets: 4
-     }
-   }
-] )
+$ db.artwork.aggregate( [
+    {
+      $bucketAuto: {
+          groupBy: "$price",
+          buckets: 4
+      }
+    }
+ ] )
 ```
-*$collStats* returns statistics regarding a collection or view
-[@www-docs.mongodb].
-
+The *$collStats* returns statistics regarding a collection or view
+[@www-docs.mongodb]. 
 ```
 db.matrices.aggregate( [ { $collStats: { latencyStats: { histograms: true } }
  } ] )
  ```
-*$count* passes a document to the next stage that contains a count of the number
- of documents input to the stage [@www-docs.mongodb].
- 
+The *$count* stage passes a document to the next stage that contains the 
+number documents that were input to the stage [@www-docs.mongodb].
  ```
- db.scores.aggregate(  [    {
+$  db.scores.aggregate(  [    {
       $match: {        score: {          $gt: 80    } }  },
     {      $count: "passing_scores"  } ])
 ```
-*$facet* stage help to process multiple aggregation pipeline in single stage.
-[@www-docs.mongodb]
-
+The *$facet* stage helps process multiple aggregation pipelines in 
+a single stage [@www-docs.mongodb].
 ```
-db.artwork.aggregate( [ {
-    $facet: {  "categorizedByTags": [   { $unwind: "$tags" },
-        { $sortByCount: "$tags" }  ],  "categorizedByPrice": [
-        // Filter out documents without a price e.g., _id: 7
-        { $match: { price: { $exists: 1 } } },
+$ db.artwork.aggregate( [ {
+     $facet: {  "categorizedByTags": [   { $unwind: "$tags" },
+         { $sortByCount: "$tags" }  ],  "categorizedByPrice": [
+         // Filter out documents without a price e.g., _id: 7
+         { $match: { price: { $exists: 1 } } },
         { $bucket: { groupBy: "$price",
             boundaries: [  0, 150, 200, 300, 400 ],
             default: "Other",
@@ -571,13 +565,11 @@ db.artwork.aggregate( [ {
         } ]}}])
 
 ```
-
-*$geoNear* returns an ordered stream of documents based on the proximity
- to a geospatial point. The output documents include an additional distance
- field and can include a location identifier field [@www-docs.mongodb].
- 
- ```
- db.places.aggregate([
+The *$geoNear* stage returns an ordered stream of documents based on the 
+proximity to a geospatial point. The output documents include an additional 
+distance field and can include a location identifier field [@www-docs.mongodb].
+```
+$ db.places.aggregate([
    {    $geoNear: {
         near: { type: "Point", coordinates: [ -73.99279 , 40.719296 ] },
         distanceField: "dist.calculated",
@@ -588,13 +580,11 @@ db.artwork.aggregate( [ {
         spherical: true
      }  }])
 ```
-
-*$graphLookup* performs a recursive search on a collection. To each output 
-document, adds a new array field that contains the traversal results of the 
-recursive search for that document [@www-docs.mongodb].
-
+The *$graphLookup* stage performs a recursive search on a collection. To each 
+output document, it adds a new array field that contains the traversal results 
+of the recursive search for that document [@www-docs.mongodb].
 ```
-db.travelers.aggregate( [
+$ db.travelers.aggregate( [
    {
       $graphLookup: {
          from: "airports",
@@ -608,12 +598,11 @@ db.travelers.aggregate( [
    }
 ] )
 ```
-*$group* consumes the document data per each distinct group. The $group stage 
-has RAM limit for 100 MB . If the stage exceeds this limit,$group produce
-an error [@www-docs.mongodb].
-
+The *$group* stage consumes the document data per each distinct group.
+It has a RAM limit of 100 MB . If the stage exceeds this limit, *$group* 
+produces an error [@www-docs.mongodb].
 ```
-db.sales.aggregate(
+$ db.sales.aggregate(
    [
       {
         $group : {
@@ -627,36 +616,33 @@ db.sales.aggregate(
    ]
 )
 ```
-*$indexStats* returns statistics regarding the use of each index for the
- collection [@www-docs.mongodb].
+The *$indexStats* stage returns statistics regarding the use of each index for 
+for a collection [@www-docs.mongodb].
  
-`db.orders.aggregate( [ { $indexStats: { } } ] )`
+`$ db.orders.aggregate( [ { $indexStats: { } } ] )`
 
-*$limit* is controlling the number of documents passed to the next stage 
-in the pipeline[@www-docs.mongodb].
-
+The *$limit* stage is used for controlling the number of documents passed to the 
+next stage in the pipeline[@www-docs.mongodb].
 ```
-db.article.aggregate(
+$ db.article.aggregate(
     { $limit : 5 }
-);
+)
 ```
+The *$listLocalSessions* stage gives the session information currently connected 
+to mongos or mongod instance [@www-docs.mongodb].
 
-*$listLocalSessions* gives the session information currently connected to mongos
- or mongod instance [@www-docs.mongodb].
+`$ db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
  
- `db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
- 
-*$listSessions* list out all session that have been active long enough to
- propagate to the system.sessions collection [@www-docs.mongodb].
- 
- ```
- use config
+The *$listSessions* stage list out all session that have been active long 
+enough to propagate to the *system.sessions* collection [@www-docs.mongodb].
+```
+$ use config
 
 db.system.sessions.aggregate( [  { $listSessions: { allUsers: true } } ] )
 
 ```
-*$lookup* useful to perform outer join to other collections in same database
-[@www-docs.mongodb].
+The *$lookup* stage is useful for performing outer joins to other collections 
+in the same database [@www-docs.mongodb].
 ```
 {
    $lookup:
@@ -668,33 +654,30 @@ db.system.sessions.aggregate( [  { $listSessions: { allUsers: true } } ] )
      }
 }
 ```
-*$match* filter the document steam. Only matching document pass to next stage
-[@www-docs.mongodb].
-
+The *$match* stage is used to filter the document stream. Only matching documents
+pass to next stage [@www-docs.mongodb].
 ```
-db.articles.aggregate(
+$ db.articles.aggregate(
     [ { $match : { author : "dave" } } ]
-);
+)
 ```
-*$out* is use to write aggregation pipeline result in collection. The should be 
-last stage of pipeline [@www-docs.mongodb].
-
+The *$out* stage is used to write aggregation pipeline results into a collection. 
+It should be the last stage of a pipeline [@www-docs.mongodb].
 ```
-db.books.aggregate( [
+$ db.books.aggregate( [
                   { $group : { _id : "$author", books: { $push: "$title" } } },
                       { $out : "authors" }
                   ] )
 ```
+The *$project* stage is used to reshape the documents by adding or deleting the 
+fields.
 
-*$project* is to reshape the documents by adding or deleting the fields.
+`$ db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
 
-`db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
-
-*$redact* reshape stream documents by restricting information using information 
-stored in documents themselves [@www-docs.mongodb].
-
+The *$redact* stage reshapes stream documents by restricting information using 
+information stored in documents themselves [@www-docs.mongodb].
 ```
-db.accounts.aggregate(
+$ db.accounts.aggregate(
   [
     { $match: { status: "A" } },
     {
@@ -704,43 +687,32 @@ db.accounts.aggregate(
           then: "$$PRUNE",
           else: "$$DESCEND"
         }      }    }  ]);
-
 ```
-
-*$replaceRoot* use to replaces a document with the specified embedded document
-[@www-docs.mongodb].
-
+The *$replaceRoot* stage is used to replace a document with a specified 
+embedded document [@www-docs.mongodb].
 ```
-db.produce.aggregate( [
+$ db.produce.aggregate( [
    {
      $replaceRoot: { newRoot: "$in_stock" }
    }
 ] )
-
 ```
-
-*$sample* use to sample out data by randomly selected number of documents form 
-input [@www-docs.mongodb].
-
+The *$sample* stage is used to sample out data by randomly selecting number 
+of documents form input [@www-docs.mongodb].
 ```
-db.users.aggregate(
+$ db.users.aggregate(
    [ { $sample: { size: 3 } } ]
 )
 ```
-
-*$skip* will skip specified initial number of documents and pass remaining
- documents to the pipeline [@www-docs.mongodb].
- 
-```
-db.article.aggregate(
+The *$skip* stage skips specified initial number of documents and passes
+remaining documents to the pipeline [@www-docs.mongodb].
+ ```
+$ db.article.aggregate(
     { $skip : 5 }
 );
- 
-```
-
-*$sort* is useful while reordering document stream by a specified sort key 
-[@www-docs.mongodb].
-
+ ```
+The *$sort* stage is useful while reordering document stream by a specified 
+sort key [@www-docs.mongodb].
 ```
 db.users.aggregate(
    [
@@ -748,41 +720,39 @@ db.users.aggregate(
    ]
 )
 ```
+The *$sortByCounts* stage groups the incoming documents based on a
+specified expression value and counts documents in each distinct 
+group [@www-docs.mongodb].
 
-*$sortByCountis* groups incoming documents on specified 
-expression value and then calculate the count of documents in each 
-distinct group [@www-docs.mongodb].
+`$ db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
 
-`db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
-
-*$unwind* deconstructs an array field from the input documents to output 
-a document for each element [@www-docs.mongodb].
-
+The *$unwind* stage deconstructs an array field from the input 
+documents to output a document for each element [@www-docs.mongodb].
 ```
-db.inventory.aggregate( [ { $unwind: "$sizes" } ] )
-db.inventory.aggregate( [ { $unwind: { path: "$sizes" } } ] )
-
+$ db.inventory.aggregate( [ { $unwind: "$sizes" } ] )
+  db.inventory.aggregate( [ { $unwind: { path: "$sizes" } } ] )
 ```
-Another option here would be to use the Map/Reduce framework,
-which essentially includes two different functions, *map*  and 
-*reduce*. The first one provides the key value pair for each
+Another option from the *aggregation operations* is the Map/Reduce 
+framework, which essentially includes two different functions, *map*  
+and *reduce*. The first one provides the key value pair for each
 tag in the array, while the latter one
 
 > "sums over all of the emitted values for a given key"
 > [@www-mongo-aggregation].
 
-The last step in this specific process it to call the 
-*map_reduce()*  function and iterate over the results.
-[@www-mongo-aggregation]. The Map-reduce operation give the result data in 
-collection or return the results in-line. We can perform subsequent map-reduce
- operations with same input collection if map-reduce output write to a
- collection [@www-docs.map-reduce]. The map-reduce operation with inline need 
- result documents within the BSON Document Size limit. the current limit for 
- BSON Document is 16 MB. The map-reduce operations not support by Views.
- [@www-docs.map-reduce]. The PyMongo’s API supports all of the features
- of MongoDB’s map/reduce engine [@www-api.map-reduce]. The map-reduce has 
- ability to get more detailed resultsBy by passing full_response=True
- to *map_reduce()* [@www-api.map-reduce].
+The last step in the Map/Redce process it to call the *map_reduce()* 
+function and iterate over the results [@www-mongo-aggregation]. The 
+Map/Reduce operation provides result data in a collection or returns
+results in-line. One can perform subsequent Map/Reduce operations with 
+the same input collection if the output of the same is written to a 
+collection [@www-docs.map-reduce]. The Map/Reduce operation that
+produces results in a in-line form must provide results with in the BSON
+document size limit. The current limit for a BSON document is 16 MB.
+These types of operations are not supported by views [@www-docs.map-reduce]. 
+The PyMongo’s API supports all features of the MongoDB’s Map/Reduce
+engine [@www-api.map-reduce]. Moreover, Map/Reduce has the ability
+to get more detailed results by passing *full_response=True* argument
+to the *map_reduce()* function [@www-api.map-reduce].
 
 ### Deleting Documents from a Collection
 
