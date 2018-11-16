@@ -65,7 +65,7 @@ Big Data Application Class during Fall-18. [@www-digitaloceaninst]
 
 #### Installation procedure
 
-1. Prior to the installation , It is recommended to configure the non root user 
+1.Prior to the installation , It is recommended to configure the non root user 
 and provide the administrative privileges to perform general MongoDB admin tasks.
 This can be accomplished using below commands by login as root user.[@www-digitaloceanprep]
 
@@ -80,19 +80,19 @@ Once the user set up done , login with regular user(mongoadmin).
 
 you can follow the below instruction to install MongoDB.
 
-2. The following command updates ubuntu packages to the most recent version.
+2.The following command updates ubuntu packages to the most recent version.
 
 `$sudo apt update`
 
-3. Install the MongoDB package.
+3.Install the MongoDB package.
 
 `$sudo apt install -y mongodb`
 
-4. Check the service and database status
+4.Check the service and database status
 
 `$sudo systemctl status mongodb`
 
-5. Verify Status - On successful install of MongoDB you should able to see below output.
+5.Verify Status - On successful install of MongoDB you should able to see below output.
 
 mongodb.service - An object/document-oriented database
    Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor preset: enabled)
