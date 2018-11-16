@@ -67,8 +67,8 @@ Prior to the installation , It is recommended to configure the non root user
 and provide the administrative privileges to perform general MongoDB admin tasks.
 This can be accomplished using below commands
 
-`# adduser mongoadmin`
-`# usermod -aG sudo sammy`
+`#adduser mongoadmin`
+`#$usermod -aG sudo sammy`
 
 > "when logged in as your regular user, you can type sudo before commands to 
 > perform actions with superuser privileges" [@www-digitaloceanprep].
@@ -156,7 +156,7 @@ Contrary to this flexible process, modifying the data structure of
 relational databases can be a very tedious process [@www-upwork]. 
 
 
-# Collection example: 
+Collection example: 
 {
  name: "Corey"
  age: "21"
@@ -164,7 +164,7 @@ relational databases can be a very tedious process [@www-upwork].
  group: ["AI" , "Machine Learning"]
 }
 
-# Document structure:
+Document structure within collection:
 {
    field1: value1,
    field2: value2,
@@ -173,10 +173,11 @@ relational databases can be a very tedious process [@www-upwork].
    fieldN: valueN
 }
 
-# Collection Operations 
+ollection Operations:
+
 If collection doesn't exists, MongoDB db will create the collection on default.
-db.myNewCollection2.insertOne( { x: 1 } )
-db.myNewCollection3.createIndex( { y: 1 } )
+>db.myNewCollection2.insertOne( { x: 1 } )
+>db.myNewCollection3.createIndex( { y: 1 } )
 
 ## MongoDB Querying
 
