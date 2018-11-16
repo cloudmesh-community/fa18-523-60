@@ -63,9 +63,11 @@ Including Linux,Ubuntu, Amazon Linux etc. This section focuses on installing Mon
 18.04 Bionic Beaver used as standard OS of virutal machine as part of 
 Big Data Application Class during Fall-18. [@www-digitaloceaninst]
 
-Prior to the installation , It is recommended to configure the non root user 
+#### Installation procedure
+
+1. Prior to the installation , It is recommended to configure the non root user 
 and provide the administrative privileges to perform general MongoDB admin tasks.
-This can be accomplished using below commands by login as root user.
+This can be accomplished using below commands by login as root user.[@www-digitaloceanprep]
 
 `adduser mongoadmin`
 
@@ -78,19 +80,19 @@ Once the user set up done , login with regular user(mongoadmin).
 
 you can follow the below instruction to install MongoDB.
 
-The following command updates ubuntu packages to the most recent version.
+2. The following command updates ubuntu packages to the most recent version.
 
 `$sudo apt update`
 
-install the MongoDB package.
+3. Install the MongoDB package.
 
 `$sudo apt install -y mongodb`
 
-Check the service and database status
+4. Check the service and database status
 
 `$sudo systemctl status mongodb`
 
-on successful install of MongoDB you should able to see below output.
+5. Verify Status - On successful install of MongoDB you should able to see below output.
 
 mongodb.service - An object/document-oriented database
    Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor preset: enabled)
@@ -101,16 +103,16 @@ mongodb.service - An object/document-oriented database
    CGroup: /system.slice/mongodb.service
            └─2312 /usr/bin/mongod --unixSocketPrefix=/run/mongodb --config /etc/mongodb.conf
 
-The command below verifies the version,server and port
+6. Verfiy Config - The command below verifies the version,server and port
 
 `mongo --eval 'db.runCommand({ connectionStatus: 1 })'`
 
-Similarly, you can restart the MongoDB
+7. Similarly, you can restart the MongoDB
 
 `$sudo systemctl restart mongodb`
 
-To allow access to MongoDB from outside hosted server you can use below command.
-It opens the fire wall connections [@www-digitaloceaninst]
+8. To allow access to MongoDB from outside hosted server you can use below command.
+It opens the fire wall connections [@www-digitaloceaninst].
 
 `$sudo ufw allow from your_other_server_ip/32 to any port 27017`  
 
@@ -118,12 +120,12 @@ status can be verified using
 
 `$sudo ufw status`
 
-Other MongoDBc Configuration can be edited through /etc/mongodb.conf files
+9. Other MongoDBc Configuration can be edited through /etc/mongodb.conf files
 such as port and hostnames , file paths
 
 `sudo nano /etc/mongodb.conf`
 
-> "Add your server's IP address to the bindIP value:"[@www-digitaloceaninst]
+> "Add your server's IP address to the bindIP value:" [@www-digitaloceaninst].
 
 logappend=true
 
@@ -174,7 +176,7 @@ relational databases can be a very tedious process [@www-upwork].
  group: ["AI" , "Machine Learning"]
 }`
 
-# Document structure:
+#### Document structure:
 
 `{
    field1: value1,
@@ -184,7 +186,8 @@ relational databases can be a very tedious process [@www-upwork].
    fieldN: valueN
 }`
 
-# Collection Operations 
+#### Collection Operations 
+
 If collection doesn't exists, MongoDB db will create the collection on default.
 
 `>db.myNewCollection2.insertOne( { x: 1 } )`
@@ -221,9 +224,10 @@ as well as range asks for specific fields that eliminate the need of
 returning entire documents [@www-guru99]. MongoDB collections do not 
 enforce document structure like SQL databases which is a compelling 
 feature. However, it is essential to keep in mind the needs of the 
-applications.[@www-upwork]
+applications[@www-upwork].
 
-Mongo Queries examples:
+#### Mongo Queries examples:
+
 You can execute queries from mongo shell as well through scripts.
 
 1. To query data from MongoDB collection, you need to use MongoDB's find() method
@@ -252,7 +256,7 @@ You can execute queries from mongo shell as well through scripts.
      }
 }`
 
-This operation is equivalent to SQL operation
+ This operation is equivalent to SQL operation
 
 `SELECT *, <output array field>
  FROM collection
@@ -260,7 +264,7 @@ This operation is equivalent to SQL operation
                                FROM <collection to join>
                                WHERE <foreignField>= <collection.localField>);`
                                
-5.Perform Like Match
+5.Perform Like Match (Regex)
 
 `db.products.find( { sku: { $regex: /789$/ } } )`                               
 
@@ -277,18 +281,18 @@ storing geospatial data in GeoJSON objects. Aggregation Operation of
 MongoDB process data records and returns computed results. MongoDB 
 aggregation framework is modeled on the concept of data pipelines.[@www-mongodbmanual]
 
-Import examples:
+#### Import/Export functions examples:
 
-Import JSON documents
+1.Import JSON documents
  
 `$mongoimport --db users --collection contacts --file contacts.json`
 
-CSV Import , using input file name mongoimport imports collection hence , collection name is 
+2.CSV Import , using input file name mongoimport imports collection hence , collection name is 
 optional.[@www-mongodbmanual]
 
 `$mongoimport --db users --type csv --headerline --file /opt/backups/contacts.csv`
 
-Export examples:
+3. Export examples:
 
 > " *mongoexport* is a utility that produces a JSON or CSV export of data stored in a 
 > MongoDB instance" [@www-mongodbmanual].
@@ -305,7 +309,7 @@ can create role/collection-based access control; roles can be predefined or cust
 MongoDB can audit activities such as DDL, CRUD statements, authentication 
 and authorization operations [@www-mongodbmanual]. 
 
-Collection based access control example:
+#### Collection based access control example:
 
 > "A user defined role can contain the following privileges" [@www-mongodbmanual]
 
