@@ -65,34 +65,34 @@ Big Data Application Class during Fall-18. [@www-digitaloceaninst]
 
 #### Installation procedure
 
-1.Prior to the installation , It is recommended to configure the non root user 
+Prior to the installation , It is recommended to configure the non root user 
 and provide the administrative privileges to perform general MongoDB admin tasks.
 This can be accomplished using below commands by login as root user.[@www-digitaloceanprep]
 
-`adduser mongoadmin`
+`$ adduser mongoadmin`
 
-`usermod -aG sudo sammy`
+`$ usermod -aG sudo sammy`
 
-> "When logged in as your regular user, you can type sudo before commands to 
-> perform actions with superuser privileges" [@www-digitaloceanprep].
+When logged in as your regular user, you can type sudo before commands to 
+perform actions with superuser privileges [@www-digitaloceanprep].
 
 Once the user set up done , login with regular user(mongoadmin).
 
 you can follow the below instruction to install MongoDB.
 
-2.The following command updates ubuntu packages to the most recent version.
+The following command updates ubuntu packages to the most recent version.
 
-`$sudo apt update`
+`$ sudo apt update`
 
-3.Install the MongoDB package.
+Install the MongoDB package.
 
-`$sudo apt install -y mongodb`
+`$ sudo apt install -y mongodb`
 
-4.Check the service and database status
+Check the service and database status
 
-`$sudo systemctl status mongodb`
+`$ sudo systemctl status mongodb`
 
-5.Verify Status - On successful install of MongoDB you should able to see below output.
+Verify Status - On successful install of MongoDB you should able to see below output.
 
 mongodb.service - An object/document-oriented database
    Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor preset: enabled)
@@ -103,37 +103,36 @@ mongodb.service - An object/document-oriented database
    CGroup: /system.slice/mongodb.service
            └─2312 /usr/bin/mongod --unixSocketPrefix=/run/mongodb --config /etc/mongodb.conf
 
-6. Verfiy Config - The command below verifies the version,server and port
+Verfiy Config - The command below verifies the version,server and port
 
 `mongo --eval 'db.runCommand({ connectionStatus: 1 })'`
 
-7. Similarly, you can restart the MongoDB
+Similarly, you can restart the MongoDB
 
-`$sudo systemctl restart mongodb`
+`$ sudo systemctl restart mongodb`
 
-8. To allow access to MongoDB from outside hosted server you can use below command.
+To allow access to MongoDB from outside hosted server you can use below command.
 It opens the fire wall connections [@www-digitaloceaninst].
 
-`$sudo ufw allow from your_other_server_ip/32 to any port 27017`  
+`$ sudo ufw allow from your_other_server_ip/32 to any port 27017`  
 
 status can be verified using 
 
-`$sudo ufw status`
+`$ sudo ufw status`
 
-9. Other MongoDBc Configuration can be edited through /etc/mongodb.conf files
+Other MongoDBc Configuration can be edited through /etc/mongodb.conf files
 such as port and hostnames , file paths
 
-`sudo nano /etc/mongodb.conf`
+`$ sudo nano /etc/mongodb.conf`
 
-> "Add your server's IP address to the bindIP value:" [@www-digitaloceaninst].
+Add your server's IP address to the bindIP value [@www-digitaloceaninst].
 
 logappend=true
 
 bind_ip = 127.0.0.1,your_server_ip
 *port = 27017*
 
-> "MongoDB is now listening for remote connections, but anyone can access it" 
-> [@www-digitaloceaninst].
+MongoDB is now listening for remote connection and anyone can access it [@www-digitaloceaninst].
 
 
 
@@ -148,6 +147,7 @@ native data types in many programming languages, hence a well defined,
 embedded document can help reduce expensive joins and improve query 
 performance. Every document is uniquely identified by an *_id* field 
 [@www-guru99]. 
+
 MongoDB offers flexibility to write records that are 
 not restricted by column types. The data storage approach is flexible as 
 it allows one to store data as it grows and to fulfill varying needs of 
@@ -190,9 +190,9 @@ relational databases can be a very tedious process [@www-upwork].
 
 If collection doesn't exists, MongoDB db will create the collection on default.
 
-`>db.myNewCollection2.insertOne( { x: 1 } )`
+`> db.myNewCollection2.insertOne( { x: 1 } )`
 
-`>db.myNewCollection3.createIndex( { y: 1 } )`
+`> db.myNewCollection3.createIndex( { y: 1 } )`
 
 ## MongoDB Querying
 
@@ -230,21 +230,20 @@ applications[@www-upwork].
 
 You can execute queries from mongo shell as well through scripts.
 
-1. To query data from MongoDB collection, you need to use MongoDB's find() method
+To query data from MongoDB collection, you need to use MongoDB's find() method
 
-`>db.COLLECTION_NAME.find()`
+`> db.COLLECTION_NAME.find()`
 
-2.The output can be formatted using pretty command.
+The output can be formatted using pretty command.
 
-`>db.mycol.find().pretty()`
+`> db.mycol.find().pretty()`
 
-3. MongoDB insert statements
+MongoDB insert statements
 
-`>db.COLLECTION_NAME.insert(document)`
+`> db.COLLECTION_NAME.insert(document)`
 
-4.
-> "Performs a left outer join to an unsharded collection in the same database 
-> to filter in documents from the “joined” collection for processing" [@www-mongodbmanual]
+lookup Performs a left outer join to an unsharded collection in the same database 
+to filter in documents from the “joined” collection for processing" [@www-mongodbmanual]
 
 `{
    $lookup:
@@ -264,9 +263,9 @@ You can execute queries from mongo shell as well through scripts.
                                FROM <collection to join>
                                WHERE <foreignField>= <collection.localField>);`
                                
-5.Perform Like Match (Regex)
+Perform Like Match (Regex)
 
-`db.products.find( { sku: { $regex: /789$/ } } )`                               
+`> db.products.find( { sku: { $regex: /789$/ } } )`                               
 
 ## MongoDB Basic Functions
 
@@ -283,21 +282,21 @@ aggregation framework is modeled on the concept of data pipelines.[@www-mongodbm
 
 #### Import/Export functions examples:
 
-1.Import JSON documents
+Import JSON documents
  
-`$mongoimport --db users --collection contacts --file contacts.json`
+`$ mongoimport --db users --collection contacts --file contacts.json`
 
-2.CSV Import , using input file name mongoimport imports collection hence , collection name is 
+CSV Import , using input file name mongoimport imports collection hence , collection name is 
 optional.[@www-mongodbmanual]
 
-`$mongoimport --db users --type csv --headerline --file /opt/backups/contacts.csv`
+`$ mongoimport --db users --type csv --headerline --file /opt/backups/contacts.csv`
 
-3. Export examples:
+Export examples:
 
-> " *mongoexport* is a utility that produces a JSON or CSV export of data stored in a 
-> MongoDB instance" [@www-mongodbmanual].
+*mongoexport* is a utility that produces a JSON or CSV export of data stored in a 
+MongoDB instance" [@www-mongodbmanual].
 
-`$mongoexport --db test --collection traffic --out traffic.json`
+`$ mongoexport --db test --collection traffic --out traffic.json`
 
 ## Security Features
 
@@ -311,7 +310,7 @@ and authorization operations [@www-mongodbmanual].
 
 #### Collection based access control example:
 
-> "A user defined role can contain the following privileges" [@www-mongodbmanual]
+A user defined role can contain the following privileges [@www-mongodbmanual].
 
 `privileges: [
   { resource: { db: "products", collection: "inventory" }, actions: [ "find", "update"] },
