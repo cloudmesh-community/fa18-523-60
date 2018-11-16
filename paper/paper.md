@@ -56,6 +56,76 @@ easily using object-oriented programming features; as well as distributed
 system challenges [@www-mongodb]. At its core, MongoDB is an open source, 
 cross-platform, document database mainly written in C++ language. 
 
+### Installation
+
+MongoDB Can be installed on various Unix Platforms.
+Including Linux,Ubuntu, Amazon Linux etc. This section focuses on installing MongoDB on Ubuntu
+18.04 Bionic Beaver used as standard OS of virutal machine as part of 
+Big Data Application Class during Fall-18. [@www-digitaloceaninst]
+
+Prior to the installation , It is recommended to configure the non root user 
+and provide the administrative privileges to perform general MongoDB admin tasks.
+This can be accomplished using below commands
+
+`# adduser mongoadmin`
+`# usermod -aG sudo sammy`
+
+> "when logged in as your regular user, you can type sudo before commands to 
+> perform actions with superuser privileges" [@www-digitaloceanprep].
+
+Once the user set up done , login with regular user(mongoadmin).
+
+you can follow the below instruction to install MongoDB.
+
+The following command updates ubuntu packages to the most recent version.
+`$sudo apt update`
+
+install the MongoDB package.
+`$sudo apt install -y mongodb`
+
+Check the service and database status
+`$sudo systemctl status mongodb`
+
+on successful install of MongoDB you should able to see below output.
+
+mongodb.service - An object/document-oriented database
+   Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sat 2018-11-15 07:48:04 UTC; 2min 17s ago
+     Docs: man:mongod(1)
+ Main PID: 2312 (mongod)
+    Tasks: 23 (limit: 1153)
+   CGroup: /system.slice/mongodb.service
+           └─2312 /usr/bin/mongod --unixSocketPrefix=/run/mongodb --config /etc/mongodb.conf
+
+The command below verifies the version,server and port
+`mongo --eval 'db.runCommand({ connectionStatus: 1 })'`
+
+Similarly, you can restart the MongoDB
+`$sudo systemctl restart mongodb`
+
+To allow access to MongoDB from outside hosted server you can use below command.
+It opens the fire wall connections [@www-digitaloceaninst]
+
+`$sudo ufw allow from your_other_server_ip/32 to any port 27017`  
+
+status can be verified using 
+`$sudo ufw status`
+
+Other MongoDBc Configuration can be edited through /etc/mongodb.conf files
+such as port and hostnames , file paths
+
+`sudo nano /etc/mongodb.conf`
+> "Add your server's IP address to the bindIP value:"[@www-digitaloceaninst]
+logappend=true
+
+bind_ip = 127.0.0.1,your_server_ip
+`#port = 27017`
+
+> "MongoDB is now listening for remote connections, but anyone can access it" 
+> [@www-digitaloceaninst].
+
+
+
 ## Collections and Documents
 
 Each database within Mongo environment contains collections which in turn 
@@ -66,29 +136,47 @@ out of field and value pairs. Documents are objects which correspond to
 native data types in many programming languages, hence a well defined, 
 embedded document can help reduce expensive joins and improve query 
 performance. Every document is uniquely identified by an *_id* field 
-[@www-guru99]. MongoDB offers flexibility to write records that are 
+[@www-guru99]. 
+MongoDB offers flexibility to write records that are 
 not restricted by column types. The data storage approach is flexible as 
 it allows one to store data as it grows and to fulfill varying needs of 
 applications and/or users. It supports JSON like binary points known as 
 BSON where data can be stored without specifying the type of data 
-[@www-upwork]. Moreover, it can be distributed on multiple machines at a 
-high speed; it includes a sharidng feature that partitions and spreads 
+Moreover, it can be distributed on multiple machines at a 
+high speed; it includes a sharding feature that partitions and spreads 
 the data out across various servers. This makes MongoDB an excellent 
 choice for cloud data processing. Its utilities can load high volumes of 
 data at high speed which ultimately provides a greater flexibility and 
-availability in a cloud-based environment [@www-upwork]. The dynamic 
-schema structure within MongoDB allows easy testing of the small sprints 
+availability in a cloud-based environment [@www-upwork].
+
+The dynamic schema structure within MongoDB allows easy testing of the small sprints 
 in agile project management life cycles and research projects that 
 require frequent changes to the data structure with minimal downtime. 
 Contrary to this flexible process, modifying the data structure of 
 relational databases can be a very tedious process [@www-upwork]. 
-Similarly to the relational databases, the query performance can be 
-improved by using indexing. MongoDB queries support regular expressions 
-as well as range asks for specific fields that eliminate the need of 
-returning entire documents [@www-guru99]. MongoDB collections do not 
-enforce document structure like SQL databases which is a compelling 
-feature. However, it is essential to keep in mind the needs of the 
-applications. 
+
+
+# Collection example: 
+{
+ name: "Corey"
+ age: "21"
+ status: "Open"
+ group: ["AI" , "Machine Learning"]
+}
+
+# Document structure:
+{
+   field1: value1,
+   field2: value2,
+   field3: value3,
+   ...
+   fieldN: valueN
+}
+
+# Collection Operations 
+If collection doesn't exists, MongoDB db will create the collection on default.
+db.myNewCollection2.insertOne( { x: 1 } )
+db.myNewCollection3.createIndex( { y: 1 } )
 
 ## MongoDB Querying
 
@@ -114,7 +202,47 @@ beforehand. For this reason, joins in MongoDB require more complicated
 querying compared to the traditional relational database joins. Although 
 at this time, *lookups* are still very far from replacing *joins*, this 
 is a prominent feature that can resolve some of the relational data 
-challenges for MongoDB [@www-sitepoint]. 
+challenges for MongoDB [@www-sitepoint].
+MongoDB queries support regular expressions 
+as well as range asks for specific fields that eliminate the need of 
+returning entire documents [@www-guru99]. MongoDB collections do not 
+enforce document structure like SQL databases which is a compelling 
+feature. However, it is essential to keep in mind the needs of the 
+applications.[@www-upwork]
+
+Mongo Queries examples:
+You can execute queries from mongo shell as well through scripts.
+
+1. To query data from MongoDB collection, you need to use MongoDB's find() method
+>db.COLLECTION_NAME.find()
+
+2.The output can be formatted using pretty command.
+>db.mycol.find().pretty()
+
+3. MongoDB insert statements
+>db.COLLECTION_NAME.insert(document)
+
+4.
+> "Performs a left outer join to an unsharded collection in the same database 
+> to filter in documents from the “joined” collection for processing" [@www-mongodbmanual]
+{
+   $lookup:
+     {
+       from: <collection to join>,
+       localField: <field from the input documents>,
+       foreignField: <field from the documents of the "from" collection>,
+       as: <output array field>
+     }
+}
+This operation is equivalent to SQL operation
+SELECT *, <output array field>
+FROM collection
+WHERE <output array field> IN (SELECT *
+                               FROM <collection to join>
+                               WHERE <foreignField>= <collection.localField>);
+                               
+5.Perform Like Match
+db.products.find( { sku: { $regex: /789$/ } } )                               
 
 ## MongoDB Basic Functions
 
@@ -127,7 +255,20 @@ and has detailed documentation available on the product website.
 It can also query the geospatial data, and it is capable of 
 storing geospatial data in GeoJSON objects. Aggregation Operation of 
 MongoDB process data records and returns computed results. MongoDB 
-aggregation framework is modeled on the concept of data pipelines. 
+aggregation framework is modeled on the concept of data pipelines.[@www-mongodbmanual]
+
+Import examples:
+Import JSON documents 
+`$mongoimport --db users --collection contacts --file contacts.json`
+
+CSV Import , using input file name mongoimport imports collection hence , collection name is 
+optional.[@www-mongodbmanual]
+`$mongoimport --db users --type csv --headerline --file /opt/backups/contacts.csv`
+
+Export examples:
+> "mongoexport is a utility that produces a JSON or CSV export of data stored in a 
+> MongoDB instance" [@www-mongodbmanual].
+`$mongoexport --db test --collection traffic --out traffic.json`
 
 ## Security Features
 
@@ -135,9 +276,18 @@ Data security is the crucial aspect of enterprise infrastructure management
 and that is why MongoDB provides various security features such as 
 authentication, access control, and encryption. It supports mechanisms 
 such as SCRAM, LDAP, and Kerberos authentication. The administrator 
-can create role-based access control; roles can be predefined or custom. 
+can create role/collection-based access control; roles can be predefined or custom. 
 MongoDB can audit activities such as DDL, CRUD statements, authentication 
 and authorization operations [@www-mongodbmanual]. 
+
+Collection based access control example:
+
+> "a user defined role can contain the following privileges" [@www-mongodbmanual]
+
+privileges: [
+  { resource: { db: "products", collection: "inventory" }, actions: [ "find", "update"] },
+  { resource: { db: "products", collection: "orders" },  actions: [ "find" ] }
+]
 
 ## MongoDB Cloud Service
 
