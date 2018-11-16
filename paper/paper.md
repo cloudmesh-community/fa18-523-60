@@ -65,12 +65,13 @@ Big Data Application Class during Fall-18. [@www-digitaloceaninst]
 
 Prior to the installation , It is recommended to configure the non root user 
 and provide the administrative privileges to perform general MongoDB admin tasks.
-This can be accomplished using below commands
+This can be accomplished using below commands by login as root user.
 
-`#adduser mongoadmin`
-`#$usermod -aG sudo sammy`
+`adduser mongoadmin`
 
-> "when logged in as your regular user, you can type sudo before commands to 
+`usermod -aG sudo sammy`
+
+> "When logged in as your regular user, you can type sudo before commands to 
 > perform actions with superuser privileges" [@www-digitaloceanprep].
 
 Once the user set up done , login with regular user(mongoadmin).
@@ -78,12 +79,15 @@ Once the user set up done , login with regular user(mongoadmin).
 you can follow the below instruction to install MongoDB.
 
 The following command updates ubuntu packages to the most recent version.
+
 `$sudo apt update`
 
 install the MongoDB package.
+
 `$sudo apt install -y mongodb`
 
 Check the service and database status
+
 `$sudo systemctl status mongodb`
 
 on successful install of MongoDB you should able to see below output.
@@ -98,9 +102,11 @@ mongodb.service - An object/document-oriented database
            └─2312 /usr/bin/mongod --unixSocketPrefix=/run/mongodb --config /etc/mongodb.conf
 
 The command below verifies the version,server and port
+
 `mongo --eval 'db.runCommand({ connectionStatus: 1 })'`
 
 Similarly, you can restart the MongoDB
+
 `$sudo systemctl restart mongodb`
 
 To allow access to MongoDB from outside hosted server you can use below command.
@@ -109,17 +115,20 @@ It opens the fire wall connections [@www-digitaloceaninst]
 `$sudo ufw allow from your_other_server_ip/32 to any port 27017`  
 
 status can be verified using 
+
 `$sudo ufw status`
 
 Other MongoDBc Configuration can be edited through /etc/mongodb.conf files
 such as port and hostnames , file paths
 
 `sudo nano /etc/mongodb.conf`
+
 > "Add your server's IP address to the bindIP value:"[@www-digitaloceaninst]
+
 logappend=true
 
 bind_ip = 127.0.0.1,your_server_ip
-`#port = 27017`
+*port = 27017*
 
 > "MongoDB is now listening for remote connections, but anyone can access it" 
 > [@www-digitaloceaninst].
@@ -156,28 +165,31 @@ Contrary to this flexible process, modifying the data structure of
 relational databases can be a very tedious process [@www-upwork]. 
 
 
-Collection example: 
-{
+# Collection example:
+ 
+`{
  name: "Corey"
  age: "21"
  status: "Open"
  group: ["AI" , "Machine Learning"]
-}
+}`
 
-Document structure within collection:
-{
+# Document structure:
+
+`{
    field1: value1,
    field2: value2,
    field3: value3,
    ...
    fieldN: valueN
-}
+}`
 
-ollection Operations:
-
+# Collection Operations 
 If collection doesn't exists, MongoDB db will create the collection on default.
->db.myNewCollection2.insertOne( { x: 1 } )
->db.myNewCollection3.createIndex( { y: 1 } )
+
+`>db.myNewCollection2.insertOne( { x: 1 } )`
+
+`>db.myNewCollection3.createIndex( { y: 1 } )`
 
 ## MongoDB Querying
 
@@ -215,18 +227,22 @@ Mongo Queries examples:
 You can execute queries from mongo shell as well through scripts.
 
 1. To query data from MongoDB collection, you need to use MongoDB's find() method
->db.COLLECTION_NAME.find()
+
+`>db.COLLECTION_NAME.find()`
 
 2.The output can be formatted using pretty command.
->db.mycol.find().pretty()
+
+`>db.mycol.find().pretty()`
 
 3. MongoDB insert statements
->db.COLLECTION_NAME.insert(document)
+
+`>db.COLLECTION_NAME.insert(document)`
 
 4.
 > "Performs a left outer join to an unsharded collection in the same database 
 > to filter in documents from the “joined” collection for processing" [@www-mongodbmanual]
-{
+
+`{
    $lookup:
      {
        from: <collection to join>,
@@ -234,16 +250,19 @@ You can execute queries from mongo shell as well through scripts.
        foreignField: <field from the documents of the "from" collection>,
        as: <output array field>
      }
-}
+}`
+
 This operation is equivalent to SQL operation
-SELECT *, <output array field>
-FROM collection
-WHERE <output array field> IN (SELECT *
+
+`SELECT *, <output array field>
+ FROM collection
+ WHERE <output array field> IN (SELECT *
                                FROM <collection to join>
-                               WHERE <foreignField>= <collection.localField>);
+                               WHERE <foreignField>= <collection.localField>);`
                                
 5.Perform Like Match
-db.products.find( { sku: { $regex: /789$/ } } )                               
+
+`db.products.find( { sku: { $regex: /789$/ } } )`                               
 
 ## MongoDB Basic Functions
 
@@ -259,16 +278,21 @@ MongoDB process data records and returns computed results. MongoDB
 aggregation framework is modeled on the concept of data pipelines.[@www-mongodbmanual]
 
 Import examples:
-Import JSON documents 
+
+Import JSON documents
+ 
 `$mongoimport --db users --collection contacts --file contacts.json`
 
 CSV Import , using input file name mongoimport imports collection hence , collection name is 
 optional.[@www-mongodbmanual]
+
 `$mongoimport --db users --type csv --headerline --file /opt/backups/contacts.csv`
 
 Export examples:
-> "mongoexport is a utility that produces a JSON or CSV export of data stored in a 
+
+> " *mongoexport* is a utility that produces a JSON or CSV export of data stored in a 
 > MongoDB instance" [@www-mongodbmanual].
+
 `$mongoexport --db test --collection traffic --out traffic.json`
 
 ## Security Features
@@ -283,12 +307,12 @@ and authorization operations [@www-mongodbmanual].
 
 Collection based access control example:
 
-> "a user defined role can contain the following privileges" [@www-mongodbmanual]
+> "A user defined role can contain the following privileges" [@www-mongodbmanual]
 
-privileges: [
+`privileges: [
   { resource: { db: "products", collection: "inventory" }, actions: [ "find", "update"] },
   { resource: { db: "products", collection: "orders" },  actions: [ "find" ] }
-]
+]`
 
 ## MongoDB Cloud Service
 
