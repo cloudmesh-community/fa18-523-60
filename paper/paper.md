@@ -140,8 +140,6 @@ bind_ip = 127.0.0.1,your_server_ip
 MongoDB is now listening for a remote connection that can be 
 accessed by anyone with appropriate credentials [@www-digitaloceaninst].
 
-
-
 ## Collections and Documents
 
 Each database within Mongo environment contains collections which in turn 
