@@ -315,12 +315,12 @@ authentication and authorization operations [@www-mongodbmanual].
 #### Collection based access control example:
 
 A user defined role can contain the following privileges [@www-mongodbmanual].
-
-`privileges: [
+```
+privileges: [
   { resource: { db: "products", collection: "inventory" }, actions: [ "find", "update"] },
   { resource: { db: "products", collection: "orders" },  actions: [ "find" ] }
-]`
-
+]
+```
 ## MongoDB Cloud Service
 
 In regards to the cloud technologies, MongoDB also offers fully automated 
@@ -470,7 +470,6 @@ $ import pymongo
 client = pymongo.MongoClient('mongodb://localhost:27017/')
 
 db = client['cloudmesh']
-
 ```
 ### Inserting and Retrieving Documents (Querying)
 
@@ -1210,6 +1209,6 @@ $ @app.route("/user/<username>")
 - Learning Outcome - Izolda Fetko fa18-523-60
 - MongoDB - Nishad Tupe fa18-523-64
 - PyMongo - Izolda Fetko fa18-523-60
-- MongoEngine, Flask-Mongo - Vishal Bhoyar fa18-523-72 
+- MongoEngine, Flask-PyMongo - Vishal Bhoyar fa18-523-72 
 - MongoEngine (Peer reviewed) - Izolda Fetko fa18-523-60
 - Flask-PyMongo (Peer reviewed) - Nishad Tupe fa18-523-64
