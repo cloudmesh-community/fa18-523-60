@@ -1116,7 +1116,7 @@ $ cloudmesh_community.objects(
             point__geo_within={"type": "Polygon",
                  "coordinates": [[[40, 5], [40, 6], [41, 6], [40, 5]]]})
 ```
-The list querylooks up the documents where the specified fiels matches
+The list query looks up the documents where the specified fields matches
 exactly to the given value. To match all pages that have the word  *coding*
 as an item in the *tags* list one would use the following query:
 ```
@@ -1125,6 +1125,9 @@ $ class Page(Document):
 
   Page.objects(tags='coding')
 ```
+The MongoEngine has good compatibility with Python and provide different 
+functions to work on Python code using MongoDb database.
+
 ## Flask-PyMongo
 
 > "Flask is a micro web framework written in Python" 
@@ -1203,6 +1206,9 @@ $ @app.route("/user/<username>")
       user = mongo.db.cloudmesh_community.find_one_or_404({"_id": username})
       return render_template("user.html", user=user)
 ```
+The Flask-PyMongo create connectivity between Python and Flask using 
+MongoDB database. This help to use different flask functionality in Python code. 
+
 ## Workbreakdown
 
 - Introduction - Nishad Tupe fa18-523-64
