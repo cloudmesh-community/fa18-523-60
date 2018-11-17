@@ -1125,35 +1125,36 @@ $ class Page(Document):
 
   Page.objects(tags='coding')
 ```
-The MongoEngine has good compatibility with Python and provide different 
-functions to work on Python code using MongoDb database.
+Overall, it would be safe to say that MongoEngine has good compatibility with 
+Python. It provides different functions to utilize Python easily with MongoDB
+and which makes this pair even more attractive to application developers.
 
 ## Flask-PyMongo
 
 > "Flask is a micro web framework written in Python" 
 > [@flask-framework]. 
 
-It was developed after Django, and it is very pythonic which implies that
-it is explicitly the targeting Python user community. It is lightweight
-as it does not require tools or libraries and hence is classified as a \
-Micro Web framework. Flask caters application features such as object mappers, 
+It was developed after Django, and it is very pythonic in nature which implies 
+thatit is explicitly the targeting the Python user community. It is lightweight
+as it does not require additional tools or libraries and hence is classified as
+a Micro Web framework. Flask caters application features such as object mappers, 
 authentication methods, and form validations by supporting extensions. 
 Flask is often used with MongoDB using PyMongo connector, and it treats 
 data within MongoDB as searchable Python dictionaries. The applications 
 such as Pinterest, LinkedIn, and the community web page for Flask are 
 using the Flask framework. It supports various features such as the RESTful 
 request dispatching, secure cookies, Google app engine compatibility, 
-and integrated support for unit testing, etc [@flask-framework]. Flask 
-PyMongo offers methods such as *Collection.find_one_or_404* which is the 
+and integrated support for unit testing, etc [@flask-framework]. Flask-PyMongo 
+offers methods such as *Collection.find_one_or_404* which is the 
 equivalent to MongoDB's *find_one* in which instead of returning *none*, 
 causes a *404 Not Found HTTP status* to a request. Similarly, 
-*PyMongo.send_file* and *PyMongo.save_file* methods works on the 
+*PyMongo.send_file* and *PyMongo.save_file* methods work on the 
 file-like object. The connection details for MongoDB can be passed as a 
 variable or configured in PyMongo constructor with additional arguments 
-such as username and password if required. One can create multiple Flask 
-PyMongo instances to connect to multiple MongoDB databases. It is 
+such as username and password if required. One can create multiple 
+Flask-PyMongo instances to connect to multiple MongoDB databases. It is 
 important that versions of both Flask and MongoDB are compatible with 
-each other avoid functionality breaks [@flask-pymongo]. 
+each other to avoid functionality breaks [@flask-pymongo]. 
 Flask-MongoAlchemy and Flask-MongoEngine are the additional libraries 
 that can be used to connect to a MongoDB database while using enhanced 
 features with the Flask app. It can be easily installed using pip. The 
@@ -1206,8 +1207,9 @@ $ @app.route("/user/<username>")
       user = mongo.db.cloudmesh_community.find_one_or_404({"_id": username})
       return render_template("user.html", user=user)
 ```
-The Flask-PyMongo create connectivity between Python and Flask using 
-MongoDB database. This help to use different flask functionality in Python code. 
+Since Flask-PyMongo creates connectivity between Python and Flask using 
+a MongoDB database it can be used as an additional Flask functionality in 
+Python code. 
 
 ## Workbreakdown
 
