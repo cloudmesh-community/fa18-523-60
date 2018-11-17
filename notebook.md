@@ -1,7 +1,12 @@
+# Week Fri 11/16/18 - Thu 11/22/18
+
+- working on the project
 
 # Week Fri 11/9/18 - Thu 11/15/18
 
 - adding more examples and info to the PyMongo section of the paper
+- installing necessary tools on virtual machine
+- reviewed entire paper.md file for formatting and grammar errors
 
 # Week Fri 11/2/18 - Thu 11/8/18
 
