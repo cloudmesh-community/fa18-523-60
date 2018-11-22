@@ -1,6 +1,8 @@
 # Week Fri 11/16/18 - Thu 11/22/18
 
 - working on the project
+- exploring some options to add to the project
+- met with the team last night to go over details 
 
 # Week Fri 11/9/18 - Thu 11/15/18
 
