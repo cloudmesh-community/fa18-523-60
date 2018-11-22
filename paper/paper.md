@@ -102,13 +102,13 @@ Verifying the status of a successful MongoDB installation can be confirmed
 with an output similar to this:
 
 ```
-mongodb.service - An object/document-oriented database
-   Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor preset: enabled)
-   Active: active (running) since Sat 2018-11-15 07:48:04 UTC; 2min 17s ago
-     Docs: man:mongod(1)
- Main PID: 2312 (mongod)
-    Tasks: 23 (limit: 1153)
-   CGroup: /system.slice/mongodb.service
+$ mongodb.service - An object/document-oriented database
+    Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor preset: enabled)
+    Active: active (running) since Sat 2018-11-15 07:48:04 UTC; 2min 17s ago
+      Docs: man:mongod(1)
+  Main PID: 2312 (mongod)
+     Tasks: 23 (limit: 1153)
+    CGroup: /system.slice/mongodb.service
            └─2312 /usr/bin/mongod --unixSocketPrefix=/run/mongodb --config /etc/mongodb.conf
 ```
 
@@ -139,10 +139,10 @@ Also to complete this step, a server's IP address must be added to the
 bindIP value [@www-digitaloceaninst].
 
 ```
-logappend=true
+$ logappend=true
 
-bind_ip = 127.0.0.1,your_server_ip
-*port = 27017*
+  bind_ip = 127.0.0.1,your_server_ip
+  *port = 27017*
 ```
 
 MongoDB is now listening for a remote connection that can be 
@@ -179,23 +179,27 @@ downtime. Contrary to this flexible process, modifying the data structure
 of relational databases can be a very tedious process [@www-upwork]. 
 
 #### Collection example:
- 
-`{
+
+```
+{
  name: "Corey"
  age: "21"
  status: "Open"
  group: ["AI" , "Machine Learning"]
-}`
+}
+```
 
 #### Document structure:
 
-`{
+```
+{
    field1: value1,
    field2: value2,
    field3: value3,
    ...
    fieldN: valueN
-}`
+}
+```
 
 #### Collection Operations 
 
@@ -259,23 +263,23 @@ The MongoDB insert statements can be performed in the following manner:
 > collection for processing" [@www-mongodbmanual]. 
 
 ```
-{
-   $lookup:
-     {
-       from: <collection to join>,
-       localField: <field from the input documents>,
-       foreignField: <field from the documents of the "from" collection>,
-       as: <output array field>
-     }
-}
+$ {
+    $lookup:
+      {
+        from: <collection to join>,
+        localField: <field from the input documents>,
+        foreignField: <field from the documents of the "from" collection>,
+        as: <output array field>
+      }
+  }
 ```
 
 This operation is equivalent to the following SQL operation:
 
 ```
- SELECT *, <output array field>
- FROM collection
- WHERE <output array field> IN (SELECT *
+ $ SELECT *, <output array field>
+   FROM collection
+   WHERE <output array field> IN (SELECT *
                                FROM <collection to join>
                                WHERE <foreignField> = <collection.localField>);`
 ``` 
@@ -329,10 +333,10 @@ authentication and authorization operations [@www-mongodbmanual].
 A user defined role can contain the following privileges [@www-mongodbmanual].
 
 ```
-privileges: [
-  { resource: { db: "products", collection: "inventory" }, actions: [ "find", "update"] },
-  { resource: { db: "products", collection: "orders" },  actions: [ "find" ] }
-]
+$ privileges: [
+   { resource: { db: "products", collection: "inventory" }, actions: [ "find", "update"] },
+   { resource: { db: "products", collection: "orders" },  actions: [ "find" ] }
+ ]
 ```
 
 ### MongoDB Cloud Service
@@ -825,7 +829,7 @@ of the recursive search for that document [@www-docs.mongodb].
 ```
 
 The *$group* stage consumes the document data per each distinct group.
-It has a RAM limit of 100 MB. If the stage exceeds this limit, *$group* 
+It has a RAM limit of 100 MB. If the stage exceeds this limit, the *$group* 
 produces an error [@www-docs.mongodb].
 
 ```
@@ -847,7 +851,7 @@ produces an error [@www-docs.mongodb].
 The *$indexStats* stage returns statistics regarding the use of each index for 
 for a collection [@www-docs.mongodb].
  
-`  db.orders.aggregate( [ { $indexStats: { } } ] )`
+`db.orders.aggregate( [ { $indexStats: { } } ] )`
 
 The *$limit* stage is used for controlling the number of documents passed to the 
 next stage in the pipeline[@www-docs.mongodb].
@@ -861,7 +865,7 @@ next stage in the pipeline[@www-docs.mongodb].
 The *$listLocalSessions* stage gives the session information currently connected 
 to mongos or mongod instance [@www-docs.mongodb].
 
-`  db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
+`db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
  
 The *$listSessions* stage lists out all session that have been active long 
 enough to propagate to the *system.sessions* collection [@www-docs.mongodb].
@@ -900,7 +904,7 @@ pass to next stage [@www-docs.mongodb].
 The *$project* stage is used to reshape the documents by adding or deleting the 
 fields.
 
-`  db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
+`db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
 
 The *$redact* stage reshapes stream documents by restricting information using 
 information stored in documents themselves [@www-docs.mongodb].
@@ -942,27 +946,27 @@ The *$skip* stage skips specified initial number of documents and passes
 remaining documents to the pipeline [@www-docs.mongodb].
 
  ```
-  db.article.aggregate(
+ db.article.aggregate(
     { $skip : 5 }
-);
+ );
  ```
  
 The *$sort* stage is useful while reordering document stream by a specified 
 sort key [@www-docs.mongodb].
 
 ```
-db.users.aggregate(
-   [
-     { $sort : { age : -1, posts: 1 } }
-   ]
-)
+ db.users.aggregate(
+    [
+      { $sort : { age : -1, posts: 1 } }
+    ]
+ )
 ```
 
 The *$sortByCounts* stage groups the incoming documents based on a
 specified expression value and counts documents in each distinct 
 group [@www-docs.mongodb].
 
-` db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
+`db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
 
 The *$unwind* stage deconstructs an array field from the input 
 documents to output a document for each element [@www-docs.mongodb].
@@ -1013,7 +1017,7 @@ updates, specification of documents to be removed is a must. For
 example, removal of the entire document collection with a score
 of 1, would required one to use the following command:
 
-` cloudmesh.users.remove({"score":1, safe=True})`
+`cloudmesh.users.remove({"score":1, safe=True})`
 
 The *safe* parameter set to *True* ensures the operation was 
 completed [@book-ohiggins]. 
@@ -1133,7 +1137,7 @@ Similarly to the MongoClient, MongoEngine uses the local host and
 port 27017 by default, however, the *connect()* function also allows 
 specifying other hosts and port arguments as well [@www-connecting].
 
-`  connect('cloudmesh_community', host='196.185.1.62', port=16758)`
+`connect('cloudmesh_community', host='196.185.1.62', port=16758)`
 
 Other types of connections are also supported (i.e. URI) and they can 
 be completed by providing the URI in the *connect()* function 
@@ -1145,7 +1149,7 @@ To query MongoDB using MongoEngine an *objects attribute* is used,
 which is, technically, a part of the document class [@www-querying]. 
 This attribute is called the *QuerySetManager* which in return 
 
->  "creates a new *QuerySet* object on access" [@www-querying].
+>"creates a new *QuerySet* object on access" [@www-querying].
 
 To be able to access individual documents from a database, this object
 needs to be iterated over. For example, to return/print all students 
@@ -1163,7 +1167,7 @@ specific information [@www-querying]. Let's say one would like to
 iterate over *cloudmesh_community* students that are natives of Indiana. 
 To achieve this, one would use the following command:
 
-`  indy_students = cloudmesh_community.objects(state='IN')`
+`indy_students = cloudmesh_community.objects(state='IN')`
 
 This library also allows the use of all operators except for the 
 equality operator in its queries, and moreover, has the capability 
