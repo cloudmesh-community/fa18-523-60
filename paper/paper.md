@@ -53,9 +53,9 @@ framework.
 
 ## MongoDB
 
-MongoDB is one of the leading NoSQL databases in the market. Today, 
-this type of database is fully capable of handling dynamic changes; 
-processing large volumes of structured and unstructured data; 
+Today MongoDB is one of leading NoSQL database which is   
+fully capable of handling dynamic changes,
+processing large volumes of complex and unstructured data, 
 easily using object-oriented programming features; as well as 
 distributed system challenges [@www-mongodb]. At its core, MongoDB 
 is an open source, cross-platform, document database mainly written 
@@ -63,18 +63,18 @@ in C++ language.
 
 ### Installation
 
-MongoDB can be installed on various Unix Platforms, in ncluding 
+MongoDB can be installed on various Unix Platforms, including 
 Linux, Ubuntu, Amazon Linux, etc. This section focuses on installing 
 MongoDB on Ubuntu 18.04 Bionic Beaver used as a standard OS for a 
-virutal machine used as a part of Big Data Application Class during the 
+virtual machine used as a part of Big Data Application Class during the 
 2018 Fall semester [@www-digitaloceaninst].
 
 #### Installation procedure
 
-Prior to the installation, it is recommended to configure the non-root user 
+Before installing, it is recommended to configure the non-root user 
 and provide the administrative privileges to it, in order to be able to 
 perform general MongoDB admin tasks. This can be accomplished by login as 
-the root user in the following manner [@www-digitaloceanprep]:
+the root user in the following manner [@www-digitaloceanprep].
 
 `$ adduser mongoadmin`
 
@@ -86,7 +86,7 @@ privileges by typing *sudo* before each command [@www-digitaloceanprep].
 Once the user set up is completed, one can login as a regular user (mongoadmin)
 and use the following instructions to install MongoDB.
 
-To update the Ubuntu packages to the most recent versions, one would use:
+To update the Ubuntu packages to the most recent versions, use below command:
 
 `$ sudo apt update`
 
@@ -104,7 +104,7 @@ with an output similar to this:
 ```
 $ mongodb.service - An object/document-oriented database
     Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor preset: enabled)
-    Active: active (running) since Sat 2018-11-15 07:48:04 UTC; 2min 17s ago
+    Active: **active** (running) since Sat 2018-11-15 07:48:04 UTC; 2min 17s ago
       Docs: man:mongod(1)
   Main PID: 2312 (mongod)
      Tasks: 23 (limit: 1153)
@@ -113,11 +113,11 @@ $ mongodb.service - An object/document-oriented database
 ```
 
 To verify the configuration, more specifically the installed version, 
-server, and port, one would use the following command:
+server, and port, use the following command:
 
 `$ mongo --eval 'db.runCommand({ connectionStatus: 1 })'`
 
-Similarly, to restart MongoDB, one would use the following:
+Similarly, to restart MongoDB, use the following:
 
 `$ sudo systemctl restart mongodb`
 
@@ -157,7 +157,7 @@ in a key-value form which allows storing of complex data types composed
 out of field and value pairs. Documents are objects which correspond to 
 native data types in many programming languages, hence a well defined, 
 embedded document can help reduce expensive joins and improve query 
-performance. Every document is uniquely identified by an *_id* field 
+performance. *_id* field  helps to indentify each document uniquly.
 [@www-guru99]. 
 
 MongoDB offers flexibility to write records that are 
@@ -165,11 +165,11 @@ not restricted by column types. The data storage approach is flexible as
 it allows one to store data as it grows and to fulfill varying needs of 
 applications and/or users. It supports JSON like binary points known as 
 BSON where data can be stored without specifying the type of data.
-Moreover, it can be distributed on multiple machines at a high speed; 
-it includes a sharding feature that partitions and spreads 
+Moreover, it can be distributed to multiple machines at high speed. 
+It includes a sharding feature that partitions and spreads 
 the data out across various servers. This makes MongoDB an excellent 
 choice for cloud data processing. Its utilities can load high volumes of 
-data at high speed which ultimately provides a greater flexibility and 
+data at high speed which ultimately provides greater flexibility and 
 availability in a cloud-based environment [@www-upwork].
 
 The dynamic schema structure within MongoDB allows easy testing of the 
@@ -206,14 +206,14 @@ of relational databases can be a very tedious process [@www-upwork].
 If collection does not exists, MongoDB database will create a collection 
 by default.
 
-`> db.myNewCollection2.insertOne( { x: 1 } )`
+`> db.myNewCollection1.insertOne( { x: 1 } )`
 
-`> db.myNewCollection3.createIndex( { y: 1 } )`
+`> db.myNewCollection2.createIndex( { y: 1 } )`
 
 ### MongoDB Querying
 
 The data retrieval patterns, the frequency of data manipulation 
-statements such as insert, updates, and deletes may embark 
+statements such as insert, updates, and deletes may demand for 
 the use of indexes or incorporating the sharding feature to improve 
 query performance and efficiency of MongoDB environment [@www-guru99]. 
 One of the significant difference between relational databases and NoSQL 
@@ -322,10 +322,11 @@ MongoDB instance" [@www-mongodbmanual].
 
 Data security is a crucial aspect of the enterprise infrastructure management 
 and is the reason why MongoDB provides various security features such as 
-authentication, access control, and encryption. It supports mechanisms 
-such as SCRAM, LDAP, and Kerberos authentication. The administrator 
-can create role/collection-based access control; also roles can be predefined 
-or custom. MongoDB can audit activities such as DDL, CRUD statements, 
+ole based access control, numerous authentication options, and encryption. 
+It supports mechanisms such as SCRAM, LDAP, and Kerberos authentication. 
+The administrator can create role/collection-based access control; 
+also roles can be predefined or custom. 
+MongoDB can audit activities such as DDL, CRUD statements, 
 authentication and authorization operations [@www-mongodbmanual]. 
 
 #### Collection based access control example:
@@ -1223,7 +1224,7 @@ and which makes this pair even more attractive to application developers.
 > [@flask-framework]. 
 
 It was developed after Django, and it is very pythonic in nature which implies 
-thatit is explicitly the targeting the Python user community. It is lightweight
+that it is explicitly the targeting the Python user community. It is lightweight
 as it does not require additional tools or libraries and hence is classified as
 a Micro Web framework. Flask caters application features such as object mappers, 
 authentication methods, and form validations by supporting extensions. 
