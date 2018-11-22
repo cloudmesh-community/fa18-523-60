@@ -115,7 +115,7 @@ mongodb.service - An object/document-oriented database
 To verify the configuration, more specifically the installed version, 
 server, and port, one would use the following command:
 
-`mongo --eval 'db.runCommand({ connectionStatus: 1 })'`
+`$ mongo --eval 'db.runCommand({ connectionStatus: 1 })'`
 
 Similarly, to restart MongoDB, one would use the following:
 
@@ -148,7 +148,7 @@ bind_ip = 127.0.0.1,your_server_ip
 MongoDB is now listening for a remote connection that can be 
 accessed by anyone with appropriate credentials [@www-digitaloceaninst].
 
-## Collections and Documents
+### Collections and Documents
 
 Each database within Mongo environment contains collections which in turn 
 contain documents. Collections and documents are analogous to tables and 
@@ -206,7 +206,7 @@ by default.
 
 `> db.myNewCollection3.createIndex( { y: 1 } )`
 
-## MongoDB Querying
+### MongoDB Querying
 
 The data retrieval patterns, the frequency of data manipulation 
 statements such as insert, updates, and deletes may embark 
@@ -284,7 +284,7 @@ To perform a Like Match (Regex), one would use the following command:
 
 `> db.products.find( { sku: { $regex: /789$/ } } )`                               
 
-## MongoDB Basic Functions
+### MongoDB Basic Functions
 
 When it comes to the technical elements of MongoDB, it posses a 
 rich interface for importing and storage of external data in various 
@@ -314,7 +314,7 @@ MongoDB instance" [@www-mongodbmanual].
 
 `$ mongoexport --db test --collection traffic --out traffic.json`
 
-## Security Features
+### Security Features
 
 Data security is a crucial aspect of the enterprise infrastructure management 
 and is the reason why MongoDB provides various security features such as 
@@ -335,7 +335,7 @@ privileges: [
 ]
 ```
 
-## MongoDB Cloud Service
+### MongoDB Cloud Service
 
 In regards to the cloud technologies, MongoDB also offers fully automated 
 cloud service called *Atlas* with competitive pricing options. Mongo Atlas 
@@ -406,7 +406,7 @@ To check if the installation was completed accurately, the
 following command is used in the Python console 
 [@www-realpython].
 
-`$ import pymongo`
+`import pymongo`
 
 If the command returns zero exceptions within the Python 
 shell, one can consider for the PyMongo installation to 
@@ -447,8 +447,8 @@ a MongoClient class needs to be imported, which sub-sequentially
 allows the MongoClient object to communicate with the database 
 [@www-realpython]. 
 
-`$ from pymongo import MongoClient`
-`$ client = MongoClient()`
+`from pymongo import MongoClient`
+`client = MongoClient()`
 
 This command allows a connection with a default, local host through 
 port 27017, however, depending on the programming requirements,
@@ -467,9 +467,9 @@ database called *cloudmesh_community*, one would use the following
 commands for the attribute and for the dictionary method, 
 respectively.
 
-`$ db = client.cloudmesh_community`
+`db = client.cloudmesh_community`
 
-`$ db = client['cloudmesh_community']`
+`db = client['cloudmesh_community']`
 
 ### Creating a Database
 
@@ -480,7 +480,7 @@ as well as the name of the database they are trying to create
 followng section:
 
 ```
-$ import pymongo
+import pymongo
 
 client = pymongo.MongoClient('mongodb://localhost:27017/')
 
@@ -494,7 +494,7 @@ accessing and creating databases. In order to add new data, a
 collection must be specified first. In this example, a decision is 
 made to use the *cloudmesh* group of documents.
 
-`$ cloudmesh = db.cloudmesh`
+`cloudmesh = db.cloudmesh`
 
 Once this step is completed, data may be inserted using the 
 *insert_one()* method, which means that only one document is 
@@ -503,20 +503,20 @@ the same time is possible as well with use of the *insert_many()*
 method [@www-realpython]. An example of this method is as follows: 
 
 ```
-$ course_info = {
+course_info = {
      'course': 'Big Data Applications and Analytics',
      'instructor': ' Gregor von Laszewski',
      'chapter': 'technologies'
 }
 ```
-`$ result = cloudmesh.insert_one(course_info)`
+`result = cloudmesh.insert_one(course_info)`
 
 Another example of this method would be to create a collection.
 If we wanted to create a collection of students in the 
 *cloudmesh_community*, we would do it in the following manner:
 
 ```
-$ student = [ {'name': 'John', 'st_id': 52642},
+student = [ {'name': 'John', 'st_id': 52642},
     {'name': 'Mercedes', 'st_id': 5717},
     {'name': 'Anna', 'st_id': 5654},
     {'name': 'Greg', 'st_id': 5423},
@@ -539,14 +539,14 @@ Retrieving documents is equally simple as creating them. The
 [@www-realpython]. An implementation of this method is given 
 in the following example.
 
-`$ gregors_course = cloudmesh.find_one({'instructor':'Gregor von Laszewski'})`
+`gregors_course = cloudmesh.find_one({'instructor':'Gregor von Laszewski'})`
 
 Similarly, to retieve multiple documents, one would use the 
 *find()* method instead of the *find_one()*. For example, to 
 find all courses thought by professor von Laszewski, one would 
 use the following command:
 
-`$ gregors_course = cloudmesh.find({'instructor':'Gregor von Laszewski'})`
+`gregors_course = cloudmesh.find({'instructor':'Gregor von Laszewski'})`
 
 One thing that users should be cognizant of when using the *find()*
 method is that it does not return results in an array format but 
@@ -567,7 +567,7 @@ modify the query results to return only the top 10 technologies.
 To do this, the following example could be utilized:
 
 ```
-$ client = pymongo.MongoClient('mongodb://localhost:27017/')
+client = pymongo.MongoClient('mongodb://localhost:27017/')
     db = client['cloudmesh']
     col = db['technologies']
     topten = col.find().limit(10)
@@ -586,7 +586,7 @@ that specifies the new value in the document. An example of
 the *update_one()* method in action is the following:
 
 ```
-$ myquery = { 'course': 'Big Data Applications and Analytics' }
+myquery = { 'course': 'Big Data Applications and Analytics' }
    newvalues = { '$set': { 'course': 'Cloud Computing' } }
 ```
 
@@ -597,7 +597,7 @@ with letter *B* with a different instructor information, we would
 do the following:
 
 ```
-$  client = pymongo.MongoClient('mongodb://localhost:27017/')
+   client = pymongo.MongoClient('mongodb://localhost:27017/')
    db = client['cloudmesh']
    col = db['courses']
    query = { 'course': { '$regex': '^B' } }
@@ -613,12 +613,12 @@ Counting documents can be done with one simple operation called
 [@www-pymongo-tutorial]. For example, we can count the documents 
 in the *cloudmesh_commpunity* by using the following command:
 
-`$ cloudmesh = count_documents({})`
+`cloudmesh = count_documents({})`
 
 To create a more specific count, one would use a command similar 
 to this:
 
-`$ cloudmesh = count_documents({'author': 'von Laszewski'})`
+`cloudmesh = count_documents({'author': 'von Laszewski'})`
 
 This technology supports some more advanced querying options as well. 
 Those advanced queries allow one to add certain contraints and narrow 
@@ -627,7 +627,7 @@ by professor von Laszewski after a certain date, one would use the
 following command:
 
 ```
-$ d = datetime.datetime(2017, 11, 12, 12)
+  d = datetime.datetime(2017, 11, 12, 12)
      for course in cloudmesh.find({'date': {'$lt': d}}).sort('author'):
      pprint.pprint(course)
 ```
@@ -644,7 +644,7 @@ documents [@www-pymongo-tutorial].
 we need to firstly create the index in the following manner:
 
 ```
-$ result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
+  result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
   unique=True)
 
   sorted(list(db.profiles.index_information()))
@@ -669,9 +669,9 @@ the client side. For example, to return all users with first name
 a command such as this:
 
 ```
-$ users = cloudmesh.users.find(
+  users = cloudmesh.users.find(
    {'firstname':'Gregor'}).sort(('dateofbirth', pymongo.DESCENDING))
- for user in users:
+  for user in users:
    print user.get('email')
 ```
 
@@ -700,7 +700,7 @@ added fields [@www.docs.mongodb]. The following example shows how to add
 *student details* into a document.
 
 ```
-$ db.cloudmesh_community.aggregate([
+  db.cloudmesh_community.aggregate([
  {
         $addFields: {
         "document.StudentDetails": {
@@ -716,7 +716,7 @@ based on specified expressions. Those groups are called *buckets*
 in action.
 
 ```
-$ db.user.aggregate([
+  db.user.aggregate([
   { "$group": {
     "_id": {
       "city": "$city",
@@ -742,7 +742,7 @@ buckets. In the following operation, input documents are grouped into four
 buckets according to the values in the price field [@www.docs.mongodb].
 
 ```
-$ db.artwork.aggregate( [
+  db.artwork.aggregate( [
     {
       $bucketAuto: {
           groupBy: "$price",
@@ -763,7 +763,7 @@ The *$count* stage passes a document to the next stage that contains the
 number documents that were input to the stage [@www-docs.mongodb].
 
  ```
-$  db.scores.aggregate(  [    {
+   db.scores.aggregate(  [    {
       $match: {        score: {          $gt: 80    } }  },
     {      $count: "passing_scores"  } ])
 ```
@@ -772,7 +772,7 @@ The *$facet* stage helps process multiple aggregation pipelines in
 a single stage [@www-docs.mongodb].
 
 ```
-$ db.artwork.aggregate( [ {
+  db.artwork.aggregate( [ {
      $facet: {  "categorizedByTags": [   { $unwind: "$tags" },
          { $sortByCount: "$tags" }  ],  "categorizedByPrice": [
          // Filter out documents without a price e.g., _id: 7
@@ -790,9 +790,9 @@ $ db.artwork.aggregate( [ {
 The *$geoNear* stage returns an ordered stream of documents based on the 
 proximity to a geospatial point. The output documents include an additional 
 distance field and can include a location identifier field [@www-docs.mongodb].
-```
 
-$ db.places.aggregate([
+```
+  db.places.aggregate([
    {    $geoNear: {
         near: { type: "Point", coordinates: [ -73.99279 , 40.719296 ] },
         distanceField: "dist.calculated",
@@ -809,7 +809,7 @@ output document, it adds a new array field that contains the traversal results
 of the recursive search for that document [@www-docs.mongodb].
 
 ```
-$ db.travelers.aggregate( [
+  db.travelers.aggregate( [
    {
       $graphLookup: {
          from: "airports",
@@ -829,7 +829,7 @@ It has a RAM limit of 100 MB. If the stage exceeds this limit, *$group*
 produces an error [@www-docs.mongodb].
 
 ```
-$ db.sales.aggregate(
+  db.sales.aggregate(
    [
       {
         $group : {
@@ -847,13 +847,13 @@ $ db.sales.aggregate(
 The *$indexStats* stage returns statistics regarding the use of each index for 
 for a collection [@www-docs.mongodb].
  
-`$ db.orders.aggregate( [ { $indexStats: { } } ] )`
+`  db.orders.aggregate( [ { $indexStats: { } } ] )`
 
 The *$limit* stage is used for controlling the number of documents passed to the 
 next stage in the pipeline[@www-docs.mongodb].
 
 ```
-$ db.article.aggregate(
+  db.article.aggregate(
     { $limit : 5 }
 )
 ```
@@ -861,15 +861,15 @@ $ db.article.aggregate(
 The *$listLocalSessions* stage gives the session information currently connected 
 to mongos or mongod instance [@www-docs.mongodb].
 
-`$ db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
+`  db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
  
 The *$listSessions* stage lists out all session that have been active long 
 enough to propagate to the *system.sessions* collection [@www-docs.mongodb].
 
 ```
-$ use config
+ use config
 
-db.system.sessions.aggregate( [  { $listSessions: { allUsers: true } } ] )
+ db.system.sessions.aggregate( [  { $listSessions: { allUsers: true } } ] )
 
 ```
 
@@ -892,7 +892,7 @@ The *$match* stage is used to filter the document stream. Only matching document
 pass to next stage [@www-docs.mongodb].
 
 ```
-$ db.articles.aggregate(
+  db.articles.aggregate(
     [ { $match : { author : "dave" } } ]
 )
 ```
@@ -900,13 +900,13 @@ $ db.articles.aggregate(
 The *$project* stage is used to reshape the documents by adding or deleting the 
 fields.
 
-`$ db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
+`  db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
 
 The *$redact* stage reshapes stream documents by restricting information using 
 information stored in documents themselves [@www-docs.mongodb].
 
 ```
-$ db.accounts.aggregate(
+  db.accounts.aggregate(
   [
     { $match: { status: "A" } },
     {
@@ -922,7 +922,7 @@ The *$replaceRoot* stage is used to replace a document with a specified
 embedded document [@www-docs.mongodb].
 
 ```
-$ db.produce.aggregate( [
+  db.produce.aggregate( [
    {
      $replaceRoot: { newRoot: "$in_stock" }
    }
@@ -933,7 +933,7 @@ The *$sample* stage is used to sample out data by randomly selecting number
 of documents form input [@www-docs.mongodb].
 
 ```
-$ db.users.aggregate(
+  db.users.aggregate(
    [ { $sample: { size: 3 } } ]
 )
 ```
@@ -942,7 +942,7 @@ The *$skip* stage skips specified initial number of documents and passes
 remaining documents to the pipeline [@www-docs.mongodb].
 
  ```
-$ db.article.aggregate(
+  db.article.aggregate(
     { $skip : 5 }
 );
  ```
@@ -962,13 +962,13 @@ The *$sortByCounts* stage groups the incoming documents based on a
 specified expression value and counts documents in each distinct 
 group [@www-docs.mongodb].
 
-`$ db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
+` db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
 
 The *$unwind* stage deconstructs an array field from the input 
 documents to output a document for each element [@www-docs.mongodb].
 
 ```
-$ db.inventory.aggregate( [ { $unwind: "$sizes" } ] )
+  db.inventory.aggregate( [ { $unwind: "$sizes" } ] )
   db.inventory.aggregate( [ { $unwind: { path: "$sizes" } } ] )
 ```
 
@@ -976,7 +976,7 @@ The *$out* stage is used to write aggregation pipeline results into a collection
 This stage should be the last stage of a pipeline [@www-docs.mongodb].
 
 ```
-$ db.books.aggregate( [
+  db.books.aggregate( [
                   { $group : { _id : "$author", books: { $push: "$title" } } },
                       { $out : "authors" }
                   ] )
@@ -1013,7 +1013,7 @@ updates, specification of documents to be removed is a must. For
 example, removal of the entire document collection with a score
 of 1, would required one to use the following command:
 
-`$ cloudmesh.users.remove({"score":1, safe=True})`
+` cloudmesh.users.remove({"score":1, safe=True})`
 
 The *safe* parameter set to *True* ensures the operation was 
 completed [@book-ohiggins]. 
@@ -1028,7 +1028,7 @@ method after connecting to the desired mongod instance
 one would use the *command()* method in the following manner:
 
 ```
-$ client.admin.command('copydb',
+  client.admin.command('copydb',
                          fromdb='cloudmesh',
                          todb='cloudmesh_copy')
 ```
@@ -1040,7 +1040,7 @@ pass in the credentials nor to authenticate to the admin database
 would use the following command:
 
 ```
-$ client.admin.command('copydb',
+  client.admin.command('copydb',
                          fromdb='cloudmesh',
                          todb='cloudmesh_copy',
                          fromhost='source.example.com')
@@ -1050,7 +1050,7 @@ On the other hand, if the server where we are copying the
 database to is protected, one would use this command instead:
 
 ```
-$ client = MongoClient('target.example.com',
+  client = MongoClient('target.example.com',
                      username='administrator',
                      password='pwd')
   client.admin.command('copydb',
@@ -1125,7 +1125,7 @@ that must be used in this function is the name of the desired database
 to be imported from the MongoEngine library.
 
 ```
-$ from mongoengine import connect
+  from mongoengine import connect
   connect('cloudmesh_community')
 ```
 
@@ -1133,7 +1133,7 @@ Similarly to the MongoClient, MongoEngine uses the local host and
 port 27017 by default, however, the *connect()* function also allows 
 specifying other hosts and port arguments as well [@www-connecting].
 
-`$ connect('cloudmesh_community', host='196.185.1.62', port=16758)`
+`  connect('cloudmesh_community', host='196.185.1.62', port=16758)`
 
 Other types of connections are also supported (i.e. URI) and they can 
 be completed by providing the URI in the *connect()* function 
@@ -1153,7 +1153,7 @@ in the *cloudmesh_community* object (database), the following command
 would be used.
 
 ```
-$ for user in cloudmesh_community.objects:
+  for user in cloudmesh_community.objects:
      print cloudmesh_community.student
 ```
 
@@ -1163,7 +1163,7 @@ specific information [@www-querying]. Let's say one would like to
 iterate over *cloudmesh_community* students that are natives of Indiana. 
 To achieve this, one would use the following command:
 
-`$ indy_students = cloudmesh_community.objects(state='IN')`
+`  indy_students = cloudmesh_community.objects(state='IN')`
 
 This library also allows the use of all operators except for the 
 equality operator in its queries, and moreover, has the capability 
@@ -1174,24 +1174,24 @@ The string queries are useful in performing text operations in the
 conditional queries. A query to find a document exactly matching and
 with state *ACTIVE* can be performed in the following manner:
 
-`$ db.cloudmesh_community.find( State.exact("ACTIVE") )`
+`db.cloudmesh_community.find( State.exact("ACTIVE") )`
 
 The query to retrieve document data for names that start with a case 
 sensitive *AL* can be written as:
 
-`$ db.cloudmesh_community.find( Name.startswith("AL") )`
+`db.cloudmesh_community.find( Name.startswith("AL") )`
 
 To perform an exact same query for the non-key-sensitive *AL* one 
 would use the following command:
 
-`$ db.cloudmesh_community.find( Name.istartswith("AL") )`
+`db.cloudmesh_community.find( Name.istartswith("AL") )`
 
 The MongoEngine allows data extraction of geographical locations by
 using Geo queries. The *geo_within* operator checks if a geometry 
 is within a polygon.
 
 ```
-$ cloudmesh_community.objects(
+  cloudmesh_community.objects(
             point__geo_within=[[[40, 5], [40, 6], [41, 6], [40, 5]]])
   cloudmesh_community.objects(
             point__geo_within={"type": "Polygon",
@@ -1203,7 +1203,7 @@ exactly to the given value. To match all pages that have the word  *coding*
 as an item in the *tags* list one would use the following query:
 
 ```
-$ class Page(Document):
+  class Page(Document):
      tags = ListField(StringField())
 
   Page.objects(tags='coding')
@@ -1270,7 +1270,7 @@ helpers. It can be installed with an easy command such as this:
 PyMongo can be added in the following manner:
 
 ```
-$ from flask import Flask
+  from flask import Flask
   from flask_pymongo import PyMongo
   app = Flask(__name__)
   app.config["MONGO_URI"] = "mongodb://localhost:27017/cloudmesh_community"
@@ -1281,7 +1281,7 @@ Multiple PyMongo instances can be used to connect to multiple databases or
 database servers:
 
 ```
-$ app = Flask(__name__)
+  app = Flask(__name__)
   mongo1 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_one")
   mongo2 = PyMongo(app, uri="mongodb://localhost:27017/cloudmesh_community_two")
   mongo3 = PyMongo(app, uri=
@@ -1291,7 +1291,7 @@ $ app = Flask(__name__)
 Flask-PyMongo provides helpers for some common tasks:
 
 ```
-$ @app.route("/user/<username>")
+  @app.route("/user/<username>")
   def user_profile(username):
       user = mongo.db.cloudmesh_community.find_one_or_404({"_id": username})
       return render_template("user.html", user=user)
