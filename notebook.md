@@ -3,6 +3,8 @@
 - working on the project
 - exploring some options to add to the project
 - met with the team last night to go over details 
+- fixing formatting and bibtext for paper.md
+- need to add more in the Flask-PyMongo section
 
 # Week Fri 11/9/18 - Thu 11/15/18
 
