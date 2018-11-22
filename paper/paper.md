@@ -8,6 +8,8 @@
 
 :o::o: flask pymongo section seemnot ready there is lots if programming detail in it that seems great, but the presentation of that section seems abit dense 
 
+:o: lost of ??? erros bibtex errors? you must look at epub
+
 * :o: we already pointed out that first section is too long - broke it down to multiple segments
 * :o: proposed title change: MongoDB in Python - changed 
 * :o: introduction and learning outcome missing - added introduction and learning outcomes
