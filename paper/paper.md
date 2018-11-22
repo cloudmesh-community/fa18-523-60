@@ -1,10 +1,12 @@
-# MongoDB in Python :hand: fa18-523-60, fa18-523-64, fa18-523-72
+# MongoDB in Python :wave: :exclamation: fa18-523-60, fa18-523-64, fa18-523-72
 
 | Izolda Fetko, Nishad Tupe, Vishal Bhoyar
 | ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
 | Indiana University
 | hid: fa18-523-60, fa18-523-64, fa18-523-72
 | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md)
+
+:o::o: flask pymongo section seemnot ready there is lots if programming detail in it that seems great, but the presentation of that section seems abit dense 
 
 * :o: we already pointed out that first section is too long - broke it down to multiple segments
 * :o: proposed title change: MongoDB in Python - changed 
