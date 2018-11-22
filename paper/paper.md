@@ -17,7 +17,7 @@
 * :o: do not use quotes for non cited text such as in  "_id" that is `_id` - fixed
 * :o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
 
-## Introduction
+# Introduction
 
 In today's era, NoSQL databases have developed an enormous potential to 
 process the unstructured data efficiently. Modern information is 
@@ -42,7 +42,7 @@ its driver PyMongo,  its object-document mapper MongoEngine, and
 the Flask-PyMongo micro-web framework that make MongoDB more attractive
 and user-friendly.
 
-## Learning Outcome
+# Learning Outcome
 
 The learning outcome of this paper is to equip the readers with a 
 basic MongoDB knowledge, as well as on how to use the PyMongo driver 
@@ -51,7 +51,7 @@ the reader will be introduced to some basic functionalities of the
 MongoEngine, an Object-Document mapper, and Flask-Mongo, a micro web 
 framework.  
 
-## MongoDB
+# MongoDB
 
 Today MongoDB is one of leading NoSQL database which is   
 fully capable of handling dynamic changes,
@@ -353,7 +353,7 @@ database. Global technology leaders such as Google, Facebook, eBay, and Nokia
 are leveraging MongoDB and *Atlas* cloud services making MongoDB one of the most 
 popular choices among the NoSQL databases [@www-mongomanual]. 
 
-## PyMongo
+# PyMongo
 
 PyMongo is the official Python driver or distribution that allows work 
 with a NoSQL type database called *MongoDB* [@api-mongodb-com-api]. The 
@@ -1082,7 +1082,7 @@ learn it and quickly feel comfortable with it.
 According to [@book-ohiggins], MongoDB is very applicable to modern 
 applications, which makes PyMongo equally valuable [@book-ohiggins].
 
-## MongoEngine
+# MongoEngine
 
 > "MongoEngine is an Object-Document Mapper, written in Python 
 > for working with MongoDB" [@docs-mongoengine]. 
@@ -1218,7 +1218,7 @@ Overall, it would be safe to say that MongoEngine has good compatibility with
 Python. It provides different functions to utilize Python easily with MongoDB
 and which makes this pair even more attractive to application developers.
 
-## Flask-PyMongo
+# Flask-PyMongo
 
 > "Flask is a micro web framework written in Python" 
 > [@flask-framework]. 
