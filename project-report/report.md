@@ -16,20 +16,68 @@ Keywords: MongoDB, PyMongo, crowdfunding, virtual machine, Docker containerizati
 
 ## Abstract
 
-Crowdfunding is a certain way of raising funds where individuals come together 
-and collectively support projects by investing in them. Kickstarter is one of the 
-leading crowdfunding platforms in the world that helps individuals/businesses 
-in various categories such as art, film, music, theatre, games, design, and other
-to raise necessary funds to complete their projects. This paper explores the topic
-of crowfunding by analyzing the Kickstarter Projects dataset obtained from Kaggle
-while utilizing big data technologies such as MongoDB, virtual machines, cloud, 
-Docker, and PyMongo driver.
+Crowdfunding is a certain way of raising funds where 
+individuals come together and collectively support projects 
+by investing in them. Kickstarter is one of the leading 
+crowdfunding platforms in the world that helps individuals/businesses 
+in various categories such as art, film, music, theatre, games, 
+design, and other to raise necessary funds to complete their projects. 
+This paper explores the topic of crowfunding by analyzing the
+Kickstarter Projects dataset obtained from Kaggle while utilizing big 
+data technologies such as MongoDB, virtual machines, cloud, Docker, 
+and PyMongo driver.
 
 ## Introduction
 
+In today's world there are many creative individuals and groups 
+that are trying to develop products, projects, and businesses 
+based on their unique ideas and talents. In many cases, an idea 
+or a talent is not enough to accomplish this. Capital funds
+are one of the main elements of a successful startup process. 
 
+Although there is a significant number of government programs 
+in the United States designed to help small businesses and 
+creative indivials to obtain necessary funds for their projects, 
+a high number of start-ups nenetheless remain capital contrained
+[@www-voelker]. This is the reason why the *Kickstarter* platform 
+was developed and is still successfully operating since 2009 
+[@www-voelker].
 
+*Kickstarter* is a web-based crowdfunding platform that helps 
+support creative arts around the globe [@www-voelker]. As of 
+November, 2018, *Kickstarter* has pledged more than four billion 
+dollars while successufully funding more than 150 thousand projects
+[@www-kickstarter-stats]. Overall, the platform has had more than 
+15 million backers, out of those, 5 million were repeated backers, 
+which totalled in more than 49 million pledges [@www-kickstarter-stats]. 
+The highest pledged category is *Games* with more than 580 million 
+dollars in successful projects and success rate of 36.55% 
+[@www-kickstarter-stats]. 
 
+*Kickstarter* uses the fundable project model where the would-be 
+business owners or project managers submit their project along with 
+the necessary project information and its funding goal.
+
+> "The funding goal establishes a base target for the project and a 
+> deadline (generally 30-days) to achieve the funding" [@www-voelker]. 
+
+The prospective artists and entrepreneurs typically display their 
+projects in a video form where they have the opportunity to outline
+the project along with its benefits and funding requirements 
+[@www-voelker].
+
+The video is shown on the *Kickstarter* project webpage along with the number
+of backers, the amount of funds received/pledged as well as the fundraising 
+goal. As each project is timed, the time remaining in the *Kickstarter* 
+promotion is shown on the project page as well.
+
+Since the platform is based on an *all or nothing* funding model, pledged 
+funds are not available to the entrepreneurs until the end of the funding 
+period which is determined by the goal-setting statement [@www-voelker]. 
+The financial transcations occur only in cases where a projects meets 
+its initial targets and funding expectations [@www-voelker]. If the initial 
+target is exceeded, the project received all funding as well as the excess 
+of its goal.
 
 ## Requirements
 TBD
@@ -60,15 +108,16 @@ its community members. To be able to use this technology, users
 need to ensure that they had installed the latest Python 3 version 
 on their machines as well as the pip package manager [@www-githubkagapi].
 Accessing the Kaggle API is done by using a simple command line; however, 
-this is not possible until a Kaggle account is created [@www-githubkagapi]. 
-Once the initial step had been completed, an API token can be created, 
-which triggers a download of a JSON file that contains the user credentials 
-necessary to access the API [@www-githubkagapi]. Once the sign-up had been 
-finalized, various command lines can be used to access the list of 
-competitions along with the files and submissions associated with them 
-[@www-githubkagapi]. A different set of commands can be used for dataset 
-downloads and dataset creation, while the final group of commands listed on 
-the Kaggle API GitHub page are the commands to manage Kernels, more 
+this is not possible until a Kaggle account is created 
+[@www-githubkagapi]. Once the initial step had been completed, an 
+API token can be created, which triggers a download of a JSON file 
+that contains the user credentials necessary to access the API 
+[@www-githubkagapi]. Once the sign-up had been finalized, various 
+command lines can be used to access the list of competitions along 
+with the files and submissions associated with them [@www-githubkagapi]. 
+A different set of commands can be used for dataset downloads and 
+dataset creation, while the final group of commands listed on the 
+Kaggle API GitHub page are the commands to manage Kernels, more 
 specifically Kernel pull and push [@www-githubkegapi].
 
 The importance of the Kaggle's public API is significant. It minimizes 
