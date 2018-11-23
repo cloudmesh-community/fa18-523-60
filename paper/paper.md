@@ -17,7 +17,7 @@
 * :o: do not use quotes for non cited text such as in  "_id" that is `_id` - fixed
 * :o: use bash and python after the 3 quotes, bash has a $ at the beginning - fixed
 
-# Introduction
+## Introduction
 
 In today's era, NoSQL databases have developed an enormous potential 
 to process the unstructured data efficiently. Modern information is 
@@ -42,7 +42,7 @@ its driver PyMongo, its object-document mapper MongoEngine, and the
 Flask-PyMongo micro-web framework that make MongoDB more attractive
 and user-friendly.
 
-# Learning Outcome
+## Learning Outcome
 
 The learning outcome of this paper is to equip the readers with a 
 basic MongoDB knowledge, as well as on how to use the PyMongo driver 
@@ -51,7 +51,7 @@ the reader will be introduced to some basic functionalities of the
 MongoEngine, an Object-Document mapper, and Flask-Mongo, a micro-web 
 framework.  
 
-# MongoDB
+## MongoDB
 
 Today MongoDB is one of leading NoSQL database which is fully capable 
 of handling dynamic changes, processing large volumes of complex and 
@@ -356,7 +356,7 @@ database. Global technology leaders such as Google, Facebook, eBay, and Nokia
 are leveraging MongoDB and *Atlas* cloud services making MongoDB one of the most 
 popular choices among the NoSQL databases [@www-mongoatlas]. 
 
-# PyMongo
+## PyMongo
 
 PyMongo is the official Python driver or distribution that allows work 
 with a NoSQL type database called *MongoDB* [@api-mongodb-com-api]. The 
@@ -458,10 +458,11 @@ allows the MongoClient object to communicate with the database
 `from pymongo import MongoClient`
 `client = MongoClient()`
 
-This command allows a connection with a default, local host through 
-port 27017, however, depending on the programming requirements,
-one can also specify those by listing them in the client instance 
-or use the same information via the Mongo URI format [@www-realpython].
+This command allows a connection with a default, local host 
+through port 27017, however, depending on the programming 
+requirements, one can also specify those by listing them in the 
+client instance or use the same information via the Mongo URI 
+format [@www-realpython].
 
 ### Accessing Databases
 
@@ -469,10 +470,11 @@ Since MongoClient plays a server role, it can be used to access
 any desired databases in an easy way. To do that, one can use two 
 different approaches. The first approach would be doing this via 
 the *attribute* method where the name of the desired database is 
-listed as an attribute, and the second approach, which would include a 
-dictionary-style access [@www-realpython]. For example, to access a 
-database called *cloudmesh_community*, one would use the following 
-commands for the attribute and for the dictionary method, respectively.
+listed as an attribute, and the second approach, which would 
+include a dictionary-style access [@www-realpython]. For example, 
+to access a database called *cloudmesh_community*, one would use 
+the following commands for the attribute and for the dictionary 
+method, respectively.
 
 `db = client.cloudmesh_community`
 
@@ -600,7 +602,8 @@ myquery = { 'course': 'Big Data Applications and Analytics' }
 Updating all documents that fall under the same criteria can be
 done with the *update_many* method [@www-w3schools]. For example, 
 to update all documents in which course title starts with letter 
-*B* with a different instructor information, we would do the following:
+*B* with a different instructor information, we would do the
+following:
 
 ```
    client = pymongo.MongoClient('mongodb://localhost:27017/')
@@ -626,11 +629,11 @@ to this:
 
 `cloudmesh = count_documents({'author': 'von Laszewski'})`
 
-This technology supports some more advanced querying options as well. 
-Those advanced queries allow one to add certain contraints and narrow 
-down the results even more. For example, to get the courses thought
-by professor von Laszewski after a certain date, one would use the 
-following command:
+This technology supports some more advanced querying options as 
+well. Those advanced queries allow one to add certain contraints 
+and narrow down the results even more. For example, to get the 
+courses thought by professor von Laszewski after a certain date, 
+one would use the following command:
 
 ```
   d = datetime.datetime(2017, 11, 12, 12)
@@ -640,12 +643,13 @@ following command:
 
 ### Indexing
 
-Indexing is a very important part of querying. It can greately improve
-query performance but also add functionality and aide in storing documents 
-[@www-pymongo-tutorial]. 
+Indexing is a very important part of querying. It can greately 
+improve query performance but also add functionality and aide in 
+storing documents [@www-pymongo-tutorial]. 
 
-> "To create a unique index on a key that rejects documents whose value 
-> for that key already exists in the index" [@www-pymongo-tutorial], 
+> "To create a unique index on a key that rejects documents whose 
+> value for that key already exists in the index" 
+> [@www-pymongo-tutorial], 
 
 We need to firstly create the index in the following manner:
 
@@ -656,23 +660,23 @@ We need to firstly create the index in the following manner:
   sorted(list(db.profiles.index_information()))
 ```
 
-This command acutally creates two different indexes. The first one is
-the *_id* , created by MongoDB automatically, and the second one is 
-the *user_id*, created by the user.
+This command acutally creates two different indexes. The first 
+one is the *_id* , created by MongoDB automatically, and the 
+second one is the *user_id*, created by the user.
 
-The purpose of those indexes is to cleverly prevent future additions of 
-invalid *user_ids* into a collection.
+The purpose of those indexes is to cleverly prevent future 
+additions of invalid *user_ids* into a collection.
 
 ### Sorting
 
-Sorting on the server-side is also avaialable via MongoDB. The PyMongo
-*sort()* method is equivalent to the SQL *order by*  statement and it
-can be performed as *pymongo.ascending* and *pymongo.descending* 
-[@book-ohiggins]. This method is much more efficient as it is being 
-completed on the server-side, compared to the sorting completed on 
-the client side. For example, to return all users with first name 
-*Gregor* sorted in descending order by birthdate we would use 
-a command such as this:
+Sorting on the server-side is also avaialable via MongoDB. 
+The PyMongo *sort()* method is equivalent to the SQL 
+*order by*  statement and it can be performed as *pymongo.ascending* 
+and *pymongo.descending* [@book-ohiggins]. This method is much 
+more efficient as it is being completed on the server-side, 
+compared to the sorting completed on the client side. For example, 
+to return all users with first name *Gregor* sorted in descending 
+order by birthdate we would use a command such as this:
 
 ```
   users = cloudmesh.users.find({'firstname':'Gregor'}).sort(('dateofbirth', pymongo.DESCENDING))
@@ -698,11 +702,11 @@ by helping change the document output form. Other pipelines help group
 or sort documents with specific fields. By using native operations from 
 MongoDB, the pipeline operators are efficient in aggregating results.
 
-The *$addFields* stage is used to add new fields into documents. It reshapes 
-each document in stream, similarly to the *$project* stage. The output 
-document will contain existing fields from input documents and the newly 
-added fields [@www-docs-mongodb]. The following example shows how to add 
-*student details* into a document.
+The *$addFields* stage is used to add new fields into documents. It 
+reshapes each document in stream, similarly to the *$project* stage. 
+The output document will contain existing fields from input documents 
+and the newly added fields [@www-docs-mongodb]. The following example 
+shows how to add *student details* into a document.
 
 ```
   db.cloudmesh_community.aggregate([
@@ -715,10 +719,10 @@ added fields [@www-docs-mongodb]. The following example shows how to add
     } ])
 ```
 
-The *$bucket* stage is used to categorize incoming documents into groups
-based on specified expressions. Those groups are called *buckets* 
-[@www-docs-mongodb]. The following example shows the *$bucket* stage 
-in action.
+The *$bucket* stage is used to categorize incoming documents 
+into groups based on specified expressions. Those groups are 
+called *buckets* [@www-docs-mongodb]. The following example shows 
+the *$bucket* stage in action.
 
 ```
   db.user.aggregate([
@@ -741,10 +745,11 @@ in action.
     "count": { "$sum": 1 }}})
 ```
 
-In the *$bucketAuto* stage, the boundaries are automatically determined 
-in an attempt to evenly distribute documents into a specified number of 
-buckets. In the following operation, input documents are grouped into four 
-buckets according to the values in the price field [@www-docs-mongodb].
+In the *$bucketAuto* stage, the boundaries are automatically 
+determined in an attempt to evenly distribute documents into
+a specified number of buckets. In the following operation, 
+input documents are grouped into four buckets according to 
+the values in the price field [@www-docs-mongodb].
 
 ```
   db.artwork.aggregate( [
@@ -757,15 +762,16 @@ buckets according to the values in the price field [@www-docs-mongodb].
  ] )
 ```
 
-The *$collStats* stage returns statistics regarding a collection or view
-[@www-docs-mongodb]. 
+The *$collStats* stage returns statistics regarding a collection 
+or view [@www-docs-mongodb]. 
 
 ```
 db.matrices.aggregate( [ { $collStats: { latencyStats: { histograms: true } }
  } ] )
  ```
-The *$count* stage passes a document to the next stage that contains the 
-number documents that were input to the stage [@www-docs-mongodb].
+The *$count* stage passes a document to the next stage that 
+contains the number documents that were input to the stage 
+[@www-docs-mongodb].
 
  ```
    db.scores.aggregate(  [    {
@@ -773,8 +779,8 @@ number documents that were input to the stage [@www-docs-mongodb].
     {      $count: "passing_scores"  } ])
 ```
 
-The *$facet* stage helps process multiple aggregation pipelines in 
-a single stage [@www-docs-mongodb].
+The *$facet* stage helps process multiple aggregation pipelines 
+in a single stage [@www-docs-mongodb].
 
 ```
   db.artwork.aggregate( [ {
@@ -792,9 +798,10 @@ a single stage [@www-docs-mongodb].
         } ]}}])
 ```
 
-The *$geoNear* stage returns an ordered stream of documents based on the 
-proximity to a geospatial point. The output documents include an additional 
-distance field and can include a location identifier field [@www-docs-mongodb].
+The *$geoNear* stage returns an ordered stream of documents 
+based on the proximity to a geospatial point. The output documents 
+include an additional distance field and can include a location 
+identifier field [@www-docs-mongodb].
 
 ```
   db.places.aggregate([
@@ -809,9 +816,10 @@ distance field and can include a location identifier field [@www-docs-mongodb].
      }  }])
 ```
 
-The *$graphLookup* stage performs a recursive search on a collection. To each 
-output document, it adds a new array field that contains the traversal results 
-of the recursive search for that document [@www-docs-mongodb].
+The *$graphLookup* stage performs a recursive search on a 
+collection. To each output document, it adds a new array field 
+that contains the traversal results of the recursive search 
+for that document [@www-docs-mongodb].
 
 ```
   db.travelers.aggregate( [
@@ -829,9 +837,10 @@ of the recursive search for that document [@www-docs-mongodb].
 ] )
 ```
 
-The *$group* stage consumes the document data per each distinct group.
-It has a RAM limit of 100 MB. If the stage exceeds this limit, the 
-*$group* produces an error [@www-docs-mongodb].
+The *$group* stage consumes the document data per each 
+distinct group. It has a RAM limit of 100 MB. If the 
+stage exceeds this limit, the *$group* produces an 
+error [@www-docs-mongodb].
 
 ```
   db.sales.aggregate(
@@ -849,13 +858,14 @@ It has a RAM limit of 100 MB. If the stage exceeds this limit, the
 )
 ```
 
-The *$indexStats* stage returns statistics regarding the use of each index for 
-for a collection [@www-docs-mongodb].
+The *$indexStats* stage returns statistics regarding 
+the use of each index for a collection [@www-docs-mongodb].
  
 `db.orders.aggregate( [ { $indexStats: { } } ] )`
 
-The *$limit* stage is used for controlling the number of documents passed to the 
-next stage in the pipeline [@www-docs-mongodb].
+The *$limit* stage is used for controlling the number of 
+documents passed to the next stage in the pipeline 
+[@www-docs-mongodb].
 
 ```
   db.article.aggregate(
@@ -863,13 +873,15 @@ next stage in the pipeline [@www-docs-mongodb].
 )
 ```
 
-The *$listLocalSessions* stage gives the session information currently connected 
-to mongos or mongod instance [@www-docs-mongodb].
+The *$listLocalSessions* stage gives the session information 
+currently connected to mongos or mongod instance 
+[@www-docs-mongodb].
 
 `db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
  
-The *$listSessions* stage lists out all session that have been active long 
-enough to propagate to the *system.sessions* collection [@www-docs-mongodb].
+The *$listSessions* stage lists out all session that have 
+been active long enough to propagate to the *system.sessions* 
+collection [@www-docs-mongodb].
 
 ```
  use config
@@ -878,8 +890,8 @@ enough to propagate to the *system.sessions* collection [@www-docs-mongodb].
 
 ```
 
-The *$lookup* stage is useful for performing outer joins to other collections 
-in the same database [@www-docs-mongodb].
+The *$lookup* stage is useful for performing outer joins to 
+other collections in the same database [@www-docs-mongodb].
 
 ```
 {
@@ -893,8 +905,8 @@ in the same database [@www-docs-mongodb].
 }
 ```
 
-The *$match* stage is used to filter the document stream. Only matching documents
-pass to next stage [@www-docs-mongodb].
+The *$match* stage is used to filter the document stream. 
+Only matching documents pass to next stage [@www-docs-mongodb].
 
 ```
   db.articles.aggregate(
@@ -902,13 +914,14 @@ pass to next stage [@www-docs-mongodb].
 )
 ```
 
-The *$project* stage is used to reshape the documents by adding or deleting the 
-fields.
+The *$project* stage is used to reshape the documents by 
+adding or deleting the fields.
 
 `db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
 
-The *$redact* stage reshapes stream documents by restricting information using 
-information stored in documents themselves [@www-docs-mongodb].
+The *$redact* stage reshapes stream documents by restricting 
+information using information stored in documents themselves 
+[@www-docs-mongodb].
 
 ```
   db.accounts.aggregate(
@@ -923,8 +936,8 @@ information stored in documents themselves [@www-docs-mongodb].
         }      }    }  ]);
 ```
 
-The *$replaceRoot* stage is used to replace a document with a specified 
-embedded document [@www-docs-mongodb].
+The *$replaceRoot* stage is used to replace a document with 
+a specified embedded document [@www-docs-mongodb].
 
 ```
   db.produce.aggregate( [
@@ -934,8 +947,8 @@ embedded document [@www-docs-mongodb].
 ] )
 ```
 
-The *$sample* stage is used to sample out data by randomly selecting number 
-of documents form input [@www-docs-mongodb].
+The *$sample* stage is used to sample out data by randomly 
+selecting number of documents form input [@www-docs-mongodb].
 
 ```
   db.users.aggregate(
@@ -943,8 +956,8 @@ of documents form input [@www-docs-mongodb].
 )
 ```
 
-The *$skip* stage skips specified initial number of documents and passes
-remaining documents to the pipeline [@www-docs-mongodb].
+The *$skip* stage skips specified initial number of documents 
+and passes remaining documents to the pipeline [@www-docs-mongodb].
 
  ```
  db.article.aggregate(
@@ -952,8 +965,8 @@ remaining documents to the pipeline [@www-docs-mongodb].
  );
  ```
  
-The *$sort* stage is useful while reordering document stream by a specified 
-sort key [@www-docs-mongodb].
+The *$sort* stage is useful while reordering document stream 
+by a specified sort key [@www-docs-mongodb].
 
 ```
  db.users.aggregate(
@@ -963,22 +976,23 @@ sort key [@www-docs-mongodb].
  )
 ```
 
-The *$sortByCounts* stage groups the incoming documents based on a
-specified expression value and counts documents in each distinct 
-group [@www-docs-mongodb].
+The *$sortByCounts* stage groups the incoming documents 
+based on a specified expression value and counts documents 
+in each distinct group [@www-docs-mongodb].
 
 `db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
 
-The *$unwind* stage deconstructs an array field from the input 
-documents to output a document for each element [@www-docs-mongodb].
+The *$unwind* stage deconstructs an array field from the 
+input documents to output a document for each element [@www-docs-mongodb].
 
 ```
   db.inventory.aggregate( [ { $unwind: "$sizes" } ] )
   db.inventory.aggregate( [ { $unwind: { path: "$sizes" } } ] )
 ```
 
-The *$out* stage is used to write aggregation pipeline results into a collection. 
-This stage should be the last stage of a pipeline [@www-docs-mongodb].
+The *$out* stage is used to write aggregation pipeline results 
+into a collection. This stage should be the last stage of a 
+pipeline [@www-docs-mongodb].
 
 ```
   db.books.aggregate( [
@@ -995,27 +1009,31 @@ tag in the array, while the latter one
 > "sums over all of the emitted values for a given key"
 > [@www-mongo-aggregation].
 
-The last step in the Map/Reduce process it to call the *map_reduce()* 
-function and iterate over the results [@www-mongo-aggregation]. The 
-Map/Reduce operation provides result data in a collection or returns
-results in-line. One can perform subsequent operations with the same 
-input collection if the output of the same is written to a collection 
-[@www-docs-map-reduce]. An operation that produces results in a in-line 
-form must provide results with in the BSON document size limit. The current 
-limit for a BSON document is 16 MB. These types of operations are not 
-supported by views [@www-docs-map-reduce]. The PyMongo's API supports all 
-features of the MongoDB's Map/Reduce engine [@www-api-map-reduce]. Moreover, 
-Map/Reduce has the ability to get more detailed results by passing 
-*full_response=True* argument to the *map_reduce()* function [@www-api-map-reduce].
+The last step in the Map/Reduce process it to call the 
+*map_reduce()* function and iterate over the results 
+[@www-mongo-aggregation]. The Map/Reduce operation provides 
+result data in a collection or returns results in-line. One 
+can perform subsequent operations with the same input collection 
+if the output of the same is written to a collection 
+[@www-docs-map-reduce]. An operation that produces results 
+in a in-line form must provide results with in the BSON 
+document size limit. The current limit for a BSON document is 
+16 MB. These types of operations are not supported by views 
+[@www-docs-map-reduce]. The PyMongo's API supports all 
+features of the MongoDB's Map/Reduce engine [@www-api-map-reduce]. 
+Moreover, Map/Reduce has the ability to get more detailed results 
+by passing *full_response=True* argument to the *map_reduce()* 
+function [@www-api-map-reduce].
 
 ### Deleting Documents from a Collection
 
-The deletion of documents with PyMongo is fairly straight forward. 
-To do so, one would use the *remove()* method of the PyMongo Collection 
-object [@book-ohiggins]. Similarly to the reads and updates, specification 
-of documents to be removed is a must. For example, removal of the entire 
-document collection with a score of 1, would required one to use the following 
-command:
+The deletion of documents with PyMongo is fairly straight 
+forward. To do so, one would use the *remove()* method of 
+the PyMongo Collection object [@book-ohiggins]. Similarly 
+to the reads and updates, specification of documents to be 
+removed is a must. For example, removal of the entire 
+document collection with a score of 1, would required one 
+to use the following command:
 
 `cloudmesh.users.remove({"score":1, safe=True})`
 
@@ -1039,9 +1057,9 @@ one would use the *command()* method in the following manner:
 
 There are two ways to copy a database between servers. If a
 server is not password-prodected, one would not need to 
-pass in the credentials nor to authenticate to the admin database
-[@www-pymongo-documentation-copydb]. In that case, to copy a database 
-one would use the following command:
+pass in the credentials nor to authenticate to the admin 
+database [@www-pymongo-documentation-copydb]. In that case, 
+to copy a database one would use the following command:
 
 ```
   client.admin.command('copydb',
@@ -1078,10 +1096,11 @@ learn it and quickly feel comfortable with it.
 > combination for rapid, iterative development of horizontally 
 > scalable backend applications" [@book-ohiggins].
 
-According to [@book-ohiggins], MongoDB is very applicable to modern 
-applications, which makes PyMongo equally valuable [@book-ohiggins].
+According to [@book-ohiggins], MongoDB is very applicable 
+to modern applications, which makes PyMongo equally valuable 
+[@book-ohiggins].
 
-# MongoEngine
+## MongoEngine
 
 > "MongoEngine is an Object-Document Mapper, written in Python 
 > for working with MongoDB" [@www-docs-mongoengine]. 
@@ -1121,11 +1140,12 @@ virtual machine, or cloud.
 
 ### Connecting to a database using MongoEngine
 
-Once installed, MongoEngine needs to be connected to an instance 
-of the mongod, similarly to PyMongo [@www-connecting]. The *connect()* 
-function must be used to successfully complete this step and the argument 
-that must be used in this function is the name of the desired database 
-[@www-connecting]. Prior to using this function, the function name needs 
+Once installed, MongoEngine needs to be connected to an 
+instance of the mongod, similarly to PyMongo [@www-connecting]. 
+The *connect()* function must be used to successfully 
+complete this step and the argument that must be used in 
+this function is the name of the desired database [@www-connecting]. 
+Prior to using this function, the function name needs 
 to be imported from the MongoEngine library.
 
 ```
@@ -1133,55 +1153,60 @@ to be imported from the MongoEngine library.
   connect('cloudmesh_community')
 ```
 
-Similarly to the MongoClient, MongoEngine uses the local host and 
-port 27017 by default, however, the *connect()* function also allows 
-specifying other hosts and port arguments as well [@www-connecting].
+Similarly to the MongoClient, MongoEngine uses the local 
+host and port 27017 by default, however, the *connect()* 
+function also allows specifying other hosts and port 
+arguments as well [@www-connecting].
 
 `connect('cloudmesh_community', host='196.185.1.62', port=16758)`
 
-Other types of connections are also supported (i.e. URI) and they can 
-be completed by providing the URI in the *connect()* function 
-[@www-connecting]. 
+Other types of connections are also supported (i.e. URI) 
+and they can be completed by providing the URI in the 
+*connect()* function [@www-connecting]. 
 
 ### Querying using MongoEngine
 
-To query MongoDB using MongoEngine an *objects attribute* is used, 
-which is, technically, a part of the document class [@www-querying]. 
-This attribute is called the *QuerySetManager* which in return 
+To query MongoDB using MongoEngine an *objects attribute* 
+is used, which is, technically, a part of the document 
+class [@www-querying]. This attribute is called the 
+*QuerySetManager* which in return 
 
 >"creates a new *QuerySet* object on access" [@www-querying].
 
-To be able to access individual documents from a database, this object
-needs to be iterated over. For example, to return/print all students 
-in the *cloudmesh_community* object (database), the following command 
-would be used.
+To be able to access individual documents from a database, 
+this object needs to be iterated over. For example, to 
+return/print all students in the *cloudmesh_community* object 
+(database), the following command would be used.
 
 ```
   for user in cloudmesh_community.objects:
      print cloudmesh_community.student
 ```
 
-MongoEngine also has a capability of query filtering which means that 
-a keyword can be used within the called *QuerySet* object to retrieve 
-specific information [@www-querying]. Let's say one would like to 
-iterate over *cloudmesh_community* students that are natives of Indiana. 
+MongoEngine also has a capability of query filtering 
+which means that a keyword can be used within the called 
+*QuerySet* object to retrieve specific information 
+[@www-querying]. Let's say one would like to iterate over 
+*cloudmesh_community* students that are natives of Indiana. 
 To achieve this, one would use the following command:
 
 `indy_students = cloudmesh_community.objects(state='IN')`
 
-This library also allows the use of all operators except for the 
-equality operator in its queries, and moreover, has the capability 
-of handling *string queries*, *geo queries*, *list querying*, 
-and querying of the raw PyMongo queries [@www-querying]. 
+This library also allows the use of all operators except 
+for the equality operator in its queries, and moreover, 
+has the capability of handling *string queries*, *geo queries*, 
+*list querying*, and querying of the raw PyMongo queries 
+[@www-querying]. 
 
-The string queries are useful in performing text operations in the 
-conditional queries. A query to find a document exactly matching and
-with state *ACTIVE* can be performed in the following manner:
+The string queries are useful in performing text operations 
+in the conditional queries. A query to find a document exactly
+matching and with state *ACTIVE* can be performed in the 
+following manner:
 
 `db.cloudmesh_community.find( State.exact("ACTIVE") )`
 
-The query to retrieve document data for names that start with a case 
-sensitive *AL* can be written as:
+The query to retrieve document data for names that start with 
+a case sensitive *AL* can be written as:
 
 `db.cloudmesh_community.find( Name.startswith("AL") )`
 
@@ -1190,9 +1215,9 @@ would use the following command:
 
 `db.cloudmesh_community.find( Name.istartswith("AL") )`
 
-The MongoEngine allows data extraction of geographical locations by
-using Geo queries. The *geo_within* operator checks if a geometry 
-is within a polygon.
+The MongoEngine allows data extraction of geographical locations 
+by using Geo queries. The *geo_within* operator checks if a 
+geometry is within a polygon.
 
 ```
   cloudmesh_community.objects(
@@ -1203,9 +1228,9 @@ is within a polygon.
 ```
 
 The list query looks up the documents where the specified fields 
-matches exactly to the given value. To match all pages that have the 
-word  *coding* as an item in the *tags* list one would use the following 
-query:
+matches exactly to the given value. To match all pages that have 
+the word  *coding* as an item in the *tags* list one would use 
+the following query:
 
 ```
   class Page(Document):
@@ -1214,30 +1239,33 @@ query:
   Page.objects(tags='coding')
 ```
 
-Overall, it would be safe to say that MongoEngine has good compatibility 
-with Python. It provides different functions to utilize Python easily with 
-MongoDBand which makes this pair even more attractive to application 
-developers.
+Overall, it would be safe to say that MongoEngine has good 
+compatibility with Python. It provides different functions 
+to utilize Python easily with MongoDBand which makes this 
+pair even more attractive to application developers.
 
-# Flask-PyMongo
+## Flask-PyMongo
 
 > "Flask is a micro-web framework written in Python" 
 > [@www-flask-framework].                                                       
 
-It was developed after Django, and it is very pythonic in nature which 
-implies that it is explicitly the targeting the Python user community. It is 
-lightweight as it does not require additional tools or libraries and hence is 
-classified as a Micro-Web framework. It is often used with MongoDB using PyMongo 
-connector, and it treats data within MongoDB as searchable Python dictionaries. 
-The applications such as Pinterest, LinkedIn, and the community web page for 
-Flask are using the Flask framework. Moreover, it supports various features 
-such as the RESTful request dispatching, secure cookies, Google app engine 
-compatibility, and integrated support for unit testing, etc [@www-flask-framework]. 
-When it comes to connecting to a database, the connection details for MongoDB 
-can be passed as a variable or configured in PyMongo constructor with additional 
-arguments such as username and password, if required. It is important that 
-versions of both Flask and MongoDB are compatible with each other to avoid 
-functionality breaks [@www-flask-pymongo]. 
+It was developed after Django, and it is very pythonic 
+in nature which implies that it is explicitly the targeting 
+the Python user community. It is lightweight as it does not 
+require additional tools or libraries and hence is classified 
+as a Micro-Web framework. It is often used with MongoDB using 
+PyMongo connector, and it treats data within MongoDB as searchable 
+Python dictionaries. The applications such as Pinterest, LinkedIn, 
+and the community web page for Flask are using the Flask framework. 
+Moreover, it supports various features such as the RESTful request 
+dispatching, secure cookies, Google app engine compatibility, and 
+integrated support for unit testing, etc [@www-flask-framework]. 
+When it comes to connecting to a database, the connection details 
+for MongoDB can be passed as a variable or configured in PyMongo 
+constructor with additional arguments such as username and password, 
+if required. It is important that versions of both Flask and MongoDB 
+are compatible with each other to avoid functionality breaks 
+[@www-flask-pymongo]. 
 
 ### Installation
 
@@ -1257,16 +1285,18 @@ PyMongo can be added in the following manner:
 
 ### Configuration
 
-There are two ways to configure Flask-PyMongo. The first way would be to pass
-a MongoDB URI to the PyMongo constructor, while the second way would be to
+There are two ways to configure Flask-PyMongo. The first way 
+would be to pass a MongoDB URI to the PyMongo constructor, 
+while the second way would be to
 
-> "assign it to the MONGO_URI Flask confiuration variable" [@www-flask-pymongo].
+> "assign it to the MONGO_URI Flask confiuration variable" 
+> [@www-flask-pymongo].
 
 ### Connection to multiple databases/servers
 
-Multiple PyMongo instances can be used to connect to multiple databases or 
-database servers. To achieve this, once would use a command similar to the
-following:
+Multiple PyMongo instances can be used to connect to multiple 
+databases or database servers. To achieve this, once would 
+use a command similar to the following:
 
 ```
   app = Flask(__name__)
@@ -1278,8 +1308,9 @@ following:
 
 ### Flask-PyMongo Methods
 
-Flask-PyMongo provides helpers for some common tasks. One of them is the
-*Collection.find_one_or_404* method shown in the following example: 
+Flask-PyMongo provides helpers for some common tasks. 
+One of them is the *Collection.find_one_or_404* method 
+shown in the following example: 
 
 ```
   @app.route("/user/<username>")
@@ -1288,51 +1319,55 @@ Flask-PyMongo provides helpers for some common tasks. One of them is the
       return render_template("user.html", user=user)
 ```
 
-This method is very similar to the MongoDB's *find_one()* method, 
-however, instead of returning *None* it causes a *404 Not Found HTTP* 
-status [@www-flask-pymongo]. 
+This method is very similar to the MongoDB's *find_one()* 
+method, however, instead of returning *None* it causes 
+a *404 Not Found HTTP* status [@www-flask-pymongo]. 
 
-Similarly, the *PyMongo.send_file* and *PyMongo.save_file* methods work on 
-the file-like objects and save them to GridFS using the given file name
-[@www-flask-pymongo].
+Similarly, the *PyMongo.send_file* and *PyMongo.save_file* 
+methods work on the file-like objects and save them to GridFS 
+using the given file name [@www-flask-pymongo].
 
 ### Additional Libraries
 
-Flask-MongoAlchemy and Flask-MongoEngine are the additional libraries 
-that can be used to connect to a MongoDB database while using enhanced 
-features with the Flask app. The Flask-MongoAlchemy is used as a proxy 
-between Python and MongoDB to connect. It provides an option such as 
-server or database based authentication to connect to MongoDB. While the 
-default is set server based, to use a database-based authentication, the 
-config value *MONGOALCHEMY_SERVER_AUTH* parameter must be set to *False* 
-[@www-pythonhosted-MongoAlchemy]. 
+Flask-MongoAlchemy and Flask-MongoEngine are the additional 
+libraries that can be used to connect to a MongoDB database 
+while using enhanced features with the Flask app. The 
+Flask-MongoAlchemy is used as a proxy between Python and 
+MongoDB to connect. It provides an option such as server or 
+database based authentication to connect to MongoDB. While the 
+default is set server based, to use a database-based authentication, 
+the config value *MONGOALCHEMY_SERVER_AUTH* parameter must be 
+set to *False* [@www-pythonhosted-MongoAlchemy]. 
 
-Flask-MongoEngine is the Flask extension that provides integration with 
-the MongoEngine. It handles connection management for the apps. It can be 
-installed through *pip* and set up very easily as well. The default configuration 
-is set to the local host and port 27017. For the custom port and in cases 
-where MongoDB is running on another server, the host and port must be explicitly 
-specified in connect strings within the *MONGODB_SETTINGS* dictionary with 
-*app.config*, along with the database username and password, in cases where a 
-database authentication is enabled. The URI style connections are also supported 
-and supply the URI as the host in the *MONGODB_SETTINGS* dictionary with 
-*app.config*. There are various custom query sets that are available within 
-Flask-Mongoengine that are attached to Mongoengine's default queryset 
-[@www-flask-mongoengine]. 
+Flask-MongoEngine is the Flask extension that provides 
+integration with the MongoEngine. It handles connection 
+management for the apps. It can be installed through *pip* and 
+set up very easily as well. The default configuration 
+is set to the local host and port 27017. For the custom port 
+and in cases where MongoDB is running on another server, the host 
+and port must be explicitly specified in connect strings within 
+the *MONGODB_SETTINGS* dictionary with *app.config*, along with 
+the database username and password, in cases where a database 
+authentication is enabled. The URI style connections are also 
+supported and supply the URI as the host in the *MONGODB_SETTINGS* 
+dictionary with *app.config*. There are various custom query sets 
+that are available within Flask-Mongoengine that are attached to 
+Mongoengine's default queryset [@www-flask-mongoengine]. 
 
 ### Classes and Wrappers
 
-Attributes such as *cx* and *db* in the PyMongo objects are the ones that help 
-provide access to the MongoDB server [@www-flask-pymongo]. To achieve this,
-one must pass the Flask app to the constructor or call *init_app()* 
-[@www-flask-pymongo]. 
+Attributes such as *cx* and *db* in the PyMongo objects are 
+the ones that help provide access to the MongoDB server 
+[@www-flask-pymongo]. To achieve this, one must pass the 
+Flask app to the constructor or call *init_app()* [@www-flask-pymongo]. 
 
-> "Flask-PyMongo wraps PyMongo's MongoClient, Database, and Collection classes,
-> and overrides their attribute and item accessors" [@www-flask-pymongo]. 
+> "Flask-PyMongo wraps PyMongo's MongoClient, Database, and 
+> Collection classes, and overrides their attribute and item 
+> accessors" [@www-flask-pymongo]. 
 
-This type of wrapping allows Flask-PyMongo to add methods to *Collection* while
-at the same time allowing a MongoDB-style dotted expressions in the code 
-[@www-flask-pymongo]. 
+This type of wrapping allows Flask-PyMongo to add methods to 
+*Collection* while at the same time allowing a MongoDB-style 
+dotted expressions in the code [@www-flask-pymongo]. 
 
 ```
 type(mongo.cx)
@@ -1340,18 +1375,20 @@ type(mongo.db)
 type(mongo.db.cloudmesh_community)
 ```
 
-Flask-PyMongo creates connectivity between Python and Flask using a MongoDB database and 
-supports 
+Flask-PyMongo creates connectivity between Python and Flask 
+using a MongoDB database and supports 
 
-> "extensions that can add application features as if they were implemented in Flask 
-> itself" [@www-wiki-flask],
+> "extensions that can add application features as if they were 
+> implemented in Flask itself" [@www-wiki-flask],
 
-hence, it can be used as an additional Flask functionality in Python code. The extensions 
-are there for the purpose of supporting form validations, authentication technologies, 
-object-relational mappers and framework related tools which ultimately adds a lot of 
-strength to this micro-web framework [@www-wiki-flask]. One of the main reasons and 
-benefits why it is frequently used with MongoDB is its capability of adding more control 
-over databases and history [@www-wiki-flask].
+hence, it can be used as an additional Flask functionality in 
+Python code. The extensions are there for the purpose of 
+supporting form validations, authentication technologies, 
+object-relational mappers and framework related tools which 
+ultimately adds a lot of strength to this micro-web framework 
+[@www-wiki-flask]. One of the main reasons and benefits why it is 
+frequently used with MongoDB is its capability of adding more 
+control over databases and history [@www-wiki-flask].
 
 ## Workbreakdown
 
