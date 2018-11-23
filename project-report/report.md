@@ -29,6 +29,8 @@ Docker, and PyMongo driver.
 
 
 
+
+
 ## Requirements
 TBD
 
@@ -37,39 +39,44 @@ TBD
 
 ## Architecture
 
-One of the technologies used to easily obtain the Kickstarter Projects dataset is 
-the newly offered Kaggle Public API. API stands for *Application Programming 
-Interface* through
+One of the technologies used to easily obtain the Kickstarter Projects 
+dataset is the newly offered Kaggle Public API. API stands for 
+*Application Programming Interface* through
 
-> "which interactions happen between an enterprise and applications that use 
-> its assets" [@www-apiwiki].
+> "which interactions happen between an enterprise and applications 
+> that use its assets" [@www-apiwiki].
 
-> "When used in the context of web development, an API is typically defined as a set 
-> of specifications, such as Hypertext Transfer Protocol (HTTP) request messages, along 
-> with a definition of the structure of response messages, usually in an Extensible 
-> Markup Language (XML) or JSON format" [@www-apiwiki].
+> "When used in the context of web development, an API is typically 
+> defined as a set of specifications, such as Hypertext Transfer Protocol 
+> (HTTP) request messages, along with a definition of the structure of 
+> response messages, usually in an Extensible Markup Language (XML) or 
+> JSON format" [@www-apiwiki].
 
-Kaggle Public API was launched in February 2018 and can be used for *creating datasets, 
-kernels*, or simply "connect with Kaggle" [@www-kaggleapi]. Although still in its beta 
-phase, it allows a more user-friendly data download as well as a seamless workflow for 
-its community members. To be able to use this technology, users need to ensure that they 
-had installed the latest Python 3 version on their machines as well as the pip package 
-manager [@www-githubkagapi]. Accessing the Kaggle API is done by using a simple command 
-line; however, this is not possible until a Kaggle account is created [@www-githubkagapi]. 
-Once the initial step had been completed, an API token can be created, which triggers a 
-download of a JSON file that contains the user credentials necessary to access the API 
-[@www-githubkagapi]. Once the sign-up had been finalized, various command lines can be 
-used to access the list of competitions along with the files and submissions associated 
-with them [@www-githubkagapi]. A different set of commands can be used for dataset 
-downloads and dataset creation, while the final group of commands listed on the Kaggle 
-API GitHub page are the commands to manage Kernels, more specifically Kernel pull and 
-push [@www-githubkegapi].
+Kaggle Public API was launched in February 2018 and can be used for 
+*creating datasets, kernels*, or simply *connect with Kaggle* 
+[@www-kaggleapi]. Although still in its beta phase, it allows a more 
+user-friendly data download as well as a seamless workflow for 
+its community members. To be able to use this technology, users 
+need to ensure that they had installed the latest Python 3 version 
+on their machines as well as the pip package manager [@www-githubkagapi].
+Accessing the Kaggle API is done by using a simple command line; however, 
+this is not possible until a Kaggle account is created [@www-githubkagapi]. 
+Once the initial step had been completed, an API token can be created, 
+which triggers a download of a JSON file that contains the user credentials 
+necessary to access the API [@www-githubkagapi]. Once the sign-up had been 
+finalized, various command lines can be used to access the list of 
+competitions along with the files and submissions associated with them 
+[@www-githubkagapi]. A different set of commands can be used for dataset 
+downloads and dataset creation, while the final group of commands listed on 
+the Kaggle API GitHub page are the commands to manage Kernels, more 
+specifically Kernel pull and push [@www-githubkegapi].
 
-The importance of the Kaggle's public API is significant. It minimizes the need 
-for its users to manually download large datasets, hence saving them time when 
-working on important projects. It is also helping students in expanding their 
-knowledge and programming experience through practical examples and real-life 
-data that can be later implemented in their professional work.
+The importance of the Kaggle's public API is significant. It minimizes 
+the need for its users to manually download large datasets, hence saving 
+them time when working on important projects. It is also helping students 
+in expanding their knowledge and programming experience through practical 
+examples and real-life data that can be later implemented in their 
+professional work.
 
 ## Dataset Description
 
