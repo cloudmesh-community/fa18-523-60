@@ -1,3 +1,9 @@
+# Week Fri 11/23/18 - Thu 11/29/18
+
+- updated references in paper.md and paper.bib
+- added configuration and more text to Flask-PyMongo section
+- rearranged Flask-PyMongo section
+
 # Week Fri 11/16/18 - Thu 11/22/18
 
 - working on the project
