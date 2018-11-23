@@ -60,7 +60,7 @@ as well as distributed system challenges [@www-mongodb]. At its core,
 MongoDB is an open source, cross-platform, document database mainly 
 written in C++ language. 
 
-### Installation
+#### Installation
 
 MongoDB can be installed on various Unix Platforms, including Linux, 
 Ubuntu, Amazon Linux, etc [@www-digitaloceaninst]. This section focuses 
@@ -147,7 +147,7 @@ $ logappend=true
 MongoDB is now listening for a remote connection that can be accessed 
 by anyone with appropriate credentials [@www-digitaloceaninst].  
 
-### Collections and Documents
+#### Collections and Documents
 
 Each database within Mongo environment contains collections which in turn 
 contain documents. Collections and documents are analogous to tables and 
@@ -210,7 +210,7 @@ by default.
 
 `> db.myNewCollection2.createIndex( { y: 1 } )`
 
-### MongoDB Querying
+#### MongoDB Querying
 
 The data retrieval patterns, the frequency of data manipulation 
 statements such as insert, updates, and deletes may demand for 
@@ -288,7 +288,7 @@ To perform a Like Match (Regex), one would use the following command:
 
 `> db.products.find( { sku: { $regex: /789$/ } } )`                               
 
-### MongoDB Basic Functions
+#### MongoDB Basic Functions
 
 When it comes to the technical elements of MongoDB, it posses a 
 rich interface for importing and storage of external data in various 
@@ -302,7 +302,7 @@ the MongoDB process data records and returns computed results. MongoDB
 aggregation framework is modeled on the concept of data pipelines 
 [@www-mongoexportimport].
 
-#### Import/Export functions examples:
+##### Import/Export functions examples:
 
 To import JSON documents, one would use the following command:
  
@@ -318,7 +318,7 @@ the collection name is optional [@www-mongoexportimport].
 
 `$ mongoexport --db test --collection traffic --out traffic.json`
 
-### Security Features
+#### Security Features
 
 Data security is a crucial aspect of the enterprise infrastructure management 
 and is the reason why MongoDB provides various security features such as 
@@ -340,7 +340,7 @@ $ privileges: [
  ]
 ```
 
-### MongoDB Cloud Service
+#### MongoDB Cloud Service
 
 In regards to the cloud technologies, MongoDB also offers fully automated 
 cloud service called *Atlas* with competitive pricing options. Mongo Atlas 
