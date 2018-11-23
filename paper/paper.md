@@ -674,10 +674,9 @@ the client side. For example, to return all users with first name
 a command such as this:
 
 ```
-  users = cloudmesh.users.find(
-   {'firstname':'Gregor'}).sort(('dateofbirth', pymongo.DESCENDING))
+  users = cloudmesh.users.find({'firstname':'Gregor'}).sort(('dateofbirth', pymongo.DESCENDING))
   for user in users:
-   print user.get('email')
+     print user.get('email')
 ```
 
 ### Aggregation
