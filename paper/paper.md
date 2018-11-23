@@ -67,21 +67,21 @@ MongoDB can be installed on various Unix Platforms, including
 Linux, Ubuntu, Amazon Linux, etc. This section focuses on installing 
 MongoDB on Ubuntu 18.04 Bionic Beaver used as a standard OS for a 
 virtual machine used as a part of Big Data Application Class during the 
-2018 Fall semester [@www-digitaloceaninst].
+2018 Fall semester [@www-digitaloceaninst].                              
 
 #### Installation procedure
 
 Before installing, it is recommended to configure the non-root user 
 and provide the administrative privileges to it, in order to be able to 
 perform general MongoDB admin tasks. This can be accomplished by login as 
-the root user in the following manner [@www-digitaloceanprep].
+the root user in the following manner [@www-digitaloceanprep].           
 
 `$ adduser mongoadmin`
 
 `$ usermod -aG sudo sammy`
 
 When logged in as a regular user, one can perform actions with superuser
-privileges by typing *sudo* before each command [@www-digitaloceanprep].
+privileges by typing *sudo* before each command [@www-digitaloceanprep]. 
 
 Once the user set up is completed, one can login as a regular user (mongoadmin)
 and use the following instructions to install MongoDB.
@@ -126,17 +126,17 @@ following command which opens the fire-wall connections [@www-digitaloceaninst].
 
 `$ sudo ufw allow from your_other_server_ip/32 to any port 27017`  
 
-status can be verified using 
+status can be verified using:
 
 `$ sudo ufw status`
 
-Other MongoDB onfigurations can be edited through the */etc/mongodb.conf* 
+Other MongoDB configurations can be edited through the */etc/mongodb.conf* 
 files such as port and hostnames, file paths.
 
 `$ sudo nano /etc/mongodb.conf`
 
-Also to complete this step, a server's IP address must be added to the 
-bindIP value [@www-digitaloceaninst].
+Also, to complete this step, a server's IP address must be added to the 
+bindIP value [@www-digitaloceaninst].                                    
 
 ```
 $ logappend=true
@@ -146,7 +146,7 @@ $ logappend=true
 ```
 
 MongoDB is now listening for a remote connection that can be 
-accessed by anyone with appropriate credentials [@www-digitaloceaninst].
+accessed by anyone with appropriate credentials [@www-digitaloceaninst].  
 
 ### Collections and Documents
 
@@ -160,10 +160,10 @@ embedded document can help reduce expensive joins and improve query
 performance. *_id* field  helps to indentify each document uniquly.
 [@www-guru99]. 
 
-MongoDB offers flexibility to write records that are 
-not restricted by column types. The data storage approach is flexible as 
-it allows one to store data as it grows and to fulfill varying needs of 
-applications and/or users. It supports JSON like binary points known as 
+MongoDB offers flexibility to write records that are not restricted by 
+column types. The data storage approach is flexible as it allows one 
+to store data as it grows and to fulfill varying needs of applications 
+and/or users. It supports JSON like binary points known as 
 BSON where data can be stored without specifying the type of data.
 Moreover, it can be distributed to multiple machines at high speed. 
 It includes a sharding feature that partitions and spreads 
@@ -294,10 +294,10 @@ When it comes to the technical elements of MongoDB, it posses a
 rich interface for importing and storage of external data in various 
 formats. By using the Mongo *Import/Export* tool, one can easily 
 transfer contents from JSON, CSV, or TSV files into a database. MongoDB 
-supports CRUD(create, read, update, delete) operations efficiently 
+supports CRUD (create, read, update, delete) operations efficiently 
 and has detailed documentation available on the product website. 
-It can also query the geospatial data, and it is capable of 
-storing geospatial data in GeoJSON objects. The *aggregation* operation of 
+It can also query the geospatial data, and it is capable of storing 
+geospatial data in GeoJSON objects. The *aggregation* operation of 
 the MongoDB process data records and returns computed results. MongoDB 
 aggregation framework is modeled on the concept of data 
 pipelines [@www-mongodbmanual].
@@ -308,7 +308,7 @@ To import JSON documents, one would use the following command:
  
 `$ mongoimport --db users --collection contacts --file contacts.json`
 
-The CSV import , uses the input file name to import a collection, hence , the 
+The CSV import uses the input file name to import a collection, hence, the 
 collection name is optional [@www-mongodbmanual].
 
 `$ mongoimport --db users --type csv --headerline --file /opt/backups/contacts.csv`
@@ -325,9 +325,9 @@ and is the reason why MongoDB provides various security features such as
 ole based access control, numerous authentication options, and encryption. 
 It supports mechanisms such as SCRAM, LDAP, and Kerberos authentication. 
 The administrator can create role/collection-based access control; 
-also roles can be predefined or custom. 
-MongoDB can audit activities such as DDL, CRUD statements, 
-authentication and authorization operations [@www-mongodbmanual]. 
+also roles can be predefined or custom. MongoDB can audit activities such 
+as DDL, CRUD statements, authentication and authorization operations 
+[@www-mongodbmanual]. 
 
 #### Collection based access control example:
 
@@ -362,7 +362,7 @@ only two years after the development of MongoDB was started. This driver
 allows developers to combine both Python's versatility and MongoDB's 
 flexible schema nature into successful applications. Currently, this 
 driver supports MongoDB versions 2.6, 3.0, 3.2, 3.4, 3.6, and 4.0 
-[@github]. MongoDB and Python represent a compatible fit considering 
+[@www-github]. MongoDB and Python represent a compatible fit considering 
 that BSON (binary JSON) used in this NoSQL database is very similar 
 to Python dictionaries, which makes the collaboration between the two 
 even more appealing [@www-slideshare]. For this reason, dictionaries 
@@ -374,29 +374,29 @@ documents [@www-gearheart].
 Prior to being able to exploit the benefits of Python and MongoDB 
 simultaneously, the PyMongo distribution must be installed using 
 *pip*. To install it on all platforms, the following command should 
-be used [@api-mongodb-com-installation]:
+be used [@www-api-mongodb-installation]:
 
 `$ python -m pip install pymongo`
 
 Specific versions of PyMongo can be installed with command lines 
 such as in our example where the 3.5.1 version is installed 
-[@api-mongodb-com-installation].
+[@www-api-mongodb-installation].
 
 `$ python -m pip install pymongo==3.5.1`
 
 A single line of code can be used to upgrade the driver as well 
-[@api-mongodb-com-installation].
+[@www-api-mongodb-installation].
 
 `$ python -m pip install --upgrade pymongo`
 
 Furthermore, the installation process can be completed with
 the help of the *easy_install* tool, which requires users to use 
-the following command [@api-mongodb-com-installation].
+the following command [@www-api-mongodb-installation].
 
 `$ python -m easy_install pymongo`
 
 To do an upgrade of the driver using this tool, the following 
-command is recommended [@api-mongodb-com-installation]:
+command is recommended [@www-api-mongodb-installation]:
 
 `$ python -m easy_install -U pymongo`
 
@@ -405,7 +405,7 @@ the source, however, they require for C extension dependencies
 to be installed prior to the driver installation step, as they 
 are the ones that skim through the sources on GitHub and use 
 the most up-to-date links to install the driver 
-[@api-mongodb-com-installation].
+[@www-api-mongodb-installation].
 
 To check if the installation was completed accurately, the 
 following command is used in the Python console 
@@ -701,7 +701,7 @@ MongoDB, the pipeline operators are efficient in aggregating results.
 The *$addFields* stage is used to add new fields into documents. It reshapes 
 each document in stream, similarly to the *$project* stage. The output 
 document will contain existing fields from input documents and the newly 
-added fields [@www.docs.mongodb]. The following example shows how to add 
+added fields [@www-docs-mongodb]. The following example shows how to add 
 *student details* into a document.
 
 ```
@@ -717,7 +717,7 @@ added fields [@www.docs.mongodb]. The following example shows how to add
 
 The *$bucket* stage is used to categorize incoming documents into groups
 based on specified expressions. Those groups are called *buckets* 
-[@www.docs.mongodb]. The following example shows the *$bucket* stage 
+[@www-docs-mongodb]. The following example shows the *$bucket* stage 
 in action.
 
 ```
@@ -744,7 +744,7 @@ in action.
 In the *$bucketAuto* stage, the boundaries are automatically determined 
 in an attempt to evenly distribute documents into a specified number of 
 buckets. In the following operation, input documents are grouped into four 
-buckets according to the values in the price field [@www.docs.mongodb].
+buckets according to the values in the price field [@www-docs-mongodb].
 
 ```
   db.artwork.aggregate( [
@@ -758,14 +758,14 @@ buckets according to the values in the price field [@www.docs.mongodb].
 ```
 
 The *$collStats* stage returns statistics regarding a collection or view
-[@www-docs.mongodb]. 
+[@www-docs-mongodb]. 
 
 ```
 db.matrices.aggregate( [ { $collStats: { latencyStats: { histograms: true } }
  } ] )
  ```
 The *$count* stage passes a document to the next stage that contains the 
-number documents that were input to the stage [@www-docs.mongodb].
+number documents that were input to the stage [@www-docs-mongodb].
 
  ```
    db.scores.aggregate(  [    {
@@ -774,7 +774,7 @@ number documents that were input to the stage [@www-docs.mongodb].
 ```
 
 The *$facet* stage helps process multiple aggregation pipelines in 
-a single stage [@www-docs.mongodb].
+a single stage [@www-docs-mongodb].
 
 ```
   db.artwork.aggregate( [ {
@@ -794,7 +794,7 @@ a single stage [@www-docs.mongodb].
 
 The *$geoNear* stage returns an ordered stream of documents based on the 
 proximity to a geospatial point. The output documents include an additional 
-distance field and can include a location identifier field [@www-docs.mongodb].
+distance field and can include a location identifier field [@www-docs-mongodb].
 
 ```
   db.places.aggregate([
@@ -811,7 +811,7 @@ distance field and can include a location identifier field [@www-docs.mongodb].
 
 The *$graphLookup* stage performs a recursive search on a collection. To each 
 output document, it adds a new array field that contains the traversal results 
-of the recursive search for that document [@www-docs.mongodb].
+of the recursive search for that document [@www-docs-mongodb].
 
 ```
   db.travelers.aggregate( [
@@ -831,7 +831,7 @@ of the recursive search for that document [@www-docs.mongodb].
 
 The *$group* stage consumes the document data per each distinct group.
 It has a RAM limit of 100 MB. If the stage exceeds this limit, the *$group* 
-produces an error [@www-docs.mongodb].
+produces an error [@www-docs-mongodb].
 
 ```
   db.sales.aggregate(
@@ -850,12 +850,12 @@ produces an error [@www-docs.mongodb].
 ```
 
 The *$indexStats* stage returns statistics regarding the use of each index for 
-for a collection [@www-docs.mongodb].
+for a collection [@www-docs-mongodb].
  
 `db.orders.aggregate( [ { $indexStats: { } } ] )`
 
 The *$limit* stage is used for controlling the number of documents passed to the 
-next stage in the pipeline[@www-docs.mongodb].
+next stage in the pipeline [@www-docs-mongodb].
 
 ```
   db.article.aggregate(
@@ -864,12 +864,12 @@ next stage in the pipeline[@www-docs.mongodb].
 ```
 
 The *$listLocalSessions* stage gives the session information currently connected 
-to mongos or mongod instance [@www-docs.mongodb].
+to mongos or mongod instance [@www-docs-mongodb].
 
 `db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
  
 The *$listSessions* stage lists out all session that have been active long 
-enough to propagate to the *system.sessions* collection [@www-docs.mongodb].
+enough to propagate to the *system.sessions* collection [@www-docs-mongodb].
 
 ```
  use config
@@ -879,7 +879,7 @@ enough to propagate to the *system.sessions* collection [@www-docs.mongodb].
 ```
 
 The *$lookup* stage is useful for performing outer joins to other collections 
-in the same database [@www-docs.mongodb].
+in the same database [@www-docs-mongodb].
 
 ```
 {
@@ -894,7 +894,7 @@ in the same database [@www-docs.mongodb].
 ```
 
 The *$match* stage is used to filter the document stream. Only matching documents
-pass to next stage [@www-docs.mongodb].
+pass to next stage [@www-docs-mongodb].
 
 ```
   db.articles.aggregate(
@@ -908,7 +908,7 @@ fields.
 `db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
 
 The *$redact* stage reshapes stream documents by restricting information using 
-information stored in documents themselves [@www-docs.mongodb].
+information stored in documents themselves [@www-docs-mongodb].
 
 ```
   db.accounts.aggregate(
@@ -924,7 +924,7 @@ information stored in documents themselves [@www-docs.mongodb].
 ```
 
 The *$replaceRoot* stage is used to replace a document with a specified 
-embedded document [@www-docs.mongodb].
+embedded document [@www-docs-mongodb].
 
 ```
   db.produce.aggregate( [
@@ -935,7 +935,7 @@ embedded document [@www-docs.mongodb].
 ```
 
 The *$sample* stage is used to sample out data by randomly selecting number 
-of documents form input [@www-docs.mongodb].
+of documents form input [@www-docs-mongodb].
 
 ```
   db.users.aggregate(
@@ -944,7 +944,7 @@ of documents form input [@www-docs.mongodb].
 ```
 
 The *$skip* stage skips specified initial number of documents and passes
-remaining documents to the pipeline [@www-docs.mongodb].
+remaining documents to the pipeline [@www-docs-mongodb].
 
  ```
  db.article.aggregate(
@@ -953,7 +953,7 @@ remaining documents to the pipeline [@www-docs.mongodb].
  ```
  
 The *$sort* stage is useful while reordering document stream by a specified 
-sort key [@www-docs.mongodb].
+sort key [@www-docs-mongodb].
 
 ```
  db.users.aggregate(
@@ -965,12 +965,12 @@ sort key [@www-docs.mongodb].
 
 The *$sortByCounts* stage groups the incoming documents based on a
 specified expression value and counts documents in each distinct 
-group [@www-docs.mongodb].
+group [@www-docs-mongodb].
 
 `db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
 
 The *$unwind* stage deconstructs an array field from the input 
-documents to output a document for each element [@www-docs.mongodb].
+documents to output a document for each element [@www-docs-mongodb].
 
 ```
   db.inventory.aggregate( [ { $unwind: "$sizes" } ] )
@@ -978,7 +978,7 @@ documents to output a document for each element [@www-docs.mongodb].
 ```
 
 The *$out* stage is used to write aggregation pipeline results into a collection. 
-This stage should be the last stage of a pipeline [@www-docs.mongodb].
+This stage should be the last stage of a pipeline [@www-docs-mongodb].
 
 ```
   db.books.aggregate( [
@@ -1000,14 +1000,14 @@ function and iterate over the results [@www-mongo-aggregation]. The
 Map/Reduce operation provides result data in a collection or returns
 results in-line. One can perform subsequent operations with the same 
 input collection if the output of the same is written to a 
-collection [@www-docs.map-reduce]. An operation that produces results 
+collection [@www-docs-map-reduce]. An operation that produces results 
 in a in-line form must provide results with in the BSON
 document size limit. The current limit for a BSON document is 16 MB.
-These types of operations are not supported by views [@www-docs.map-reduce]. 
+These types of operations are not supported by views [@www-docs-map-reduce]. 
 The PyMongo's API supports all features of the MongoDB's Map/Reduce
-engine [@www-api.map-reduce]. Moreover, Map/Reduce has the ability
+engine [@www-api-map-reduce]. Moreover, Map/Reduce has the ability
 to get more detailed results by passing *full_response=True* argument
-to the *map_reduce()* function [@www-api.map-reduce].
+to the *map_reduce()* function [@www-api-map-reduce].
 
 ### Deleting Documents from a Collection
 
@@ -1028,7 +1028,7 @@ completed [@book-ohiggins].
 Copying databases within the same mongod instance or between
 different mongod servers is made possible with the *command()*
 method after connecting to the desired mongod instance 
-[@www-pymongo-documentation]. For example, to copy the 
+[@www-pymongo-documentation-copydb]. For example, to copy the 
 *cloudmesh* database and name the new database *cloudmesh_copy*, 
 one would use the *command()* method in the following manner:
 
@@ -1041,8 +1041,8 @@ one would use the *command()* method in the following manner:
 There are two ways to copy a database between servers. If a
 server is not password-prodected, one would not need to 
 pass in the credentials nor to authenticate to the admin database
-[@www-pymongo-documentation]. In that case, to copy a database one 
-would use the following command:
+[@www-pymongo-documentation-copydb]. In that case, to copy a database 
+one would use the following command:
 
 ```
   client.admin.command('copydb',
@@ -1085,7 +1085,7 @@ applications, which makes PyMongo equally valuable [@book-ohiggins].
 # MongoEngine
 
 > "MongoEngine is an Object-Document Mapper, written in Python 
-> for working with MongoDB" [@docs-mongoengine]. 
+> for working with MongoDB" [@www-docs-mongoengine]. 
 
 It is actually a library that allows a more advanced communication 
 with MongoDB compared to PyMongo. As MongoEngine is technically 
@@ -1103,10 +1103,10 @@ database* must be created within the utilized programming
 language [@www-wikiodm]. This library is also used to define 
 schemata for documents within MongoDB, which ultimately helps
 with minimizing coding errors as well defining methods 
-on existing fields [@docs-mongoengine- schema]. It is also 
+on existing fields [@www-mongoengine-schema]. It is also           
 very beneficial to the overall workflow as it tracks changes 
 made to the documents and aids in the document saving process 
-[docs-mongoengine- instances].
+[@www-mongoengine-instances].
 
 ### Installation
 
@@ -1221,7 +1221,7 @@ and which makes this pair even more attractive to application developers.
 # Flask-PyMongo
 
 > "Flask is a micro web framework written in Python" 
-> [@flask-framework]. 
+> [@www-flask-framework].                                                       
 
 It was developed after Django, and it is very pythonic in nature which implies 
 that it is explicitly the targeting the Python user community. It is lightweight
@@ -1233,7 +1233,7 @@ data within MongoDB as searchable Python dictionaries. The applications
 such as Pinterest, LinkedIn, and the community web page for Flask are 
 using the Flask framework. It supports various features such as the RESTful 
 request dispatching, secure cookies, Google app engine compatibility, 
-and integrated support for unit testing, etc [@flask-framework]. Flask-PyMongo 
+and integrated support for unit testing, etc [@www-flask-framework]. Flask-PyMongo
 offers methods such as *Collection.find_one_or_404* which is the 
 equivalent to MongoDB's *find_one* in which instead of returning *none*, 
 causes a *404 Not Found HTTP status* to a request. Similarly, 
@@ -1243,7 +1243,7 @@ variable or configured in PyMongo constructor with additional arguments
 such as username and password if required. One can create multiple 
 Flask-PyMongo instances to connect to multiple MongoDB databases. It is 
 important that versions of both Flask and MongoDB are compatible with 
-each other to avoid functionality breaks [@flask-pymongo]. 
+each other to avoid functionality breaks [@www-flask-pymongo]. 
 Flask-MongoAlchemy and Flask-MongoEngine are the additional libraries 
 that can be used to connect to a MongoDB database while using enhanced 
 features with the Flask app. It can be easily installed using pip. The 
@@ -1252,7 +1252,7 @@ connect. Flask-MongoAlchemy provides an option such as server or
 database based authentication to connect to MongoDB. While the default 
 is set server based, to use a database-based authentication, the config 
 value *MONGOALCHEMY_SERVER_AUTH* parameter must be set to *False* 
-[@pythonhosted-MongoAlchemy]. Flask-MongoEngine is the Flask extension 
+[@www-pythonhosted-MongoAlchemy]. Flask-MongoEngine is the Flask extension 
 that provides integration with MongoEngine. It handles connection 
 management for the apps. It can be installed through *pip* and set up very 
 easily as well. The default configuration is set to the local host and port 
@@ -1263,7 +1263,7 @@ database username and password, in cases where a database authentication
 is enabled. The URI style connections are also supported and supply the 
 URI as the host in the *MONGODB_SETTINGS* dictionary with *app.config*. 
 There are various custom query sets that are available within Flask-Mongoengine 
-that are attached to Mongoengine's default queryset [flask-mongoengine]. 
+that are attached to Mongoengine's default queryset [@www-flask-mongoengine]. 
 
 ### Installation
 
