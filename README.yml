@@ -13,12 +13,12 @@ technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/plasma-magma.md  
 paper:
   - keyword: MongoDB
-    title: "MongoDB, PyMongo, MongoEngine, and Flask-PyMongo"
+    title: "MongoDB in Python"
     url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
 project:
   - keyword: MongoDB
-    title: "Instacart Basket Analysis using MongoDB and Performance Benchmarking on VM and Cloud"
+    title: "Kickstarter Projects Analysis"
     url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/report.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
     code: TBD
