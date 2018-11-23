@@ -178,7 +178,8 @@ projects that require frequent changes to the data structure with minimal
 downtime. Contrary to this flexible process, modifying the data structure 
 of relational databases can be a very tedious process [@www-upwork]. 
 
-#### Collection example:
+
+#### Collection example: 
 
 ```
 {
@@ -260,7 +261,7 @@ The MongoDB insert statements can be performed in the following manner:
 
 > "The *$lookup* command performs a left-outer-join to an unsharded 
 > collection in the same database to filter in documents from the *joined*
-> collection for processing" [@www-mongodbmanual]. 
+> collection for processing" [@www-mongodblookup]. 
 
 ```
 $ {
@@ -300,7 +301,7 @@ It can also query the geospatial data, and it is capable of storing
 geospatial data in GeoJSON objects. The *aggregation* operation of 
 the MongoDB process data records and returns computed results. MongoDB 
 aggregation framework is modeled on the concept of data 
-pipelines [@www-mongodbmanual].
+pipelines [@www-mongoexportimport].
 
 #### Import/Export functions examples:
 
@@ -309,12 +310,12 @@ To import JSON documents, one would use the following command:
 `$ mongoimport --db users --collection contacts --file contacts.json`
 
 The CSV import uses the input file name to import a collection, hence, the 
-collection name is optional [@www-mongodbmanual].
+collection name is optional [@www-mongoexportimport].
 
 `$ mongoimport --db users --type csv --headerline --file /opt/backups/contacts.csv`
 
 *Mongoexport* is a utility that produces a JSON or CSV export of data stored in a 
-MongoDB instance" [@www-mongodbmanual].
+MongoDB instance" [@www-mongoexportimport].
 
 `$ mongoexport --db test --collection traffic --out traffic.json`
 
@@ -327,11 +328,11 @@ It supports mechanisms such as SCRAM, LDAP, and Kerberos authentication.
 The administrator can create role/collection-based access control; 
 also roles can be predefined or custom. MongoDB can audit activities such 
 as DDL, CRUD statements, authentication and authorization operations 
-[@www-mongodbmanual]. 
+[@www-mongosecurity]. 
 
 #### Collection based access control example:
 
-A user defined role can contain the following privileges [@www-mongodbmanual].
+A user defined role can contain the following privileges [@www-mongosecurity].
 
 ```
 $ privileges: [
@@ -351,7 +352,7 @@ performance monitoring interface allows users to promptly detect anomalies and
 generate index suggestions to optimize the performance and reliability of the 
 database. Global technology leaders such as Google, Facebook, eBay, and Nokia 
 are leveraging MongoDB and *Atlas* cloud services making MongoDB one of the most 
-popular choices among the NoSQL databases [@www-mongomanual]. 
+popular choices among the NoSQL databases [@www-mongoatlas]. 
 
 # PyMongo
 
