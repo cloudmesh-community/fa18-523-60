@@ -63,10 +63,10 @@ written in C++ language.
 ### Installation
 
 MongoDB can be installed on various Unix Platforms, including Linux, 
-Ubuntu, Amazon Linux, etc. This section focuses on installing MongoDB 
-on Ubuntu 18.04 Bionic Beaver used as a standard OS for a virtual machine 
-used as a part of Big Data Application Class during the 2018 Fall semester 
-[@www-digitaloceaninst].                              
+Ubuntu, Amazon Linux, etc [@www-digitaloceaninst]. This section focuses 
+on installing MongoDB on Ubuntu 18.04 Bionic Beaver used as a standard 
+OS for a virtual machine used as a part of Big Data Application Class 
+during the 2018 Fall semester.                              
 
 #### Installation procedure
 
