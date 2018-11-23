@@ -422,21 +422,21 @@ have been completed successfully.
 The PyMongo driver has a few dependencies that should 
 be taken into consideration prior to its usage. Currently, 
 it supports CPython 2.7, 3.4+, PyPy, and PyPy 3.5+ 
-interpreters [@www-github-driver]. An optional dependency 
-that requires some additional components to be installed 
-is the GSSAPI authentication [@www-github-driver]. For 
-the Unix based machines, it requires *pykerberos*, while 
-for the Windows machines *WinKerberos* is needed to fullfill 
-this requirement [@www-github-driver]. The automatic 
-installation of this dependency can be done simultaneously 
-with the driver installation, in the following manner:
+interpreters [@www-github]. An optional dependency that 
+requires some additional components to be installed is 
+the GSSAPI authentication [@www-github]. For the Unix based 
+machines, it requires *pykerberos*, while for the Windows 
+machines *WinKerberos* is needed to fullfill this requirement 
+[@www-github]. The automatic installation of this dependency 
+can be done simultaneously with the driver installation, in 
+the following manner:
 
 `$ python -m pip install pymongo[gssapi]`
 
 Other third-party dependencies such as *ipaddress*, *certifi*, 
 or *wincerstore* are necessary for connections with help of 
 TLS/SSL and can also be simultaneously installed along with the 
-driver installation [@www-github-driver].
+driver installation [@www-github].
 
 ### Running PyMongo with Mongo Deamon
 
