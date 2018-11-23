@@ -16,11 +16,19 @@ Keywords: MongoDB, PyMongo, crowdfunding, virtual machine, Docker containerizati
 
 ## Abstract
 
-TBD
+Crowdfunding is a certain way of raising funds where individuals come together 
+and collectively support projects by investing in them. Kickstarter is one of the 
+leading crowdfunding platforms in the world that helps individuals/businesses 
+in various categories such as art, film, music, theatre, games, design, and other
+to raise necessary funds to complete their projects. This paper explores the topic
+of crowfunding by analyzing the Kickstarter Projects dataset obtained from Kaggle
+while utilizing big data technologies such as MongoDB, virtual machines, cloud, 
+Docker, and PyMongo driver.
 
 ## Introduction
 
-TBD
+
+
 ## Requirements
 TBD
 
