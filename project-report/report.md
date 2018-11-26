@@ -22,9 +22,10 @@ crowdfunding platforms in the world that helps individuals/
 businesses in various categories such as art, film, music, theatre, 
 games, design, and other to raise necessary funds to complete their 
 projects. This paper explores the utilization of the big data 
-technologies such as MongoDB, virtual machines, MongoDB Atlas and 
-Digital Ocean as well as PyMonog while analyzing the *Kickstarter 
-Projects* dataset obtained from the Kaggle datascience platform.
+technologies and cloud services such as MongoDB, virtual machines, 
+MongoDB Atlas and Digital Ocean as well as PyMonog while analyzing 
+the *Kickstarter Projects* dataset obtained from the Kaggle 
+datascience platform.
 
 ## Introduction
 
