@@ -982,7 +982,7 @@ in each distinct group [@www-docs-mongodb].
 
 `db.exhibits.aggregate( [ { $unwind: "$tags" },  { $sortByCount: "$tags" } ] )`
 
-The *$unwind* stage deconstructs an array field from the 
+The *unwind* stage deconstructs an array field from the 
 input documents to output a document for each element [@www-docs-mongodb].
 
 ```
