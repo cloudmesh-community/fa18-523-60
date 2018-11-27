@@ -156,7 +156,7 @@ in a key-value form which allows storing of complex data types composed
 out of field and value pairs. Documents are objects which correspond to 
 native data types in many programming languages, hence a well defined, 
 embedded document can help reduce expensive joins and improve query 
-performance. The *_id* field  helps to indentify each document uniquly
+performance. The *_id* field  helps to identify each document uniquly
 [@www-guru99]. 
 
 MongoDB offers flexibility to write records that are not restricted by 
@@ -596,7 +596,7 @@ the *update_one()* method in action is the following:
 
 ```
 myquery = { 'course': 'Big Data Applications and Analytics' }
-   newvalues = { '$set': { 'course': 'Cloud Computing' } }
+newvalues = { '$set': { 'course': 'Cloud Computing' } }
 ```
 
 Updating all documents that fall under the same criteria can be
@@ -702,10 +702,10 @@ by helping change the document output form. Other pipelines help group
 or sort documents with specific fields. By using native operations from 
 MongoDB, the pipeline operators are efficient in aggregating results.
 
-The *$addFields* stage is used to add new fields into documents. It 
-reshapes each document in stream, similarly to the *$project* stage. 
+The *addFields* stage is used to add new fields into documents. It 
+reshapes each document in stream, similarly to the *project* stage. 
 The output document will contain existing fields from input documents 
-and the newly added fields [@www-docs-mongodb]. The following example 
+and the newly added fields @www-docs-mongodb]. The following example 
 shows how to add *student details* into a document.
 
 ```
@@ -719,10 +719,10 @@ shows how to add *student details* into a document.
     } ])
 ```
 
-The *$bucket* stage is used to categorize incoming documents 
+The *bucket* stage is used to categorize incoming documents 
 into groups based on specified expressions. Those groups are 
 called *buckets* [@www-docs-mongodb]. The following example shows 
-the *$bucket* stage in action.
+the *bucket* stage in action.
 
 ```
   db.user.aggregate([
@@ -745,7 +745,7 @@ the *$bucket* stage in action.
     "count": { "$sum": 1 }}})
 ```
 
-In the *$bucketAuto* stage, the boundaries are automatically 
+In the *bucketAuto* stage, the boundaries are automatically 
 determined in an attempt to evenly distribute documents into
 a specified number of buckets. In the following operation, 
 input documents are grouped into four buckets according to 
@@ -762,14 +762,14 @@ the values in the price field [@www-docs-mongodb].
  ] )
 ```
 
-The *$collStats* stage returns statistics regarding a collection 
-or view [@www-docs-mongodb]. 
+The *collStats* stage returns statistics regarding a collection 
+or view [@www-docs-mongodb].
 
 ```
 db.matrices.aggregate( [ { $collStats: { latencyStats: { histograms: true } }
  } ] )
  ```
-The *$count* stage passes a document to the next stage that 
+The *count* stage passes a document to the next stage that 
 contains the number documents that were input to the stage 
 [@www-docs-mongodb].
 
@@ -779,7 +779,7 @@ contains the number documents that were input to the stage
     {      $count: "passing_scores"  } ])
 ```
 
-The *$facet* stage helps process multiple aggregation pipelines 
+The *facet* stage helps process multiple aggregation pipelines 
 in a single stage [@www-docs-mongodb].
 
 ```
@@ -798,7 +798,7 @@ in a single stage [@www-docs-mongodb].
         } ]}}])
 ```
 
-The *$geoNear* stage returns an ordered stream of documents 
+The *geoNear* stage returns an ordered stream of documents 
 based on the proximity to a geospatial point. The output documents 
 include an additional distance field and can include a location 
 identifier field [@www-docs-mongodb].
@@ -816,7 +816,7 @@ identifier field [@www-docs-mongodb].
      }  }])
 ```
 
-The *$graphLookup* stage performs a recursive search on a 
+The *graphLookup* stage performs a recursive search on a 
 collection. To each output document, it adds a new array field 
 that contains the traversal results of the recursive search 
 for that document [@www-docs-mongodb].
@@ -837,7 +837,7 @@ for that document [@www-docs-mongodb].
 ] )
 ```
 
-The *$group* stage consumes the document data per each 
+The *group* stage consumes the document data per each 
 distinct group. It has a RAM limit of 100 MB. If the 
 stage exceeds this limit, the *$group* produces an 
 error [@www-docs-mongodb].
@@ -858,12 +858,12 @@ error [@www-docs-mongodb].
 )
 ```
 
-The *$indexStats* stage returns statistics regarding 
+The *indexStats* stage returns statistics regarding 
 the use of each index for a collection [@www-docs-mongodb].
  
 `db.orders.aggregate( [ { $indexStats: { } } ] )`
 
-The *$limit* stage is used for controlling the number of 
+The *limit* stage is used for controlling the number of 
 documents passed to the next stage in the pipeline 
 [@www-docs-mongodb].
 
@@ -873,13 +873,13 @@ documents passed to the next stage in the pipeline
 )
 ```
 
-The *$listLocalSessions* stage gives the session information 
+The *listLocalSessions* stage gives the session information 
 currently connected to mongos or mongod instance 
 [@www-docs-mongodb].
 
 `db.aggregate( [  { $listLocalSessions: { allUsers: true } } ] )`
  
-The *$listSessions* stage lists out all session that have 
+The *listSessions* stage lists out all session that have 
 been active long enough to propagate to the *system.sessions* 
 collection [@www-docs-mongodb].
 
@@ -890,7 +890,7 @@ collection [@www-docs-mongodb].
 
 ```
 
-The *$lookup* stage is useful for performing outer joins to 
+The *lookup* stage is useful for performing outer joins to 
 other collections in the same database [@www-docs-mongodb].
 
 ```
@@ -905,7 +905,7 @@ other collections in the same database [@www-docs-mongodb].
 }
 ```
 
-The *$match* stage is used to filter the document stream. 
+The *match* stage is used to filter the document stream. 
 Only matching documents pass to next stage [@www-docs-mongodb].
 
 ```
@@ -914,12 +914,12 @@ Only matching documents pass to next stage [@www-docs-mongodb].
 )
 ```
 
-The *$project* stage is used to reshape the documents by 
+The *project* stage is used to reshape the documents by 
 adding or deleting the fields.
 
 `db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )`
 
-The *$redact* stage reshapes stream documents by restricting 
+The *redact* stage reshapes stream documents by restricting 
 information using information stored in documents themselves 
 [@www-docs-mongodb].
 
@@ -936,7 +936,7 @@ information using information stored in documents themselves
         }      }    }  ]);
 ```
 
-The *$replaceRoot* stage is used to replace a document with 
+The *replaceRoot* stage is used to replace a document with 
 a specified embedded document [@www-docs-mongodb].
 
 ```
@@ -947,7 +947,7 @@ a specified embedded document [@www-docs-mongodb].
 ] )
 ```
 
-The *$sample* stage is used to sample out data by randomly 
+The *sample* stage is used to sample out data by randomly 
 selecting number of documents form input [@www-docs-mongodb].
 
 ```
@@ -956,7 +956,7 @@ selecting number of documents form input [@www-docs-mongodb].
 )
 ```
 
-The *$skip* stage skips specified initial number of documents 
+The *skip* stage skips specified initial number of documents 
 and passes remaining documents to the pipeline [@www-docs-mongodb].
 
  ```
@@ -965,7 +965,7 @@ and passes remaining documents to the pipeline [@www-docs-mongodb].
  );
  ```
  
-The *$sort* stage is useful while reordering document stream 
+The *sort* stage is useful while reordering document stream 
 by a specified sort key [@www-docs-mongodb].
 
 ```
@@ -976,7 +976,7 @@ by a specified sort key [@www-docs-mongodb].
  )
 ```
 
-The *$sortByCounts* stage groups the incoming documents 
+The *sortByCounts* stage groups the incoming documents 
 based on a specified expression value and counts documents 
 in each distinct group [@www-docs-mongodb].
 
@@ -990,7 +990,7 @@ input documents to output a document for each element [@www-docs-mongodb].
   db.inventory.aggregate( [ { $unwind: { path: "$sizes" } } ] )
 ```
 
-The *$out* stage is used to write aggregation pipeline results 
+The *out* stage is used to write aggregation pipeline results 
 into a collection. This stage should be the last stage of a 
 pipeline [@www-docs-mongodb].
 
