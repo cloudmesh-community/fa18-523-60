@@ -181,7 +181,7 @@ of relational databases can be a very tedious process [@www-upwork].
 #### Collection example: 
 
 The following collection example for a person named *Corey* includes
-additional information such as age, status, and group [www-mongocollection].
+additional information such as age, status, and group [@www-mongocollection].
 
 ```
 {
@@ -649,7 +649,7 @@ storing documents [@www-pymongo-tutorial].
 
 > "To create a unique index on a key that rejects documents whose 
 > value for that key already exists in the index" 
-> [@www-pymongo-tutorial], 
+> [@www-pymongo-tutorial].
 
 We need to firstly create the index in the following manner:
 
@@ -1115,7 +1115,7 @@ considered to be
 
 The primary technique why one would use an ODM includes 
 *data conversion* between computer systems that are not 
-compatible with each other[@www-wikiodm]. For the purpose of 
+compatible with each other [@www-wikiodm]. For the purpose of 
 converting data to the appropriate form, a *virtual object 
 database* must be created within the utilized programming 
 language [@www-wikiodm]. This library is also used to define 
