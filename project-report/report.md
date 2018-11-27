@@ -20,10 +20,10 @@ individuals come together and collectively support projects
 by investing in them. Kickstarter is one of the leading 
 crowdfunding platforms in the world that helps individuals/
 businesses in various categories such as art, film, music, theatre, 
-games, design, and other to raise necessary funds to complete their 
-projects. This paper explores the utilization of the big data 
+games, design, and other, to raise necessary funds to complete their 
+projects. This paper explores the utilization of big data 
 technologies and cloud services such as MongoDB, virtual machines, 
-MongoDB Atlas and Digital Ocean as well as PyMonog while analyzing 
+MongoDB Atlas, DigitalOcean, and PyMonogo while analyzing 
 the *Kickstarter Projects* dataset obtained from the Kaggle 
 datascience platform.
 
@@ -46,17 +46,17 @@ was developed and is still successfully operating since 2009
 *Kickstarter* is a web-based crowdfunding platform that helps 
 support creative arts around the globe [@www-voelker]. As of 
 November, 2018, *Kickstarter* has pledged more than four billion 
-dollars while successufully funding more than 150 thousand projects
-[@www-kickstarter-stats]. Overall, the platform has had more than 
-15 million backers, out of those, 5 million were repeated backers, 
-which totalled in more than 49 million pledges [@www-kickstarter-stats]. 
-The highest pledged category is *Games* with more than 580 million 
-dollars in successful projects and success rate of 36.55% 
-[@www-kickstarter-stats]. 
+dollars while successufully funding more than 150 thousand 
+projects [@www-kickstarter-stats]. Overall, the platform has 
+had more than 15 million backers, out of those, 5 million were
+repeated backers, which totalled in more than 49 million pledges 
+[@www-kickstarter-stats]. The highest pledged category is 
+*Games* with more than 580 million dollars in successful 
+projects and success rate of 36.55% [@www-kickstarter-stats]. 
 
 *Kickstarter* uses the fundable project model where the would-be 
-business owners or project managers submit their project along with 
-the necessary project information and its funding goal.
+business owners or project managers submit their project along 
+with the necessary project information and its funding goal.
 
 > "The funding goal establishes a base target for the project and a 
 > deadline (generally 30-days) to achieve the funding" [@www-voelker]. 
@@ -71,17 +71,15 @@ number of backers, the amount of funds received/pledged as well as the
 fundraising goal. As each project is timed, the time remaining in the 
 *Kickstarter* promotion is shown on the project page as well.
 
-Since the platform is based on an *all or nothing* funding model, pledged 
-funds are not available to the entrepreneurs until the end of the funding 
-period which is determined by the goal-setting statement [@www-voelker]. 
-The financial transcations occur only in cases where a projects meets 
-its initial targets and funding expectations [@www-voelker]. If the 
-initial target is exceeded, the project received all funding as well as 
-the excess of its goal.
+Since the platform is based on an *all or nothing* funding model, 
+pledged funds are not available to the entrepreneurs until the end of 
+the funding period which is determined by the goal-setting statement 
+[@www-voelker]. The financial transcations occur only in cases where 
+a projects meets its initial targets and funding expectations 
+[@www-voelker]. If the initial target is exceeded, the project 
+received all funding as well as the excess of its goal.
 
-## Requirements
-
-TBD
+In our project, 
 
 ## Design
 
@@ -236,7 +234,7 @@ BI tools the team will be creating a python application that will have a capabil
 running seamlessly on any of the underlying environments - virtualized,  physical, or 
 on a cloud. 
 
-## Implementation
+## Project Results
 TBD
 
 ## Benchmark
