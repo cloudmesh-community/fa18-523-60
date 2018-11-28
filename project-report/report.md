@@ -121,6 +121,8 @@ on a cloud.
 
 ## Dataset Description
 
+### Kaggle Platform
+
 Prior to the dataset description, this segment of the report 
 provides an overview of the platform used to obtain the 
 chosen dataset.
@@ -173,6 +175,8 @@ as well as techniques that can be used to explore the dataset (e.g.,
 > "or the type of the data itself (e.g., "text data")" 
 > [@www-kaggle-datasets].
 
+### Kaggle API
+
 One of the technologies used to easily obtain the Kickstarter Projects 
 dataset is the newly offered Kaggle Public API. API stands for 
 *Application Programming Interface* through
@@ -212,6 +216,8 @@ them time when working on important projects. It is also helping students
 in expanding their knowledge and programming experience through practical 
 examples and real-life data that can be later implemented in their 
 professional work.
+
+### Kickstarter Projects Dataset
 
 The Kickstarter Projects dataset is publicly available on the Kaggle website. 
 The dataset is available in the CSV format and contains more than 370 thousand 
