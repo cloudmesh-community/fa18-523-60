@@ -253,11 +253,8 @@ Our code is organized as described below ,
 ### dataset
   
   - link to dataset
-  - steps download using kaggle.com
+  - steps to download using kaggle.com
   
-### images
-  
-  - architecture.png
 
 ## Architecture
 
