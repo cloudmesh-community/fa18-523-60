@@ -152,61 +152,9 @@ and conclusions.
 
 ### Kaggle Platform
 
-Prior to the dataset description, this segment of the report 
-provides an overview of the platform used to obtain the 
-chosen dataset.
-
-In the recent years, data science has become an extremely important 
-part of the modern society. This
-
-> "growing importance of data science has, in turn, led to the growth 
-> and importance of data scientists" [@www-datascience].
-
-An online platform that allows the continuous idea sharing, learning, 
-and collaboration for those individuals is *Kaggle.com*. *Kaggle.com* 
-is a website, a virtual space where data enthusiasts flock to explore 
-project topics, work on their own projects, and participate in lucrative 
-competitions [@www-kaggle]. This platform was created in 2010 by Anthony 
-Goldbloom and Ben Hamner, and today it includes a group/community of more 
-than a million data scientists and machine learners [@www-kaggle-blog]. 
-According to the company's CEO (Anthony Goldbloom), the earliest competitions 
-included
-
-> "participants who called themselves computer scientists, statisticians, 
-> econometricians and bioinformaticians" [@www-kaggle-blog].
-
-Over time, those silo-ed communities came together,
-
-> "shared different approaches and ideas through the forums and Kaggle 
-> Kernels" [@www-kaggle-blog]
-
-which resulted in forming of the popular platform we see today. The platform 
-supports various types of datasets, such as CSV, Excel (although recommended 
-to be uploaded as CSV), JSON, SQLite, BigQuery, and other [@www-kaggle-datasets]. 
-Other file formats constitute PNG imagery files, NPZ specialty file formats, as 
-well as complex hierarchical data formats like HDF5 [@www-kaggle-datasets]. 
-Kaggle also supports archives, in other words,
-
-> "files compressed using the ZIP file format as well as other common archive 
-> formats like 7z" [@www-kaggle-datasets].
-
-The datasets are organized in a list on the Datasets webpage, and can be filtered 
-for in a few different ways: by searching a common term in the search bar; by 
-choosing the dataset type from the drop-down menu; by choosing the dataset size; 
-and/or by choosing one of the available tags in the Tags submenu.
-
-> "Tags are added by dataset owners to indicate the topic of the dataset" 
-> [@www-kaggle-datasets],
-
-as well as techniques that can be used to explore the dataset (e.g., 
-"classification"),
-
-> "or the type of the data itself (e.g., "text data")" 
-> [@www-kaggle-datasets].
-
 ### Kaggle API
 
-One of the technologies used to easily obtain the Kickstarter Projects 
+The technology used to easily obtain the Kickstarter Projects 
 dataset is the newly offered Kaggle Public API. API stands for 
 *Application Programming Interface* through
 
