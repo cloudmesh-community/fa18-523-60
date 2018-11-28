@@ -29,7 +29,6 @@ analyzing the *Kickstarter Projects* dataset obtained
 from the Kaggle datascience platform.
 
 ## Introduction
-
 Many creative individuals and groups around the globe are trying 
 to develop products, projects, and businesses based on their 
 unique ideas and talents. In many cases, an idea or a talent 
@@ -58,16 +57,23 @@ the *Kickstarter* dataset collected in the 2009-2018 timeframe and
 made public via Kaggle, a well known datascience platform. The base
 technology used to store and query the dataset is the widely known
 NoSQL database called MongoDB. Three cloud services chosen to be 
-benchmarked against each other are MongoAtlas, DigitalOcean, and 
-AWS. Our team had created virtual machines in each service and 
-performed a basic exploratory analysis. The time needed to query
+benchmarked against each other are MongoDB Atlas, DigitalOcean, and 
+AWS. Our team had developed python program and packaged shell script
+that build the mongodb environment on Unix platform, 
+performs data analysis through visualizations to gain hidden insights  
+and builds logstic regression model to predict the success/failure
+of the project on kickstarterMongDB database hosted on different 
+cloud environments. 
+The time needed to query
 the dataset was used as a quantitative measure to analyze the 
 relative benchmarking. Moreover, our team also provides an 
-ease-of-use review of each service as an addition to the 
-performance benchmarking. This report introduces the reader 
+of each service as an addition to the 
+performance benchmarking. 
+This report introduces the reader 
 to the related work in the MongoDB realm, as well as to
 the chosen dataset prior to presenting the project design 
 and research methods, architecture, technologies, and results. 
+ 
 
 ## Literature review
 
