@@ -188,13 +188,13 @@ TBD
 
 ## Technologies
 
-### Technologies and tools used in this project are:
+### Technologies and Tools Used
 
 * Python version 3.6 and it's libraries Seaborn,Matplotlib,Pandas etc.
 * PyMongo Driver, Bash Shell 
 * Cloud services - MogoDB Atlas, 3 node replica cluster
 * Cloud services - Digital Ocean, Ubuntu 18.04 ,MongoDB 3.6.3
-* Cloud services - AWS, Linux, MongoDB 3.6.3
+* Cloud services - AWS , Amazon Elastic Comput Cloud (EC2), Linux, MongoDB 3.6.3
 
 ## Code Organization
 
