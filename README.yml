@@ -17,8 +17,8 @@ paper:
     url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
 project:
-  - keyword: MongoDB
+  - keyword: MongoDB, PyMongo, Cloud services(DBaaS,IaaS), Data Analysis, VM's
     title: "Kickstarter Projects Analysis"
     url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/report.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
-    code: TBD
+    code: https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin
