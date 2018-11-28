@@ -145,7 +145,8 @@ CSS, JavaScript, Bootstrap, Flask, JQuery.js, and Chartist.js
 however, instead of using the BI tools the team had created a 
 Python application that has a capability of running seamlessly on 
 any of the underlying environments - virtualized,  physical, or 
-on a cloud. 
+on a cloud. Finally, the report provides summarized findings 
+and conclusions.
 
 ## Dataset Description
 
