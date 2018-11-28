@@ -150,8 +150,6 @@ and conclusions.
 
 ## Dataset Description
 
-### Kaggle Platform
-
 ### Kaggle API
 
 The technology used to easily obtain the Kickstarter Projects 
