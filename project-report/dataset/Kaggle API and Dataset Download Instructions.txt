@@ -1,0 +1,16 @@
+Necessary steps needed to be able to use Kaggle API and download the Kickstarter Dataset
+via command prompt
+
+1. Make sure Python 3 is installed
+2. Use pip to install the kaggle package
+    
+   `$ pip install kaggle`
+
+3. Sign up for Kaggle account
+4. Create API Token 
+5. Download kaggle.json file with API credentials
+6. Place the json file in a specific location where Python will be able to access it
+7. To download the Kickstarter dataset, use:
+
+   `$ kaggle datasets download  kemical/kickstarter-projects -f ks-projects-201801.csv
+	
