@@ -19,7 +19,7 @@ def load_data():
     #collection = db.projects
     #df = pd.DataFrame(list(collection.find()))
       
-    client = MongoClient('mongodb+srv://Izolda:Tesla18$@cluster0-4fgwj.azure.mongodb.net/test?retryWrites=true')
+    client = MongoClient('mongodb+srv://nishad:****@cluster0-4fgwj.azure.mongodb.net/test?retryWrites=true')
     db = client.kick
     collection = db.project
     df = pd.DataFrame(list(collection.find()))
