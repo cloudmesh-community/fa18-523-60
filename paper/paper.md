@@ -839,7 +839,7 @@ for that document [@www-docs-mongodb].
 
 The *group* stage consumes the document data per each 
 distinct group. It has a RAM limit of 100 MB. If the 
-stage exceeds this limit, the *$group* produces an 
+stage exceeds this limit, the *group* produces an 
 error [@www-docs-mongodb].
 
 ```
@@ -1002,9 +1002,9 @@ pipeline [@www-docs-mongodb].
 ```
 
 Another option from the *aggregation operations* is the Map/Reduce 
-framework, which essentially includes two different functions, *map*  
-and *reduce*. The first one provides the key value pair for each
-tag in the array, while the latter one
+framework, which essentially includes two different functions,
+*map* and *reduce*. The first one provides the key value pair for 
+each tag in the array, while the latter one
 
 > "sums over all of the emitted values for a given key"
 > [@www-mongo-aggregation].
