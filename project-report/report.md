@@ -192,8 +192,7 @@ TBD
 
 ## Code Organization
 
-Code is checked-in on GitHub at location 
-https://github.com/cloudmesh-community/fa18-523-60/tree/master/project-report/bin
+Code is checked-in on GitHub at location [GitHub](https://github.com/cloudmesh-community/fa18-523-60/tree/master/project-report/bin)
 Our code is organized as described in the following section.
 
 ### bin
@@ -205,7 +204,7 @@ Our code is organized as described in the following section.
   
 ### dataset
   
-  - https://www.kaggle.com/kemical/kickstarter-projects#ks-projects-201801.csv
+  - [Kaggle](https://www.kaggle.com/kemical/kickstarter-projects#ks-projects-201801.csv)
   - Kaggle API and Download Instructions.txt
   
 
