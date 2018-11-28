@@ -136,12 +136,6 @@ dataset is the newly offered Kaggle Public API. API stands for
 > "which interactions happen between an enterprise and applications 
 > that use its assets" [@www-apiwiki].
 
-> "When used in the context of web development, an API is typically 
-> defined as a set of specifications, such as Hypertext Transfer Protocol 
-> (HTTP) request messages, along with a definition of the structure of 
-> response messages, usually in an Extensible Markup Language (XML) or 
-> JSON format" [@www-apiwiki].
-
 Kaggle Public API was launched in February 2018 and can be used for 
 *creating datasets, kernels*, or simply *connect with Kaggle* 
 [@www-kaggleapi]. Although still in its beta phase, it allows a more 
