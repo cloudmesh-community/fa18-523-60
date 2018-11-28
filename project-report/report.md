@@ -43,16 +43,8 @@ This is the reason why the *Kickstarter* platform was developed
 and is still successfully operating since 2009 [@www-voelker].
 
 *Kickstarter* is a web-based crowdfunding platform that helps 
-support creative arts around the globe [@www-voelker]. As of 
-November, 2018, *Kickstarter* has pledged more than four 
-billion dollars while successufully funding more than 150 
-thousand projects [@www-kickstarter-stats]. Overall, the 
-platform has had more than 15 million backers, out of those, 
-5 million were repeated backers, which totalled in more than 
-49 million pledges [@www-kickstarter-stats]. The highest pledged 
-category is *Games* with more than 580 million dollars in 
-successful projects and success rate of 36.55% 
-[@www-kickstarter-stats]. *Kickstarter* uses the fundable 
+support creative arts around the globe [@www-voelker].
+*Kickstarter* uses the fundable 
 project model where the would-be business owners or project 
 managers submit their project along with the necessary project 
 information and its funding goal.
