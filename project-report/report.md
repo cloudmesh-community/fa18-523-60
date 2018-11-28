@@ -30,18 +30,17 @@ from the Kaggle datascience platform.
 
 ## Introduction
 
-In today's world there are many creative individuals and groups 
-that are trying to develop products, projects, and businesses 
-based on their unique ideas and talents. In many cases, an idea 
-or a talent is not enough to accomplish this. Capital funds
-are one of the main elements of a successful startup process. 
-Although there is a significant number of government programs 
-in the United States designed to help small businesses and 
-creative indivials to obtain necessary funds for their projects, 
-a high number of start-ups nonetheless remain capital constrained
-[@www-voelker]. This is the reason why the *Kickstarter* platform 
-was developed and is still successfully operating since 2009 
-[@www-voelker].
+Many creative individuals and groups around the globe are trying 
+to develop products, projects, and businesses based on their 
+unique ideas and talents. In many cases, an idea or a talent 
+is not enough to accomplish this. Capital funds are one of the 
+main elements of a successful startup process. Although there 
+is a significant number of government programs in the United 
+States designed to help small businesses and creative indivials 
+to obtain necessary funds for their projects, a high number of 
+start-ups nonetheless remain capital constrained [@www-voelker]. 
+This is the reason why the *Kickstarter* platform was developed 
+and is still successfully operating since 2009 [@www-voelker].
 
 *Kickstarter* is a web-based crowdfunding platform that helps 
 support creative arts around the globe [@www-voelker]. As of 
@@ -53,31 +52,14 @@ platform has had more than 15 million backers, out of those,
 49 million pledges [@www-kickstarter-stats]. The highest pledged 
 category is *Games* with more than 580 million dollars in 
 successful projects and success rate of 36.55% 
-[@www-kickstarter-stats]. 
-
-*Kickstarter* uses the fundable project model where the would-be 
-business owners or project managers submit their project along 
-with the necessary project information and its funding goal.
+[@www-kickstarter-stats]. *Kickstarter* uses the fundable 
+project model where the would-be business owners or project 
+managers submit their project along with the necessary project 
+information and its funding goal.
 
 > "The funding goal establishes a base target for the project 
 > and a deadline (generally 30-days) to achieve the funding" 
 > [@www-voelker]. 
-
-The prospective artists and entrepreneurs typically display their 
-projects in a video form where they have the opportunity to outline
-the project along with its benefits and funding requirements 
-[@www-voelker]. The video is shown on the *Kickstarter* project 
-webpage along with the number of backers, the amount of funds 
-received/pledged as well as the fundraising goal. As each project 
-is timed, the time remaining in the *Kickstarter* promotion is 
-shown on the project page as well. Since the platform is based on 
-an *all or nothing* funding model, pledged funds are not available 
-to the entrepreneurs until the end of the funding period which 
-is determined by the goal-setting statement [@www-voelker]. The 
-financial transcations occur only in cases where a projects meets 
-its initial targets and funding expectations [@www-voelker]. If 
-the initial target is exceeded, the project received all funding 
-as well as the excess of its goal.
 
 Our project includes several big data technologies while exploring 
 the *Kickstarter* dataset collected in the 2009-2018 timeframe and 
@@ -90,14 +72,9 @@ performed a basic exploratory analysis. The time needed to query
 the dataset was used as a quantitative measure to analyze the 
 relative benchmarking. Moreover, our team also provides an 
 ease-of-use review of each service as an addition to the 
-performance benchmarking. When it comes to connecting to 
-MongoDB, our team had determined that the PyMongo driver is 
-a logical choice not only due to Python's programming 
-versatility and flexibility, but also due to the 
-compatibility between Python dictionaries and MongoDB's 
-BSON objects. This report introduces the reader to the 
-related work in the MongoDB realm, as well as the Kaggle platform 
-and the chosen dataset prior to presenting the project design 
+performance benchmarking. This report introduces the reader 
+to the related work in the MongoDB realm, as well as to
+the chosen dataset prior to presenting the project design 
 and research methods, architecture, technologies, and results. 
 
 ## Literature review
