@@ -230,13 +230,36 @@ TBD
 
 ## Technologies
 
-TBD
+### Technologies and tools used in this project are:
 
-## Architecture
-
-TBD
+* Python version 3.6 and it's libraries Seaborn,Matplotlib,Pandas etc.
+* PyMongo Driver, Bash Shell 
+* Cloud services - MogoDB Atlas, 3 node replica cluster
+* Cloud services - Digital Ocean, Ubuntu 18.04 ,MongoDB 3.6.3
 
 ## Code Organization
+
+Code is checked-in on GitHub at location 
+https://github.com/cloudmesh-community/fa18-523-60/tree/master/project-report/bin
+Our code is organized as described below , 
+
+### bin
+
+  - main.py 
+  - load_csv.py
+  - mongo_install.sh
+  - mongo_uninstall.sh 
+  
+### dataset
+  
+  - link to dataset
+  - steps download using kaggle.com
+  
+### images
+  
+  - architecture.png
+
+## Architecture
 
 TBD
 
