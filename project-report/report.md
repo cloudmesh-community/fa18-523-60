@@ -236,9 +236,11 @@ In most of basic of form, our M0 cluster consists of one primary node and two
 secondary nodes. The primary nodes are responsible mainly for write operations 
 while the secondary nodes replicate primary’s *oplog* such that secondary 
 nodes datasets reflects primary’s dataset so 
+
 > "when the primary is 
 > unavailable an eligible secondary will hold an election to elect itself the new 
 > primary" [@www-mongodbreplica]. 
+
 Thus the replica set arrangement ensures high 
 availability of data. Optionally we can configure the arbiter node which does 
 not hold any data but keep the track quorum in a replica set. Since arbiter node 
