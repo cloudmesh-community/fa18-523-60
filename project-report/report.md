@@ -188,8 +188,8 @@ TBD
 ## Code Organization
 
 Our code is checked-in on GitHub and can be accessed by using this 
-[link](https://github.com/cloudmesh-community/fa18-523-60/tree/master/project-report/bin),
-and is organized as described in the following section.
+[link](https://github.com/cloudmesh-community/fa18-523-60/tree/master/project-report/bin).
+It is organized as described in the following section.
 
 ### bin
 
