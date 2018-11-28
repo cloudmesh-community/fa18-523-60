@@ -157,7 +157,10 @@ professional work.
 
 ### Kickstarter Projects Dataset
 
-The Kickstarter Projects dataset is publicly available on the Kaggle website. 
+The Kickstarter Projects dataset is publicly available on the Kaggle website
+and can be accessed using this [path]((https://www.kaggle.com/kemical/kickstarter-projects#ks-projects-201801.csv).
+The instructions on how to obtain the dataset using the Kaggle API can be found
+[here](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/dataset/Kaggle%20API%20and%20Dataset%20Download%20Instructions.txt).
 The dataset is available in the CSV format and contains more than 370 thousand 
 projects submitted to Kickstarter between 2009 and 2018 [@www-kaggle-kickstarterdata]. 
 The dataset variables allow versatile data analysis which is presented in the Results 
@@ -194,12 +197,6 @@ and is organized as described in the following section.
   - load_csv.py
   - mongo_install.sh
   - mongo_uninstall.sh 
-  
-### dataset
-  
-  - [kaggle dataset](https://www.kaggle.com/kemical/kickstarter-projects#ks-projects-201801.csv)
-  - Kaggle API and Download Instructions.txt
-  
 
 ## Architecture
 
