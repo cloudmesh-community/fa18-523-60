@@ -88,7 +88,7 @@ community needs.
 There are several advantages of storing data in document format 
 and some of them are flexible schema and ability to store arrays 
 which are faster to process using native commands of Python scripts 
-[@www-pymongo]. In June 2018, students of Indiana University of 
+[@www-pymongo]. In June 2018, students of the Indiana University, 
 Bloomington Izolda Fetko, Rashmi Ray, and Nishad Tupe explored 
 the France accidents dataset using MongoDB, PyMongo, and Tableau 
 to provide safety recommendations. They used the newest release 
@@ -105,21 +105,22 @@ than RDBMS, while avoiding complex joins. However, the research also
 showed that Tableau and MongoDB is a lousy marriage predominantly 
 because Tableau was built before the NoSQL and Big Data were popular 
 and is not yet mature to process relational data [@www-mongoknowi]. 
-Tableau's slow processing of joins, when connected directly to MongoDB, 
-was one of the main reason authors decided to join the CSV files using 
-Pandas data frame and use MongoDB as a backend tool. This tool allows 
-a stable platform for the user-friendly BI tools such as Tableau to 
-perform analytics on large datasets with millions of rows and also 
-to stand as a robust database on which one can build applications 
-[@www-mongotab]. In the final step, authors created a website and 
-provided links to various dashboards using technologies such as HTML, 
-CSS, JavaScript, Bootstrap, Flask, JQuery.js, and Chartist.js 
-[@www-mongotab]. Our current project fosters a similar idea, 
-however, instead of using the BI tools the team had created a 
-Python application that has a capability of running seamlessly on 
-any of the underlying environments - virtualized,  physical, or 
-on a cloud. Finally, the report provides summarized findings 
-and conclusions.
+Tableau's slow processing of joins, when connected directly to 
+MongoDB, was one of the main reason authors decided to join the 
+CSV files using Pandas data frame and use MongoDB as a backend tool. 
+This tool allows a stable platform for the user-friendly BI tools 
+such as Tableau to perform analytics on large datasets with millions 
+of rows and also to stand as a robust database on which one can 
+build applications [@www-mongotab]. In the final step, authors 
+created a website and provided links to various dashboards 
+using technologies such as HTML, CSS, JavaScript, Bootstrap, 
+Flask, JQuery.js, and Chartist.js [@www-mongotab]. Although
+the goals of the aforementioned and our current project differ,
+they do share a lot of similarities in sense of using the exact
+same big data technologies MongoDB and Python. 
+
+Another paper written by ..... TBD
+
 
 ## Dataset Description
 
@@ -177,7 +178,39 @@ origin; and the total amount of funds pledged by currency [@www-kaggle-kickstart
 
 ## Design and Methods
 
-TBD
+* DESIGN STEPS - TBD
+
+During the aforementioned process, our team had utilized the following 
+statistical methods to complete the exploratory analysis and draw 
+insights from the dataset. 
+
+1. Analysis of Variance
+
+          The analysis of variance or ANOVA is a statistical technique 
+          of parametric nature used to compare compare datasets. In our
+          case, it is used to compare different categories within the
+          *Kickstarter* dataset. This technique is very similar to the
+          *t-score* and *z-score* in the sense of being used to compare
+          means and the relative variance between them [@www-anova]. 
+
+2. Correlation
+          
+          The correlation analysis is a statistical method used to 
+          evaluate a relationship between two continuous variables 
+          [@www-correlcation]. 
+                 
+2. Logistic Regression
+          
+          The logistic regression analysis is a predictive analysis
+          used to descrpibe a relationship between one dependent and 
+          one or more nominal, ordinal, interval, or ratio-level independent
+          variables [@www-logreg]. 
+          
+3. Timeseries Analysis
+          
+          The time series analysis is a statistical technique which is related 
+          to data that is distributed in a series of particular time periods or
+          intervals [@www-timeseries].
 
 ## Technologies
 
