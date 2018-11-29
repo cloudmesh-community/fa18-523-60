@@ -183,7 +183,7 @@ TBD
 
 ### Technologies and Tools Used
 
-* Python version 3.6 and it's libraries Seaborn,Matplotlib,Pandas etc.
+* Python version 3.6 and its libraries Seaborn, Matplotlib, Pandas, and NumPy
 * PyMongo Driver, Bash Shell 
 * Cloud services - MogoDB Atlas, 3 node replica cluster
 * Cloud services - Digital Ocean, Ubuntu 18.04 ,MongoDB 3.6.3
