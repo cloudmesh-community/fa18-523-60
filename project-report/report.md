@@ -239,9 +239,18 @@ customization over the OS and database level resources, MongoDB Atlas cloud
 services provided the stable database clustered environment for high 
 availability of data. There was no overhead of configuring MongoDB instance as 
 it's "DBaaS" service. We decided to leverage Unix bash script to perform a task 
-such as automatically. 1. Download the dataset 2. Install MongoDB 3. Import the 
-MongoDB 4. Run the Python Analysis. Thus achieving the stable infrastructure 
-foundation we established the VM creation, we had moved on to loading the data 
+such as automatically. 
+
+1. Download the dataset 
+
+2. Install MongoDB 
+
+3. Import the MongoDB 
+
+4. Run the Python Analysis. 
+
+Thus achieving the stable infrastructure 
+foundation on cloud based VM's, we had moved on to loading the data 
 using two methods 1. Python script based method for DBaaS 2. MongoImport for 
 cloud VM's Before beginning the analysis, it is essential to extract essential 
 features. We used Python date time library to get the date, year, month, clean 
