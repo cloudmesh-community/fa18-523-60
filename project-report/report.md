@@ -139,14 +139,14 @@ benchmarking of the MongoDB database on several cloud instances.
 In his report, [@www-matei] notes that each virtual instance
 had the MongoDB and PyMongo installed on it. The similarity
 between this report and our project is that both exploit the
-benefits of the PyMongo driver and Amazon Web Services, 
+benefits of the PyMongo driver and the Amazon Web Services, 
 more specifically the *EC2* instances. In addition to the AWS, 
-[@www-matei] used Linode, a hosting company that offers virtual 
+[@www-matei] used Linode, a hosting company that offers a virtual 
 private server (VPS); Rackspace cloud and its open source technology 
 *OpenStack*; and Windows Azure and its virtual machines [@www-matei].
-In the final part of his paper, [@www-matei] concludes that MongoDB's 
+In the finalsection of his paper, [@www-matei] concludes that MongoDB's 
 performance varies from cloud to cloud due to various factors. One of 
-the most important factor he lists are the fast I/O access and 
+the most important factors that he lists are the fast I/O access and 
 ability of the database to cach all indexes in RAM [@www-matei].
 
 The report by [@www-bigbee] shows similarities to our report 
@@ -154,19 +154,19 @@ in the sense of benchmarking MongoDB using the AWS. However,
 in his report, [@www-bigbee] takes a step further and compares
 the MongoDB performance to other databases such as CouchDB and
 Apache Spark. He concludes that MongoDB performs well on the
-cloud with ultr-low latency which makes it a great choice 
+cloud with ultra-low latency which makes it a great choice 
 for applications with flexible schema requirements [@www-bigbee].
 
 The article written by [@www-sverchkov], presents NoSQL database
 benchmarking with the use of the Yahoo Cloud Benchmark (YCSB) and 
 Amazon Web Services with an installed Linux operating system 
 [@www-sverchkov]. The purpose of his article is to help developers 
-choose the right NoSQL database for their application. He tested 
-Cassandra 2.0, MongoDB 2.4.6, HBASE 0.92 and concluded that developers 
+choose the right database for their application. He tested Cassandra 
+2.0, MongoDB 2.4.6, HBASE 0.92 and concluded that developers 
 need to evaluate different solutions in their search, and test their 
-performance since perfect solutions do not exist [@www-sverchkov]. 
+performance first prior to making any decisions [@www-sverchkov]. 
 According to him, all databases are good in some way, but may perform 
-differently in different scenarios hence, it is important to chose them
+differently in different scenarios, hence, it is important to chose them
 based on the most needed properties and project requirements [@www-sverchkov].
 The similarity between this project and our project is the use of the
 Amazon Web Services as a benchmarking tool for MongoDB. 
