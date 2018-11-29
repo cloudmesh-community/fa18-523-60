@@ -197,7 +197,7 @@ insights from the dataset.
           
           The correlation analysis is a statistical method used to 
           evaluate a relationship between two continuous variables 
-          [@www-correlcation]. 
+          [@www-correlation]. 
                  
 2. Logistic Regression
           
