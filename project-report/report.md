@@ -253,6 +253,7 @@ methods to complete the data analysis and draw
 insights from the dataset. 
 
 1. Exploratory Analysis and Visualization. 
+
    Data Visualizations that let you discover trends or patterns in
    a data set are called Exploratory Data analysis.Once the data
    is in good shape, it is easier to gain the understanding of the data
