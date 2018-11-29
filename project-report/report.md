@@ -44,14 +44,29 @@ and is still successfully operating since 2009 [@www-voelker].
 
 *Kickstarter* is a web-based crowdfunding platform that helps 
 support creative arts around the globe [@www-voelker].
-*Kickstarter* uses the fundable 
-project model where the would-be business owners or project 
-managers submit their project along with the necessary project 
-information and its funding goal.
+It uses the fundable project model where the would-be business 
+owners or project managers submit their project along with the 
+necessary project information and its funding goal.
 
 > "The funding goal establishes a base target for the project 
 > and a deadline (generally 30-days) to achieve the funding" 
 > [@www-voelker]. 
+
+The prospective artists and entrepreneurs typically display their 
+projects in a video form where they have the opportunity to outline
+the project along with its benefits and funding requirements 
+[@www-voelker]. The video is shown on the *Kickstarter* project 
+webpage along with the number of backers, the amount of funds 
+received/pledged as well as the fundraising goal. As each project 
+is timed, the time remaining in the *Kickstarter* promotion is 
+shown on the project page as well. Since the platform is based on 
+an *all or nothing* funding model, pledged funds are not available 
+to the entrepreneurs until the end of the funding period which 
+is determined by the goal-setting statement [@www-voelker]. The 
+financial transcations occur only in cases where a projects meets 
+its initial targets and funding expectations [@www-voelker]. If 
+the initial target is exceeded, the project received all funding 
+as well as the excess of its goal.
 
 Our project includes several big data technologies while exploring 
 the *Kickstarter* dataset collected in the 2009-2018 timeframe and 
@@ -69,9 +84,9 @@ as a quantitative measure to analyze the relative benchmarking.
 Moreover, our team also provides an ease-of-use review of each 
 service as an addition to the performance benchmarking. 
 This report introduces the reader to the related work in the 
-MongoDB realm, as well as to the chosen dataset prior to presenting 
-the project design and research methods, architecture, technologies, 
-and results. 
+MongoDB realm, as well as to the chosen dataset prior to 
+presenting the project design and research methods, architecture, 
+technologies, and results. 
 
 ## Literature review
 
