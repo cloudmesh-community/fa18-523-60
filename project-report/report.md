@@ -340,7 +340,53 @@ to the application while accessing the MongoDB data.
 
 ## Observations and Visualizations
 
-TBD
+The bar chart visualization shows top Kickstarter projects main categories with
+ successful and failed project. The funding goal data grouped on successful and
+ failed project status. The vertical axis in horizontal bar chart is showing
+ main categories for the projects. The horizontal axis is the
+ average project funding goal data. The blue bars in chart are
+ representing  failed projects average funding goal and green bars are 
+ representing successful projects average funding goals.
+ The results shows the top average failed and successful funding goal for 
+ Technology main category. The higher goals are set for for Technology category.
+ The main category Craft shows lowest average failed and successful funding
+ goal.
+ 
+ 
+ The bar plot visualization is showing successful and failure project count 
+ data for different years. The horizontal axis is showing the project launch 
+ years and vertical axis is showing the number of successful and failure 
+ project count for each years. 
+ 
+ 
+ 
+ The stacked chart visualization is showing project count data for different
+ categories stacked with project status. The horizontal axis for the chart is 
+ showing categories data and vertical axis is showing project counts for each 
+ categories. The horizontal axis is short in alphabetical order. The most of 
+the project categories are showing large failure project counts. The Film & 
+Video category has maximum project count with higher successful and failed
+ project status. The Dance category has lowest project count with only 
+ successful and failed status.
+ 
+ 
+ 
+ 
+ The top market visualization shows the list of top countries which has most
+ pledged funding for the projects. The horizontal axis in chart is showing 
+ countries information sorted on number of pledged funding. The vertical axis
+ is showing pledged funding for the projects. The pledged fund divided on
+ project status. Jordan country has maximum pledged amounts with successful 
+ and failed status.
+ 
+ 
+ 
+ The Average pledged amounts visualization shows top Kickstarter projects main 
+ categories with successful and failed project. The vertical axis in 
+ bar chart is showing average pledged funding data. The horizontal axis is the
+ main categories for projects. The Technology category is showing high average
+ pledged amounts for successful and failed projects.
+
 
 ## Conclusion
 TBD
