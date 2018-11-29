@@ -201,31 +201,31 @@ insights from the dataset.
 
 1. Analysis of Variance
 
-          The analysis of variance or ANOVA is a statistical technique 
-          of parametric nature used to compare compare datasets. In our
-          case, it is used to compare different categories within the
-          *Kickstarter* dataset. This technique is very similar to the
-          *t-score* and *z-score* in the sense of being used to compare
-          means and the relative variance between them [@www-anova]. 
+   The analysis of variance or ANOVA is a statistical technique 
+   of parametric nature used to compare compare datasets. In our
+   case, it is used to compare different categories within the
+   *Kickstarter* dataset. This technique is very similar to the
+   *t-score* and *z-score* in the sense of being used to compare
+    means and the relative variance between them [@www-anova]. 
 
 2. Correlation
           
-          The correlation analysis is a statistical method used to 
-          evaluate a relationship between two continuous variables 
-          [@www-correlation]. 
+   The correlation analysis is a statistical method used to 
+   evaluate a relationship between two continuous variables 
+   [@www-correlation]. 
                  
 2. Logistic Regression
           
-          The logistic regression analysis is a predictive analysis
-          used to descrpibe a relationship between one dependent and 
-          one or more nominal, ordinal, interval, or ratio-level independent
-          variables [@www-logreg]. 
+   The logistic regression analysis is a predictive analysis
+   used to descrpibe a relationship between one dependent and 
+   one or more nominal, ordinal, interval, or ratio-level independent
+   variables [@www-logreg]. 
           
 3. Timeseries Analysis
           
-          The time series analysis is a statistical technique which is related 
-          to data that is distributed in a series of particular time periods or
-          intervals [@www-timeseries].
+   The time series analysis is a statistical technique which is related 
+   to data that is distributed in a series of particular time periods or
+   intervals [@www-timeseries].
 
 ## Technologies
 
