@@ -226,40 +226,63 @@ actual funds pledged to the project along with the number of backers; the countr
 origin; and the total amount of funds pledged by currency [@www-kaggle-kickstarterdata].
 
 ## Design and Methods
-
-* DESIGN STEPS - TBD
-
-During the aforementioned process, our team had utilized the following 
-statistical methods to complete the exploratory analysis and draw 
+We have used the methodology as shown in the process diagram to conduct our 
+study and publish the results. One of the primary aims of the project was to 
+utilize the minimal cost cloud resources. Thankfully nowadays every coud 
+provider provides a free tier. To leverage this, we created VM's on Amazon Web 
+Services(AWS), Digital Ocean cloud services with more or less with the same 
+basic configuration of memory and hard disk. The AWS and Digital Ocean primarily 
+*IaaS* service while MongoDB Atlas *DBaaS* this also gave the opportunity to 
+test the solution various cloud providers and benchmark their performance with 
+pros and cons. Although the cloud VM's gave us the lot more control and 
+customization over the OS and database level resources, MongoDB Atlas cloud 
+services provided the stable database clustered environment for high 
+availability of data. There was no overhead of configuring MongoDB instance as 
+it's "DBaaS" service. We decided to leverage Unix bash script to perform a task 
+such as automatically. 1. Download the dataset 2. Install MongoDB 3. Import the 
+MongoDB 4. Run the Python Analysis. Thus achieving the stable infrastructure 
+foundation we established the VM creation, we had moved on to loading the data 
+using two methods 1. Python script based method for DBaaS 2. MongoImport for 
+cloud VM's Before beginning the analysis, it is essential to extract essential 
+features. We used Python date time library to get the date, year, month, clean 
+up the *NaN* rows carefully and also to calculate the duration of the project. 
+The next step encompassed in data enhancement by extracting the features that 
+can give a foundation to perform various analysis and develop machine learning
+model. During the aforementioned process, our team had utilized the following 
+methods to complete the data analysis and draw 
 insights from the dataset. 
 
-1. Analysis of Variance
+1. Exploratory Analysis and Visualization. 
+   Data Visualizations that let you discover trends or patterns in
+   a data set are called Exploratory Data analysis.Once the data
+   is in good shape, it is easier to gain the understanding of the data
+   and visualization often becomes handy tool to find the interesting
+   patterns.
 
-   The analysis of variance or ANOVA is a statistical technique 
-   of parametric nature used to compare compare datasets. In our
-   case, it is used to compare different categories within the
-   *Kickstarter* dataset. This technique is very similar to the
-   *t-score* and *z-score* in the sense of being used to compare
-    means and the relative variance between them [@www-anova]. 
-
-2. Correlation
+2. Correlation or Heatmap analysis
           
    The correlation analysis is a statistical method used to 
    evaluate a relationship between two continuous variables 
    [@www-correlation]. 
                  
-2. Logistic Regression
-          
-   The logistic regression analysis is a predictive analysis
-   used to descrpibe a relationship between one dependent and 
-   one or more nominal, ordinal, interval, or ratio-level independent
-   variables [@www-logreg]. 
           
 3. Timeseries Analysis
           
    The time series analysis is a statistical technique which is related 
    to data that is distributed in a series of particular time periods or
    intervals [@www-timeseries].
+
+4. Perform MongoDB queries
+   The gist of our project to show the mongoDB ability to query it real time
+   hence using MongoDB aggregation framework to Analyze the data using 
+   MongoDB queries. 
+   
+5. Logistic Regression model for predicting Success and Failure
+          
+   The logistic regression analysis is a predictive analysis
+   used to descrpibe a relationship between one dependent and 
+   one or more nominal, ordinal, interval, or ratio-level independent
+   variables [@www-logreg]. 
 
 ## Technologies
 
