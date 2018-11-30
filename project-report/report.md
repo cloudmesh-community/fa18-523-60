@@ -325,59 +325,61 @@ cloud computing services from Amazon Web Services (*AWS*), *DigitalOcean*
 as *IaaS* and *MongoDB Atlas* as a *DBaaS* platform. Though *AWS* is giant a
 cloud provider with multiple cloud services, we found that *DigitalOcean's* 
 user-friendly virtual machine (VM's) management interface is equally attractive. 
-The architecture diagram +@fig:architecture shows the client machine or application 
-tier where the source code(*.py*) was stored and used for performance 
-benchmarking. 
-
-+@fig:fromonetotheorthe
+The architecture diagram +@fig:architecture more specifically the upper
+left dotted box, shows the client machine or application tier where the 
+source code(*.py*) was stored and used for performance benchmarking. 
 
 ![Architecture Diagram](images/architecture.jpg){#fig:architecture}
 
-
-The team also kept a copy of the source code and other scripts 
-on the cloud VM's file systems. We used PyMongo driver as one of the primary 
-components for communicating with the MongoDB database. PyMongo does not only
-provide the MongoDB driver access to Python libraries, but is also a recommended 
-choice when wrangling data with MongoDB [@www-mongodbpymongo]. 
+The team also kept a copy of the source code and other scripts on the cloud 
+VM's file systems. We used PyMongo driver as one of the primary components 
+for communicating with the MongoDB database. PyMongo does not only
+provide the MongoDB driver access to Python libraries, but is also a 
+recommended choice when wrangling data with MongoDB [@www-mongodbpymongo]. 
 
 During the initial loading phase of the *Kickstarter* dataset, our team
-imported the raw data using the MongoDB import command line (dotted box 
-2) in the *DigitalOcean* and *AWS* cloud VM's. A custom bash shell script 
-that installs, configures the MongoDB environment and then imports the CSV data 
-to MongoDB (dotted box 2) was also written. To load the data in the MongoDB 
-Atlas cluster (dotted box 3),  we used a simple Python function *load_csv.py* 
-(dotted box 1). The primary reason for this is because MongoDB Atlas is a 
-*DBaaS* cloud service and typically in *DBaaS* users do not have control 
-or access to OS resources such as a file system. In most basic form, our 
-M0 cluster consists of one primary node and two secondary nodes. The primary 
-nodes are mainly responsible for writing operations, while the secondary 
-nodes replicate primary's *oplog*.  This way the secondary node's dataset
-reflects the primary's dataset in cases where the primary node is unavailable 
-[@www-mongodbreplica]. Only the eligible secondary nodes will
+imported the raw data using the MongoDB import command line in the 
+*DigitalOcean* and *AWS* cloud VM's. A custom bash shell script that 
+installs, configures the MongoDB environment and then imports the CSV 
+data to MongoDB was also written. To load the data in the MongoDB 
+Atlas cluster,  we used a simple Python function *load_csv.py*. The 
+primary reason for this is because MongoDB Atlas is a *DBaaS* cloud 
+service and typically in *DBaaS* users do not have control or access 
+to OS resources such as a file system. In most basic form, our M0 
+cluster consists of one primary node and two secondary nodes. The 
+primary nodes are mainly responsible for writing operations, while 
+the secondary nodes replicate primary's *oplog*.  This way the 
+secondary node's dataset reflects the primary's dataset in cases 
+where the primary node is unavailable [@www-mongodbreplica]. Only 
+the eligible secondary nodes will
 
 > "hold an election to elect itself the new primary" [@www-mongodbreplica]. 
 
-This replica set arrangement ensures high availability of data. Optionally, one 
-can configure the arbiter node which does not hold any data but keeps the track 
-quorum in the replica set. Since arbiter nodes do not hold any data, they act as 
-a suitable repository to keep the heartbeat information at a cheaper cost 
-[@www-mongodbreplica]. On the contrary, our team had found that the *IaaS* services 
-provide greater control and customization to the OS resources but add overhead 
-to perform the configuration and other tasks which can be complex and may induce 
-a lag time for writing the code due to incomplete pre-requisites. On the cloud 
-VM's, the team hosted a single instance MongoDB database on Ubuntu 18.04 platform 
-(dotted box3). As post install steps, our team had installed the Python Anaconda 
-Distribution and other necessary libraries essential to complete the analysis. 
-The communication between MongoDB and Python application happens by connecting 
-string. The connect strin, one must have a valid username and password and 
-necessary privileges to access and modify the database. To accept the remote 
-connection, one of the vital steps is to set a value of *bind_ip* to 0.0.0.0 
-in the *mongodb.conf* file that resides on the VM. For all cloud providers, 
-our team had used free-tier services. We observed notable advantage of using 
-MongoDB Atlas free tier service often called as *M0 cluster*. By default, the 
-*M0 cluster* comes with three node replica sets and 512 MB storage(dotted box 3). 
-The replica set is a group of *mongod* processes which provide redundancy and 
-high availability to the application while accessing the MongoDB data. 
+This replica set arrangement ensures high availability of data. 
+Optionally, one can configure the arbiter node which does not 
+hold any data but keeps the track quorum in the replica set. Since 
+arbiter nodes do not hold any data, they act as a suitable repository 
+to keep the heartbeat information at a cheaper cost [@www-mongodbreplica]. 
+On the contrary, our team had found that the *IaaS* services 
+provide greater control and customization to the OS resources 
+but add overhead to perform the configuration and other tasks 
+which can be complex and may induce a lag time for writing the 
+code due to incomplete pre-requisites. On the cloud VM's, the team 
+hosted a single instance MongoDB database on Ubuntu 18.04 platform. 
+As post install steps, our team had installed the Python Anaconda 
+Distribution and other necessary libraries essential to complete 
+the analysis. The communication between MongoDB and Python application
+happens by connecting string. The connect strin, one must have a valid 
+username and password and necessary privileges to access and modify 
+the database. To accept the remote connection, one of the vital 
+steps is to set a value of *bind_ip* to 0.0.0.0 in the *mongodb.conf* 
+file that resides on the VM. For all cloud providers, our team had 
+used free-tier services. We observed notable advantage of using 
+MongoDB Atlas free tier service often called as *M0 cluster*. 
+By default, the *M0 cluster* comes with three node replica sets 
+and 512 MB storage. The replica set is a group of *mongod* processes 
+which provide redundancy and high availability to the application 
+while accessing the MongoDB data. 
 
 ## Observations and Visualizations
 
