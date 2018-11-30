@@ -329,6 +329,8 @@ The architecture diagram +@fig:architecture shows the client machine or applicat
 tier where the source code(*.py*) was stored and used for performance 
 benchmarking. 
 
++@fig:fromonetotheorthe
+
 ![Architecture Diagram](images/architecture.jpg){#fig:architecture}
 
 
