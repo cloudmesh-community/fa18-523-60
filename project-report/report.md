@@ -325,7 +325,7 @@ cloud computing services from Amazon Web Services (*AWS*), *DigitalOcean*
 as *IaaS* and *MongoDB Atlas* as a *DBaaS* platform. Though *AWS* is giant a
 cloud provider with multiple cloud services, we found that *DigitalOcean's* 
 user-friendly virtual machine (VM's) management interface is equally attractive. 
-The architecture diagram (dotted box 1) shows the client machine or application 
+The architecture diagram +@fig:architecture shows the client machine or application 
 tier where the source code(*.py*) was stored and used for performance 
 benchmarking. 
 
