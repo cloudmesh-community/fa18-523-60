@@ -386,7 +386,7 @@ while accessing the MongoDB data.
 Our team had completed an exploratory analysis of the *Kickstarter* dataset. 
 The results of the analysis can be observed in the following section.
 
-The bar chart visualization in +@fig: Top main categories Average goal shows the top *Kickstarter Projects*
+The bar chart visualization in +@fig:Top main categories Average goal shows the top *Kickstarter Projects*
 main categories using the successful and failed projects. In order to create 
 this visual, the funding goal data first needed to be grouped based on the
 successful and failed project status.The categories are represented on the *y* 
@@ -400,7 +400,7 @@ set higher than for the others, for example *Craft*, which shows the lowest
 average funding goal in both successful and failed projects. 
 
 ![Bar chart](images/To_main_categories_AverageGoal_Success_failed.png)
-{#fig: Top main categories Average goal}
+{#fig:Top main categories Average goal}
  
  The bar plot visualization is showing successful and failure project count 
  data for different years. The horizontal axis is showing the project launch 
@@ -430,11 +430,14 @@ Video category has maximum project count with higher successful and failed
  
  
  
- The Average pledged amounts visualization shows top Kickstarter projects main 
+ The Average pledged amounts visualization +@fig:Average Pledge Amount by category shows top Kickstarter projects main 
  categories with successful and failed project. The vertical axis in 
  bar chart is showing average pledged funding data. The horizontal axis is the
  main categories for projects. The Technology category is showing high average
  pledged amounts for successful and failed projects.
+ 
+ ![Bar chart](images/Pledge_Amount_Average.png)
+{#fig:Average Pledge Amount by category}
 
 
 ## Conclusion
