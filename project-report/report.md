@@ -386,7 +386,7 @@ while accessing the MongoDB data.
 Our team had completed an exploratory analysis of the *Kickstarter* dataset. 
 The results of the analysis can be observed in the following section.
 
-The bar chart visualization in +@fig: TBD shows the top *Kickstarter Projects*
+The bar chart visualization in +@fig: Top main categories Average goal shows the top *Kickstarter Projects*
 main categories using the successful and failed projects. In order to create 
 this visual, the funding goal data first needed to be grouped based on the
 successful and failed project status.The categories are represented on the *y* 
@@ -399,6 +399,8 @@ the *Technology* category. As expected, the goals for the this category are
 set higher than for the others, for example *Craft*, which shows the lowest
 average funding goal in both successful and failed projects. 
 
+![Bar chart](images/To_main_categories_AverageGoal_Success_failed.png)
+{#fig: Top main categories Average goal}
  
  The bar plot visualization is showing successful and failure project count 
  data for different years. The horizontal axis is showing the project launch 
