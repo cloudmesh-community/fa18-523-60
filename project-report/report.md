@@ -383,18 +383,22 @@ while accessing the MongoDB data.
 
 ## Observations and Visualizations
 
-The bar chart visualization shows top Kickstarter projects main categories with
- successful and failed project. The funding goal data grouped on successful and
- failed project status. The vertical axis in horizontal bar chart is showing
- main categories for the projects. The horizontal axis is the
- average project funding goal data. The blue bars in chart are
- representing  failed projects average funding goal and green bars are 
- representing successful projects average funding goals.
- The results shows the top average failed and successful funding goal for 
- Technology main category. The higher goals are set for for Technology category.
- The main category Craft shows lowest average failed and successful funding
- goal.
- 
+Our team had completed an exploratory analysis of the *Kickstarter* dataset. 
+The results of the analysis can be observed in the following section.
+
+The bar chart visualization in +@fig: TBD shows the top *Kickstarter Projects*
+main categories using the successful and failed projects. In order to create 
+this visual, the funding goal data first needed to be grouped based on the
+successful and failed project status.The categories are represented on the *y* 
+axis, while the average project funding goal data is represented on the *x* 
+axis. The average funding goals for the failed projects are highlighted in
+blue, while the green bars are representing average funding goals for the
+successful projects. The results of this visualization indicate that the
+top average funding goals for both failed and successful projects are within
+the *Technology* category. As expected, the goals for the this category are 
+set higher than for the others, for example *Craft*, which shows the lowest
+average funding goal in both successful and failed projects. 
+
  
  The bar plot visualization is showing successful and failure project count 
  data for different years. The horizontal axis is showing the project launch 
