@@ -467,6 +467,12 @@ remains the US.
 
 ![Projects by Year and Country](images/t3.png){#fig:pjbyyc}
 
+### Logistic Regression
+some text
+
+![ML chart](images/selecting_top_5_categories.png)
+{#fig:selecting top 5 categories for model prediction}
+
 
 ### MongoDB Queries
 
