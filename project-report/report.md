@@ -470,8 +470,25 @@ remains the US.
 ### Logistic Regression
 some text
 
-![ML chart](images/selecting_top_5_categories.png)
+![ML chart1](images/selecting_top_5_categories.png)
+
 {#fig:selecting top 5 categories for model prediction}
+
+
+some text
+
+![ML chart2](images/selecting_top_5_categories.png)
+
+{#fig:Top 5 Categories Success Failed}
+
+some text
+
+![ML chart3](images/Confusion_Matrix.png)
+
+{#fig: Confustion Matrix for ML}
+
+
+
 
 
 ### MongoDB Queries
