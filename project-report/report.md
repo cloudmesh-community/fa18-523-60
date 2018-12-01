@@ -472,28 +472,20 @@ remains the US.
 ### Logistic Regression
 some text
 
-![ML chart1](images/selecting_top_5_categories.png)
-
-{#fig:selecting top 5 categories for model prediction}
+![ML chart1](images/selecting_top_5_categories.png){#fig:pyysjs}
 
 
 some text
 
-![ML chart2](images/Top 5 Categories Success Failed.png)
-
-{#fig:Top_5_Categories_Success_Failed}
+![ML chart2](images/Top 5 Categories Success Failed.png){#fig:nrtt}
 
 some text
 
-![ML chart3](images/Confusion_Matrix.PNG)
-
-{#fig:Confustion Matrix for ML}
+![ML chart3](images/Confusion_Matrix.PNG){#fig:bytt}
 
 some text
 
-![ML chart4](images/Accuracy_Score.PNG)
-
-{#fig:Confustion Matrix for ML}
+![ML chart4](images/Accuracy_Score.PNG){#fig:ttyml}
 
 
 
