@@ -341,7 +341,7 @@ The architecture diagram +@fig:architecture more specifically the upper
 left dotted box, shows the client machine or application tier where the 
 source code(*.py*) was stored and used for performance benchmarking. 
 
-![Architecture Diagram](images/architecture.jpg){#fig:architecture}
+![Architecture Diagram](images/architecture.png){#fig:architecture}
 
 The team also kept a copy of the source code and other scripts on the cloud 
 VM's file systems. We used PyMongo driver as one of the primary components 
