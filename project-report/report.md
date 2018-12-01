@@ -274,8 +274,7 @@ insights from the dataset.
    The correlation analysis is a statistical method used to 
    evaluate a relationship between two continuous variables 
    [@www-correlation]. 
-                 
-          
+                         
 3. Timeseries Analysis
           
    The time series analysis is a statistical technique which is related 
@@ -388,18 +387,19 @@ The results of the analysis can be observed in the following section.
 
 ### Basic Exploratory Analysis
 
-The bar chart visualization in +@fig:Top main categories Average goal shows the top *Kickstarter Projects*
-main categories using the successful and failed projects. In order to create 
-this visual, the funding goal data first needed to be grouped based on the
-successful and failed project status.The categories are represented on the *y* 
-axis, while the average project funding goal data is represented on the *x* 
-axis. The average funding goals for the failed projects are highlighted in
-blue, while the green bars are representing average funding goals for the
-successful projects. The results of this visualization indicate that the
-top average funding goals for both failed and successful projects are within
-the *Technology* category. As expected, the goals for the this category are 
-set higher than for the others, for example *Craft*, which shows the lowest
-average funding goal in both successful and failed projects. 
+The bar chart visualization in +@fig:Top main categories Average goal shows 
+the top *Kickstarter Projects* main categories using the successful and 
+failed projects. In order to create this visual, the funding goal data 
+first needed to be grouped based on the successful and failed project status.
+The categories are represented on the *y* axis, while the average project 
+funding goal data is represented on the *x* axis. The average funding goals 
+for the failed projects are highlighted in blue, while the green bars are 
+representing average funding goals for the successful projects. The results 
+of this visualization indicate that the top average funding goals for both 
+failed and successful projects are within the *Technology* category. As 
+expected, the goals for the this category are set higher than for the others, 
+for example *Craft*, which shows the lowest average funding goal in both 
+successful and failed projects. 
 
 ![Bar chart](images/To_main_categories_AverageGoal_Success_failed.png)
 {#fig:Top main categories Average goal}
@@ -450,13 +450,22 @@ number of projects drastically decreases most likely due to the holidays.
 
 ![Projects by Month and State](images/t4.png){#fig:pjbyms}
 
-Loogking at the same categories over the years, from +@gig:pjby one can 
+Loogking at the same categories over the years, from +@fig:pjbyys one can 
 conclude that overall, 2015 was a great year for *Kickstarter* with the highest 
 number of submitted projects, but also, proportionally, the largest portion of 
 the failed projects. 
 
 ![Projects by Year and State](images/t2.png){#fig:pjbyys}
 
+When it comes to the countries from which the projects were submitted in the
+2009-2017 timeframe, one can conclude that *Kickstarter* was popular and 
+available only in the United States in the first four years of its activity.
+In 2013, for the first time, one can notice other countries making project
+contributions such as Canada and New Zealand. In the follwoing years, the 
+number of contributing countries rises, however, the leading one still 
+remains the US.
+
+![Projects by Year and Country](images/t3.png){#fig:pjbyyc}
 
 
 ### MongoDB Queries
