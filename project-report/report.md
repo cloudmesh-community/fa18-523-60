@@ -386,6 +386,8 @@ while accessing the MongoDB data.
 Our team had completed an exploratory analysis of the *Kickstarter* dataset. 
 The results of the analysis can be observed in the following section.
 
+### Basic Exploratory Analysis
+
 The bar chart visualization in +@fig:Top main categories Average goal shows the top *Kickstarter Projects*
 main categories using the successful and failed projects. In order to create 
 this visual, the funding goal data first needed to be grouped based on the
@@ -438,6 +440,31 @@ Video category has maximum project count with higher successful and failed
  
  ![Bar chart](images/Pledge_Amount_Average.png)
 {#fig:Average Pledge Amount by category}
+
+### Time Series Analysis
+
+
+### MongoDB Queries
+
+Our team had also had the opportunity to write MongoDB queries directly 
+working via MongoAtlas with a purpose to compare the ease-of-use 
+related to querying of the *Kickstarter* data between MongoDB and
+Python. The following queries were written:
+
+Count of Projects by Category
+
+```
+> db.project.aggregate([
+          {$group:{_id:{category:"$main_category"}, count:{$sum:1}}},
+          {$sort:{count:1}}
+          ])
+```
+The output of this query can be seen in +@fig:queryfour.
+
+![Projects by Category](images/Query 4 - Results.jpg){#fig:queryfour
+
+
+
 
 
 ## Conclusion
