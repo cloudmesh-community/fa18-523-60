@@ -471,11 +471,9 @@ remains the US.
 ### MongoDB Queries
 
 Our team had also had the opportunity to write MongoDB queries directly 
-working via MongoAtlas with a purpose to compare the ease-of-use 
+working in MongoAtlas with a purpose to compare the ease-of-use 
 related to querying of the *Kickstarter* data between MongoDB and
-Python. The following queries were written:
-
-1. Count of Projects by Category
+Python. One of the queries included the count of projects by category.
 
 ```
 > db.project.aggregate([
@@ -487,13 +485,13 @@ The output of this query can be seen in +@fig:projbycat.
 
 ![Projects by Category](images/q4.JPG){#fig:projbycat}
 
-From the results we can see that the highest number of overall 
+From the results we can see that the highest number of the overall 
 submitted projects was in the *Film and Video* category. This
 makes sence when we take into consideration the number of
 smart phones and camera devices in the world. These technologies
-have made this art more available to amateurs.
-
-2. Total Count of Projects by Year
+have made this art more available to amateurs. In a similar 
+manner, the team had written a query to count the number of 
+projects by year. 
 
 ```
 > db.project.aggregate([
@@ -502,18 +500,13 @@ have made this art more available to amateurs.
           {$sort:{_id:1}}
           ])
 ```
-          
+
 The results in this query have shown that the number of projects
 varied through out the years, and that the highest number of 
-projects was submitted in 2015.
-
-![Projects by Year](images/q1.JPG){#fig:projbyyr}
-
-3. Total Count of Projects by Project State
-
-In a similar fashion to the previous two queries, we used
-MongoDB to investigate what project states are most common 
-in the overall project pool.
+projects was submitted in 2015. Finally, a query that resembles 
+the previous two is the total count of projects by project state,
+which revealed that the vast majority of projects that get 
+submitted also get funded.
 
 ```
 > db.project.aggregate([
@@ -522,12 +515,11 @@ in the overall project pool.
           ])
 ```
 
-![Projects by Project State](images/q2.JPG){#fig:projbyst}
-
-The results indicate that a vast majority of projects that
-get submitted also get funded.
-
-4. Total Amount Pledged, Number of Backers, and Total Goal by Category
+A slightly more complex query was used to compute the total amount of 
+the pledged funds, number of backers (investors), and total funding 
+goal by project category. It revealed that the best performing 
+categories according to these criteria are *Design*, *Technology*, 
+and *Games*. 
 
 ```
 > db.project.aggregate([
@@ -539,8 +531,8 @@ get submitted also get funded.
 
 ![Total Metrics by Category](images/q7.JPG){#fig:totalmetrbycat}
 
-5. Average Amount Pledged, Average Number of Backers, and Average
-Goal by Category
+In a similar fashion, the average metrics by category were 
+obtained thanks to the following query: 
 
 ```
 > db.project.aggregate([
@@ -550,8 +542,10 @@ Goal by Category
           {$sort:{avg_amt_pled: -1}} 
           ])
 ```
-From the results we can conclude that the best category when looking
-at the average metrics is *Design*.
+
+From the results we can conclude that the best category is again 
+*Design*, which is in line with the results from the previous 
+query.
 
 ![Average Metrics by Category](images/q10.JPG){#fig:avgmetrbycat}
 
