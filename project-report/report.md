@@ -461,7 +461,7 @@ Count of Projects by Category
 ```
 The output of this query can be seen in +@fig:projbycat.
 
-![Projects by Category](images/q1.jpg){#fig:projbycat}
+![Projects by Category](images/q1.JPG){#fig:projbycat}
 
 
 
