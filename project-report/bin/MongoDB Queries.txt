@@ -1,0 +1,75 @@
+-- MongoDB Queries
+
+1) COUNT OF PROJECTS PER YEAR
+
+>db.project.aggregate([
+	{$group:{_id:{year:"$year"}, total_number_of_projects:{$sum:1}}},
+	{$sort:{_id:1}}
+	])
+
+
+2) COUNT OF PROJECTS BY STATE
+
+>db.project.aggregate([
+	{$group:{_id:{state:"$state"}, count:{$sum:1}}},
+	{$sort:{count:-1}},
+	])
+
+3) SUCCESSFUL PROJECTS BY YEAR - COUNT
+
+>db.project.aggregate([
+	{$match:{state:"successful"}},
+	{$group:{_id:{year:"$year"}, total_of_succ_projecs:{$sum:1}}},
+	{$sort:{_id:1}}
+	])
+
+4) COUNT OF PROJECTS BY CATEGORY
+
+>db.project.aggregate([
+	{$group:{_id:{category:"$main_category"}, count:{$sum:1}}},
+	{$sort:{count:1}}
+	])
+
+5) FAILED PROJECTS BY YEAR
+
+>db.project.aggregate([
+	{$match:{state:"failed"}},
+	{$group:{_id:{year:"$year"}, failed_proj_count:{$sum:1}}},
+	{$sort:{_id:1}}
+	])
+
+6) TOP 10 COUNTRIES BY PROJECT COUNT
+
+>db.project.aggregate([
+	{$group:{_id:{country:"$country"}, count:{$sum:1}}},
+	{$sort:{count:-1}},
+	{$limit:10}
+	])
+
+7) TOTAL AMOUNT PLEDGED, TOTAL BACKERS, TOTAL GOAL BY CATEGORY
+
+>db.project.aggregate([
+	{$group:{_id:{category:"$main_category"}, tot_amt_pledged:{$sum:"$pledged"}, tot_backers :{$sum:"$backers"}, tot_goal:{$sum:"$goal"}}}
+	])
+
+8) TOTAL AMOUNT PLEDGED, TOTAL GOALS, AND BACKERS BY YEAR
+
+>db.project.aggregate([
+	{$group:{_id:{year:"$year"}, tot_pledged:{$sum:"$pledged"}, tot_backers :{$sum:"$backers"}, tot_goal:{$sum:"$goal"}}}
+	])
+
+9) TOTAL PLEDGED AND BACKERS BY COUNTRY FOR SUCCESSFUL PROJECTS - TOP 10
+
+>db.project.aggregate([
+	{$match:{state:"successful:}},
+	{$group:{_id:{country:"$country"}, total_pledged:{$sum:"$pleadged"}, tot_backers:{$sum:"$backers"}}},
+	{$sort:{total_pledged: -1}},
+	{$limit:10}
+	])
+
+10) AVERAGE AMOUNT PLEDGED, AVERAGE NUMBER OF BACKERS, AND AVERAGE GOAL BY CATEGORY
+
+>db.project.aggregate([
+	{$group:{_id:{category:"main_category"}, avg_amt_pled:{$avg:"$pledged"}, avg_backers:{$avg:"$backers"}, avg_goal:{$avg:"$goal"}}},
+	{$sort:{avg_amt_pled: -1}}
+	])
