@@ -459,9 +459,9 @@ Count of Projects by Category
           {$sort:{count:1}}
           ])
 ```
-The output of this query can be seen in +@fig:projects.
+The output of this query can be seen in +@fig:projbycat.
 
-![Projects by Cateogry](images/q1.jpg){#fig:Projects by Category}
+![Projects by Category](images/q1.jpg){#fig:projbycat}
 
 
 
