@@ -9,7 +9,7 @@
 
 ---
 
-Keywords: MongoDB, PyMongo, Crowdfunding, Virtual Machine, Cloud, Data Analysis, Cloud Performance
+Keywords: MongoDB, PyMongo, Crowdfunding, Virtual Machine, IaaS & DBaaS , Data Analysis, 
           
 ---
 
@@ -251,8 +251,13 @@ such as automatically.
 
 Thus achieving the stable infrastructure 
 foundation on cloud based VM's, we had moved on to loading the data 
-using two methods 1. Python script based method for DBaaS 2. MongoImport for 
-cloud VM's Before beginning the analysis, it is essential to extract essential 
+using two methods  
+
+1. Python script based method for DBaaS 
+
+2. MongoImport for  cloud VM's 
+
+Before beginning the analysis, it is essential to extract essential 
 features. We used Python date time library to get the date, year, month, clean 
 up the *NaN* rows carefully and also to calculate the duration of the project. 
 The next step encompassed in data enhancement by extracting the features that 
@@ -261,7 +266,13 @@ model. During the aforementioned process, our team had utilized the following
 methods to complete the data analysis and draw 
 insights from the dataset. 
 
-1. Exploratory Analysis and Visualization. 
+1. Cloud and MongoDB set up
+   The first step is create the stable infrastructure to perform analysis.
+   This methods involves creating the cloud VM's , use bash shell scripts to 
+   installations. Testing the MongoDB connectivity from various machine to the 
+   cloud instance. Create and prepare the architecture diagram.
+
+2. Exploratory Analysis and Visualization. 
 
    Data Visualizations that let you discover trends or patterns in
    a data set are called Exploratory Data analysis.Once the data
@@ -269,26 +280,26 @@ insights from the dataset.
    and visualization often becomes handy tool to find the interesting
    patterns.
 
-2. Correlation or Heatmap analysis
+3. Correlation or Heatmap analysis
           
    The correlation analysis is a statistical method used to 
    evaluate a relationship between two continuous variables 
    [@www-correlation]. 
                          
-3. Timeseries Analysis
+4. Timeseries Analysis
           
    The time series analysis is a statistical technique which is related 
    to data that is distributed in a series of particular time periods or
    intervals [@www-timeseries].
    
-4. Logistic Regression model for predicting Success and Failure
+5. Logistic Regression model for predicting Success and Failure
           
    The logistic regression analysis is a predictive analysis
    used to descrpibe a relationship between one dependent and 
    one or more nominal, ordinal, interval, or ratio-level independent
    variables [@www-logreg].
 
-5. Perform MongoDB queries
+6. Perform MongoDB queries
    The gist of our project to show the mongoDB ability to query it real time
    hence using MongoDB aggregation framework to Analyze the data using 
    MongoDB queries. 
@@ -299,7 +310,7 @@ insights from the dataset.
 
 ### Technologies and Tools Used
 
-* Python version 3.6 and its libraries Seaborn, Matplotlib, Pandas, and NumPy
+* Python version 3.6 and various libraries such as Seaborn, Matplotlib, Pandas, and Scikit-learn
 * PyMongo Driver, Bash Shell 
 * Cloud services - MogoDB Atlas, 3 node replica cluster
 * Cloud services - Digital Ocean, Ubuntu 18.04 ,MongoDB 3.6.3
@@ -384,31 +395,29 @@ while accessing the MongoDB data.
 
 ## Observations and Visualizations
 
-Our team had completed an exploratory analysis of the *Kickstarter* dataset. 
-The results of the analysis can be observed in the following section.
+Our team completed an exploratory analysis of the *Kickstarter* dataset. 
+The results of the analysis can be observed in the following sections.
 
 ### Exploratory Analysis
 
-The Kickstarter projects data is mainly divided with six different states as 
-failed, successful, canceled, live , suspended and undefined.  According to 
- projects records between 2009 and 2018 shown in +@fig:states_count, more 
-than 300000  project could not achieve the goal funding till deadline date and 
-fall in failed status. More than 200000 project achieved the funding goal with 
- successful status. The projects count with canceled status was between 50000
- and 70000. The small count of project were with status live , suspended and
- undefined.
+The Kickstarter projects data includes six different project states which are 
+failed, successful, canceled, live, suspended and undefined. According to 
+projects records between 2009 and 2018 as shown in +@fig:states_count. Due to lack of funding 
+more than  300000 project were failed while 200000 projects achieved the funding goal with 
+a successful status. Around 70000 projects were canceled while some others 
+were with status live , suspended and undefined with minimal count.
  
- ![project_states_count](images/project_states_count.png){#fig:states_count}
+ ![Project States Count By Year](images/project_states_count.png){#fig:states_count}
  
- The detail analysis for projects count is showing majority projects
- with status failed and successful. The data visualization in +@fig:year_count
- shows nearly 70000 projects were failed to achieve the goal funding in
- targeted time-frame in year 2015. The  2015 project count failed was highest
- failed count between the year 2009-2017.The successful project count for year 
- 2013-2014 was nearly 30000. For each year, project failed
- count was higher than successful count.
+The detail analysis for projects count is showing majority projects
+with status failed and successful. The data visualization in +@fig:year_count
+shows nearly 70000 projects were failed to achieve the goal funding in
+targeted time-frame in year 2015. The  2015 project count failed was highest
+failed count between the year 2009-2017.The successful project count for year 
+2013-2014 was nearly 30000. For each year, project failed
+count was higher than successful count.
  
- ![project_count_by_year](images/project_count_by_year.png){#fig:year_count} 
+ ![Project Counts By Year(Succces & Failed)](images/project_count_by_year.png){#fig:year_count} 
  
  The +@fig:top_market visualization is showing country market data for funding the 
  project. The data analysis for Kickstarter project is showing Japan as best
@@ -417,7 +426,7 @@ fall in failed status. More than 200000 project achieved the funding goal with
  high compare to other country. Hong Kong has the highest failed project count 
  ratio against successful count.
  
-![top_markes_for_pledged](images/top_markes_for_pledged.png){#fig:top_market} 
+![Top Markets For Pledged Funds](images/top_markes_for_pledged.png){#fig:top_market} 
  
 The heat map visualization in +@fig:category_coun is showing project state count against
 main category. The scale represent highest count with yellow color and lowest 
@@ -425,7 +434,7 @@ count with dark blue color. The chart is showing highest successful project
 counts for Technology main category followed by dance and game categories. The 
 successful project count for Technology main category was more than 80000.
 
-![heatmap](images/heatmap.png){#fig:category_count} 
+![Heatmap Amount Pledged By Categories & State](images/heatmap.png){#fig:category_count} 
 
 The projects with failed status could not achieve funding goals between 
 launched date and deadline date. There are some projects which started 
@@ -435,7 +444,7 @@ for main categories. The Film & Video category has highest funding goal and
 only 10% fund achieved by projects. The funding collection for Technology 
 category was highest against total fund goal.
 
-![failure_categories_pledged_remaining_fund](images/failure_categories_pledged_remaining_fund.jpg){#fig:remaining_fund} 
+![Pledged & Remaining Funds Failed Categories ](images/failure_categories_pledged_remaining_fund.jpg){#fig:remaining_fund} 
 
 The project fund duration is the days count between project launched date and 
 project deadline date. The duration box plot in +@fig:duration is showing average
@@ -444,7 +453,7 @@ projects was less than 31 days and average duration for failed project was
 more than 40 days. The median between successful and failed projects duration 
 was nearly on 36 days.
  
-![duration_box_plot](images/duration_box_plot.png){#fig:duration} 
+![Project Duration Box Plot](images/duration_box_plot.png){#fig:duration} 
 
 ### Time Series Analysis
 
@@ -482,22 +491,68 @@ remains the US.
 ![Projects by Year and Country](images/t3.png){#fig:pjbyyc}
 
 ### Logistic Regression
-some text
 
-![ML chart1](images/selecting_top_5_categories.png){#fig:pyysjs}
+In real life we see more classification problems than regression.
+And logistic regression helps us to solve classification problems by employing the sigmoid function.
+As shown in +@fig:sigmoid ,logistic regression tells us probability as a cut off point[@book-ISLR].
 
 
-some text
+![Sigmoid Logistic Graph\label{sigmoid}](/https://www.quora.com/What-does-an-x-axis-represent-in-a-logistic-regression-sigmoid-function/of/sigmoid.png)
 
-![ML chart2](images/Top 5 Categories Success Failed.png){#fig:nrtt}
+probability of belonging to class is less than 50%, then values are assigned to class 0
+in our cases the classes were predefined as *success* or *failed*
+So using scikit-learn logistic regression which takes care of substantial mathematical part 
+we moved on to build that can predict the future project state.
 
-some text
+The steps we followed are as follows 
+1. Cleaning the dataset.
 
-![ML chart3](images/Confusion_Matrix.PNG){#fig:bytt}
+2. Extract the project with success and failed state only.
 
-some text
+3. Explore the dataset to predefine the classes
 
-![ML chart4](images/Accuracy_Score.PNG){#fig:ttyml}
+4. Identify the top 5 categories 
+
+5. Extracts features and label the data 
+
+6. Build the model 
+
+7. Predict and measure accuracy
+
+The following figure shows that categories with highest success and failed projects.
+
+![Top Five Categories](images/selecting_top_5_categories.png){#fig:selecttop5}
+
+We decided to use features such as *'main_category', 'goal', 'backers', 'duration', 'successful'*
+out of which *successful* feature was generated using pandas get_dummies method.  
+
+`proj_state = pd.get_dummies(data=df_sf_t['state'], drop_first=True)`
+
+The following figure shows the categorization under classes success and failed of our input
+dataframe
+
+![Category Classes](images/top_5_categories_classes.png){#fig:categoryclass}
+
+All the main categories were mapped to numerical values as shown in +@fig:labels 
+so as to input them as numeric vectors to the machine learning algorithm.
+
+`cats = {'Publishing':4,'Film & Video':1,'Music':2,'Games':5,'Technology':3}`
+
+![Labeled Data](images/labeled_data.PNG){#fig:labels}
+    
+Once the DataFrame with labeled data was ready; we followed the normal machine learning
+steps to build the model that involves creating classifier object
+spitting the train test dataset, fitting the model, predicting values and measure accuracy
+The following figure shows the confusion matrix of our test dataset.
+
+![Confusion Matrix](images/confusionmatrix.PNG){#fig:confusion}
+
+We used five fold cross-validation method to measure the accuracy of algorithm. 
+And found the average accuracy score close to 90%. Definitely this was done small set of classes
+and dataset we believe this can be extended with more features apart from project length
+to get more accuracy. 
+
+![Accuracy Scores](images/accuracyscore.PNG){#fig:accscore}
 
 
 
@@ -587,10 +642,63 @@ concluded that compared to Python it is less user-friendly,
 which is in line with Python's flexible programming nature.
 
 ## Conclusion
-TBD
+We were able to deploy successful python application that 
+can run on cloud services  using MongoDB as stable backend. 
+We observed the performance is slightly better on DigitalOcean / Amazon platform(44 Seconds)
+That has dedicated memory and cpu and more customization options while
+that MongoDB Atlas cluster it took around 96 seconds , there are various factors to consider while 
+benchmarking the performance like load , dedicated resources such as cpu , memory plays a role
+each platoform has its own advantages such as ease of use, customization to the environments 
+however most importantly we used minimal cost approach and ran the code on free tiers 
+that are available.  
+Each year the number of failed projects were more than successful
+36% project success rate
+Technology      Games   Publishing    Music   Film & Video    Top Categories
+2014 had more successful project than any other year 
+While 2015 has highest number suspended projects. 
+Overall 2011 seen highest success rate.
+Technology sector received highest pledged Amount followed by Design and Games
+Warmer months more projects gets launched and then drop in fall
+Austria , China , Netherland are top countries for generating pledged Amount
+Avg duration for successful project was less than 30 days. 
+45 upper limit for for max project length.
+with ML methods we were able to predict the success and failure of the project based 
+on extracting features such as goal,backers,categories and duration 
+however we believe this can be extended with more feature engineering 
+and may sponsors to fund projects that are more likely to be successful and keep encouraging 
+the startups. 
+
 
 ## Acknowledgement
-TBD
+
+The authors would like to thank the Big Data Applications and Analytics(I-523) course
+teaching staff, mainly professor Gregor von Laszewski for their support and
+guidance during this project. Also, we would also like to extend
+our appreciation to Kaggle for providing us with the kickstarter projects dataset
+, and to other online sources for allowing us to gather
+meaningful insights and programming support.
 
 ## Workbreakdown
-TBD
+
+### Nishad Tupe
+Project design, cloud architecture and implementation research 
+MongoDB Atlas, Digital Ocean Cloud VM set up
+Bash script MongoDB installation and Import
+Python coding, Data Analysis of Cloud VM's. 
+ 
+### Vishal Bhoyar
+Project requirements and design research 
+Exploratory Analysis of data 
+Amazon Cloud VM set up.
+PyMongo research 
+
+
+### Izolda Fetko
+Project dataset and literature research 
+Testing MongoDB Queries on Cloud VM's
+MongoDB Aggregation framework research
+Python Time Series Analysis 
+
+## Nishad Tupe, Vishal Bhoyar, Izolda Fetko
+Performance benchmarking
+Project Papers 
