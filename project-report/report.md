@@ -451,7 +451,7 @@ working via MongoAtlas with a purpose to compare the ease-of-use
 related to querying of the *Kickstarter* data between MongoDB and
 Python. The following queries were written:
 
-Count of Projects by Category
+1. Count of Projects by Category
 
 ```
 > db.project.aggregate([
@@ -461,11 +461,75 @@ Count of Projects by Category
 ```
 The output of this query can be seen in +@fig:projbycat.
 
-![Projects by Category](images/q1.JPG){#fig:projbycat}
+![Projects by Category](images/q4.JPG){#fig:projbycat}
 
+From the results we can see that the highest number of overall 
+submitted projects was in the *Film and Video* category. This
+makes sence when we take into consideration the number of
+smart phones and camera devices in the world. These technologies
+have made this art more available to amateurs.
 
+2. Total Count of Projects by Year
 
+```
+> db.project.aggregate([
+          {$group:{_id:{year:"$year"}, total_number_of_projects:
+          {$sum:1}}},
+          {$sort:{_id:1}}
+          ])
+```
+          
+The results in this query have shown that the number of projects
+varied through out the years, and that the highest number of 
+projects was submitted in 2015.
 
+![Projects by Year](images/q1.JPG){#fig:projbyyr}
+
+3. Total Count of Projects by Project State
+
+In a similar fashion to the previous two queries, we used
+MongoDB to investigate what project states are most common 
+in the overall project pool.
+
+```
+> db.project.aggregate([
+          {$group:{_id:{state:"$state"}, count:{$sum:1}}},
+          {$sort:{count: -1}}
+          ])
+```
+
+![Projects by Project State](images/q2.JPG){#fig:projbyst}
+
+The results indicate that a vast majority of projects that
+get submitted also get funded.
+
+4. Total Amount Pledged, Number of Backers, and Total Goal by Category
+
+```
+> db.project.aggregate([
+          {$group:{_id:{category:"$main_category"}, tot_amt_pledged:
+          {$sum:"$pledged"}, tot_backers:{$sum:"$backers"}, tot_goal:
+          {$sum:"$goal"}}}
+          ])
+```
+
+![Total Metrics by Category](images/q7.JPG){#fig:totalmetrbycat}
+
+5. Average Amount Pledged, Average Number of Backers, and Average
+Goal by Category
+
+```
+> db.project.aggregate([
+          {$group:{_id:{category:"$main_category"}, avg_amt_pled:
+          {$avg:"$pledged"}, avg_backers:{$avg:"$backers"}, avg_goal:
+          {$avg:"$goal"}}},
+          {$sort:{avg_amt_pled: -1}} 
+          ])
+```
+From the results we can conclude that the best category when looking
+at the average metrics is *Design*.
+
+![Average Metrics by Category](images/q10.JPG){#fig:avgmetrbycat}
 
 
 ## Conclusion
