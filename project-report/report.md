@@ -389,50 +389,62 @@ The results of the analysis can be observed in the following section.
 
 ### Exploratory Analysis
 
-The bar chart visualization in +@fig:Top main categories Average goal shows 
-the top *Kickstarter Projects* main categories using the successful and 
-failed projects. In order to create this visual, the funding goal data 
-first needed to be grouped based on the successful and failed project status.
-The categories are represented on the *y* axis, while the average project 
-funding goal data is represented on the *x* axis. The average funding goals 
-for the failed projects are highlighted in blue, while the green bars are 
-representing average funding goals for the successful projects. The results 
-of this visualization indicate that the top average funding goals for both 
-failed and successful projects are within the *Technology* category. As 
-expected, the goals for the this category are set higher than for the others, 
-for example *Craft*, which shows the lowest average funding goal in both 
-successful and failed projects. 
+The Kickstarter projects data is mainly divided with six different states as 
+failed, successful, canceled, live , suspended and undefined.  According to 
+ projects records between 2009 and 2018 shown in +@fig:states_count, more 
+than 300000  project could not achieve the goal funding till deadline date and 
+fall in failed status. More than 200000 project achieved the funding goal with 
+ successful status. The projects count with canceled status was between 50000
+ and 70000. The small count of project were with status live , suspended and
+ undefined.
+ 
+ ![project_states_count](images/project_states_count.png){#fig:states_count}
+ 
+ The detail analysis for projects count is showing majority projects
+ with status failed and successful. The data visualization in +@fig:year_count
+ shows nearly 70000 projects were failed to achieve the goal funding in
+ targeted time-frame in year 2015. The  2015 project count failed was highest
+ failed count between the year 2009-2017.The successful project count for year 
+ 2013-2014 was nearly 30000. For each year, project failed
+ count was higher than successful count.
+ 
+ ![project_count_by_year](images/project_count_by_year.png){#fig:year_count} 
+ 
+ The +@fig:top_market visualization is showing country market data for funding the 
+ project. The data analysis for Kickstarter project is showing Japan as best
+ market to collect project funding. More than 350000 projects stated in 
+ Japan achieve goal within deadline. The failed project count for Japan was also
+ high compare to other country. Hong Kong has the highest failed project count 
+ ratio against successful count.
+ 
+![top_markes_for_pledged](images/top_markes_for_pledged.png){#fig:top_market} 
+ 
+The heat map visualization in +@fig:category_coun is showing project state count against
+main category. The scale represent highest count with yellow color and lowest 
+count with dark blue color. The chart is showing highest successful project
+counts for Technology main category followed by dance and game categories. The 
+successful project count for Technology main category was more than 80000.
 
-![Bar chart](images/To_main_categories_AverageGoal_Success_failed.png)
-{#fig:Top main categories Average goal}
+![heatmap](images/heatmap.png){#fig:category_count} 
+
+The projects with failed status could not achieve funding goals between 
+launched date and deadline date. There are some projects which started 
+collecting funding but could not collect the targeted amount. The visualization
+in +@fig:remaining_fund is showing targeted funding goal data and actual funding collected
+for main categories. The Film & Video category has highest funding goal and 
+only 10% fund achieved by projects. The funding collection for Technology 
+category was highest against total fund goal.
+
+![failure_categories_pledged_remaining_fund](images/failure_categories_pledged_remaining_fund.jpg){#fig:remaining_fund} 
+
+The project fund duration is the days count between project launched date and 
+project deadline date. The duration box plot in +@fig:duration is showing average
+duration for successful and failed project. The average duration for successful
+projects was less than 31 days and average duration for failed project was 
+more than 40 days. The median between successful and failed projects duration 
+was nearly on 36 days.
  
-The bar plot visualization is showing successful and failure project count 
-data for different years. The horizontal axis is showing the project launch 
-years and vertical axis is showing the number of successful and failure 
-project count for each years. 
- 
-The stacked chart visualization is showing project count data for different
-categories stacked with project status. The horizontal axis for the chart is 
-showing categories data and vertical axis is showing project counts for each 
-categories. The horizontal axis is short in alphabetical order. The most of 
-the project categories are showing large failure project counts. The Film & 
-Video category has maximum project count with higher successful and failed
-project status. The Dance category has lowest project count with only 
-successful and failed status.
- 
-The top market visualization shows the list of top countries which has most
-pledged funding for the projects. The horizontal axis in chart is showing 
-countries information sorted on number of pledged funding. The vertical axis
-is showing pledged funding for the projects. The pledged fund divided on
-project status. Jordan country has maximum pledged amounts with successful 
-and failed status.
- 
-The Average pledged amounts visualization +@fig:Average Pledge Amount by category 
-shows top Kickstarter projects main categories with successful and failed project. 
-The vertical axis in bar chart is showing average pledged funding data. The 
-horizontal axis is the main categories for projects. The Technology category 
-is showing high average pledged amounts for successful and failed projects.
- 
+![duration_box_plot](images/duration_box_plot.png){#fig:duration} 
 
 ### Time Series Analysis
 
