@@ -461,7 +461,7 @@ Count of Projects by Category
 ```
 The output of this query can be seen in +@fig:queryfour.
 
-![Projects by Category](images/Query 4 - Results.jpg){#fig:queryfour}
+![Projects by Category](images/Query 4 - Results.JPG){#fig:projects}
 
 
 
