@@ -438,17 +438,24 @@ The time-series analysis conducted by the team revealed certain trends in
 the *Kickstarter* dataset which will be presented in the following segment.
 One of the trends noted was that the projects mostly get launched in the 
 warmer months with July being the month with the highest number of projects.
+The trend of the launched projects by months can be seen in +@fig:pjbym.
 
 ![Projects by Month](images/t5.png){#fig:pjbym}
 
 Drilling further into the project by month data, one can notice taht 
 proportionally to the number of launched projects, July is the month with 
 the highest number of cancelled and failed projecs. The number of live projects
-is higher in winter months, mostly November and December, hoever, the overall
+is higher in winter months, mostly in November and December, however, the overall
 number of projects drastically decreases most likely due to the holidays.
 
 ![Projects by Month and State](images/t4.png){#fig:pjbyms}
 
+Loogking at the same categories over the years, from +@gig:pjby one can 
+conclude that overall, 2015 was a great year for *Kickstarter* with the highest 
+number of submitted projects, but also, proportionally, the largest portion of 
+the failed projects. 
+
+![Projects by Year and State](images/t2.png){#fig:pjbyys}
 
 
 
