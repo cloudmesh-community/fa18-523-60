@@ -385,7 +385,7 @@ while accessing the MongoDB data.
 Our team had completed an exploratory analysis of the *Kickstarter* dataset. 
 The results of the analysis can be observed in the following section.
 
-### Basic Exploratory Analysis
+### Exploratory Analysis
 
 The bar chart visualization in +@fig:Top main categories Average goal shows 
 the top *Kickstarter Projects* main categories using the successful and 
