@@ -461,7 +461,7 @@ Count of Projects by Category
 ```
 The output of this query can be seen in +@fig:projects.
 
-![Projects by Cateogry](images/architecture.jpg){#fig:Projects by Category}
+![Projects by Cateogry](images/q1.jpg){#fig:Projects by Category}
 
 
 
