@@ -477,7 +477,7 @@ some text
 
 some text
 
-![ML chart2](images/selecting_top_5_categories.png)
+![ML chart2](images/Top 5 Categories Success Failed.png.png)
 
 {#fig:Top 5 Categories Success Failed}
 
