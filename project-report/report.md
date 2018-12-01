@@ -404,44 +404,52 @@ average funding goal in both successful and failed projects.
 ![Bar chart](images/To_main_categories_AverageGoal_Success_failed.png)
 {#fig:Top main categories Average goal}
  
- The bar plot visualization is showing successful and failure project count 
- data for different years. The horizontal axis is showing the project launch 
- years and vertical axis is showing the number of successful and failure 
- project count for each years. 
+The bar plot visualization is showing successful and failure project count 
+data for different years. The horizontal axis is showing the project launch 
+years and vertical axis is showing the number of successful and failure 
+project count for each years. 
  
- 
- 
- The stacked chart visualization is showing project count data for different
- categories stacked with project status. The horizontal axis for the chart is 
- showing categories data and vertical axis is showing project counts for each 
- categories. The horizontal axis is short in alphabetical order. The most of 
+The stacked chart visualization is showing project count data for different
+categories stacked with project status. The horizontal axis for the chart is 
+showing categories data and vertical axis is showing project counts for each 
+categories. The horizontal axis is short in alphabetical order. The most of 
 the project categories are showing large failure project counts. The Film & 
 Video category has maximum project count with higher successful and failed
- project status. The Dance category has lowest project count with only 
- successful and failed status.
+project status. The Dance category has lowest project count with only 
+successful and failed status.
  
+The top market visualization shows the list of top countries which has most
+pledged funding for the projects. The horizontal axis in chart is showing 
+countries information sorted on number of pledged funding. The vertical axis
+is showing pledged funding for the projects. The pledged fund divided on
+project status. Jordan country has maximum pledged amounts with successful 
+and failed status.
  
+The Average pledged amounts visualization +@fig:Average Pledge Amount by category 
+shows top Kickstarter projects main categories with successful and failed project. 
+The vertical axis in bar chart is showing average pledged funding data. The 
+horizontal axis is the main categories for projects. The Technology category 
+is showing high average pledged amounts for successful and failed projects.
  
- 
- The top market visualization shows the list of top countries which has most
- pledged funding for the projects. The horizontal axis in chart is showing 
- countries information sorted on number of pledged funding. The vertical axis
- is showing pledged funding for the projects. The pledged fund divided on
- project status. Jordan country has maximum pledged amounts with successful 
- and failed status.
- 
- 
- 
- The Average pledged amounts visualization +@fig:Average Pledge Amount by category shows top Kickstarter projects main 
- categories with successful and failed project. The vertical axis in 
- bar chart is showing average pledged funding data. The horizontal axis is the
- main categories for projects. The Technology category is showing high average
- pledged amounts for successful and failed projects.
- 
- ![Bar chart](images/Pledge_Amount_Average.png)
-{#fig:Average Pledge Amount by category}
 
 ### Time Series Analysis
+
+The time-series analysis conducted by the team revealed certain trends in
+the *Kickstarter* dataset which will be presented in the following segment.
+One of the trends noted was that the projects mostly get launched in the 
+warmer months with July being the month with the highest number of projects.
+
+![Projects by Month](images/Time Series 5 - Projects Launched by Month.png.png){#fig:pjbym}
+
+Drilling further into the project by month data, one can notice taht 
+proportionally to the number of launched projects, July is the month with 
+the highest number of cancelled and failed projecs. The number of live projects
+is higher in winter months, mostly November and December, hoever, the overall
+number of projects drastically decreases most likely due to the holidays.
+
+![Projects by Month and State](images/Time Series 4 - Projects by Month and State.png){#fig:pjbyms}
+
+
 
 
 ### MongoDB Queries
@@ -451,7 +459,7 @@ working via MongoAtlas with a purpose to compare the ease-of-use
 related to querying of the *Kickstarter* data between MongoDB and
 Python. The following queries were written:
 
-Count of Projects by Category
+1. Count of Projects by Category
 
 ```
 > db.project.aggregate([
@@ -459,14 +467,81 @@ Count of Projects by Category
           {$sort:{count:1}}
           ])
 ```
-The output of this query can be seen in +@fig:projects.
+The output of this query can be seen in +@fig:projbycat.
 
-![Projects by Cateogry](images/architecture.jpg){#fig:Projects by Category}
+![Projects by Category](images/q4.JPG){#fig:projbycat}
 
+From the results we can see that the highest number of overall 
+submitted projects was in the *Film and Video* category. This
+makes sence when we take into consideration the number of
+smart phones and camera devices in the world. These technologies
+have made this art more available to amateurs.
 
+2. Total Count of Projects by Year
 
+```
+> db.project.aggregate([
+          {$group:{_id:{year:"$year"}, total_number_of_projects:
+          {$sum:1}}},
+          {$sort:{_id:1}}
+          ])
+```
+          
+The results in this query have shown that the number of projects
+varied through out the years, and that the highest number of 
+projects was submitted in 2015.
 
+![Projects by Year](images/q1.JPG){#fig:projbyyr}
 
+3. Total Count of Projects by Project State
+
+In a similar fashion to the previous two queries, we used
+MongoDB to investigate what project states are most common 
+in the overall project pool.
+
+```
+> db.project.aggregate([
+          {$group:{_id:{state:"$state"}, count:{$sum:1}}},
+          {$sort:{count: -1}}
+          ])
+```
+
+![Projects by Project State](images/q2.JPG){#fig:projbyst}
+
+The results indicate that a vast majority of projects that
+get submitted also get funded.
+
+4. Total Amount Pledged, Number of Backers, and Total Goal by Category
+
+```
+> db.project.aggregate([
+          {$group:{_id:{category:"$main_category"}, tot_amt_pledged:
+          {$sum:"$pledged"}, tot_backers:{$sum:"$backers"}, tot_goal:
+          {$sum:"$goal"}}}
+          ])
+```
+
+![Total Metrics by Category](images/q7.JPG){#fig:totalmetrbycat}
+
+5. Average Amount Pledged, Average Number of Backers, and Average
+Goal by Category
+
+```
+> db.project.aggregate([
+          {$group:{_id:{category:"$main_category"}, avg_amt_pled:
+          {$avg:"$pledged"}, avg_backers:{$avg:"$backers"}, avg_goal:
+          {$avg:"$goal"}}},
+          {$sort:{avg_amt_pled: -1}} 
+          ])
+```
+From the results we can conclude that the best category when looking
+at the average metrics is *Design*.
+
+![Average Metrics by Category](images/q10.JPG){#fig:avgmetrbycat}
+
+Although querying in MongoDB is relatively simple, the team had
+concluded that compared to Python it is less user-friendly,
+which is in line with Python's flexible programming nature.
 
 ## Conclusion
 TBD
