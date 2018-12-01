@@ -280,18 +280,20 @@ insights from the dataset.
    The time series analysis is a statistical technique which is related 
    to data that is distributed in a series of particular time periods or
    intervals [@www-timeseries].
-
-4. Perform MongoDB queries
-   The gist of our project to show the mongoDB ability to query it real time
-   hence using MongoDB aggregation framework to Analyze the data using 
-   MongoDB queries. 
    
-5. Logistic Regression model for predicting Success and Failure
+4. Logistic Regression model for predicting Success and Failure
           
    The logistic regression analysis is a predictive analysis
    used to descrpibe a relationship between one dependent and 
    one or more nominal, ordinal, interval, or ratio-level independent
-   variables [@www-logreg]. 
+   variables [@www-logreg].
+
+5. Perform MongoDB queries
+   The gist of our project to show the mongoDB ability to query it real time
+   hence using MongoDB aggregation framework to Analyze the data using 
+   MongoDB queries. 
+   
+ 
 
 ## Technologies
 
@@ -477,17 +479,21 @@ some text
 
 some text
 
-![ML chart2](images/Top 5 Categories Success Failed.png.png)
+![ML chart2](images/Top 5 Categories Success Failed.png)
 
-{#fig:Top 5 Categories Success Failed}
+{#fig:Top_5_Categories_Success_Failed}
 
 some text
 
-![ML chart3](images/Confusion_Matrix.png)
+![ML chart3](images/Confusion_Matrix.PNG)
 
-{#fig: Confustion Matrix for ML}
+{#fig:Confustion Matrix for ML}
 
+some text
 
+![ML chart4](images/Accuracy_Score.PNG)
+
+{#fig:Confustion Matrix for ML}
 
 
 
