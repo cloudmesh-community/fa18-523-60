@@ -201,7 +201,7 @@ with the files and submissions associated with them [@www-githubkagapi].
 A different set of commands can be used for dataset downloads and 
 dataset creation, while the final group of commands listed on the 
 Kaggle API GitHub page are the commands to manage Kernels, more 
-specifically Kernel pull and push [@www-githubkegapi].
+specifically Kernel pull and push [@www-githubkagapi].
 
 The importance of the Kaggle's public API is significant. It minimizes 
 the need for its users to manually download large datasets, hence saving 
