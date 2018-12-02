@@ -111,7 +111,7 @@ allowed BI tools such as Tableau to interact with MongoDB.
 The BI connector converts the Tableau's SQL-like commands on 
 structured data into the native MongoDB commands while fetching 
 data [@www-mongotab]. The team also used PyMongo and other web 
-technologies to build the website that could store, update,  
+technologies to build the website that could store, update, 
 process the records live and can be accessed by the global audience. 
 As MongoDB is a NoSQL engine, it scales easily for multiple tables 
 as a single JSON object, and makes query retrieval speed faster 
@@ -451,7 +451,7 @@ The heatmap visualization in +@fig:category_count is showing project state
 count against the main category. The scale represents highest count with 
 yellow color and lowest count with dark blue color. The chart is showing 
 highest successful project counts for the *Technology* main category followed 
-by *Dance* and *Games* categories. The count of successful projects tn the 
+by *Dance* and *Games* categories. The count of successful projects in the 
 *Technology* main category was more than 80000.
 
 ![Heatmap Amount Pledged By Category & State](images/heatmap.png){#fig:category_count} 
