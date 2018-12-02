@@ -519,7 +519,7 @@ Logistic regression helps us solve classification problems by employing
 the sigmoid function. As shown in +@fig:sigmoid, logistic regression tells 
 us about the probability as a cut off point[@book-ISLR].
 
-![Sigmoid Logistic Function]{sigmoid}](images/sigmoid.PNG){#fig:sigmoid}
+![Sigmoid Logistic Graph\label{sigmoid}](/https://www.quora.com/What-does-an-x-axis-represent-in-a-logistic-regression-sigmoid-function/images/sigmoid.PNG)
 
 The probability of belonging to a class is less than 50%. The values are 
 assigned to class 0 and in our case, the classes were predefined as 
