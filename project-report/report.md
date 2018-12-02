@@ -4,8 +4,8 @@
 | ifetko@iu.edu, ntupe@iu.edu, vbhoyar@iu.edu
 | Indiana University
 | hid: fa18-523-60, fa18-523-64, fa18-523-72
-| | github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60blob/master/project-report/report.md)
-| code: TBD
+| github: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60blob/master/project-report/report.md)
+| code: [:cloud:](https://github.com/cloudmesh-community/fa18-523-60/tree/master/project-report/bin)
 
 ---
 
@@ -16,13 +16,13 @@ Keywords: MongoDB, PyMongo, Crowdfunding, Virtual Machine, IaaS & DBaaS , Data A
 ## Abstract
 
 Crowdfunding is a certain way of raising funds where 
-individuals come together and collectively support 
-projects by investing in them. Kickstarter is one 
-of the leading crowdfunding platforms in the world
-that helps individuals/businesses in various categories 
-such as art, film, music, theatre, games, design, and 
-other, to raise necessary funds to complete their projects. 
-This paper explores the utilization of big data technologies 
+individuals come together and collectively support projects 
+by investing in them. Kickstarter is one of the leading 
+crowdfunding platforms in the world that helps 
+individuals/businesses in various categories such as art, 
+film, music, theatre, games, design, and other, to raise 
+necessary funds to complete their projects. This paper 
+explores the utilization of big data technologies 
 and cloud services such as MongoDB, virtual machines, 
 MongoDB Atlas, DigitalOcean, AWS, and PyMonogo while 
 analyzing the *Kickstarter Projects* dataset obtained 
@@ -34,7 +34,7 @@ Many creative individuals and groups around the globe are trying
 to develop products, projects, and businesses based on their 
 unique ideas and talents. In many cases, an idea or a talent 
 is not enough to accomplish this. Capital funds are one of the 
-main elements of a successful startup process. Although there 
+main elements of a successful start-up process. Although there 
 is a significant number of government programs in the United 
 States designed to help small businesses and creative indivials 
 to obtain necessary funds for their projects, a high number of 
@@ -57,16 +57,16 @@ projects in a video form where they have the opportunity to outline
 the project along with its benefits and funding requirements 
 [@www-voelker]. The video is shown on the *Kickstarter* project 
 webpage along with the number of backers, the amount of funds 
-received/pledged as well as the fundraising goal. As each project 
+received/pledged as well as the fundraising goal. Since each project 
 is timed, the time remaining in the *Kickstarter* promotion is 
-shown on the project page as well. Since the platform is based on 
-an *all or nothing* funding model, pledged funds are not available 
-to the entrepreneurs until the end of the funding period which 
-is determined by the goal-setting statement [@www-voelker]. The 
-financial transcations occur only in cases where a projects meets 
-its initial targets and funding expectations [@www-voelker]. If 
-the initial target is exceeded, the project received all funding 
-as well as the excess of its goal.
+shown on the project page as well. The platform is based on 
+an *all or nothing* funding model which means that the pledged 
+funds are not available to the entrepreneurs until the end of 
+the funding period, which is determined by the goal-setting 
+statement [@www-voelker]. The financial transcations occur only 
+in cases where projects meet their initial targets and funding 
+expectations [@www-voelker]. If the initial target is exceeded, 
+the project receives all funding as well as the excess of its goal.
 
 Our project includes several big data technologies while exploring 
 the *Kickstarter* dataset collected in the 2009-2018 timeframe and 
@@ -78,21 +78,20 @@ AWS. Our team had developed a Python program and a packaged shell
 script that builds the MongoDB environment on a Unix platform, 
 performs data analysis through visualizations to gain hidden insights  
 and builds a logstic regression model to predict the success/failure
-of the *Kickstarter* projects. MongDB database is hosted on different 
+of the *Kickstarter* projects. MongoDB database is hosted on several 
 cloud environments. The time needed to query the dataset was used 
 as a quantitative measure to analyze the relative benchmarking. 
-Moreover, our team also provides an ease-of-use review of each 
-service as an addition to the performance benchmarking. 
-This report introduces the reader to the related work in the 
-MongoDB realm, as well as to the chosen dataset prior to 
-presenting the project design and research methods, architecture, 
-technologies, and results. 
+Moreover, our team provides an ease-of-use review of each service 
+as an addition to the performance benchmarking. This report 
+introduces the reader to the related work in the MongoDB realm, 
+as well as to the chosen dataset prior to presenting the project 
+design and research methods, architecture, technologies, and results. 
 
 ## Literature review
 
-MongoDB and Python both are open source technologies. One can 
-get started quickly building an application on MongoDB using 
-any of the languages that leverage MongoDB's driver. MongoDB 
+MongoDB and Python are both open source technologies. One can 
+get started quickly by building an application on MongoDB using 
+any of the languages that leverage MongoDB's driver. This database
 offers a native driver called PyMongo to fit Python developer 
 community needs.
 
@@ -101,7 +100,7 @@ community needs.
 > based on the JSON specification" [@www-pymongo].
 
 There are several advantages of storing data in document format 
-and some of them are flexible schema and ability to store arrays 
+and some of them are flexible schema and ability to store arrays, 
 which are faster to process using native commands of Python scripts 
 [@www-pymongo]. In June 2018, students of the Indiana University, 
 Bloomington Izolda Fetko, Rashmi Ray, and Nishad Tupe explored 
@@ -112,8 +111,8 @@ allowed BI tools such as Tableau to interact with MongoDB.
 The BI connector converts the Tableau's SQL-like commands on 
 structured data into the native MongoDB commands while fetching 
 data [@www-mongotab]. The team also used PyMongo and other web 
-technologies to build the website that could store, update, and 
-process records live and can be accessed by the global audience. 
+technologies to build the website that could store, update,  
+process the records live and can be accessed by the global audience. 
 As MongoDB is a NoSQL engine, it scales easily for multiple tables 
 as a single JSON object, and makes query retrieval speed faster 
 than RDBMS, while avoiding complex joins. However, the research also 
@@ -129,33 +128,34 @@ of rows and also to stand as a robust database on which one can
 build applications [@www-mongotab]. In the final step, authors 
 created a website and provided links to various dashboards 
 using technologies such as HTML, CSS, JavaScript, Bootstrap, 
-Flask, JQuery.js, and Chartist.js [@www-mongotab]. Although
-the goals of the aforementioned and our current project differ,
-they do share a lot of similarities in sense of using the exact
-same big data technologies MongoDB and Python. 
+Flask, JQuery, and Chartist [@www-mongotab]. Although the goals 
+of the aforementioned and our current project differ, they do share 
+a lot of similarities such as using the exact same big data 
+technologies MongoDB and Python. 
 
 Another paper written by [@www-matei], presents an interesting
 benchmarking of the MongoDB database on several cloud instances.
-In his report, [@www-matei] notes that each virtual instance
-had the MongoDB and PyMongo installed on it. The similarity
-between this report and our project is that both exploit the
-benefits of the PyMongo driver and the Amazon Web Services, 
-more specifically the *EC2* instances. In addition to the AWS, 
-[@www-matei] used Linode, a hosting company that offers a virtual 
+In his report, [@www-matei] notes that each virtual instance created
+for this purpose had MongoDB and PyMongo installed on it. The 
+similarity between this report and our project is that both 
+exploit the benefits of the PyMongo driver and the Amazon Web 
+Services, more specifically the *EC2* instances. In addition to the 
+AWS, [@www-matei] used Linode, a hosting company that offers a virtual 
 private server (VPS); Rackspace cloud and its open source technology 
 *OpenStack*; and Windows Azure and its virtual machines [@www-matei].
-In the finalsection of his paper, [@www-matei] concludes that MongoDB's 
+In the final section of his paper, [@www-matei] concludes that MongoDB's 
 performance varies from cloud to cloud due to various factors. One of 
 the most important factors that he lists are the fast I/O access and 
 ability of the database to cach all indexes in RAM [@www-matei].
 
-The report by [@www-bigbee] shows similarities to our report 
-in the sense of benchmarking MongoDB using the AWS. However,
-in his report, [@www-bigbee] takes a step further and compares
-the MongoDB performance to other databases such as CouchDB and
-Apache Spark. He concludes that MongoDB performs well on the
-cloud with ultra-low latency which makes it a great choice 
-for applications with flexible schema requirements [@www-bigbee].
+The report by [@www-bigbee] shows similarities with our report 
+in the sense that is conducting benchmarking of MongoDB using 
+the Amazon Web Services. However, in his report, [@www-bigbee] 
+takes a step further and compares the MongoDB performance to other
+databases such as CouchDB and Apache Spark. He concludes that
+MongoDB performs well on the cloud with ultra-low latency which 
+makes it a great choice  for applications with flexible schema 
+requirements [@www-bigbee].
 
 The article written by [@www-sverchkov], presents NoSQL database
 benchmarking with the use of the Yahoo Cloud Benchmark (YCSB) and 
@@ -163,19 +163,20 @@ Amazon Web Services with an installed Linux operating system
 [@www-sverchkov]. The purpose of his article is to help developers 
 choose the right database for their application. He tested Cassandra 
 2.0, MongoDB 2.4.6, HBASE 0.92 and concluded that developers 
-need to evaluate different solutions in their search, and test their 
-performance first prior to making any decisions [@www-sverchkov]. 
+need to evaluate different solutions in their search, and test
+their performance first prior to making any decisions [@www-sverchkov]. 
 According to him, all databases are good in some way, but may perform 
 differently in different scenarios, hence, it is important to chose them
-based on the most needed properties and project requirements [@www-sverchkov].
-The similarity between this project and our project is the use of the
-Amazon Web Services as a benchmarking tool for MongoDB. 
+based on the most needed properties and project requirements
+[@www-sverchkov]. The similarity between this project and our project 
+is the use of the Amazon Web Services as a benchmarking tool for 
+MongoDB. 
 
 ## Dataset Description
 
 ### Kaggle API
 
-The technology used to easily obtain the Kickstarter Projects 
+The technology used to easily obtain the *Kickstarter Projects* 
 dataset is the newly offered Kaggle Public API. API stands for 
 *Application Programming Interface* through
 
@@ -217,92 +218,101 @@ The instructions on how to obtain the dataset using the Kaggle API can be found
 [here](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/dataset/Kaggle%20API%20and%20Dataset%20Download%20Instructions.txt).
 The dataset is available in the CSV format and contains more than 370 thousand 
 projects submitted to Kickstarter between 2009 and 2018 [@www-kaggle-kickstarterdata]. 
-The dataset variables allow versatile data analysis which is presented in the *Results* 
-segment of our project. Other than the project ID, the dataset contains information 
-on the project name; main category and category of campaign; currency used to support 
-the project; fundraising goal (the amount of funds needed to complete the project); 
-project launch; project crowdfunding deadline; state – current state of the project; 
-actual funds pledged to the project along with the number of backers; the country of 
-origin; and the total amount of funds pledged by currency [@www-kaggle-kickstarterdata].
+The dataset variables allow versatile data analysis which is presented in the 
+*Observations and Visualizations* segment of our project. Other than the project 
+ID, the dataset contains information on the project name; main category and 
+category of campaign; currency used to support the project; fundraising goal 
+(the amount of funds needed to complete the project); project launch (date); 
+project crowdfunding deadline (date); state – current state of the project; 
+actual funds pledged to the project along with the number of backers; the country 
+of origin; and the total amount of funds pledged by currency [@www-kaggle-kickstarterdata].
 
 ## Design and Methods
-We have used the methodology as shown in the process diagram to conduct our 
-study and publish the results. One of the primary aims of the project was to 
-utilize the minimal cost cloud resources. Thankfully nowadays every coud 
-provider provides a free tier. To leverage this, we created VM's on Amazon Web 
-Services(AWS), Digital Ocean cloud services with more or less with the same 
-basic configuration of memory and hard disk. The AWS and Digital Ocean primarily 
-*IaaS* service while MongoDB Atlas *DBaaS* this also gave the opportunity to 
-test the solution various cloud providers and benchmark their performance with 
-pros and cons. Although the cloud VM's gave us the lot more control and 
-customization over the OS and database level resources, MongoDB Atlas cloud 
-services provided the stable database clustered environment for high 
-availability of data. There was no overhead of configuring MongoDB instance as 
-it's "DBaaS" service. We decided to leverage Unix bash script to perform a task 
-such as automatically. 
 
-1. Download the dataset 
+One of the primary aims of the project was to utilize the minimal cost cloud 
+resources. Thankfully, nowadays, every coud provider provides a free tier service. 
+To leverage this, our team created VM's on Amazon Web Services (AWS), DigitalOcean 
+cloud service with more or less the same basic configuration of memory and hard 
+disk. The AWS and DigitalOcean are primarily an *IaaS* service, while MongoDB Atlas 
+is a *DBaaS* . This gave us the opportunity to test the solution on various cloud 
+providers and benchmark their performance with pros and cons. Although the cloud 
+VM's gave us the lot more control and customization over the OS and database level 
+resources, MongoDB Atlas cloud services provided a stable database clustered 
+environment for high availability of data. There was no overhead of configuring 
+MongoDB instance as it is a "DBaaS" service. We decided to leverage Unix bash script 
+to perform a task automatically. The following bullet points outline the steps 
+taken during our project:
+
+1. Dataset Download
 
 2. Install MongoDB 
 
-3. Import the MongoDB 
+3. Import MongoDB 
 
-4. Run the Python Analysis. 
+4. Conduct Python Analysis
 
-Thus achieving the stable infrastructure 
-foundation on cloud based VM's, we had moved on to loading the data 
-using two methods  
+Once the stable infrastructure foundation on the cloud based VM's was achieved, we moved
+onto loading the data using two methods:  
 
 1. Python script based method for DBaaS 
 
-2. MongoImport for  cloud VM's 
+2. MongoImport for cloud VM's 
 
-Before beginning the analysis, it is essential to extract essential 
-features. We used Python date time library to get the date, year, month, clean 
-up the *NaN* rows carefully and also to calculate the duration of the project. 
-The next step encompassed in data enhancement by extracting the features that 
-can give a foundation to perform various analysis and develop machine learning
-model. During the aforementioned process, our team had utilized the following 
-methods to complete the data analysis and draw 
+Before beginning the analysis, it is crutial to extract the essential 
+features. We used Python datetime library to get the date, year, month; to
+clean up the *NaN* rows carefully and also to calculate the duration of 
+a project. The next step encompassed in data enhancement by extracting the 
+features that can give a foundation to perform various analysis and develop 
+a machine learning model. During the aforementioned process, our team had 
+utilized the following methods to complete the data analysis and draw 
 insights from the dataset. 
 
 1. Cloud and MongoDB set up
-   The first step is create the stable infrastructure to perform analysis.
-   This methods involves creating the cloud VM's , use bash shell scripts to 
-   installations. Testing the MongoDB connectivity from various machine to the 
-   cloud instance. Create and prepare the architecture diagram.
 
-2. Exploratory Analysis and Visualization. 
+   The first step was to create a stable infrastructure to perform analysis.
+   This method involved creating the cloud VM's,  and use the bash shell 
+   scripts to complete the installations. We had also done some testing of 
+   the MongoDB connectivity from various machines to the cloud instances. 
+   Finally, we had created and prepared the architecture diagram.
 
-   Data Visualizations that let you discover trends or patterns in
-   a data set are called Exploratory Data analysis.Once the data
-   is in good shape, it is easier to gain the understanding of the data
-   and visualization often becomes handy tool to find the interesting
-   patterns.
+2. Exploratory Analysis and Visualization
+
+   Data Visualizations that let one discover trends or patterns in
+   a dataset are called the *Exploratory Data* analysis. Once the data
+   is in a good shape, it is easier to gain insights by using
+   visualizations that often become handy tools for finding
+   interesting patterns.
 
 3. Correlation or Heatmap analysis
           
    The correlation analysis is a statistical method used to 
    evaluate a relationship between two continuous variables 
-   [@www-correlation]. 
+   [@www-correlation]. For example, we had used this type 
+   of analysis to find relationships between project 
+   categories and states.
                          
 4. Timeseries Analysis
           
    The time series analysis is a statistical technique which is related 
    to data that is distributed in a series of particular time periods or
-   intervals [@www-timeseries].
+   intervals [@www-timeseries]. We had used it to get a better 
+   understanding of the distribution of the projects over years and
+   months.
    
-5. Logistic Regression model for predicting Success and Failure
+5. Logistic Regression Model
           
    The logistic regression analysis is a predictive analysis
-   used to descrpibe a relationship between one dependent and 
-   one or more nominal, ordinal, interval, or ratio-level independent
-   variables [@www-logreg].
+   used to describe a relationship between one dependent and 
+   one or more nominal, ordinal, interval, or ratio-level 
+   independent variables [@www-logreg]. We had used this
+   model in our machine learning algorithm to predict 
+   successful vs. failed project status.
 
 6. Perform MongoDB queries
-   The gist of our project to show the mongoDB ability to query it real time
-   hence using MongoDB aggregation framework to Analyze the data using 
-   MongoDB queries. 
+
+   The gist of our project is to show the MongoDB ability to 
+   query in real time, hence we used the MongoDB aggregation 
+   framework to analyze the *Kickstarter* dataset as well.
    
  
 
@@ -312,9 +322,9 @@ insights from the dataset.
 
 * Python version 3.6 and various libraries such as Seaborn, Matplotlib, Pandas, and Scikit-learn
 * PyMongo Driver, Bash Shell 
-* Cloud services - MogoDB Atlas, 3 node replica cluster
-* Cloud services - Digital Ocean, Ubuntu 18.04 ,MongoDB 3.6.3
-* Cloud services - AWS , Amazon Elastic Comput Cloud (EC2), Linux, MongoDB 3.6.3
+* Cloud service - MogoDB Atlas, 3 node replica cluster
+* Cloud service - DigitalOcean, Ubuntu 18.04 ,MongoDB 3.6.3
+* Cloud service - AWS , Amazon Elastic Compute Cloud (EC2), Linux, MongoDB 3.6.3
 
 ## Code Organization
 
@@ -326,20 +336,24 @@ It is organized as described in the following section.
 
   - main.py 
   - load_csv.py
-  - mongo_install.sh
-  - mongo_uninstall.sh 
+  - setup.sh
+  - mongo_uninstall.sh
+  - BDAA Project - Time Series.ipynb
+  - MongoDB Queries.txt
+  - bdaa_project_machine_learning.ipynb
 
 ## Architecture
 
-Since the beginning of our project, the team aimed to create a scalable Python 
-code that can run seamlessly on different cloud environments. We mainly used 
-cloud computing services from Amazon Web Services (*AWS*), *DigitalOcean* 
-as *IaaS* and *MongoDB Atlas* as a *DBaaS* platform. Though *AWS* is giant a
-cloud provider with multiple cloud services, we found that *DigitalOcean's* 
-user-friendly virtual machine (VM's) management interface is equally attractive. 
-The architecture diagram +@fig:architecture more specifically the upper
-left dotted box, shows the client machine or application tier where the 
-source code(*.py*) was stored and used for performance benchmarking. 
+Since the beginning of our project, the team aimed to create a 
+scalable Python code that can run seamlessly on different cloud 
+environments. We mainly used cloud computing services from Amazon 
+Web Services (*AWS*), *DigitalOcean* as *IaaS* and *MongoDB Atlas* as 
+a *DBaaS* platform. Though *AWS* is giant a cloud provider with multiple 
+cloud services, we found that *DigitalOcean's* user-friendly virtual 
+machine (VM's) management interface is equally attractive. The architecture 
+diagram (+@fig:architecture), more specifically the upper left dotted box, 
+shows the client machine or application tier where the source code(*.py*) 
+was stored and used for performance benchmarking. 
 
 ![Architecture Diagram](images/architecture.png){#fig:architecture}
 
@@ -360,14 +374,14 @@ service and typically in *DBaaS* users do not have control or access
 to OS resources such as a file system. In most basic form, our M0 
 cluster consists of one primary node and two secondary nodes. The 
 primary nodes are mainly responsible for writing operations, while 
-the secondary nodes replicate primary's *oplog*.  This way the 
+the secondary nodes replicate primary's *oplog*. This way the 
 secondary node's dataset reflects the primary's dataset in cases 
 where the primary node is unavailable [@www-mongodbreplica]. Only 
 the eligible secondary nodes will
 
 > "hold an election to elect itself the new primary" [@www-mongodbreplica]. 
 
-This replica set arrangement ensures high availability of data. 
+This replica set arrangement ensures high availability of the data. 
 Optionally, one can configure the arbiter node which does not 
 hold any data but keeps the track quorum in the replica set. Since 
 arbiter nodes do not hold any data, they act as a suitable repository 
@@ -380,10 +394,10 @@ code due to incomplete pre-requisites. On the cloud VM's, the team
 hosted a single instance MongoDB database on Ubuntu 18.04 platform. 
 As post install steps, our team had installed the Python Anaconda 
 Distribution and other necessary libraries essential to complete 
-the analysis. The communication between MongoDB and Python application
-happens by connecting string. The connect strin, one must have a valid 
-username and password and necessary privileges to access and modify 
-the database. To accept the remote connection, one of the vital 
+the analysis. The communication between the MongoDB and Python
+application happens by connecting string. The connect string, one must 
+have a valid username and password and necessary privileges to access 
+and modify the database. To accept the remote connection, one of the vital 
 steps is to set a value of *bind_ip* to 0.0.0.0 in the *mongodb.conf* 
 file that resides on the VM. For all cloud providers, our team had 
 used free-tier services. We observed notable advantage of using 
@@ -400,58 +414,65 @@ The results of the analysis can be observed in the following sections.
 
 ### Exploratory Analysis
 
-The Kickstarter projects data includes six different project states which are 
-failed, successful, canceled, live, suspended and undefined. According to 
-projects records between 2009 and 2018 as shown in +@fig:states_count. Due to lack of funding 
-more than  300000 project were failed while 200000 projects achieved the funding goal with 
-a successful status. Around 70000 projects were canceled while some others 
-were with status live , suspended and undefined with minimal count.
+Our queries have determined that the *Kickstarter Projects* data includes 
+six different project states such as failed, successful, canceled, live, 
+suspended and undefined, as shown in +@fig:states_count. Due to the lack 
+of funding, more than  300000 projects in the overall pool of projects 
+had failed, while 200000 projects achieved the funding goal with a 
+successful status. Approximately 70000 projects were canceled while 
+others with with less significant counts were marked as live, suspended
+and undefined. 
  
- ![Project States Count By Year](images/project_states_count.png){#fig:states_count}
+![Project States Count By Year](images/project_states_count.png){#fig:states_count}
  
-The detail analysis for projects count is showing majority projects
-with status failed and successful. The data visualization in +@fig:year_count
-shows nearly 70000 projects were failed to achieve the goal funding in
-targeted time-frame in year 2015. The  2015 project count failed was highest
-failed count between the year 2009-2017.The successful project count for year 
-2013-2014 was nearly 30000. For each year, project failed
-count was higher than successful count.
+A more detailed view of the project counts was created for the main two 
+state categories - successful and failed projects. The data visualization 
+in +@fig:year_count shows that the highest number of projects were submitted
+in 2015. Nearly 70000 projects failed to achieve their funding goal in the 
+targeted time-frame. This was the highest count of failed projects in the 
+history of *Kickstarter*. The number of successful projects has steadily 
+increased since 2009 and shows a normal distribution over the years with lot 
+less variance compared to failed projects. Overall, it can be concluded that 
+the number of failed projects was much higher then the number of success 
+projects in each year.
+
+![Project Counts By Year(Succces & Failed)](images/project_count_by_year.png){#fig:year_count} 
  
- ![Project Counts By Year(Succces & Failed)](images/project_count_by_year.png){#fig:year_count} 
- 
- The +@fig:top_market visualization is showing country market data for funding the 
- project. The data analysis for Kickstarter project is showing Japan as best
- market to collect project funding. More than 350000 projects stated in 
- Japan achieve goal within deadline. The failed project count for Japan was also
- high compare to other country. Hong Kong has the highest failed project count 
- ratio against successful count.
+The +@fig:top_market visualization is showing the best markets (countries) for 
+funding projects. Based on this analysis, Austria appears to be the best country
+for project funding. More than 800000 projects with pledged US dollars launched 
+in Austria achieved their goal within deadline. It is followed by China and New 
+Zealand, which have less successful projects but almost equal amount of failed 
+projects as Austria.
  
 ![Top Markets For Pledged Funds](images/top_markes_for_pledged.png){#fig:top_market} 
  
-The heat map visualization in +@fig:category_coun is showing project state count against
-main category. The scale represent highest count with yellow color and lowest 
-count with dark blue color. The chart is showing highest successful project
-counts for Technology main category followed by dance and game categories. The 
-successful project count for Technology main category was more than 80000.
+The heatmap visualization in +@fig:category_count is showing project state 
+count against the main category. The scale represents highest count with 
+yellow color and lowest count with dark blue color. The chart is showing 
+highest successful project counts for the *Technology* main category followed 
+by *Dance* and *Games* categories. The count of successful projects tn the 
+*Technology* main category was more than 80000.
 
-![Heatmap Amount Pledged By Categories & State](images/heatmap.png){#fig:category_count} 
+![Heatmap Amount Pledged By Category & State](images/heatmap.png){#fig:category_count} 
 
-The projects with failed status could not achieve funding goals between 
-launched date and deadline date. There are some projects which started 
-collecting funding but could not collect the targeted amount. The visualization
-in +@fig:remaining_fund is showing targeted funding goal data and actual funding collected
-for main categories. The Film & Video category has highest funding goal and 
-only 10% fund achieved by projects. The funding collection for Technology 
-category was highest against total fund goal.
+The projects recorded as *failed* are the ones that were not able to achieve 
+funding goals between the project launched date and the project deadline date. 
+There are some projects which started collecting funding however, were not able to
+collect the targeted amount. The visualization in +@fig:remaining_fund is showing
+the targeted funding goal data and actual funding collected for main categories. 
+The *Film & Video* category has the highest funding goal and only 10% fund achieved 
+by projects. The funding collection of the *Technology* category was the highest 
+compared to the total fund goal.
 
 ![Pledged & Remaining Funds Failed Categories ](images/failure_categories_pledged_remaining_fund.jpg){#fig:remaining_fund} 
 
-The project fund duration is the days count between project launched date and 
-project deadline date. The duration box plot in +@fig:duration is showing average
-duration for successful and failed project. The average duration for successful
-projects was less than 31 days and average duration for failed project was 
-more than 40 days. The median between successful and failed projects duration 
-was nearly on 36 days.
+The project fund duration is a measure that represents the day counts between 
+the project launch date and the project deadline date. The duration box plot 
+in +@fig:duration shows the average duration for successful and failed projects. 
+The average duration of the successful projects was less than 31 days and the
+average duration of the failed projects was more than 40 days. The median between 
+successful and failed projects the duration at approximately 36 days.
  
 ![Project Duration Box Plot](images/duration_box_plot.png){#fig:duration} 
 
@@ -459,24 +480,25 @@ was nearly on 36 days.
 
 The time-series analysis conducted by the team revealed certain trends in
 the *Kickstarter* dataset which will be presented in the following segment.
-One of the trends noted was that the projects mostly get launched in the 
+One of the trends noticed was that the projects mostly get launched in the 
 warmer months with July being the month with the highest number of projects.
-The trend of the launched projects by months can be seen in +@fig:pjbym.
+The trend of the launched projects by month can be seen in +@fig:pjbym.
 
 ![Projects by Month](images/t5.png){#fig:pjbym}
 
-Drilling further into the project by month data, one can notice taht 
+Drilling further into the project by month data, one can notice that
 proportionally to the number of launched projects, July is the month with 
-the highest number of cancelled and failed projecs. The number of live projects
-is higher in winter months, mostly in November and December, however, the overall
-number of projects drastically decreases most likely due to the holidays.
+the highest number of cancelled and failed projecs. The number of live 
+projects is higher in winter months, mostly in November and December, 
+however, the overall number of projects drastically decreases most likely 
+due to the holidays.
 
 ![Projects by Month and State](images/t4.png){#fig:pjbyms}
 
-Loogking at the same categories over the years, from +@fig:pjbyys one can 
-conclude that overall, 2015 was a great year for *Kickstarter* with the highest 
-number of submitted projects, but also, proportionally, the largest portion of 
-the failed projects. 
+Looking at the same categories over the years time series, from +@fig:pjbyys 
+one can conclude that overall, 2015 was a great year for *Kickstarter* with 
+the highest number of submitted projects, but also, proportionally, one of
+the highest number of failed projects.
 
 ![Projects by Year and State](images/t2.png){#fig:pjbyys}
 
@@ -484,7 +506,7 @@ When it comes to the countries from which the projects were submitted in the
 2009-2017 timeframe, one can conclude that *Kickstarter* was popular and 
 available only in the United States in the first four years of its activity.
 In 2013, for the first time, one can notice other countries making project
-contributions such as Canada and New Zealand. In the follwoing years, the 
+contributions such as Canada and New Zealand. In the following years, the 
 number of contributing countries rises, however, the leading one still 
 remains the US.
 
@@ -492,44 +514,48 @@ remains the US.
 
 ### Logistic Regression
 
-In real life we see more classification problems than regression.
-And logistic regression helps us to solve classification problems by employing the sigmoid function.
-As shown in +@fig:sigmoid ,logistic regression tells us probability as a cut off point[@book-ISLR].
+In real life classification problems are more prevalent than regression. 
+Logistic regression helps us solve classification problems by employing 
+the sigmoid function. As shown in +@fig:sigmoid, logistic regression tells 
+us about the probability as a cut off point[@book-ISLR].
 
+!Sigmoid Logistic Function]{sigmoid}](images/sigmoid.png){#fig:sigmoid}
 
-!Sigmod Logistic Function]{sigmoid}](images/sigmoid.png){#fig:sigmoid}
+The probability of belonging to a class is less than 50%. The values are 
+assigned to class 0 and in our case, the classes were predefined as 
+*success* or *failed*. Thanks to the scikit-learn logistic regression
+model which takes care of the substantial mathematical part, we moved
+forward with bulding a model that can predict future projects' states.
 
-probability of belonging to class is less than 50%, then values are assigned to class 0
-in our cases the classes were predefined as *success* or *failed*
-So using scikit-learn logistic regression which takes care of substantial mathematical part 
-we moved on to build that can predict the future project state.
+To build this model, we used the following steps: 
 
-The steps we followed are as follows 
 1. Cleaning the dataset.
 
-2. Extract the project with success and failed state only.
+2. Extract projects with success and failed states only.
 
-3. Explore the dataset to predefine the classes
+3. Explore dataset to predefine the classes
 
-4. Identify the top 5 categories 
+4. Identify top 5 categories 
 
-5. Extracts features and label the data 
+5. Extract features and label data 
 
 6. Build the model 
 
 7. Predict and measure accuracy
 
-The following figure shows that categories with highest success and failed projects.
+The following figure shows categories with highest success and 
+failed projects.
 
 ![Top Five Categories](images/selecting_top_5_categories.png){#fig:selecttop5}
 
-We decided to use features such as *'main_category', 'goal', 'backers', 'duration', 'successful'*
-out of which *successful* feature was generated using pandas get_dummies method.  
+We decided to use features such as *'main_category', 'goal', 
+'backers', 'duration', 'successful'* out of which *successful* 
+feature was generated using pandas get_dummies method.  
 
 `proj_state = pd.get_dummies(data=df_sf_t['state'], drop_first=True)`
 
-The following figure shows the categorization under classes success and failed of our input
-dataframe
+The following figure shows the categorization of our input dataframe into 
+two classes - successful and failed.
 
 ![Category Classes](images/top_5_categories_classes.png){#fig:categoryclass}
 
@@ -540,26 +566,25 @@ so as to input them as numeric vectors to the machine learning algorithm.
 
 ![Labeled Data](images/labeled_data.PNG){#fig:labels}
     
-Once the DataFrame with labeled data was ready; we followed the normal machine learning
-steps to build the model that involves creating classifier object
-spitting the train test dataset, fitting the model, predicting values and measure accuracy
-The following figure shows the confusion matrix of our test dataset.
+Once the data frame with labeled data was ready we followed the
+standardized machine learning steps to build the model which involved creating 
+the classifier object; splitting the train test dataset; fitting the model;  predicting 
+values; and measure model accuracy. The following figure shows the 
+confusion matrix of our test dataset.
 
 ![Confusion Matrix](images/confusionmatrix.PNG){#fig:confusion}
 
-We used five fold cross-validation method to measure the accuracy of algorithm. 
-And found the average accuracy score close to 90%. Definitely this was done small set of classes
-and dataset we believe this can be extended with more features apart from project length
-to get more accuracy. 
+We used the five fold cross-validation method to measure the accuracy 
+of the algorithm. We had found the average accuracy score was close to 
+90%. To get more accuracy, this model can be extended to additional
+features and also a larger set of classes.
 
 ![Accuracy Scores](images/accuracyscore.PNG){#fig:accscore}
-
-
 
 ### MongoDB Queries
 
 Our team had also had the opportunity to write MongoDB queries directly 
-working in MongoAtlas with a purpose to compare the ease-of-use 
+working in Mongo Atlas with a purpose of comparing the ease-of-use 
 related to querying of the *Kickstarter* data between MongoDB and
 Python. One of the queries included the count of projects by category.
 
@@ -605,9 +630,9 @@ submitted also get funded.
 
 A slightly more complex query was used to compute the total amount of 
 the pledged funds, number of backers (investors), and total funding 
-goal by project category. It revealed that the best performing 
-categories according to these criteria are *Design*, *Technology*, 
-and *Games*. 
+goal by project category. Our team had determined that with more
+complex queries, the output appeared less attractive and more 
+difficult to read.
 
 ```
 > db.project.aggregate([
@@ -631,74 +656,94 @@ obtained thanks to the following query:
           ])
 ```
 
-From the results we can conclude that the best category is again 
-*Design*, which is in line with the results from the previous 
-query.
-
 ![Average Metrics by Category](images/q10.JPG){#fig:avgmetrbycat}
 
 Although querying in MongoDB is relatively simple, the team had
-concluded that compared to Python it is less user-friendly,
-which is in line with Python's flexible programming nature.
+concluded that compared to Python the output results are less
+attractive and the overall usage is less friendly. 
 
 ## Conclusion
-We were able to deploy successful python application that 
-can run on cloud services  using MongoDB as stable backend. 
-We observed the performance is slightly better on DigitalOcean / Amazon platform(44 Seconds)
-That has dedicated memory and cpu and more customization options while
-that MongoDB Atlas cluster it took around 96 seconds , there are various factors to consider while 
-benchmarking the performance like load , dedicated resources such as cpu , memory plays a role
-each platoform has its own advantages such as ease of use, customization to the environments 
-however most importantly we used minimal cost approach and ran the code on free tiers 
-that are available.  
-Each year the number of failed projects were more than successful
-36% project success rate
-Technology      Games   Publishing    Music   Film & Video    Top Categories
-2014 had more successful project than any other year 
-While 2015 has highest number suspended projects. 
-Overall 2011 seen highest success rate.
-Technology sector received highest pledged Amount followed by Design and Games
-Warmer months more projects gets launched and then drop in fall
-Austria , China , Netherland are top countries for generating pledged Amount
-Avg duration for successful project was less than 30 days. 
-45 upper limit for for max project length.
-with ML methods we were able to predict the success and failure of the project based 
-on extracting features such as goal,backers,categories and duration 
-however we believe this can be extended with more feature engineering 
-and may sponsors to fund projects that are more likely to be successful and keep encouraging 
-the startups. 
 
+In this project, our team was able to deploy a successful 
+Python application that has the capability of running on 
+various cloud services using MongoDB as a stabile backend.
+The team had observed that the performance was better on 
+DigitalOcean and Amazon platforms (44 seconds) which have
+a dedicated memory and CPU, as well are more costumization 
+options, compared to the MongoDB Atlas cluster where it took
+96 seconds to run the aforementioned Python script. Various
+factors need to be taken into consideration when benchmarking
+performance on different services. Some of them include load 
+and dedicated resources such as CPU and memory, which play a 
+very important role. Overall, we have concluded that each 
+platform has its own advantages such as ease of use,
+customization of the environments, however, one of the 
+very important aspects also includes the cost of the offered
+services. Our team had used the minimal cost approach in this
+project, and ran the code on the available free tier level
+services, which could have also affected the performance.
+When it comes to the crowdfunding data, we have found that
+the overall success rate of the *Kickstarter* projects in the
+2009-2018 time frame was 36%, and that each year, the number of 
+failed projects was much higher compared to their successful 
+counterparts. We had also identified the most successful
+categories - *Technology*, *Games*, *Publishing*, *Music*,
+*Film & Video*. From those categories, *Technology*  and *Games*
+were among the categories with the highest amount of pledged funds,
+including *Design*. The highest number of successful projects 
+was achieved in 2014 while the number of suspended projects 
+was the highest in 2015. Overall, 2011 was the year of the 
+highest success rate. By conducting the monthly time series 
+analysis, we had identified certain trends where we could see
+that warmer months yieled more project launchs while the
+colder months were sub-sequentially less project heavy.
+Although the platform was created in the United States, 
+countries such as Austria , China, and Netherland shown 
+to be the top countries for generating pledged funds.
+Project duration was also analyzed and the team had concluded
+that the average duration of the successful projects was less
+than 30 days, while the upper limit for the maximum project
+length was 45 days. Moreover, thanks to our implemented
+machine learning methods, we were able to predict the 
+success and failer of the projects based on the extracted 
+features such as goal, backers, categories, and duration.
+However, we also believe this model can be expanded with 
+additional feature engineering and stimulate sponsors to
+fund projects that are more likely to be successful with
+the sole purpose of keep encouraging the start-ups.
 
 ## Acknowledgement
 
-The authors would like to thank the Big Data Applications and Analytics(I-523) course
-teaching staff, mainly professor Gregor von Laszewski for their support and
-guidance during this project. Also, we would also like to extend
-our appreciation to Kaggle for providing us with the kickstarter projects dataset
-, and to other online sources for allowing us to gather
-meaningful insights and programming support.
+The authors would like to thank the Big Data Applications and 
+Analytics (I-523) course teaching staff, mainly professor 
+Gregor von Laszewski for their support and guidance during 
+this project. Also, we would also like to extend our 
+appreciation to Kaggle for providing us with the *Kickstarter 
+Projects* dataset, as well as to other online sources 
+for allowing us to gather meaningful insights and 
+programming support.
 
 ## Workbreakdown
 
 ### Nishad Tupe
-Project design, cloud architecture and implementation research 
-MongoDB Atlas, Digital Ocean Cloud VM set up
-Bash script MongoDB installation and Import
-Python coding, Data Analysis of Cloud VM's. 
+- Project design, cloud architecture and implementation research 
+- MongoDB Atlas, Digital Ocean Cloud VM set up
+- Bash script MongoDB installation and Import
+- Python coding, Data Analysis of Cloud VM's. 
  
 ### Vishal Bhoyar
-Project requirements and design research 
-Exploratory Analysis of data 
-Amazon Cloud VM set up.
-PyMongo research 
+- Project requirements and design research 
+- Exploratory Analysis of data 
+- Amazon Cloud VM set up.
+- PyMongo research 
 
 
 ### Izolda Fetko
-Project dataset and literature research 
-Testing MongoDB Queries on Cloud VM's
-MongoDB Aggregation framework research
-Python Time Series Analysis 
+- Project dataset and literature research 
+- Testing MongoDB Queries on Cloud VM's
+- MongoDB Aggregation framework research
+- Python Time Series Analysis
 
 ## Nishad Tupe, Vishal Bhoyar, Izolda Fetko
-Performance benchmarking
-Project Papers 
+- Performance benchmarking
+- Project Papers 
