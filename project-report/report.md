@@ -726,15 +726,16 @@ programming support.
 ## Workbreakdown
 
 ### Nishad Tupe
-- Project design, cloud architecture and implementation research 
-- MongoDB Atlas, Digital Ocean Cloud VM set up
-- Bash script MongoDB installation and Import
-- Python coding, Data Analysis of Cloud VM's. 
+- Project cloud architecture and implementation research 
+- MongoDB Atlas, Digital Ocean Cloud VM set ups
+- Bash script for Dataset download, installation & import of MongoDB
+- Python data loading scripts and exploratory visualizations
+- Python Logitistic regression implementation
  
 ### Vishal Bhoyar
 - Project requirements and design research 
 - Exploratory Analysis of data 
-- Amazon Cloud VM set up.
+- Amazon Cloud VM set up
 - PyMongo research 
 
 
