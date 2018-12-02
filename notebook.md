@@ -1,3 +1,8 @@
+# Week Fri 11/30/18 - Thu 12/3/18
+
+- finalized project.md
+
+
 # Week Fri 11/23/18 - Thu 11/29/18
 
 - updated references in paper.md and paper.bib
