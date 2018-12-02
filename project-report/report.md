@@ -239,7 +239,7 @@ providers and benchmark their performance with pros and cons. Although the cloud
 VM's gave us the lot more control and customization over the OS and database level 
 resources, MongoDB Atlas cloud services provided a stable database clustered 
 environment for high availability of data. There was no overhead of configuring 
-MongoDB instance as it is a "DBaaS" service. We decided to leverage Unix bash script 
+MongoDB instance as it is a *DBaaS* service. We decided to leverage Unix bash script 
 to perform a task automatically. The following bullet points outline the steps 
 taken during our project:
 
@@ -291,7 +291,7 @@ insights from the dataset.
    of analysis to find relationships between project 
    categories and states.
                          
-4. Timeseries Analysis
+4. Time-Series Analysis
           
    The time series analysis is a statistical technique which is related 
    to data that is distributed in a series of particular time periods or
