@@ -244,18 +244,14 @@ to perform a task automatically. The following bullet points outline the steps
 taken during our project:
 
 1. Dataset Download
-
 2. Install MongoDB 
-
 3. Import MongoDB 
-
 4. Conduct Python Analysis
 
 Once the stable infrastructure foundation on the cloud based VM's was achieved, we moved
 onto loading the data using two methods:  
 
 1. Python script based method for DBaaS 
-
 2. MongoImport for cloud VM's 
 
 Before beginning the analysis, it is crutial to extract the essential 
