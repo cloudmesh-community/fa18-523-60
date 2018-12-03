@@ -334,13 +334,15 @@ It is organized as described in the following section.
 
 ### bin
 
-  - main.py 
-  - load_csv.py
-  - setup.sh
-  - mongo_uninstall.sh
-  - BDAA Project - Time Series.ipynb
-  - MongoDB Queries.txt
-  - bdaa_project_machine_learning.ipynb
+- MongoDB_queries.txt
+- bash_envsetup_script.sh
+- csv_to_mongo.py
+- exploratory_analysis.ipynb
+- logistic_regression.ipynb	
+- main.py	
+- mongo_uninstall.sh
+- timeseries_analysis.ipynb
+
 
 ## Architecture
 
