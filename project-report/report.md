@@ -615,23 +615,6 @@ Python. One of the queries included the count of projects by category.
           {$sort:{count:1}}
           ])
 ```
-
-{ "_id" : { "category" : "Dance" }, "count" : 3768 }
-{ "_id" : { "category" : "Journalism" }, "count" : 4755 }
-{ "_id" : { "category" : "Crafts" }, "count" : 8809 }
-{ "_id" : { "category" : "Photography" }, "count" : 10779 }
-{ "_id" : { "category" : "Comics" }, "count" : 10819 }
-{ "_id" : { "category" : "Theater" }, "count" : 10913 }
-{ "_id" : { "category" : "Fashion" }, "count" : 22816 }
-{ "_id" : { "category" : "Food" }, "count" : 24602 }
-{ "_id" : { "category" : "Art" }, "count" : 28153 }
-{ "_id" : { "category" : "Design" }, "count" : 30070 }
-{ "_id" : { "category" : "Technology" }, "count" : 32569 }
-{ "_id" : { "category" : "Games" }, "count" : 35231 }
-{ "_id" : { "category" : "Publishing" }, "count" : 39874 }
-{ "_id" : { "category" : "Music" }, "count" : 51918 }
-{ "_id" : { "category" : "Film & Video" }, "count" : 63585 }
-
 The output of this query can be seen in +@fig:projbycat.
 
 ![Projects by Category](images/q4.JPG){#fig:projbycat}
