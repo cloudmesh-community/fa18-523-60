@@ -243,16 +243,16 @@ MongoDB instance as it is a *DBaaS* service. We decided to leverage Unix bash sc
 to perform a task automatically. The following bullet points outline the steps 
 taken during our project:
 
-1. Dataset Download
-2. Install MongoDB 
-3. Import MongoDB 
-4. Conduct Python Analysis
+-  Dataset Download
+-  Install MongoDB 
+-  Import MongoDB 
+-  Conduct Python Analysis
 
 Once the stable infrastructure foundation on the cloud based VM's was achieved, we moved
 onto loading the data using two methods:  
 
-1. Python script based method for DBaaS 
-2. MongoImport for cloud VM's 
+-  Python script based method for DBaaS 
+-  MongoImport for cloud VM's 
 
 Before beginning the analysis, it is crutial to extract the essential 
 features. We used Python datetime library to get the date, year, month; to
@@ -310,8 +310,6 @@ insights from the dataset.
    query in real time, hence we used the MongoDB aggregation 
    framework to analyze the *Kickstarter* dataset as well.
    
- 
-
 ## Technologies
 
 ### Technologies and Tools Used
@@ -330,14 +328,14 @@ It is organized as described in the following section.
 
 ### bin
 
-- MongoDB_queries.txt
-- bash_envsetup_script.sh
-- csv_to_mongo.py
-- exploratory_analysis.ipynb
-- logistic_regression.ipynb	
-- main.py	
-- mongo_uninstall.sh
-- timeseries_analysis.ipynb
+- [MongoDB_queries.txt](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/MongoDB_queries.txt)
+- [bash_envsetup_script.sh](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/bash_envsetup_script.sh)
+- [csv_to_mongo.py](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/csv_to_mongo.py)
+- [exploratory_analysis.ipynb](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/exploratory_analysis.ipynb)
+- [logistic_regression.ipynb](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/logistic_regression.ipynb)	
+- [main.py](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/main.py)	
+- [mongo_uninstall.sh](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/mongo_uninstall.sh)
+- [timeseries_analysis.ipynb](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/timeseries_analysis.ipynb)
 
 
 ## Architecture
@@ -353,7 +351,7 @@ diagram (+@fig:architecture), more specifically the upper left dotted box,
 shows the client machine or application tier where the source code(*.py*) 
 was stored and used for performance benchmarking. 
 
-![Architecture Diagram](images/architecture.png){#fig:architecture}
+![Architecture Diagram](images/kickstarter_architecture.png){#fig:architecture}
 
 The team also kept a copy of the source code and other scripts on the cloud 
 VM's file systems. We used PyMongo driver as one of the primary components 
@@ -484,12 +482,12 @@ The trend of the launched projects by month can be seen in +@fig:pjbym.
 
 ![Projects by Month](images/t5.png){#fig:pjbym}
 
-Drilling further into the project by month data, one can notice that
-proportionally to the number of launched projects, July is the month with 
-the highest number of cancelled and failed projecs. The number of live 
-projects is higher in winter months, mostly in November and December, 
-however, the overall number of projects drastically decreases most likely 
-due to the holidays.
+Drilling further into the project by month data, as shown in +@fig:pjbyms,
+one can notice that proportionally to the number of launched projects, 
+July is the month with the highest number of cancelled and failed projecs. 
+The number of live projects is higher in winter months, mostly in November 
+and December, however, the overall number of projects drastically decreases 
+most likely due to the holidays.
 
 ![Projects by Month and State](images/t4.png){#fig:pjbyms}
 
@@ -504,9 +502,9 @@ When it comes to the countries from which the projects were submitted in the
 2009-2017 timeframe, one can conclude that *Kickstarter* was popular and 
 available only in the United States in the first four years of its activity.
 In 2013, for the first time, one can notice other countries making project
-contributions such as Canada and New Zealand. In the following years, the 
-number of contributing countries rises, however, the leading one still 
-remains the US.
+contributions such as Canada and New Zealand. As one can notice in +@fig:pjbyyc, 
+in the following years, the number of contributing countries rises, however, 
+the leading one still remains the US.
 
 ![Projects by Year and Country](images/t3.png){#fig:pjbyyc}
 
@@ -515,7 +513,7 @@ remains the US.
 In real life classification problems are more prevalent than regression. 
 Logistic regression helps us solve classification problems by employing 
 the sigmoid function. As shown in +@fig:sigmoid, logistic regression tells 
-us about the probability as a cut off point[@book-ISLR].
+us about the probability as a cut off point [@book-ISLR].
 
 ![Sigmoid Logistic Graph](images/sigmoid.PNG){#fig:sigmoid}
 
@@ -541,8 +539,8 @@ To build this model, we used the following steps:
 
 7. Predict and measure accuracy
 
-The following figure shows categories with highest success and 
-failed projects.
+The following figure (+@fig:selecttop5) shows categories with 
+the highest number of succeeded and failed projects.
 
 ![Top Five Categories](images/selecting_top_5_categories.png){#fig:selecttop5}
 
@@ -565,9 +563,10 @@ so as to input them as numeric vectors to the machine learning algorithm.
 ![Labeled Data](images/labeled_data.PNG){#fig:labels}
     
 Once the data frame with labeled data was ready we followed the
-standardized machine learning steps to build the model which involved creating 
-the classifier object; splitting the train test dataset; fitting the model;  predicting 
-values; and measure model accuracy. The following figure shows the 
+standardized machine learning steps to build the model which 
+involved creating the classifier object; splitting the train test 
+dataset; fitting the model;  predicting values; and measure model 
+accuracy. The following figure (+@fig:confusion) shows the 
 confusion matrix of our test dataset.
 
 ![Confusion Matrix](images/confusionmatrix.PNG){#fig:confusion}
@@ -575,7 +574,8 @@ confusion matrix of our test dataset.
 We used the five fold cross-validation method to measure the accuracy 
 of the algorithm. We had found the average accuracy score was close to 
 90%. To get more accuracy, this model can be extended to additional
-features and also a larger set of classes.
+features and also a larger set of classes. Our accuracy scores
+can be seen in +@fig:accscore.
 
 ![Accuracy Scores](images/accuracyscore.PNG){#fig:accscore}
 
@@ -630,7 +630,7 @@ A slightly more complex query was used to compute the total amount of
 the pledged funds, number of backers (investors), and total funding 
 goal by project category. Our team had determined that with more
 complex queries, the output appeared less attractive and more 
-difficult to read.
+difficult to read as it can be seen in +fig@:totalmetrbycat.
 
 ```
 > db.project.aggregate([
@@ -658,7 +658,8 @@ obtained thanks to the following query:
 
 Although querying in MongoDB is relatively simple, the team had
 concluded that compared to Python the output results are less
-attractive and the overall usage is less friendly. 
+attractive, as it can be seen in +@fig:avgmetrbycat, and the 
+overall usage is less friendly.  
 
 ## Conclusion
 
