@@ -556,7 +556,8 @@ our input dataframe into two classes - successful and failed.
 ![Category Classes](images/top_5_categories_classes.png){#fig:categoryclass}
 
 All the main categories were mapped to numerical values so as to input 
-them as numeric vectors to the machine learning algorithm.
+them as numeric vectors to the machine learning algorithm. This can be
+seen in the following table.
 
 `cats = {'Publishing':4,'Film & Video':1,'Music':2,'Games':5,'Technology':3}`
 
@@ -588,7 +589,7 @@ We used the five fold cross-validation method to measure the accuracy
 of the algorithm. We had found the average accuracy score was close to 
 90%. To get more accuracy, this model can be extended to additional
 features and also a larger set of classes. Our accuracy scores
-can be seen in the following table
+can be seen in the following table:
 
 * Accuracy Scores 
 
