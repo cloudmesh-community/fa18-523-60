@@ -14,7 +14,7 @@ technologies:
 paper:
   - keyword: MongoDB
     title: "MongoDB in Python"
-    url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/paper/paper.md
+    url: https://github.com/cloudmesh-community/book/blob/master/chapters/data/mongodb.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
 project:
   - keyword: MongoDB, PyMongo, Cloud services(DBaaS,IaaS), Data Analysis, VM's
