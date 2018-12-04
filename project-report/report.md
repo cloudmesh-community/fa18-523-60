@@ -525,19 +525,19 @@ forward with bulding a model that can predict future projects' states.
 
 To build this model, we used the following steps: 
 
-1. Cleaning the dataset
+* Cleaning the dataset
 
-2. Extract projects with success and failed states only
+* Extract projects with success and failed states only
 
-3. Explore dataset to predefine the classes
+* Explore dataset to predefine the classes
 
-4. Identify top 5 categories 
+* Identify top 5 categories 
 
-5. Extract features and label data 
+* Extract features and label data 
 
-6. Build the model 
+* Build the model 
 
-7. Predict and measure accuracy
+* Predict and measure accuracy
 
 The following figure (+@fig:selecttop5) shows categories with 
 the highest number of succeeded and failed projects.
@@ -566,7 +566,6 @@ so as to input them as numeric vectors to the machine learning algorithm.
 | 4 | 1000.0 | 0 | 58 | 0 |
 | 1 | 30000.0 | 15 | 59 | 0 |
 
-![Labeled Data](images/labeled_data.PNG){#fig:labels}
     
 Once the data frame with labeled data was ready we followed the
 standardized machine learning steps to build the model which  
