@@ -569,6 +569,12 @@ dataset; fitting the model;  predicting values; and measure model
 accuracy. The following figure (+@fig:confusion) shows the 
 confusion matrix of our test dataset.
 
+|  n=88758 |Predictd No   |Predicted yes|
+|----------|--- ----------|-------------|
+|Actual No | TN=50106     |FP = 2331    |
+|Actual Yes| FN=7043      |TP = 29278   | 
+
+
 ![Confusion Matrix](images/confusionmatrix.PNG){#fig:confusion}
 
 We used the five fold cross-validation method to measure the accuracy 
