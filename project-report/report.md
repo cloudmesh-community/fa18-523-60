@@ -9,7 +9,7 @@
 
 ---
 
-Keywords: MongoDB, PyMongo, Crowdfunding, Virtual Machines, IaaS & DBaaS Cloud, Data Analysis, Predictions
+Keywords: MongoDB, PyMongo, Crowdfunding, VM's, IaaS & DBaaS Cloud, Data Analysis, Predictions
           
 ---
 
