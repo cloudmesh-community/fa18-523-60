@@ -574,6 +574,11 @@ confusion matrix of our test dataset.
 |Actual No | TN=50106     |FP = 2331    |
 |Actual Yes| FN=7043      |TP = 29278   | 
 
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
+
 
 ![Confusion Matrix](images/confusionmatrix.PNG){#fig:confusion}
 
