@@ -562,14 +562,14 @@ so as to input them as numeric vectors to the machine learning algorithm.
 
 
 |main_category| goal| backers| duration| succesful|
-| --- | --- | ---| --- | ----| ----|
+| --- | --- | ---| --- | ---| 
 | 4 | 1000.0 | 0 | 58 | 0 |
 | 1 | 30000.0 | 15 | 59 | 0 |
 
 ![Labeled Data](images/labeled_data.PNG){#fig:labels}
     
 Once the data frame with labeled data was ready we followed the
-standardized machine learning steps to build the model which 
+standardized machine learning steps to build the model which  
 involved creating the classifier object; splitting the train test 
 dataset; fitting the model;  predicting values; and measure model 
 accuracy. The following table shows the 
@@ -588,14 +588,14 @@ of the algorithm. We had found the average accuracy score was close to
 features and also a larger set of classes. Our accuracy scores
 can be seen in +@fig:accscore.
 
-| Cross Validations| Accuracy | Avg Accuracy|
-| --- | --- | ---|
+| Cross Validations| Accuracy |
+| --- | --- | 
 | CV-1| 90.47 |        
 | CV-2| 89.51 |        
-| CV-3| 89.66 |  89.70 
+| CV-3| 89.66 |  
 | CV-4| 89.17 |        
 | CV-5| 89.67 |         
-
+| Avg | 89.70 |
 ### MongoDB Queries
 
 Our team had also had the opportunity to write MongoDB queries directly 
