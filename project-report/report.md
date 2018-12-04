@@ -566,13 +566,9 @@ Once the data frame with labeled data was ready we followed the
 standardized machine learning steps to build the model which 
 involved creating the classifier object; splitting the train test 
 dataset; fitting the model;  predicting values; and measure model 
-accuracy. The following figure (+@fig:confusion) shows the 
+accuracy. The following table shows the 
 confusion matrix of our test dataset.
-
-|  n=88758 |Predictd No   |Predicted yes|
-|----------|--- ----------|-------------|
-|Actual No | TN=50106     |FP = 2331    |
-|Actual Yes| FN=7043      |TP = 29278   | 
+ 
 
 | n=88758| Predicted no | Predicted Yes|
 | --- | --- | ---|
@@ -580,15 +576,19 @@ confusion matrix of our test dataset.
 | Actual Yes | FN = 7043 |   TP = 29278 |
 
 
-![Confusion Matrix](images/confusionmatrix.PNG){#fig:confusion}
-
 We used the five fold cross-validation method to measure the accuracy 
 of the algorithm. We had found the average accuracy score was close to 
 90%. To get more accuracy, this model can be extended to additional
 features and also a larger set of classes. Our accuracy scores
 can be seen in +@fig:accscore.
 
-![Accuracy Scores](images/accuracyscore.PNG){#fig:accscore}
+| Cross Validations| Accuracy | Avg Accuracy|
+| --- | --- | ---|
+| CV-1| 90.47 |        |
+| CV-2| 89.51 |        |
+| CV-3| 89.66 |  89.70 |
+| CV-4| 89.17 |        |
+| CV-5| 89.67 |        |
 
 ### MongoDB Queries
 
