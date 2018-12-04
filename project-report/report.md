@@ -550,8 +550,8 @@ feature was generated using pandas get_dummies method.
 
 `proj_state = pd.get_dummies(data=df_sf_t['state'], drop_first=True)`
 
-The following figure shows the categorization of our input dataframe into 
-two classes - successful and failed.
+The following figure (+@fig:categoryclass) shows the categorization of 
+our input dataframe into two classes - successful and failed.
 
 ![Category Classes](images/top_5_categories_classes.png){#fig:categoryclass}
 
