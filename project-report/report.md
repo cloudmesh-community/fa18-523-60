@@ -560,6 +560,7 @@ so as to input them as numeric vectors to the machine learning algorithm.
 
 `cats = {'Publishing':4,'Film & Video':1,'Music':2,'Games':5,'Technology':3}`
 
+* Labeled Data Sample
 
 |main_category| goal| backers| duration| succesful|
 | --- | --- | ---| --- | ---| 
@@ -573,9 +574,11 @@ involved creating the classifier object; splitting the train test
 dataset; fitting the model;  predicting values; and measure model 
 accuracy. The following table shows the 
 confusion matrix of our test dataset.
+
+* Confustion Matrix (y-test)
  
 
-| n=88758| Predicted no | Predicted Yes|
+| n=88758| Predicted No | Predicted Yes|
 | --- | --- | ---|
 | Actual No | TN = 50106 | FP = 2331 |
 | Actual Yes | FN = 7043 |   TP = 29278 |
@@ -585,7 +588,9 @@ We used the five fold cross-validation method to measure the accuracy
 of the algorithm. We had found the average accuracy score was close to 
 90%. To get more accuracy, this model can be extended to additional
 features and also a larger set of classes. Our accuracy scores
-can be seen in +@fig:accscore.
+can be seen in the following table
+
+* Accuracy Scores 
 
 | Cross Validations| Accuracy |
 | --- | --- | 
@@ -594,7 +599,8 @@ can be seen in +@fig:accscore.
 | CV-3| 89.66 |  
 | CV-4| 89.17 |        
 | CV-5| 89.67 |         
-| Avg | 89.70 |
+| Average | 89.70 |
+
 ### MongoDB Queries
 
 Our team had also had the opportunity to write MongoDB queries directly 
