@@ -263,7 +263,7 @@ a machine learning model. During the aforementioned process, our team had
 utilized the following methods to complete the data analysis and draw 
 insights from the dataset. 
 
-1. Cloud and MongoDB set up
+* Cloud and MongoDB set up
 
    The first step was to create a stable infrastructure to perform analysis.
    This method involved creating the cloud VM's,  and use the bash shell 
@@ -271,7 +271,7 @@ insights from the dataset.
    the MongoDB connectivity from various machines to the cloud instances. 
    Finally, we had created and prepared the architecture diagram.
 
-2. Exploratory Analysis and Visualization
+* Exploratory Analysis and Visualization
 
    Data Visualizations that let one discover trends or patterns in
    a dataset are called the *Exploratory Data* analysis. Once the data
@@ -279,7 +279,7 @@ insights from the dataset.
    visualizations that often become handy tools for finding
    interesting patterns.
 
-3. Correlation or Heatmap analysis
+* Correlation or Heatmap analysis
           
    The correlation analysis is a statistical method used to 
    evaluate a relationship between two continuous variables 
@@ -287,7 +287,7 @@ insights from the dataset.
    of analysis to find relationships between project 
    categories and states.
                          
-4. Time-Series Analysis
+* Time-Series Analysis
           
    The time series analysis is a statistical technique which is related 
    to data that is distributed in a series of particular time periods or
@@ -295,7 +295,7 @@ insights from the dataset.
    understanding of the distribution of the projects over years and
    months.
    
-5. Logistic Regression Model
+* Logistic Regression Model
           
    The logistic regression analysis is a predictive analysis
    used to describe a relationship between one dependent and 
@@ -304,7 +304,7 @@ insights from the dataset.
    model in our machine learning algorithm to predict 
    successful vs. failed project status.
 
-6. Perform MongoDB queries
+* Perform MongoDB queries
 
    The gist of our project is to show the MongoDB ability to 
    query in real time, hence we used the MongoDB aggregation 
@@ -318,7 +318,7 @@ insights from the dataset.
 * PyMongo Driver, Bash Shell 
 * Cloud service - MogoDB Atlas, 3 node replica cluster
 * Cloud service - DigitalOcean, Ubuntu 18.04 ,MongoDB 3.6.3
-* Cloud service - AWS , Amazon Elastic Compute Cloud (EC2), Linux, MongoDB 3.6.3
+* Cloud service - AWS , Amazon Elastic Compute Cloud (EC2), Ubunty 18.04, MongoDB 3.6.3
 
 ## Code Organization
 
