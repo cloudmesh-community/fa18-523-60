@@ -555,8 +555,8 @@ our input dataframe into two classes - successful and failed.
 
 ![Category Classes](images/top_5_categories_classes.png){#fig:categoryclass}
 
-All the main categories were mapped to numerical values as shown in +@fig:labels 
-so as to input them as numeric vectors to the machine learning algorithm.
+All the main categories were mapped to numerical values so as to input 
+them as numeric vectors to the machine learning algorithm.
 
 `cats = {'Publishing':4,'Film & Video':1,'Music':2,'Games':5,'Technology':3}`
 
@@ -569,11 +569,11 @@ so as to input them as numeric vectors to the machine learning algorithm.
 
     
 Once the data frame with labeled data was ready we followed the
-standardized machine learning steps to build the model which  
+standardized machine learning steps to build the model which 
 involved creating the classifier object; splitting the train test 
 dataset; fitting the model;  predicting values; and measure model 
-accuracy. The following table shows the 
-confusion matrix of our test dataset.
+accuracy. The following table shows the confusion matrix of our 
+test dataset.
 
 * Confustion Matrix (y-test)
  
