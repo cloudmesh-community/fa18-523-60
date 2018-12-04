@@ -525,9 +525,9 @@ forward with bulding a model that can predict future projects' states.
 
 To build this model, we used the following steps: 
 
-1. Cleaning the dataset.
+1. Cleaning the dataset
 
-2. Extract projects with success and failed states only.
+2. Extract projects with success and failed states only
 
 3. Explore dataset to predefine the classes
 
