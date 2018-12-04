@@ -560,6 +560,12 @@ so as to input them as numeric vectors to the machine learning algorithm.
 
 `cats = {'Publishing':4,'Film & Video':1,'Music':2,'Games':5,'Technology':3}`
 
+
+|main_category| goal| backers| duration| succesful|
+| --- | --- | ---| --- | ----| ----|
+| 4 | 1000.0 | 0 | 58 | 0 |
+| 1 | 30000.0 | 15 | 59 | 0 |
+
 ![Labeled Data](images/labeled_data.PNG){#fig:labels}
     
 Once the data frame with labeled data was ready we followed the
@@ -584,11 +590,11 @@ can be seen in +@fig:accscore.
 
 | Cross Validations| Accuracy | Avg Accuracy|
 | --- | --- | ---|
-| CV-1| 90.47 |        |
-| CV-2| 89.51 |        |
-| CV-3| 89.66 |  89.70 |
-| CV-4| 89.17 |        |
-| CV-5| 89.67 |        |
+| CV-1| 90.47 |        
+| CV-2| 89.51 |        
+| CV-3| 89.66 |  89.70 
+| CV-4| 89.17 |        
+| CV-5| 89.67 |         
 
 ### MongoDB Queries
 
