@@ -331,11 +331,10 @@ It is organized as described in the following section.
 - [MongoDB_queries.txt](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/MongoDB_queries.txt)
 - [bash_envsetup_script.sh](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/bash_envsetup_script.sh)
 - [csv_to_mongo.py](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/csv_to_mongo.py)
-- [exploratory_analysis.ipynb](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/exploratory_analysis.ipynb)
-- [logistic_regression.ipynb](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/logistic_regression.ipynb)	
+- [kickstarter_analysis.ipynb](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/kickstarter_analysis.ipynb)
 - [main.py](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/main.py)	
 - [mongo_uninstall.sh](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/mongo_uninstall.sh)
-- [timeseries_analysis.ipynb](https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/bin/timeseries_analysis.ipynb)
+
 
 
 ## Architecture
