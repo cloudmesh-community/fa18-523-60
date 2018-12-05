@@ -318,7 +318,7 @@ insights from the dataset.
 * PyMongo Driver, Bash Shell 
 * Cloud service - MogoDB Atlas, 3 node replica cluster
 * Cloud service - DigitalOcean, Ubuntu 18.04 ,MongoDB 3.6.3
-* Cloud service - AWS , Amazon Elastic Compute Cloud (EC2), Ubunty 18.04, MongoDB 3.6.3
+* Cloud service - AWS , Amazon Elastic Compute Cloud (EC2), Ubuntu 18.04, MongoDB 3.6.3
 
 ## Code Organization
 
