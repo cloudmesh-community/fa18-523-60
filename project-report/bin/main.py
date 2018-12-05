@@ -11,6 +11,7 @@ from wordcloud import WordCloud
 import time
 import numpy as np
 import time 
+
 def show_wordcloud(data, title = None):
     '''Split names by space and generate word counts.'''
     wordcloud = WordCloud(
@@ -29,21 +30,29 @@ def show_wordcloud(data, title = None):
 
     return plt.imshow(wordcloud)
 
-def load_data():
-    
-    #df = pd.read_csv("ks-projects-201801.csv")
-    
-    ''' Mongo DB Atlas connection '''
-    
-    client = MongoClient('mongodb+srv://nishad:Tesla18$@cluster0-4fgwj.azure.mongodb.net/test?retryWrites=true')
-    db = client.kick
-    collection = db.project
-    df = pd.DataFrame(list(collection.find()))
+''' Build DataFrame from MongoDB data '''
+
+def load_data_mongo():
+   
+       ''' Read the Credentials '''
+
+       config_file = open('config.txt','r')
+       connect_str = config_file.read()
+
+       ''' Connect using PyMongo Driver and load Data '''
+       client = pymongo.MongoClient(connect_str)
+       db = client.kick
+       collection = db.project
+       df = pd.DataFrame(list(collection.find()))
+       config_file.close()
+       return df
+
+def load_data():    
     
     ''' If want to use DigitalOcean please use below connection string '''
     # client = pymongo.MongoClient("mongodb://nishad:Tesla18$@159.203.170.43/kick")
 
-
+    df = load_data_mongo()
     #df.drop(['usd pledged'], axis=1, inplace=True)
 
     df.replace('N,0"','NO',inplace=True)
@@ -143,5 +152,6 @@ def main():
     
     show_wordcloud(df[df.state == 'successful']['category'])
     end = time.time()
-    print(end - start)
+    elapsed_time = end - start
+    print("Program RunTime On Mongo Atlas cloud in seconds:", elapsed_time)
 main()
