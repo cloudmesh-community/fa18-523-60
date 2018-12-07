@@ -726,8 +726,9 @@ The results can be seen the in following output:
 
 Although querying in MongoDB is relatively simple, the team had
 concluded that compared to Python the output results are less
-attractive, as it can be seen in +@fig:avgmetrbycat, and the 
-overall usage is less friendly.  
+attractive, as it can be seen in the query outputs previously 
+shown. We have also concluded that the overall usage is less 
+user-friendly.  
 
 ## Conclusion
 
