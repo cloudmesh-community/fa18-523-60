@@ -614,9 +614,25 @@ Python. One of the queries included the count of projects by category.
           {$sort:{count:1}}
           ])
 ```
-The output of this query can be seen in +@fig:projbycat.
+The output of this query can be seen in the following section.
 
-![Projects by Category](images/q4.JPG){#fig:projbycat}
+```
+{ "_id" : { "category" : "Dance" }, "count" : 3768}
+{ "_id" : { "category" : "Journalism" }, "count" : 4755}
+{ "_id" : { "category" : "Crafts" }, "count" : 8809}
+{ "_id" : { "category" : "Photography" }, "count" : 10779}
+{ "_id" : { "category" : "Comics" }, "count" : 10819}
+{ "_id" : { "category" : "Theater" }, "count" : 10913}
+{ "_id" : { "category" : "Fashon" }, "count" : 22816}
+{ "_id" : { "category" : "Food" }, "count" : 24602}
+{ "_id" : { "category" : "Art" }, "count" : 28153}
+{ "_id" : { "category" : "Design" }, "count" : 30070}
+{ "_id" : { "category" : "Technology" }, "count" : 32569}
+{ "_id" : { "category" : "Games" }, "count" : 35231}
+{ "_id" : { "category" : "Publishing" }, "count" : 39874}
+{ "_id" : { "category" : "Music" }, "count" : 51918}
+{ "_id" : { "category" : "Film & Video" }, "count" : 63585}
+```
 
 From the results we can see that the highest number of the overall 
 submitted projects was in the *Film and Video* category. This
@@ -633,7 +649,6 @@ projects by year.
           {$sort:{_id:1}}
           ])
 ```
-
 
 The results in this query have shown that the number of projects
 varied through out the years, and that the highest number of 
@@ -653,7 +668,7 @@ A slightly more complex query was used to compute the total amount of
 the pledged funds, number of backers (investors), and total funding 
 goal by project category. Our team had determined that with more
 complex queries, the output appeared less attractive and more 
-difficult to read as it can be seen in +fig@:totalmetrbycat.
+difficult to read as it can be seen in the output after the query code.
 
 ```
 > db.project.aggregate([
@@ -662,8 +677,19 @@ difficult to read as it can be seen in +fig@:totalmetrbycat.
           {$sum:"$goal"}}}
           ])
 ```
-
-![Total Metrics by Category](images/q7.JPG){#fig:totalmetrbycat}
+```
+{ "_id" : { "category" : "Theater" }, "tot_amt_pledged" : 44713012.92, "tot_backers": 513536, "tot_goal" : 300569615.61 }
+{ "_id" : { "category" : "Dance" }, "tot_amt_pledged" : 13906929.44, "tot_backers": 16127, "tot_goal" : 38890776.3 }
+{ "_id" : { "category" : "Music" }, "tot_amt_pledged" : 207294846.96 , "tot_backers": 2708475, "tot_goal" : 833613962.47 }
+{ "_id" : { "category" : "Film & Video" }, "tot_amt_pledged" : 404574432.02 , "tot_backers": 4197577, "tot_goal" : 562378004.68 }
+{ "_id" : { "category" : "Photography" }, "tot_amt_pledged" : 39501225.45 , "tot_backers": 428078, "tot_goal" : 140161865.51 }
+{ "_id" : { "category" : "Publishing" }, "tot_amt_pledged" : 145090176.71 , "tot_backers": 2231589 , "tot_goal" : 1161588016.96  }
+{ "_id" : { "category" : "Crafts" }, "tot_amt_pledged" : 17760300.12  , "tot_backers": 240342 , "tot_goal" : 102116446.5 }
+{ "_id" : { "category" : "Games" }, "tot_amt_pledged" : 770331916.1 , "tot_backers": 11336829 , "tot_goal" : 1786609751.2 }
+{ "_id" : { "category" : "Comics" }, "tot_amt_pledged" : 74643647.75 , "tot_backers": 1458090 , "tot_goal" : 219016009.29 }
+{ "_id" : { "category" : "Art" }, "tot_amt_pledged" : 101547027.64, "tot_backers": 1188200 , "tot_goal" : 1149463908.6 }
+{ "_id" : { "category" : "Fashion" }, "tot_amt_pledged" : 149422709.86 , "tot_backers": 1407993, "tot_goal" : 566253100.85 }
+```
 
 In a similar fashion, the average metrics by category were 
 obtained thanks to the following query: 
@@ -677,7 +703,26 @@ obtained thanks to the following query:
           ])
 ```
 
-![Average Metrics by Category](images/q10.JPG){#fig:avgmetrbycat}
+The results can be seen the in following output:
+
+```
+{ "_id" : { "category" : "Design" }, "avg_amt_pledged" : 27119.75 , "avg_backers": 241.30, "avg_goal" : 46733.63 }
+{ "_id" : { "category" : "Technology" }, "avg_amt_pledged" : 22586.16, "avg_backers": 164.4, "avg_goal" : 119712.32 }
+{ "_id" : { "category" : "Games" }, "avg_amt_pledged" : 21865.17 , "avg_backers": 321.78, "avg_goal" : 50711.29  }
+{ "_id" : { "category" : "Comics" }, "avg_amt_pledged" : 6899.31 , "avg_backers": 134.77, "avg_goal" : 20243.65 }
+{ "_id" : { "category" : "Fashion" }, "avg_amt_pledged" : 6549.03, "avg_backers": 61.45, "avg_goal" : 24818.25 }
+{ "_id" : { "category" : "Film & Video" }, "avg_amt_pledged" : 6362.73, "avg_backers": 66.02, "avg_goal" : 84334.01 }
+{ "_id" : { "category" : "Food" }, "avg_amt_pledged" : 5340.16, "avg_backers": 54.17, "avg_goal" : 48693.75 }
+{ "_id" : { "category" : "Theater" }, "avg_amt_pledged" : 4097.22, "avg_backers": 47.06, "avg_goal" : 27542.34  }
+{ "_id" : { "category" : "Music" }, "avg_amt_pledged" : 3992.73, "avg_backers": 52.17 , "avg_goal" : 16056.36 }
+{ "_id" : { "category" : "Dance" }, "avg_amt_pledged" : 3690.80, "avg_backers": 42.80, "avg_goal" : 10321.33 }
+{ "_id" : { "category" : "Photography" }, "avg_amt_pledged" : 3664.65, "avg_backers": 39.71, "avg_goal" : 13003.23}
+{ "_id" : { "category" : "Publishing" }, "avg_amt_pledged" : 3638.72, "avg_backers": 55.96, "avg_goal" : 29131.46 }
+{ "_id" : { "category" : "Art" }, "avg_amt_pledged" : 3606.97, "avg_backers": 42.20, "avg_goal" : 40829.18}
+{ "_id" : { "category" : "Journalism" }, "avg_amt_pledged" : 3218.08, "avg_backers": 42.20, "avg_goal" : 88783.58 }
+{ "_id" : { "category" : "Crafts" }, "avg_amt_pledged" : 2016.15, "avg_backers": 27.28, "avg_goal" : 11592.19 }
+
+```
 
 Although querying in MongoDB is relatively simple, the team had
 concluded that compared to Python the output results are less
