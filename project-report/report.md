@@ -511,10 +511,9 @@ the leading one still remains the US.
 
 In real life classification problems are more prevalent than regression. 
 Logistic regression helps us solve classification problems by employing 
-the sigmoid function. As shown in +@fig:sigmoid, logistic regression tells 
-us about the probability as a cut off point [@book-ISLR].
-
-![Sigmoid Logistic Graph](images/sigmoid.PNG){#fig:sigmoid}
+the sigmoid function. Logistic regression tells us about the probability 
+as a cut off point, it uses logitistic function
+to build the model that can predict binary dependent variable[@book-ISLR].
 
 The probability of belonging to a class is less than 50%. The values are 
 assigned to class 0 and in our case, the classes were predefined as 
