@@ -742,12 +742,14 @@ Python application that has the capability of running on
 various cloud services using MongoDB as a stabile backend.
 The team had observed that the performance was better on 
 DigitalOcean and Amazon platforms (44 seconds) which have
-a dedicated memory and CPU, as well are more costumization 
-options, compared to the MongoDB Atlas cluster where it took
+a dedicated memory and CPU, as well are more hardware
+level customization options such as CPU,Memory etc.
+compared to the MongoDB Atlas cluster where it took
 96 seconds to run the aforementioned Python script. Various
 factors need to be taken into consideration when benchmarking
-performance on different services. Some of them include load 
-and dedicated resources such as CPU and memory, which play a 
+performance on different services. Some of them include shared
+infrastructure load on which the cloud VM's are mostly available,
+dedicated resources such as CPU and memory, which play a 
 very important role. Overall, we have concluded that each 
 platform has its own advantages such as ease of use,
 customization of the environments, however, one of the 
