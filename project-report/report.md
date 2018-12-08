@@ -604,7 +604,7 @@ can be seen in the following table:
 
 |algorithm | Accuracy %|
 | --- | --- |
-| Logistic Regression | 89.58 |
+| Logistic Regression | 89.43 |
 
 ### MongoDB Queries
 
