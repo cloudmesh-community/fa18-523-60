@@ -590,16 +590,22 @@ of the algorithm. We had found the average accuracy score was close to
 features and also a larger set of classes. Our accuracy scores
 can be seen in the following table:
 
-* Accuracy Scores 
-
-| Cross Validations| Accuracy |
+* Accuracy Scores of train data
+ 
+| Cross Validations| Accuracy %|
 | --- | --- | 
-| CV-1| 90.47 |        
-| CV-2| 89.51 |        
-| CV-3| 89.66 |  
-| CV-4| 89.17 |        
-| CV-5| 89.67 |         
-| Average | 89.70 |
+| CV-1| 89.20 |        
+| CV-2| 89.34 |        
+| CV-3| 89.60 |  
+| CV-4| 89.81 |        
+| CV-5| 89.14 |         
+| Average | 89.42 |
+
+* Accuracy of actual Model
+
+|algorithm | Accuracy %|
+| --- | --- |
+| Logistic Regression | 89.50 |
 
 ### MongoDB Queries
 
