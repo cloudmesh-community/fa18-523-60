@@ -1,5 +1,5 @@
 The steps has been in automated in installation script - bash_envsetup_script.sh
-However we listing the step to manually download the dataset.
+However we are listing the steps to manually download the dataset.
 
 Necessary steps needed to be able to use Kaggle API and download the Kickstarter Dataset
 via command prompt
