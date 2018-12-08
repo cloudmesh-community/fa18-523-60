@@ -591,20 +591,20 @@ can be seen in the following table:
 
 * Accuracy Scores of train data
  
-| Cross Validations| Accuracy %|
+| Cross Val=5| Accuracy %|
 | --- | --- | 
-| CV-1| 89.20 |        
-| CV-2| 89.34 |        
-| CV-3| 89.60 |  
-| CV-4| 89.81 |        
-| CV-5| 89.14 |         
-| Average | 89.42 |
+| CV-1| 89.84 |        
+| CV-2| 89.66 |        
+| CV-3| 89.48 |  
+| CV-4| 89.54 |        
+| CV-5| 89.37 |         
+| Average | 89.58 |
 
 * Accuracy of actual Model
 
 |algorithm | Accuracy %|
 | --- | --- |
-| Logistic Regression | 89.50 |
+| Logistic Regression | 89.58 |
 
 ### MongoDB Queries
 
