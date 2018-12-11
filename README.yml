@@ -5,6 +5,7 @@ owner:
   hid: "fa18-523-60"
   community: "i523"
   semester: fa18
+  online: "Yes"
   profile: https://github.com/IzoldaIU
 technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/docker-compose.md
