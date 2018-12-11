@@ -1,6 +1,7 @@
 # Week Fri 12/07/18 - 12/17/18
 
 - updated notebook.md
+- updated README.yml
 
 # Week Fri 11/30/18 - Thu 12/06/18
 
