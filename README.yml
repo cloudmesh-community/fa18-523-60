@@ -6,7 +6,9 @@ owner:
   community: "i523"
   semester: "fa18"
   online: "Yes"
-  profile: https://github.com/IzoldaIU
+  
+profile: 
+  - url: https://github.com/IzoldaIU
   
 notebook: 
   - url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/notebook.md
