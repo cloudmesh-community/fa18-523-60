@@ -7,16 +7,22 @@ owner:
   semester: "fa18"
   online: "Yes"
   profile: https://github.com/IzoldaIU
+  
+notebook: 
+  - url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/notebook.md
+  
 technologies:
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/docker-compose.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/linux-vserver.md
   - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/mysql.md
-  - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/plasma-magma.md  
+  - url: https://github.com/cloudmesh/technologies/blob/master/chapters/tech/plasma-magma.md 
+  
 paper:
   - keyword: MongoDB
     title: "MongoDB in Python"
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/data/mongodb.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
+    
 project:
   - keyword: MongoDB, PyMongo, Crowdfunding, VM's, IaaS & DBaaS Cloud, Data Analysis, Predictions
     title: "Kickstarter Projects Analysis"
