@@ -17,7 +17,7 @@ paper:
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/data/mongodb.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
 project:
-  - keyword: MongoDB, PyMongo, Cloud services(DBaaS,IaaS), Data Analysis, VM's
+  - keyword: MongoDB, PyMongo, Crowdfunding, VM's, IaaS & DBaaS Cloud, Data Analysis, Predictions
     title: "Kickstarter Projects Analysis"
     url: https://github.com/cloudmesh-community/fa18-523-60/blob/master/project-report/report.md
     group: fa18-523-60 fa18-523-64 fa18-523-72
