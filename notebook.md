@@ -1,8 +1,8 @@
-# Week Fri 12/4/18 - 12/10/18
+# Week Fri 12/07/18 - 12/17/18
 
-- fixed typos in project report and formatting touch-ups
+- updated notebook.md
 
-# Week Fri 11/30/18 - Thu 12/3/18
+# Week Fri 11/30/18 - Thu 12/06/18
 
 - finalized project.md
 - project touch-ups
